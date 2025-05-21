@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+<!-- Title -->
+<title>
+  
+    ShortComix: cooking-with-google
+  
+</title>
+
+<!-- Favicon -->
+<link href='/images/sprites/favicon.png' rel='icon'/>
+<link href='/images/sprites/favicon.png' rel='apple-touch-icon' sizes='180x180'/>
+<link href="/css/style.css" rel="stylesheet" />
+
+<!-- Basic Meta Tags -->
+<meta charset='UTF-8'/>
+<meta content='width=device-width, initial-scale=1.0' name='viewport'/>
+<meta content='Short Comix is a comic website. LightHearted Illustrations, comics and short stories. ShortComix is weekly. Stuffed with Fun © Shreyas Hegde' name='description'/>
+<meta content='Shreyas Hegde' name='author'/>
+
+<!-- Google Search Console Verification -->
+<meta content='pt5UcQjmqTVxOQyZTv4Ha_y3h96Z6Zf5814_1JYGnBo' name='google-site-verification'/>
+
+<!-- Open Graph / Facebook -->
+<meta content='website' property='og:type'/>
+<meta content='/' property='og:url'/>
+<meta content='ShortComix - Comics and Short Stories' property='og:title'/>
+<meta content='Some lighthearted illustrations, comics and short stories packed with fun!' property='og:description'/>
+<meta content='/images/emotes/awesome.png' property='og:image'/>
+<meta content='ShortComix' property='og:site_name'/>
+
+<!-- Twitter -->
+<meta content='summary_large_image' name='twitter:card'/>
+<meta content='@shortcomix1' name='twitter:site'/>
+<meta content='@shortcomix1' name='twitter:creator'/>
+<meta content='ShortComix - Comics and Short Stories' name='twitter:title'/>
+<meta content='Some lighthearted illustrations, comics and short stories packed with fun!' name='twitter:description'/>
+<meta content='/images/emotes/awesome.png' name='twitter:image'/>
+
+<!-- Theme Colors -->
+<meta content='#ffffff' name='theme-color'/>
+<meta content='#ffffff' name='msapplication-navbutton-color'/>
+<meta content='default' name='app lle-mobile-web-app-status-bar-style'/>
+
+</head>
+
+<body>
+   <!--Outer Wrapper-->
+   <div align='center' class='emoji-space' id='outer-wrapper'>
+     <!-- Header --> 
+<!-- -->
+     <div class='mobile-header for-mobile' style='width:100%; height:60px; display: block;'>
+     
+       <div style='width:100%; height:60px; position: fixed; top:0px; left:0px; z-index: 5000; background: #141414;  display: flex; justify-content: space-between; align-items: center;'>
+       	<div onclick='window.location="/";' style='height: 100%; display: flex; justify-content: center; align-items:center; gap: 15px; padding:0 5%;'>
+        <img src='/images/sprites/favicon.png' style='height: 60%;'/>
+       	 <p style='font-family: gloria hallelujah; font-size: min(6vw, 28px); color: white;'>ShortComix</p>
+       </div>
+       <div style='height: 100%; padding: 0 5%; display: flex; justify-content: center; align-items:center; gap: 20px;'>
+        <svg fill='none' height='24' onclick='mobileMenu(1)' style='height: 45%; width: auto; aspect-ratio:1/1;' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M4 6H20M4 12H20M4 18H20' stroke='#fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2'/>			</svg>
+         <svg fill='none' height='24' onclick='document.querySelector("#comic-search-bar").style.display="flex";  document.querySelector(".search-results").style.display="flex";' stroke='white' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' style='height: 40%; width: auto; aspect-ratio:1/1;' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><circle cx='11' cy='11' r='8'/><line x1='21' x2='16.65' y1='21' y2='16.65'/></svg>
+       </div>
+       
+       <!-- search input -->
+       <div id='comic-search-bar' style='box-sizing: border-box; width:100%; height: 100%; position: absolute; top:0; left:0; display: none; overflow: hidden; box-shadow: 0 1px 1px #ddd;'>
+        <input id='comic-search-input' oninput='searchComics()' placeholder='Search Comics' style='flex: 1; border: #eee solid 8px; background: white; font-size: min(4vw, 30px); padding: 0 5%;' type='text' value=''/>
+        <div onclick='document.querySelector("#comic-search-bar").style.display="none"; document.querySelector(".search-results").style.display="none";' style='position: absolute; top: 0; right: 0; background: black; border-radius: 500px; clip-path: circle(25%); display: grid; place-items: center; aspect-ratio: 1/1; height: 100%; color: white; font-size: min(3vw, 30px)!important;'><p style='transform: translateY(-5%);'>&#10006;</p></div>
+       </div>
+       </div>
+     
+  </div>
+     
+     <!-- Search Results -->
+     <div class='search-results' style='display:none; position: fixed; width: 100%; height: auto; overflow-x: hidden; overflow-y: scroll; flex-direction: column; max-height: 80%; top:60px; left:0; background: var(--primary-bg); z-index: 5500;'>
+     </div>
+     
+<!-- -->
+     
+     <!--Mobile Menu Button-->
+      <div id='open-mobile-menu' onclick='mobileMenu(1)' style='display: flex; width: 18.5vw; max-width: 100px; height: auto; aspect-ratio: 1/0.98; position: fixed; left: 50vw; transform:translateX(-50%); bottom: 35px; z-index: 1100; border-radius: 500px; transition: ease-in-out 1s linear; '>
+        <!-- logo img -->
+        <img alt='Mobile Menu' src='/images/sprites/favicon.png' style='position: relative; z-index: 5; width: 100%; max-width: 100px; height: auto; aspect-ratio: 1/0.98;'/>
+        <!-- menu icon -->
+        <img alt='Mobile Menu icon' class='hidden-icon' src='/images/sprites/favicon.png' style='transform: scale(0); position: absolute; z-index: 10; width: 100%; max-width: 100px; height: auto; aspect-ratio: 1/0.98;'/>
+        
+     </div>
+     
+   <!--Mobile Menu-->    
+   <div class='for-mobile mobile-menu'>
+      <div class='menu-background' onclick='mobileMenu(0);' style='width: 100vw; height: 100vh; background-color: #000; overflow: hidden; position: fixed; bottom: 0px; left: 0px; display: flex; justify-content:center; place-items:center;'></div>
+      
+      <a class='for-mobile home-tag' href='/#kiddo-peek' style='display: block; width: 20vw; height: 30vw; position: fixed; top: 4%; left: 0%; color:white; font-family: gloria hallelujah; font-weight: 400; font-size: min(14.8vw,75px); text-align: center;'>
+         <p class='tag-tick-tick'>#</p>
+      </a>
+      <ul>
+         <li><a href='/archives'>Comic List !egg</a></li>
+         <li style='margin-top: -2vw;'><a href='/fun-games'>Fun Game !stars</a></li>
+         <li><a href='/daily-joke'>Read jokes !wow</a></li>
+      </ul>
+      <!-- a. menu social icons--> 
+      <div class='menu-social-icons' style='width:60%; height: auto; display: flex; flex-direction: row; gap: 80px; justify-content: center; place-items: center; position: absolute; bottom: 8%; margin: 42px 0 40px 0;'>
+          <div>
+             <a alt='Instagram' aria-label='Instagram' href='https://instagram.com/shortcomix.ig' target='blank'>
+                <svg height='16' style='transform: scale(2.3);' viewBox='0 0 24 24' width='16' xmlns='http://www.w3.org/2000/svg'>
+                   <path d='M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z' fill='' stroke=''/>
+                  </svg>
+             </a>
+           </div>
+           <div>
+             <a alt='Twitter' aria-label='Twitter' href='https://twitter.com/shortcomix1' target='blank'>
+                <svg height='16' style='transform: scale(2.3);' viewBox='0 0 16 16' width='16' xmlns='http://www.w3.org/2000/svg'>
+                   <path d='M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z'/>
+                 </svg>
+              </a>
+            </div>
+         </div>
+     <!-- -->
+   </div>
+   <!-- -->
+     
+   <!--Spill Menu-->
+   <div class='spill' style='display:none;width:100vw; height: 100vh; max-height: auto; position: fixed; bottom: 0px; right: 0px; background:#070707; clip-path: circle(0% at 90% 85%); -webkit-clip-path: circle(0% at 90% 85%); will-change: clip-path; transition: clip-path 1s linear; aspect-ratio:1/1; z-index: 1000; overflow:hidden; place-items:center; justify-content:center;'>
+      <ul>
+         <li><a href='/archives'>Comic List !egg</a></li>
+         <li><a href='/fun-games'>Fun Game !stars</a></li>
+         <li><a href='/daily-joke'>Read Jokes !wow</a></li>
+      </ul>
+   </div>
+   
+   <!--Desktop Menu-->
+      <div align='center' class='desktop-menu'>
+         <a href='/#d-kiddo-peek'><img alt='Home' loading='lazy' src='/images/sprites/favicon.png' style='position:fixed; left: 18.5%;  z-index: 100; aspect-ratio:1/1; width: auto; height: 7vw; max-height: 200px; margin-top:15px; border-radius:100px;' title='Sweet Home'/></a>
+         <ul>
+            <li><a href='/archives'>Comics</a></li>
+            <li><a href='/fun-games'>Fun Game</a></li>
+            <li><a href='/daily-joke'>Daily Joke</a></li>
+         </ul>
+        <a href='/story-book'><img alt='star in the corner' src='https://images.vexels.com/content/134175/preview/star-hand-drawn-icon-56-3bf3da.png' style='filter: invert(1); position:fixed; top: 0px; right: 5%;  z-index: 100; aspect-ratio:1/1; width: auto; height: 3.5vw; max-height: 100px; margin-top:15px; border-radius:100px;'/></a>
+      </div>
+     
+   <!--Main Wrapper--> 
+   <div id='main-wrapper'>
+     
+   
+   <!--Top Spacing-->
+   <div class='common-gap' style='width:100%; height:0px;'></div>
+     
+   
+
+
+
+ <!-- POST BODY -->
+            <div class='comic-container'>
+               <div class='post-body comics during-touch' style='margin-top: 0px; margin-left:0px; margin-right:0px; max-width:none;'>
+                  <img class="back comicimg" src="./comic.jpg" style="aspect-ratio:  0.20;" />
+
+               </div>
+            </div>
+
+            <!-- Post TITLE -->
+            <p class='post-title' id='comic-title' style='position:relative; margin:20px 0 10px 0; font-size: 9.3vw; font-family: acme; width:92%;'>cooking-with-google</p>
+      
+               <!-- Navigation -->
+               <div style='width:100%; max-width: 600px; position:relative; display:flex; flex-direction:row; gap: 5%; justify-content:center; place-items:center; user-select:none;'>
+                   
+                  <!-- Prev -->
+                  <div class='nav-prev' style='width: 18vw; max-width: 95px; height: auto; aspect-ratio: 16/14; background: transparent; transform: rotate(180deg);'>
+                  
+                  <a href=/comic/crystal-clear-confession/>
+                     <img alt='Prev Comic' src='/images/sprites/arrow.png' style='width:100%; height: auto; aspect-ratio: 16/14;'/>
+                  </a>
+                  
+                  </div>
+                 
+                  <!-- Random -->
+                  <div class='nav-random' onclick='LuckyLink()'>
+                     <img alt='Random Comic' src='/images/sprites/random-die.png' style='width: 29vw; max-width: 160px; height: auto; aspect-ratio: 16/12; padding: 0 5% 0 5%; cursor:pointer;'/>
+                  </div>
+
+                  <!-- next -->
+                  <div class='nav-next' style='width: 18vw; max-width: 95px; height: auto; aspect-ratio: 16/14; background: transparent;'>
+                     
+                     <a href=/comic/christmas/>
+                        <img alt='Next Comic' src='/images/sprites/arrow.png' style='width:100%; height: auto; aspect-ratio: 16/14;'/>
+                     </a>
+                     
+                  </div>
+                  
+               </div>
+
+               <div class='for-laptop'><br/></div>
+
+               <!-- Comments --> 
+               <div class='open-comments-section' onclick='commentsSection(); toEmoji();' style='background: #121212; margin: 40px 0 40px 0; width:100%; min-height: 45px; height: auto; max-height: 80px; justify-content:center;place-items:center; position:relative;cursor:pointer;'>
+                  <p style='color:white!important; font-family:acme; font-size: 6.5vw; position:relative; padding: 8px 0 8px 0; user-select:none;'>Write a Comment</p>
+               </div>
+               <div id='cmts' name='html-comment-box' style='display:none; width: 93%; max-width: 650px;'>
+                  
+              <!-- comments -->
+                <br/>
+              <div id='disqus_thread' style='width:90%; height: auto; min-height: 40vh; display:none; background-image: url("https://i.pinimg.com/originals/71/3a/32/713a3272124cc57ba9e9fb7f59e9ab3b.gif"); background-size: 70%; background-position: center; background-repeat: no-repeat;'></div>
+
+                 <div class='gmail-comments' style='display:none; width: 85%; max-width: 450px;margin-top: 8%;'><img src='/images/static/gmail-comment1.jpg' style='width: auto; height:auto;'/><br/><br/></div>
+                 <br/>
+                 
+            </div>
+              
+               
+               <!-- Social Icons after POST-->
+               <div class='social-icons' style='display: flex; flex-direction: row; position: relative; gap: 48%; width: min(90%,400px); place-items: center; place-content:center; margin-top: 15px; margin-bottom: 30px; max-width: 650px; height: auto; aspect-ratio: 23/6;'>
+                  <div>
+                     <a alt='Instagram' href='https://instagram.com/shortcomix.ig' style='aspect-ratio:1/1;' target='blank' title='Instagram'>
+                        <svg height='16' style='transform: scale(2.3);' viewBox='0 0 24 24' width='16' xmlns='http://www.w3.org/2000/svg'>
+                           <path d='M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z'/>
+                        </svg>
+                     </a>
+                  </div>
+                  <div>
+                     <a alt='Twitter' class='tweet' href='https://twitter.com/shortcomix1' style='aspect-ratio:1/1;' target='blank' title='Twitter'>
+                        <svg height='16' style='transform: scale(2.3);' viewBox='0 0 16 16' width='16' xmlns='http://www.w3.org/2000/svg'>
+                           <path d='M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z'/>
+                        </svg>
+                     </a>
+                  </div>
+               </div>
+               <!--   --> 
+
+
+
+<script async='async' id='dsq-count-scr' src='//shortcomix.disqus.com/count.js'></script>
+           
+   </div>
+   
+</div>
+  
+<!-- JAVASCRIPT FUNCTIONS -->
+<script defer='defer' type='text/javascript' src="/js/script.js"></script>
+
+</body>
+</html>

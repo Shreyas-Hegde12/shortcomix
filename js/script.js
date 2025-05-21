@@ -1,0 +1,554 @@
+const comictitle = document.getElementById('comic-title');
+const previousComic = document.getElementById('Blog1_blog-pager-older-link');
+const nextComic = document.getElementById('Blog1_blog-pager-newer-link');
+const isMobile = screen.width < 650;
+
+let visits = parseInt(localStorage.getItem("userNew")) || 0;
+let menuOpened = localStorage.getItem("menuOpened") || 'false' ;
+
+let frogFreeze;
+let frogPose=0;
+
+const carouselImages = [
+  	{ name: "wow/awesome", src: "/images/emotes/awesome.png" },
+  	{ name: "think egg", src: "/images/emotes/think.png" },
+  	{ name: "oh no", src: "/images/emotes/oh-no.png" },
+  	{ name: "scared", src: "/images/emotes/scared.png" }
+];
+
+// On Page Load
+window.onload = function() {
+
+	if(document.querySelector('#this-is-home-page') != null){
+      setTimeout(startCarousel, 500);
+	}
+}
+
+// On DOM content Load
+document.addEventListener('DOMContentLoaded', function() {
+
+	loadFonts();
+	
+	if (visits < 10 && menuOpened == 'false'){
+		visits += 1; 
+		if(localStorage) localStorage.setItem("userNew", visits);
+		// Show a flag on menu icon and say 'I am Menu'
+		document.querySelector(':root').style.setProperty('--i-am-menu-animation', 'appear_disappear 5s 1');
+	}
+
+	if(comictitle != null){
+		polishComicPage();
+	}
+	else if(document.querySelector('#this-is-home-page') != null){
+		comicPick();
+		polishHomePage();
+	}
+	else if (document.querySelector('#this-is-story-page') !== null) {
+    	document.querySelector("iframe").addEventListener("load", lock);
+	}
+	else if(document.querySelector('#this-is-games-page') != null){
+		sizeTracker();
+	}
+	else if(document.querySelector('#about-page') != null){
+		replaceText();
+	}
+
+});
+
+function loadFonts() {
+	const link = document.createElement('link');
+	link.href='https://fonts.googleapis.com/css2?family=Acme&family=Gloria+Hallelujah&family=Indie+Flower&family=Open+Sans&family=Sedan&family=Montserrat&display=swap';
+	link.rel= 'stylesheet';
+	link.type='text/css';
+	link.media='all';
+	document.head.appendChild(link);
+}
+
+function polishComicPage() {
+
+		// a. comic title and alt
+		document.querySelector('.comicimg').alt = comictitle.innerHTML;
+		document.querySelector('.comicimg').title = comictitle.innerHTML; 
+
+		document.querySelector('#open-mobile-menu').style.display = 'none';
+
+		// b. tweet links
+		const COMIC_URL = window.location.origin + window.location.pathname;
+		const TWEET_TEXT = "A comic by @shortcomix1";
+		const tweetHref = "https://twitter.com/share?url=" + COMIC_URL + "&text=" + TWEET_TEXT;
+		document.querySelector('.tweet').href= tweetHref;
+
+		// c. gmail comments
+		if(window.location.pathname=='/comic/cut-it'){document.querySelector('.gmail-comments').style.display='block';}
+
+		// d. mobile menu stick to bottom for small squarey comics
+		if(document.querySelector('.sq') !== null){
+			const mobmenu = document.querySelector('#open-mobile-menu');
+ 			mobmenu.style.position = 'absolute'; 
+			mobmenu.bottom = '5px';
+		}
+
+		// e. Keyboard Comic Navigation
+		if(window.innerWidth> 800){
+			document.addEventListener("keydown", (e) => {
+				if((e.key == "ArrowLeft") && (previousComic)){window.open(previousComic.href,"_self");}
+				if((e.key == "ArrowRight") && (nextComic)){window.open(nextComic.href,"_self");}
+			});
+		}
+}
+
+
+function polishHomePage() {
+
+    // a. Carousel Preload Images
+	carouselImages.forEach(image => {
+  		const link = document.createElement('link');
+  		link.rel = 'preload';
+  		link.as = 'image';
+  		link.href = image.src;
+  		document.head.appendChild(link);
+	});
+
+
+	// b. Carousel Position Settings
+	const toh = window.innerHeight/2;
+	const toph = toh - (5*toh)/100;
+	document.querySelector('.carousel').style.top = toph + 'px';
+	document.querySelector('.home-tag').style.display="none";
+
+	// c. Frog Pic Change every second
+	frogFreeze = setInterval( ()=>{
+		const frog = isMobile ? document.querySelector('#frog-pic') : document.querySelector('#d-frog-pic');
+ 		const frogImages = [
+			'/images/static/frog.png', '/images/static/frog-with-tie.png'
+		];
+
+		if(frogPose === frogImages.length){ frogPose=0; } 
+		frog.src= frogImages[frogPose];
+		frogPose++;
+
+	}, 1e3);
+
+	// d. Coffee Cup Menu
+	if(window.innerWidth>800){
+		document.addEventListener("scroll", (e)=>{
+			const a = window.pageYOffset/document.body.clientHeight;
+			let ele = document.querySelector('#coffee-cup-menu');
+
+			if(a>0.5){
+				// Coffee Cup visible
+				ele.style.opacity='0';
+				ele.style.pointerEvents = 'none';
+			}
+			else{
+				// Coffee Cup invisible
+				ele.style.opacity='1';
+				ele.style.pointerEvents = 'auto';
+			}
+
+		});
+	}
+
+	// e. Preload 1st Youtube Video Thumbnail
+    if(isMobile){
+		const observer = new IntersectionObserver(entries => {
+        	entries.forEach(entry => {
+            	if (entry.isIntersecting) {
+                	const thumbnail = document.querySelector('.tv-embed img').src;
+                	const link = document.createElement('link');
+                	link.href = thumbnail;
+					link.rel = 'preload';
+					link.as = 'image';
+					document.head.appendChild(link);
+                	observer.disconnect(); // Completely stops the observer
+            	}
+        	});
+    	});
+    	const target = document.querySelector('#bubbles');
+    	if (target) observer.observe(target);
+	}
+
+}
+
+
+// When user clicks 'Play' under Tv section in Home Page, Autoplay the video without showing thumbnail
+function firstvideo(iframe){
+	// On iframe load
+	iframe.onload = () => {
+		// send command to the video to start playing immediately
+		const command = 'playVideo';
+        iframe.contentWindow.postMessage(
+        	JSON.stringify({ event: 'command', func: command, args: [] }),
+            '*'
+        );
+   };
+}
+
+
+// Random Post
+function LuckyLink() {
+	const allLinks = [
+		"/million-dollar-baby","/anybody-coffeee","/story-time","/game-over","/egg-life","/wonder-of-life","/blame-potatoes","/toasted-birthday","/heaven","/dark-watch","/cooking-with-google","/feel-the-kick","/the-english-smile","/puppy-tale","/shooting-stars","/extra-seat","/cut-it"
+		];
+
+	// Find a Random Comic Link
+	let destination, lucky;
+	do
+	{
+		lucky = Math.floor(Math.random()*allLinks.length);
+		destination= '/comic' + allLinks[lucky];
+	} while(destination === window.location.pathname);
+	
+	// Play Button Animation
+	document.querySelector('.nav-random').style.animation='shake_on_hover 0.45s 2';
+    const reset = setTimeout(()=>{
+      	document.querySelector('.nav-random').style.animation='';
+    },900);
+
+	// Wait for 0.5s then open Link
+	sleep(500).then( ()=>{ window.location.href= destination; } );
+}
+
+
+// Configure Disqus
+function disqusConfig() {    
+    // a. Load the Disqus embed script
+	document.getElementById('disqus_thread').innerHTML = '';
+    let disqusscript = document.createElement('script');
+    disqusscript.src = `https://shortcomix.disqus.com/embed.js`;
+    disqusscript.setAttribute('data-timestamp', +new Date());
+    disqusscript.async = true;
+    document.body.appendChild(disqusscript);
+}
+
+// Comment Section
+function commentsSection() {
+
+	const cmts = document.querySelector('#cmts');
+	const cmtsOpen = cmts.style.display === 'block';
+
+	if(!cmtsOpen){
+		cmts.style.display = 'block'; 
+		document.querySelector('.open-comments-section p').innerHTML="Hide Comments"; 
+		document.querySelector('#open-mobile-menu').style.display="none"; 
+		document.querySelector('.social-icons').style.display="none"; 
+		document.getElementById('disqus_thread').style.display = 'block';
+		// Scroll Down to bring comments into view
+		window.scrollBy({
+  			top: 300,
+  			left: 0,
+  			behavior: "smooth",
+		});
+		// Configure Disqus
+		disqusConfig();
+	}
+	else{
+		cmts.style.display = 'none'; 
+		document.querySelector('.open-comments-section p').innerHTML="Write a Comment"; 
+		document.querySelector('#open-mobile-menu').style.display="flex"; 
+		document.querySelector('.social-icons').style.display="flex";
+		document.getElementById('disqus_thread').style.display = 'none';
+	}
+}
+
+
+// Mobile Menu open and close
+function mobileMenu(opn) { 
+	menuOpened = 'true'; 
+	localStorage.setItem('menuOpened','true');
+	const mobilemenu = document.querySelector('.mobile-menu');
+	const button = document.querySelector('#open-mobile-menu');
+	const isHomePage = (document.querySelector('#this-is-home-page') != null);
+	
+	if(isHomePage){
+		if(opn){
+			mobilemenu.style.clipPath = "circle(150% at 50% 92%)";
+			mobilemenu.style.transition= "clip-path 0.5s ease-in-out";
+		}
+		else{
+			mobilemenu.style.clipPath = "circle(0% at 50% 92%)";
+			mobilemenu.style.transition= "clip-path 0.5s ease-in-out";
+			button.style.display="flex";
+		}
+		return;
+	}
+
+	if(opn){
+		mobilemenu.style.clipPath = "circle(0% at 50% 50%)";
+		mobilemenu.offsetWidth;
+		mobilemenu.style.clipPath = "circle(150% at 50% 50%)";
+		mobilemenu.style.transition= "clip-path 0.5s ease-in-out";
+	}
+	else{
+		mobilemenu.style.clipPath = "circle(0% at 50% 50%)";
+		mobilemenu.style.transition= "clip-path 0.5s ease-in-out";
+		//button.style.display="flex";
+	}
+}
+
+// Game Page
+function sizeTracker() {
+	const sizetrack = setInterval(function(){
+		let bx = parseInt(window.getComputedStyle(document.querySelector("#blue-box")).width);
+		let by = parseInt(window.getComputedStyle(document.querySelector("#blue-box")).height);
+		let rx = parseInt(window.getComputedStyle(document.querySelector("#red-box")).width);
+		let ry = parseInt(window.getComputedStyle(document.querySelector("#red-box")).height);
+		if(Math.abs(bx - rx) <= 2 && Math.abs(by - ry) <= 2){ fireAlert(); }
+ 	},1);
+}
+
+
+// Sleep
+function sleep(ms) {
+	return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+// Clipboard
+function clipboard(text) {
+	let copyText = text
+
+	// If text says 'copylink' then copy page URL instead
+	if(text === "copylink"){
+		copyText = window.location.origin + window.location.pathname;
+	}
+
+	// Write to clipboard
+	navigator.clipboard.writeText(copyText);
+}
+
+// Signal Copy to user (Optional)
+function signalCopy(buttonId, whatToSay) {
+	document.querySelector(buttonId).innerHTML= `<div id="signaling-copy"> ${whatToSay} </div>`;
+}
+
+
+// Comics for home comic grid
+const comicLinks = [
+	/* "/comic/cut-it", */
+  	"/comic/extra-seat",
+  	"/comic/shooting-stars",
+  	"/comic/puppy-tale",
+	"/comic/feel-the-kick",
+	"/comic/the-english-smile",
+ 	/* "/comic/cooking-with-google", */
+	"/comic/a-nosy-deal",
+	"/comic/toasted-birthday",
+	"/comic/wonder-of-life",
+ 	/* "/comic/game-over", */
+	"/comic/blame-potatoes",
+ 	/* "/comic/egg-life", */
+ 	/* "/comic/story-time", */
+  	"/comic/million-dollar-baby",
+  	/* "/comic/anybody-coffee", */
+];
+
+function comicPick() {
+
+	const ran1 = Math.floor(Math.random() * comicLinks.length);
+	let ran2 = Math.floor(Math.random() * comicLinks.length);
+
+	while(ran1 === ran2){ 
+		ran2 = Math.floor(Math.random() * comicLinks.length);
+	}
+
+	const pickLink = isMobile ? '.pick-link' : '.d-pick-link';
+	const secondPickLink = isMobile ? '.pick-second-link' : '.d-pick-second-link';
+	const pickImage = isMobile ? '.pick-img' : '.d-pick-img';
+	const secondPickImage = isMobile ? '.pick-second-img' : '.d-pick-second-img';
+
+	document.querySelector(pickLink).href = comicLinks[ran1];
+	document.querySelector(secondPickLink).href = comicLinks[ran2];
+	document.querySelector(pickImage).src = comicLinks[ran1] + '/thumb.jpg';
+	document.querySelector(secondPickImage).src = comicLinks[ran2] + '/thumb.jpg';
+}
+
+
+// Carousel
+function startCarousel() {
+	let imageNum= 0;
+	setInterval(() => {
+		if(imageNum == 0){ document.querySelector('.emoji-carousel').classList.add('animate-carousel'); }
+		if(imageNum == carouselImages.length){ imageNum = 0; }
+
+		document.querySelector('.emoji-carousel').src= carouselImages[imageNum].src;
+
+		imageNum++;
+	},2000);
+}
+
+
+// Replace Emoji Text with its Emojis
+!function(){ toEmoji(); }();
+
+function toEmoji(){
+	let bodyText = document.querySelector(".emoji-space");
+	let theText = bodyText.innerHTML;
+	theText = theText.replace(/!shy/gi, "<img src='/images/emotes/shy.png' class='emoji-settings' alt='emoji shy'/>");
+theText = theText.replace(/!omg/gi, "<img src='/images/emotes/scared.png' class='emoji-settings' alt='emoji omg'/>");
+theText = theText.replace(/!sad/gi, "<img src='/images/emotes/oh-no.png' class='emoji-settings' alt='emoji sad'/>");
+theText = theText.replace(/!smile/gi, "<img src='/images/emotes/smile.png'class='emoji-settings' alt='emoji smile'/>");
+	theText = theText.replace(/!stars/gi, "<img src='/images/emotes/sparkly.png' class='emoji-settings' alt='emoji stars'/>");
+	theText = theText.replace(/!dog/gi, "<img src='/images/emotes/loyal.png' class='emoji-settings'  alt='emoji dog'/>");
+	theText = theText.replace(/!cop/gi, "<img src='/images/emotes/eyes-on-you.png' class='emoji-settings'  alt='emoji cop'/>");
+	theText = theText.replace(/!wow/gi, "<img src='/images/emotes/awesome.png' class='emoji-settings'  alt='emoji wow'/>");
+	theText = theText.replace(/!egg/gi, "<img src='/images/emotes/think.png' class='emoji-settings'  alt='emoji egg'/>");
+	theText = theText.replace(/!hat/gi, "<img src='/images/emotes/hat.png' class='emoji-settings' alt='emoji with-hat'/>");
+	
+	bodyText.innerHTML = theText;
+}
+
+
+
+// Easter Egg Message Map
+const recordsElement = document.querySelector("#records");
+
+const messageMap = {
+    1: "The frog is ded😔💐.",
+    5: "Stop stabbing 😠💢🫵",
+    11: "<span id='password' onclick='clipboard(&quot;🍰🌓aepayssia&quot;);' class='soft-touch gray-bg-element twinkling' style='display: inline-block; font-family: open sans; font-size: inherit; padding: 2% 5%; user-select: none;'>🍰🌓aepayssia</span>",
+    12: "Frog face is no more recognizable🤕..",
+    20: "Leave this poor lil🤏 frog🥺. Dude..",
+    25: () => {
+      recordsElement.innerHTML = "The knife is ultra red🩸";
+      document.querySelector("#unscrambler").style.display = "block";
+    },
+    26: () => {
+      recordsElement.innerHTML = "Stabbing is crime, I repeat🤧";
+      document.querySelector("#unscrambler").style.display = "none";
+    },
+    40: () => {
+      recordsElement.innerHTML = "You are a dangerous guy💀! </br> Cruel is your name..</br>";
+      document.querySelector('#music iframe').src = 'https://res.cloudinary.com/dzss5ged8/video/upload/v1725563540/dangerous-michael-jackson-the-immortal-12650_mp3cut.net_x9txnk.mp3';
+      document.querySelector('#music').style.display = 'block';
+    },
+    50: () => {
+      recordsElement.innerHTML = "Thanos says - The End";
+      document.querySelector('#music').style.display = 'none'; 
+    }
+  };
+
+
+// Like Animation
+function likeAnimation(){
+	const root = document.querySelector(":root");
+
+	// a. Set scale for mobile devices
+    if (window.innerWidth < 650) {
+      const hscale = (window.innerWidth / 460) * 1.25;
+      const tscale = (window.innerWidth / 460) * 1.15;
+      root.style.setProperty("--like-card-scale", hscale);
+      root.style.setProperty("--like-msg-scale", tscale);
+    }
+    
+    // b. Initialize animation properties
+    root.style.setProperty("--like-btn-animation", "like_plus_one 2s 1");
+    root.style.setProperty("--like-card-zIndex", "500");
+    
+    // c. Show message after delay
+    sleep(2000).then(() => {
+      document.querySelector(":root").style.setProperty("--like-msg-appear", "1");
+    });
+    
+    // d. Stop frog animation and replace with dead frog
+    clearInterval(frogFreeze);
+    const deadFrogUrl = 'https://res.cloudinary.com/dzss5ged8/image/upload/v1742934877/frog-dead---_teafct.png';
+    document.querySelector('#frog-pic').src = deadFrogUrl;
+    document.querySelector('#d-frog-pic').src = deadFrogUrl;
+	document.querySelector('.frog-like-btn.laptop-view').style.pointerEvents = 'None';
+}
+
+
+// Frog Click - What to do
+let count = 0
+function frogClick() {
+
+  if (count === 0) {
+	// User Liked the page, animate the Liking Card
+    likeAnimation();
+  }
+  else{
+	// User is using Easter Egg
+	
+  	// a. Show Stab Count
+  	document.querySelector(".stab").style.display = "block";
+  	document.querySelector("#stab-count").innerHTML = "Stab count: " + count;
+
+  	// b. Display appropriate easter egg message
+  	if (messageMap[count]) {
+    	if (typeof messageMap[count] === 'function') {
+      		messageMap[count]();
+    	} else {
+      		recordsElement.innerHTML = messageMap[count];
+    	}
+ 	}
+  }
+  count++;
+
+}
+
+let allComicJSON = [];
+let searchFileLoaded = false;
+
+// Fetch search.json
+function fetchSearchJSON(){
+	fetch('/search.json')
+    .then(response => response.json())
+    .then(data => {
+      allComicJSON = data;
+	  searchFileLoaded = true;
+    })
+    .catch(error => {
+      console.error('Error fetching search.json:', error);
+      searchResultsContainer.innerHTML = '<p>Error loading search data.</p>';
+    });
+
+}
+
+// Search Comics
+function searchComics() {
+	if(!searchFileLoaded){ fetchSearchJSON(); }
+  	const searchTerm = document.querySelector("#comic-search-input").value.trim().toLowerCase();
+  	const resultsDiv = document.querySelector(".search-results");
+  	resultsDiv.innerHTML = "";
+
+  	// filtering logic
+	if (!searchTerm) {
+      return []; // Return empty array if no search term
+    }
+
+    const filteredComics = allComicJSON.filter(comic => {
+      const titleMatch = comic.title.toLowerCase().includes(searchTerm);
+      const tagMatch = comic.keywords.some(keyword => keyword.toLowerCase().includes(searchTerm) || searchTerm.toLowerCase().includes(keyword));
+      return titleMatch || tagMatch;
+    });
+	showSearchResults(filteredComics);
+  
+}
+
+function showSearchResults(searchResults) {
+  const resultsDiv = document.querySelector(".search-results");
+  resultsDiv.innerHTML = "";
+  
+  if (!searchResults) {
+    resultsDiv.innerHTML = "Comic not found :(";
+    return;
+  }
+
+  searchResults.forEach(result => {
+    const title = result.title;
+    const link = result.url;
+    const thumbnail = result.thumbnail;
+	console.log(thumbnail);
+
+    const comicHTML = `
+      <div class="search-result" style="width:90%; height: auto; aspect-ratio: 16/4; font-family: gloria hallelujah; text-align: left; font-size: min(5vw, 28px); margin: 5px 5%; padding: 5px 0;">
+        <a href="${link}" class="plain-link" style=" display: grid; grid-template-columns: 5fr 2fr; align-items: center; gap: 10px; width:100%; height: 100%; ">
+          
+          <div style="text-align: left;"><p style="">${title}</p></div>
+		  <img src="${thumbnail}" alt="${title}" style="aspect-ratio: 1/1;"/>
+        </a>
+      </div>
+    `;
+    resultsDiv.insertAdjacentHTML("beforeend", comicHTML);
+  });
+}

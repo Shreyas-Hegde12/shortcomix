@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+<!-- Title -->
+<title>
+  
+    ShortComix: About Page
+  
+</title>
+
+<!-- Favicon -->
+<link href='/images/sprites/favicon.png' rel='icon'/>
+<link href='/images/sprites/favicon.png' rel='apple-touch-icon' sizes='180x180'/>
+<link href="/css/style.css" rel="stylesheet" />
+
+<!-- Basic Meta Tags -->
+<meta charset='UTF-8'/>
+<meta content='width=device-width, initial-scale=1.0' name='viewport'/>
+<meta content='Short Comix is a comic website. LightHearted Illustrations, comics and short stories. ShortComix is weekly. Stuffed with Fun © Shreyas Hegde' name='description'/>
+<meta content='Shreyas Hegde' name='author'/>
+
+<!-- Google Search Console Verification -->
+<meta content='pt5UcQjmqTVxOQyZTv4Ha_y3h96Z6Zf5814_1JYGnBo' name='google-site-verification'/>
+
+<!-- Open Graph / Facebook -->
+<meta content='website' property='og:type'/>
+<meta content='/' property='og:url'/>
+<meta content='ShortComix - Comics and Short Stories' property='og:title'/>
+<meta content='Some lighthearted illustrations, comics and short stories packed with fun!' property='og:description'/>
+<meta content='/images/emotes/awesome.png' property='og:image'/>
+<meta content='ShortComix' property='og:site_name'/>
+
+<!-- Twitter -->
+<meta content='summary_large_image' name='twitter:card'/>
+<meta content='@shortcomix1' name='twitter:site'/>
+<meta content='@shortcomix1' name='twitter:creator'/>
+<meta content='ShortComix - Comics and Short Stories' name='twitter:title'/>
+<meta content='Some lighthearted illustrations, comics and short stories packed with fun!' name='twitter:description'/>
+<meta content='/images/emotes/awesome.png' name='twitter:image'/>
+
+<!-- Theme Colors -->
+<meta content='#ffffff' name='theme-color'/>
+<meta content='#ffffff' name='msapplication-navbutton-color'/>
+<meta content='default' name='app lle-mobile-web-app-status-bar-style'/>
+
+</head>
+
+<body>
+   <!--Outer Wrapper-->
+   <div align='center' class='emoji-space' id='outer-wrapper'>
+     <!-- Header --> 
+<!-- -->
+     <div class='mobile-header for-mobile' style='width:100%; height:60px; display: block;'>
+     
+       <div style='width:100%; height:60px; position: fixed; top:0px; left:0px; z-index: 5000; background: #141414;  display: flex; justify-content: space-between; align-items: center;'>
+       	<div onclick='window.location="/";' style='height: 100%; display: flex; justify-content: center; align-items:center; gap: 15px; padding:0 5%;'>
+        <img src='/images/sprites/favicon.png' style='height: 60%;'/>
+       	 <p style='font-family: gloria hallelujah; font-size: min(6vw, 28px); color: white;'>ShortComix</p>
+       </div>
+       <div style='height: 100%; padding: 0 5%; display: flex; justify-content: center; align-items:center; gap: 20px;'>
+        <svg fill='none' height='24' onclick='mobileMenu(1)' style='height: 45%; width: auto; aspect-ratio:1/1;' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M4 6H20M4 12H20M4 18H20' stroke='#fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2'/>			</svg>
+         <svg fill='none' height='24' onclick='document.querySelector("#comic-search-bar").style.display="flex";  document.querySelector(".search-results").style.display="flex";' stroke='white' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' style='height: 40%; width: auto; aspect-ratio:1/1;' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><circle cx='11' cy='11' r='8'/><line x1='21' x2='16.65' y1='21' y2='16.65'/></svg>
+       </div>
+       
+       <!-- search input -->
+       <div id='comic-search-bar' style='box-sizing: border-box; width:100%; height: 100%; position: absolute; top:0; left:0; display: none; overflow: hidden; box-shadow: 0 1px 1px #ddd;'>
+        <input id='comic-search-input' oninput='searchComics()' placeholder='Search Comics' style='flex: 1; border: #eee solid 8px; background: white; font-size: min(4vw, 30px); padding: 0 5%;' type='text' value=''/>
+        <div onclick='document.querySelector("#comic-search-bar").style.display="none"; document.querySelector(".search-results").style.display="none";' style='position: absolute; top: 0; right: 0; background: black; border-radius: 500px; clip-path: circle(25%); display: grid; place-items: center; aspect-ratio: 1/1; height: 100%; color: white; font-size: min(3vw, 30px)!important;'><p style='transform: translateY(-5%);'>&#10006;</p></div>
+       </div>
+       </div>
+     
+  </div>
+     
+     <!-- Search Results -->
+     <div class='search-results' style='display:none; position: fixed; width: 100%; height: auto; overflow-x: hidden; overflow-y: scroll; flex-direction: column; max-height: 80%; top:60px; left:0; background: var(--primary-bg); z-index: 5500;'>
+     </div>
+     
+<!-- -->
+     
+     <!--Mobile Menu Button-->
+      <div id='open-mobile-menu' onclick='mobileMenu(1)' style='display: flex; width: 18.5vw; max-width: 100px; height: auto; aspect-ratio: 1/0.98; position: fixed; left: 50vw; transform:translateX(-50%); bottom: 35px; z-index: 1100; border-radius: 500px; transition: ease-in-out 1s linear; '>
+        <!-- logo img -->
+        <img alt='Mobile Menu' src='/images/sprites/favicon.png' style='position: relative; z-index: 5; width: 100%; max-width: 100px; height: auto; aspect-ratio: 1/0.98;'/>
+        <!-- menu icon -->
+        <img alt='Mobile Menu icon' class='hidden-icon' src='/images/sprites/favicon.png' style='transform: scale(0); position: absolute; z-index: 10; width: 100%; max-width: 100px; height: auto; aspect-ratio: 1/0.98;'/>
+        
+     </div>
+     
+   <!--Mobile Menu-->    
+   <div class='for-mobile mobile-menu'>
+      <div class='menu-background' onclick='mobileMenu(0);' style='width: 100vw; height: 100vh; background-color: #000; overflow: hidden; position: fixed; bottom: 0px; left: 0px; display: flex; justify-content:center; place-items:center;'></div>
+      
+      <a class='for-mobile home-tag' href='/#kiddo-peek' style='display: block; width: 20vw; height: 30vw; position: fixed; top: 4%; left: 0%; color:white; font-family: gloria hallelujah; font-weight: 400; font-size: min(14.8vw,75px); text-align: center;'>
+         <p class='tag-tick-tick'>#</p>
+      </a>
+      <ul>
+         <li><a href='/archives'>Comic List !egg</a></li>
+         <li style='margin-top: -2vw;'><a href='/fun-games'>Fun Game !stars</a></li>
+         <li><a href='/daily-joke'>Read jokes !wow</a></li>
+      </ul>
+      <!-- a. menu social icons--> 
+      <div class='menu-social-icons' style='width:60%; height: auto; display: flex; flex-direction: row; gap: 80px; justify-content: center; place-items: center; position: absolute; bottom: 8%; margin: 42px 0 40px 0;'>
+          <div>
+             <a alt='Instagram' aria-label='Instagram' href='https://instagram.com/shortcomix.ig' target='blank'>
+                <svg height='16' style='transform: scale(2.3);' viewBox='0 0 24 24' width='16' xmlns='http://www.w3.org/2000/svg'>
+                   <path d='M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z' fill='' stroke=''/>
+                  </svg>
+             </a>
+           </div>
+           <div>
+             <a alt='Twitter' aria-label='Twitter' href='https://twitter.com/shortcomix1' target='blank'>
+                <svg height='16' style='transform: scale(2.3);' viewBox='0 0 16 16' width='16' xmlns='http://www.w3.org/2000/svg'>
+                   <path d='M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z'/>
+                 </svg>
+              </a>
+            </div>
+         </div>
+     <!-- -->
+   </div>
+   <!-- -->
+     
+   <!--Spill Menu-->
+   <div class='spill' style='display:none;width:100vw; height: 100vh; max-height: auto; position: fixed; bottom: 0px; right: 0px; background:#070707; clip-path: circle(0% at 90% 85%); -webkit-clip-path: circle(0% at 90% 85%); will-change: clip-path; transition: clip-path 1s linear; aspect-ratio:1/1; z-index: 1000; overflow:hidden; place-items:center; justify-content:center;'>
+      <ul>
+         <li><a href='/archives'>Comic List !egg</a></li>
+         <li><a href='/fun-games'>Fun Game !stars</a></li>
+         <li><a href='/daily-joke'>Read Jokes !wow</a></li>
+      </ul>
+   </div>
+   
+   <!--Desktop Menu-->
+      <div align='center' class='desktop-menu'>
+         <a href='/#d-kiddo-peek'><img alt='Home' loading='lazy' src='/images/sprites/favicon.png' style='position:fixed; left: 18.5%;  z-index: 100; aspect-ratio:1/1; width: auto; height: 7vw; max-height: 200px; margin-top:15px; border-radius:100px;' title='Sweet Home'/></a>
+         <ul>
+            <li><a href='/archives'>Comics</a></li>
+            <li><a href='/fun-games'>Fun Game</a></li>
+            <li><a href='/daily-joke'>Daily Joke</a></li>
+         </ul>
+        <a href='/story-book'><img alt='star in the corner' src='https://images.vexels.com/content/134175/preview/star-hand-drawn-icon-56-3bf3da.png' style='filter: invert(1); position:fixed; top: 0px; right: 5%;  z-index: 100; aspect-ratio:1/1; width: auto; height: 3.5vw; max-height: 100px; margin-top:15px; border-radius:100px;'/></a>
+      </div>
+     
+   <!--Main Wrapper--> 
+   <div id='main-wrapper'>
+     
+   
+   <!--Top Spacing-->
+   <div class='common-gap' style='width:100%; height:0px;'></div>
+     
+   <div id="about-page" style="max-width: 700px;">
+  
+  <!-- Sticky Header -->
+  <div class="about-page-header for-mobile" style="display:flex; flex-direction:row; gap: 25%; width:100%; height: 9vh; max-height: 100px; overflow:hidden; position:fixed; top:0px; left:0px; z-index: 10; text-align: right; background: rgba(255,255,255, 0.2); backdrop-filter:blur(20px); transform: translateY(0%); justify-content:center; place-items:center;">
+    <p onclick="window.location.href='/#home-page';" style="width: auto; height:55%; aspect-ratio:2.1/1!important; font-family:acme; padding: 3px; background: rgba(200,200,200,0.4); backdrop-filter:blur(20px); border-radius:40px;" id="logo-replace">&emsp;&emsp;&emsp;</p>
+    <p style="width: 40%; font-family: sedan; padding: 5px; font-size: min(5.2vw,26px); border-radius:40px; user-select:none;">Before you follow</p>
+  </div>
+  
+  <!-- Swipe -->
+  <div class="swipe-out for-mobile" style="width:100%; height: 100%; display:flex; justify-content: center; place-items: center; font-size: min(7vw,45px); font-family: acme; background: #121212; color: white!important; position: fixed; left:0px; top:0px; z-index: 100;">
+    <p style="width:85%; max-width:800px; opacity: 0;" class="fade-in" >Before Following anyone, it is important to know the person properly !!
+  </p>
+  </div>
+  
+  <p class="for-laptop" style="font-style:italic; text-decoration: underline; font-size: min(5vw,45px); font-family: sedan;">About</p>
+  
+  <!-- I, the creator of -->
+  <div style="margin-top: 20vh; width:100%; height: auto; display:flex; flex-direction: column; justify-content:center; place-items:center;">  
+    <div style="margin-top: -10vh;" class="for-laptop" ></div>
+    <div class="for-mobile">
+    <p style="font-family: sedan; font-size: min(15vw, 50px); text-align:center; line-height:1.5; font-style:italic;">I,</p><p style="margin-bottom: 4%; font-family: sedan; font-size: min(8vw,40px); text-align:center; line-height:1.5;font-style:italic;">The creator of<br>ShortComix</p>
+    </div>
+    
+    <!-- a. Broken soul Gif -->
+    <div style="width:85%; height: auto; aspect-ratio:16/9.5; margin-bottom: 5%; position:relative;">
+       <img src="https://i.pinimg.com/originals/bf/ab/e1/bfabe1d75f91c37a452de53733ea6f6a.gif" style="width:100%;position:relative;"/>
+       <div style="position: absolute; bottom:0%; left:0px; width:100%; height: 41%;  background: rgba(0,0,0,0); backdrop-filter: grayscale(1);"></div>
+    </div> 
+    <!-- b. sub title -->
+    <p style="font-size: min(4.8vw,27px); width:85%; font-family: sedan;">I am a broken soul searching for peace and happiness.</p>
+  </div>
+    
+  <!-- Info Pad -->
+  <ul style="margin-top: 12vh;">
+    <!-- a. Name -->
+    <li onclick="toggleText('name')"><span class="no-italic-emoji">😎</span> My Name</li>
+    	<div id="name" class="additional-text" style="text-align:left; font-style:italic;">
+      		Shreyas Hegde<br>
+      	<img class="back" alt="signature" src='/images/static/signature.jpg' style="width: 50%; height: auto; aspect-ratio:16/8; margin-top:5%;"/><br>
+    	</div>
+    <!-- b. Fav Comics -->
+    <li onclick="toggleText('comics')"><span class="no-italic-emoji">🎨</span> My fav comics</li>
+    	<div id="comics" class="additional-text" style="text-align:left;">
+      		Loading Artist, Jenkins Comics, Wumo Comics, Sarah Scribbles, Whats Up Beanie?, Exo Comics, Xkcd Comics, PHD Comics and more.<br><br>
+    	</div>
+    <!-- c. Zodiac Sign -->
+    <li onclick="toggleText('zodiac')"><span class="no-italic-emoji">🦁</span> My zodiac sign</li>
+    	<div id="zodiac" class="additional-text">
+      		<img src="https://media.tenor.com/lEPCz_3tD_oAAAAj/penguin-pudgy.gif" style="width: 60%;"/>
+      		<br>My zodiac sign is Aquarius.<br>
+    	</div>
+    <!-- d. Fav Movies -->
+    <li onclick="toggleText('movies')"><span class="no-italic-emoji">🍿</span> My fav movies</li>
+    	<div id="movies" class="additional-text">
+      		<ol>
+        		<li>My Neighbour Totoro (1988)</li>
+        		<li>Matrix (1999)</li>
+        		<li>Harry Potter (2001-2011)</li>
+        		<li>Ratatouille (2007)</li>
+        		<li>Inception (2010)</li>
+        		<li>Interstellar (2014) </li>
+        		<li>Ulidavaru Kandante (2014)</li>
+        		<li>Spiderman: Across the spiderverse</li>
+        		<li>Aachar &amp; Co (2023)</li>
+        		<li><i>Ok stop. (Also, Dune part 1 !!)</i></li>
+      		</ol>
+    	</div>
+    <!-- e. Signature -->
+    <li onclick="toggleText('signature')"><span class="no-italic-emoji">✍️</span> My signature</li>
+    	<div id="signature" class="additional-text">
+      		I owe Industrial Bank of India 20,000 rupees.
+            In case I dont pay, the person reading this on my website is going to pay<br>
+          <img class="back" alt="signature" src='/images/static/signature2.jpg' style="width: 50%; height: auto; aspect-ratio:16/7; margin-top:5%;"/><br>
+    	</div>
+  </ul>
+  
+  <br><br><br>
+ 
+  <!-- Gif + funny me -->
+  <!-- a. juggling -->
+  <div class="image-container">
+    <h2>I am</h2>
+    <img src="https://www.icegif.com/wp-content/uploads/icegif-5535.gif" alt="Image 1">
+    <p>I love balancing stuff. So they call me to weddings to perform juggling.</p>
+  </div>
+  <!-- b. dessert joke -->
+  <div class="image-container">
+    <h2>I</h2>
+  <img src="https://www.tomandjerryonline.com/animgifs/000d9q9g.gif" alt="Image 2"/>
+    <p id="heheboy">Desert or Ocean ?<br>heheBoy Desserts🍰..</p>
+  </div>
+  <!-- c. school to college -->
+  <div class="image-container">
+  	<h2>I am</h2>
+  	<img src="https://media1.tenor.com/m/xK6aYOWclHYAAAAC/tom-and-jerry-nibbles.gif" alt="Image 3">
+  	<p id="line-fader">
+    	I was thrown out of the class for laughing a lot and cracking jokes
+    </p>
+    <p id="line-fader">
+		
+    </p>
+  </div>
+  <!-- d. dominos pizza -->
+  <div class="image-container">
+    <h2>a very very</h2>
+     <img src="https://i.makeagif.com/media/9-02-2019/4QohA7.gif" alt="Image 4">
+    <p>Dominos pizza is totally overrated. I eat bread with milk while bingeing.</p>
+  </div>
+  <!-- e. early riser -->
+  <div class="image-container">
+    <h2>good guy</h2>
+     <img src="https://i.pinimg.com/originals/e2/73/c3/e273c32f7e463115f853600cc435d59e.gif" alt="Image 5">
+    <p>I am an early bird. I go to bed very early. Glad you believed it.</p>
+  </div>
+  <!-- f. popcorn lunch -->
+  <div class="image-container">
+    <h2>you know?</h2>
+      <img src="https://media.tenor.com/4kKTxLbtzy8AAAAM/pop-corn-movie.gif" alt="Image 6">
+    <p>Popcorn is a healthy snack. But sorry, I eat it for Lunch.</p>
+  </div>
+  <!-- g. fun fact -->
+  <div class="image-container">
+    <h2><u>Fun Fact</u></h2>
+    <img src="/images/static/tom-drinks-water.jpg" style="aspect-ratio:16/15;" alt="Image 7">
+    <p>Sometimes I drink too much water.</p>
+  </div>
+  
+  
+  <br>
+  
+  <!-- Now You Qualify -->
+  <p style="font-family:sedan; font-size: min(10vw,45px); ">Now you qualify !</p>
+  <br><br>
+  <div class="follow-me-guys">
+    <div style="flex:1;">
+      <a href="https://randomstreetview.com/"><img src="/images/static/track-my-ip.png"/></a>
+      <p>GPS Track Me!</p>
+    </div>
+    <div style="flex:1;">
+      <a href="https://instagram.com/shortcomix.ig"><img src="/images/static/instagram-color.png" style="transform: rotate(20deg); width: 30%!important; margin-bottom: 12%;"/></a>
+        <p>Insta Follow Me!</p>
+    </div>
+  </div>
+  <br><br>
+  
+  <p style="font-size: min(4.5vw, 30px); font-family: open sans; padding: 5%; margin-bottom: 0%;"></p>
+  
+    <div class="links" style="width:100%; justify-content:center; display:flex; flex-direction:row; place-items:center;">
+          <button onclick="clipboard('copyLink'); signalCopy('.links button','Copied!');" style="outline:none; border:0px; background:transparent; transform: translate(-50%,-70%);cursor:pointer; position:relative; margin-right: 2%; font-size: min(5vw,22px);">
+             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21.921 2.081c2.771 2.772 2.771 7.269 0 10.042l-3.84 3.839-2.121-2.122 3.839-3.84c1.599-1.598 1.599-4.199-.001-5.797-1.598-1.599-4.199-1.599-5.797-.001l-3.84 3.839-2.121-2.121 3.84-3.839c2.771-2.773 7.267-2.773 10.041 0zm-8.082 13.879l-3.84 3.839c-1.598 1.6-4.199 1.599-5.799 0-1.598-1.598-1.598-4.2 0-5.797l3.84-3.84-2.121-2.121-3.84 3.84c-2.771 2.772-2.772 7.268 0 10.041 2.773 2.772 7.27 2.773 10.041 0l3.84-3.84-2.121-2.122z"/></svg>
+          </button>
+          <a href="mailto:shortcomix.strip@gmail.com" target="_blank">Email</a>
+          <a href="https://twitter.com/shortcomix1" target="_blank">Twitter</a>
+          <a href="https://github.com/Shreyas-Hegde12" target="_blank">GitHub</a>
+          
+      </div>
+    
+  </div>
+  
+  <style>
+    #open-mobile-menu, .mobile-header, .desktop-menu{display:none!important;}
+  body {
+    font-family: 'sedan';
+    line-height: 1.6; 
+    margin: 0;
+    padding: 20px;
+    background-color: #f9f9f9; 
+  }
+  .image-container {
+    width:90%;
+    margin-bottom: 12%;
+    border-bottom: 1px solid #e0e0e0; 
+    padding-bottom: 10%;
+  }
+  h2 {
+    font-family: 'sedan', serif;
+    font-size: min(12vw, 44px);
+    margin-bottom: 5%;
+    margin-top: 5%;
+  }
+  
+  
+    .fade-in{ animation: fade_in_text 2s 1; animation-fill-mode: forwards;}
+    .swipe-out { pointer-events: none; animation: swipe_out 2s 1; animation-fill-mode: forwards; animation-delay: 3s; }
+    
+    
+    .follow-me-guys{display: flex; width: 90%; max-width: 600px; flex-direction: row; justify-content:center; place-items:center;}
+    .follow-me-guys div{justify-content:center; place-items:center; display: flex; width: 100%; max-width: 600px; flex-direction: column;}
+    .follow-me-guys img{width: 85%; height: auto; transition: 0.5s linear;}
+    .follow-me-guys div:hover img{transform: rotate(10deg) scale(1.1)!important; }
+    .follow-me-guys p {font-family: 'sedan'; font-size: min(5.4vw,30px);}  
+    
+   
+  .image-container img{width:90%; overflow: hidden; margin: 8px 8px 8px 8px; user-select:none;}
+  .image-container p {font-family: 'sedan'; font-size: min(5.1vw,28px); width: 82%;}
+    
+    
+  ul{margin-left: 0%; }
+  ul li{width: 80%; font-size: 115%; list-style-type: none; text-align:left; line-height: 2.2; font-style:oblique;}
+  ul > li{cursor:pointer;}
+  ul > li::before{content: "?"; display: inline-block;  font-size: min(6vw, 35px); width: 1.1em; margin-left: 0em; margin-right: 0.15em; transform: translateY(5%);}
+    
+    
+  ol li{width: 80%; font-size: min(4vw, 22px); list-style-type: numbered; text-align:left; line-height: 2; text-decoration:none!important; font-style: normal!important;}
+    
+    
+  .no-italic-emoji{font-style: normal!important;}
+  
+  .additional-text{display:none; width: 80%; font-size: min(4.2vw, 22px); padding: 20px;}
+    
+  .links a {margin-right: 20px;margin-bottom: 40px; text-decoration: underline; color: black;font-family: sedan;font-size: min(4.4vw,28px);}
+   
+  @media(min-width:650px){
+    .about-page-header{max-height: 150px!important;}
+   }
+    
+  @media(prefers-color-scheme:dark){
+    .links a{color:white!important;} 
+    .links svg{fill:white!important;} 
+    .about-page-header{background: rgba(20,20,20,1)!important;} 
+    .about-page-header p:nth-child(1){background: rgba(145,145,145,0.4)!important;}
+    .about-page-header p:nth-child(2){color:white!important;}
+    }
+    
+  
+  #logo-replace::before{
+    content:''; background: url('/images/sprites/favicon.png') no-repeat; background-size:cover; width: auto; height:110%; aspect-ratio:1/1; position:absolute; transform: translate(-10%,-14%) scale(1.04); left: 0px; display:inline-block; border-radius:50px; border: 2px solid white; transition: 0.2s ease;
+  }
+  
+  #logo-replace:hover::before{
+    transform: translate(78%,-14%) scale(1.04); transition: 0.4s ease;
+  }
+  
+    @keyframes fade_in_text{
+    	to{ opacity: 1;}
+    }
+    
+    @keyframes swipe_out{
+    	to{ transform: translateX(-100%); display:none;}
+    }
+  
+  #line-fader { position: relative; }
+    
+  #line-fader span {
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 95%;
+  text-align: center;
+}
+
+
+  </style>
+  
+
+  <script>
+    function toggleText(id) {
+      var textElement = document.getElementById(id);
+      if (textElement.style.display === "block") {
+        textElement.style.display = "none";
+      } else {
+        textElement.style.display = "block";
+      }
+    }
+    function replaceText(){
+    let space = document.querySelector('#heheboy');
+    let text = space.innerHTML;
+    text = text.replace(/heheboy/gi, '<img src="https://www.memecreator.org/static/images/memes/3772097.jpg" style="width: 13vw; max-width: 54px; height: auto; aspect-ratio: 16/16; border-radius: 10px; vertical-align: middle; display: inline-block; transform: rotate(-8deg);" alt="hehe boy"/>')
+      space.innerHTML = text;
+    }
+    
+</script>
+           
+   </div>
+   
+</div>
+  
+<!-- JAVASCRIPT FUNCTIONS -->
+<script defer='defer' type='text/javascript' src="/js/script.js"></script>
+
+</body>
+</html>
