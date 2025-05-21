@@ -49,10 +49,10 @@
         :root{ --pinkish-shade: #ffabc0; }
       }
       @media(max-width:650px){ 
-        .container { gap: 8%; }
+    
       }
       @media(min-width:650px){ 
-        .container { gap: 5%; }
+
       }
       #dvd-playground{animation: fall_down ease-in-out 5s; animation-delay: 2s; animation-fill-mode: forwards;}
       .soft-touch-btn {animation: soft_touch 1.1s 1;}
@@ -109,11 +109,11 @@
   </head>
 
   <body>
-    <div class='container' style='display:flex; flex-direction: column; justify-content:center; align-items:center; width:100%; height: 100vh;'>
+    <div class='container' style='display:flex; flex-direction: column; gap: 8%; justify-content:center; align-items:center; width:100%; height: 100vh;'>
        
       <div style='width: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center;'>
         <!-- 404 main attraction -->
-        <div style='width:85%; max-width: 600px; height:auto; aspect-ratio: 16/11; position:relative;'>
+        <div style='width:85%; max-width: 550px; height:auto; aspect-ratio: 16/11; position:relative;'>
           <!-- 404 dvd bounce -->
           <div id='dvd-playground' style='background: var(--pinkish-shade); width: 100%; height: 100%; position: absolute; top:0px; left:0px; overflow:hidden;'>
             <p style='font-size: min(27vw, 160px); font-family: acme; font-weight: bold; color: #e6174b!important; position: absolute; top: 0px; left: 0px; padding: 0px!important; margin:0px 0px!important;'>
@@ -126,9 +126,8 @@
           </video>
         </div>
         
-        <br>
         <!-- Error Text -->
-        <p style='width: 80%; max-width: 520px; font-size: min(4.8vw,28px); font-family: open sans; margin-top:3%; padding: min(5%,15px); color:black; text-align:center;'>
+        <p style='width: 80%; max-width: 520px; font-size: min(4.8vw,28px); font-family: open sans; margin-top:min(3%,10px); padding: min(5%,15px); color:black; text-align:center;'>
           This place exists only in your imagination, my friend.
         </p>
       </div>
