@@ -325,7 +325,7 @@ function signalCopy(buttonId, whatToSay) {
 // Comics for home comic grid
 const comicLinks = [
 	/* "/comic/cut-it", */
-  	"/comic/extra-seat",
+  	/*"/comic/extra-seat",*/
   	"/comic/shooting-stars",
   	"/comic/puppy-tale",
 	"/comic/feel-the-kick",
