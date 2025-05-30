@@ -74,7 +74,7 @@ function polishComicPage() {
 		document.querySelector('.comicimg').alt = comictitle.innerHTML;
 		document.querySelector('.comicimg').title = comictitle.innerHTML; 
 
-		document.querySelector('#open-mobile-menu').style.display = 'none';
+		//document.querySelector('#open-mobile-menu').style.display = 'none';
 
 		// b. tweet links
 		const COMIC_URL = window.location.origin + window.location.pathname;
@@ -203,7 +203,7 @@ function LuckyLink() {
 	{
 		lucky = Math.floor(Math.random()*allLinks.length);
 		destination= allLinks[lucky];
-	} while(destination == window.location);
+	} while(destination === window.location.pathname);
 	
 	// Play Button Animation
 	document.querySelector('.nav-random').style.animation='shake_on_hover 0.45s 2';
@@ -266,7 +266,7 @@ function mobileMenu(opn) {
 	const button = document.querySelector('#open-mobile-menu');
 	const isHomePage = (document.querySelector('#this-is-home-page') != null);
 	
-	if(isHomePage){
+	if(1){
 		if(opn){
 			mobilemenu.style.clipPath = "circle(150% at 50% 92%)";
 			mobilemenu.style.transition= "clip-path 0.5s ease-in-out";
