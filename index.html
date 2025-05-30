@@ -4,15 +4,16 @@ layout: layouts/base.liquid
 ---
 
 <!--Carousel Background-->
-<div class='not-simple' id='fixed-background'>
-  <p class='for-laptop' style='font-family: indie flower; font-size: 0px;'>.</p>
-</div>
+   <div id='fixed-background'>
+      <p class='for-laptop' style='font-family: indie flower; font-size: 0px;'>.</p>
+   </div>
      
-<div class='carousel not-simple for-lapto' style='display: none;'>
-  <img alt='ShortComix Carousel' class='emoji-carousel' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEimqGnFifPb887vmknTUJmh-vBJLkWNwDdKWU2ng0fNm2nbPCsgqL-y-3vxN5c_snfa-CZ-mKxC3w9nFasUC_lZ1Db_rTPkPdcPnqNYL719e0R3bj5PhJNh-5_-hOvJ0374HjRIzo9d2UpbpKeIyWhN-8qiRDhNRH6U96bhQmp8b4pevcHNT9PpK3zUD0Er/s0-rw/shy--.png' style='height:auto; aspect-ratio: 371/322; max-width: 430px; margin-left:0px;'/>
-</div>
-   
-<!-- -->
+   <!--Emoji Carousel-->
+    <!--  <div class='carousel not-simple for-mobile for-lapto' id='mobile-coffee-menu' style='display: none; transform: translate(-45%, -37%);'><img alt='Coffee Cup Menu' onclick='mobileMenu(1)' src='/images/static/coffee-cup.png' style='width: 75vw!important; height: auto; max-width: 400px; aspect-ratio: 16/15.3; transform: rotate(15deg); filter: saturate(0.8) contrast(1); transition: transform 0.6s ease;' title='🍰Coffee Cup Menu'/></div> -->
+    
+    <div class='carousel' style='display: none;'><img alt='ShortComix Carousel' class='emoji-carousel' src='/images/emotes/shy.png' style='height:auto; aspect-ratio: 371/322; max-width: 430px; margin-left:0px;'/>
+    </div>
+    
 
 <!-- Page Id -->
 <div id="this-is-home-page"></div>
@@ -30,41 +31,41 @@ layout: layouts/base.liquid
        data-smile="https://res.cloudinary.com/dzss5ged8/image/upload/v1737571237/top3_tnv6er.png"
        data-smile-shaded="https://res.cloudinary.com/dzss5ged8/image/upload/v1737571237/top3_tnv6er.png"
        
-       src='https://res.cloudinary.com/dzss5ged8/image/upload/v1737577034/top10_1_xapllm.png' 
+       src='/images/static/kiddo-peek.png' 
        
-       style='margin-bottom: 10%; aspect-ratio:16/15.6; width: 58vw; max-width: 300px; height: auto; transition: ease-in 0.8s; border-radius:500px; filter: opacity(0.97) contrast(0.85) brightness(1.11);' 
+       style='margin-bottom: 8%; aspect-ratio:16/15.6; width: 58vw; max-width: 300px; height: auto; transition: ease-in 0.8s; border-radius:500px; filter: opacity(0.97) contrast(0.85) brightness(1.11);' 
        tile="©Shooshoo.comics rendition of kiddo!" alt="©Shooshoo.comics rendition of kiddo!"
        onclick="window.location='#bubbles';"/>
    
   
   <!-- Comics -->
-  <div style="width: 91%; max-width: 580px; display:flex; flex-direction: row; place-items:center; justify-content:center; place-items:center; filter: contrast(0.9) saturate(0.9); margin-bottom: -0%;">
+  <div style="width: 91%; max-width: 580px; display:flex; flex-direction: row; place-items:center; justify-content:center; place-items:center; filter: contrast(0.9) saturate(0.9); margin-bottom: -3%;">
     <div class="pick-link comic-outer-square"onclick="handleComicClick(0,0)" >
-      <img class="pick-img back comic-square" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhEwrz5q0zjmEgWAEijRysyLYX__WIqhpzg8bqXC4YdbvcWXWpR6BvQ-ktY88_FORRCoSsGCu81b5CyJHOPUPPXDGTExE7uIs-L30LOYLPwdqmoxdNcxcLV_Y0olE56q4wrg10AZodorBZHqlkNNf21jkRwd9w66P0xLZXbVPUXXsPMklJj8RB-_LdsJg/s0-rw/solid-color-image%20%281%29.jpeg" alt="Comic I chose for you" title="Comic I chose for you"/>
-    <p class="subtitle" style="font-family: gloria hallelujah; font-size: min(8vw, 25px); opacity: 0.8; color: var(--dull-text); padding: 2%;">comic 1</p>
+      <img class="pick-img back comic-square" src="/images/sprites/placeholder.jpg" alt="Comic I chose for you" title="Comic I chose for you"/>
+    <p class="subtitle" style="font-family: gloria hallelujah; font-size: min(8vw, 28px); opacity: 0.8; color: var(--dull-text); padding: 2%;">comic 1</p>
    </div>
     <div class="pick-second-link comic-outer-square"onclick="handleComicClick(0,1)" >
-      <img class="pick-second-img back comic-square" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhEwrz5q0zjmEgWAEijRysyLYX__WIqhpzg8bqXC4YdbvcWXWpR6BvQ-ktY88_FORRCoSsGCu81b5CyJHOPUPPXDGTExE7uIs-L30LOYLPwdqmoxdNcxcLV_Y0olE56q4wrg10AZodorBZHqlkNNf21jkRwd9w66P0xLZXbVPUXXsPMklJj8RB-_LdsJg/s0-rw/solid-color-image%20%281%29.jpeg" alt="Comic I chose for you 2" title="Comic I chose for you 2"/><p class="subtitle" style="font-family: gloria hallelujah; font-size: min(8vw, 25px); opacity: 0.8; color: var(--dull-text); padding: 2%;">comic 2</p>
+      <img class="pick-second-img back comic-square" src="/images/sprites/placeholder.jpg" alt="Comic I chose for you 2" title="Comic I chose for you 2"/><p class="subtitle" style="font-family: gloria hallelujah; font-size: min(8vw, 28px); opacity: 0.8; color: var(--dull-text); padding: 2%;"  >comic 2</p>
     </div>
   </div>
 
   
   <!-- Animated Car on Road -->
-<div style="position:relative; overflow:hidden; margin-bottom: 9%;">
+<div style="position:relative; overflow:hidden; margin-bottom: 10%;">
   <div id="animated-road"></div>
-<img id="animated-car" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhJj5DJwn9c3GtwpCA_rhGKspdqpGhRNqdT2_uTuLLz6zkmxCA3xsk7lxcDpzvOnAwRSpamy42GpTo9U8DwUyWkb9zhv4zId2uha6v9aXCUEkKC8Pfz_fKrEnD8oiUxLodHspm7B_QjjTgkYv2ef-36jo5Lmmuwhy4g6ns7cUfLKmUHMuwZAijiVqg00gsX/s0-rw/car-animation--.png" alt="Arrested doggie van" title="Arrested doggie van"/></div><br> 
+<img id="animated-car" src="/images/static/car-with-glow.png" alt="Arrested doggie van" title="Arrested doggie van"/></div><br> 
   
   
   <!-- Clips -->
-  <div class="gray-bg" style="padding-top:8%;">
+  <div class="gray-bg" style="padding-top:9%;">
     <!-- TV -->
-    <div class="tv-frame" style="display:flex; border-radius: 4px; width:76%; max-width: 470px; height: auto; aspect-ratio: 16/10.45; margin-top:2%; margin-bottom: 5%; background-image: url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjKwfWPfny15dLwLtEe4RPNswTCCCALIgsfkZ9LUT-uLJPKAHv0ITlrPA2NGbgArqlser722zTnc1eYNpa3kA6dF9MXTLhqm5qjSMXDoo2f6Nppr9fqIxwhqMLkXfKZJOR0VZ-OSAVewpws-sFOfXika4JeR7N6aSYajGzVSwuZjHlDMoVH1WhWS0kK0rhd/s0-rw/png_20220603_191913_0000_11zon%20%281%29.jpeg'); background-position:5% 0; background-size: cover; position: relative; place-items:center; justify-content:center;">
+    <div class="tv-frame" style="display:flex; border-radius: 4px; width:75%; max-width: 470px; height: auto; aspect-ratio: 16/10.45; margin-top:2%; background-image: url('/images/static/tv.jpg'); background-position:5% 0; background-size: cover; position: relative; place-items:center; justify-content:center;">
       <!-- tv text--><div style="display:none; position: absolute; top:-16%; left:-11%; z-index:50; transform: rotate(-0deg);">
-      <div class="my-tv-tex" style="background:#7081c5; filter: hue-rotate(-0deg) saturate(0.9); border-radius:100px; width: min(21vw,100px); height:auto; aspect-ratio:1/1; color:white; position:relative; top: -10%; left:0%; z-index: 20; display:flex; place-items:center; justify-content:center;overflow:hidden;transform: scale(0.95) rotate(0deg);"><span style="font-size: min(10vw,45px); font-family:open sans; position:relative; top: -6%;">My</span></div>
-      <div class="my-tv-tex" style="background:#4356b7; filter: hue-rotate(-0deg) saturate(0.95);border-radius:100px; width: min(15.5vw,80px); height:auto; aspect-ratio:1/1; color:white; position:absolute; top: 2%; left:75%; z-index: 20; display:flex; justify-content:center; place-items:center; text-align:center;transform: scale(0.9) rotate(0deg) ;"><span style="font-size: min(9vw,44px); font-family:open sans; position:relative;overflow:hidden;">Tv</span></div></div>
+      <div class="my-tv-text" style="background:#7081c5; filter: hue-rotate(-0deg) saturate(1.05); border-radius:100px; width: min(21vw,100px); height:auto; aspect-ratio:1/1; color:white; position:relative; top: -10%; left:0%; z-index: 20; display:flex; place-items:center; justify-content:center;overflow:hidden;transform: scale(0.9) rotate(0deg);"><span style="font-size: min(10vw,45px); font-family:open sans; position:relative; top: -6%;">My</span></div>
+      <div class="my-tv-text" style="background:#4356b7; filter: hue-rotate(-0deg) saturate(1.05);border-radius:100px; width: min(15.5vw,80px); height:auto; aspect-ratio:1/1; color:white; position:absolute; top: 2%; left:75%; z-index: 20; display:flex; justify-content:center; place-items:center; text-align:center;transform: scale(0.9) rotate(0deg) ;"><span style="font-size: min(9vw,44px); font-family:open sans; position:relative;overflow:hidden;">Tv</span></div></div>
       <!-- tv embed -->
       <div class="tv-embed" style="position: relative; width: 90%; height: auto; border-radius: 0px; transform: translateX(-0%); max-width: 450px; aspect-ratio: 16/9.4; overflow:hidden; background: transparent; z-index: 10;">
-        <img class="back" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgOCUN25355VXcO7Tp8iNs331GUNRKOksCVIHMmUQwfSkpUiFcJc_nW8-qKOtEj18AucznnhBY2QwcTWnzKyTi_I9zuRt5K4oQuMQRHTS5IKCOLizwWxUMg3u4H2dfDBo7lu7x90b5dkcsZkwG80sGuTn4pf_d6zGHf5jyRZf3UVdYdbfzrVWIz2AuGKGv8/s0-rw/Screenshot%202025-04-14%20164025%20%281%29.png" style="width: 0%; height: auto; position:absolute; top: 0px; left: 0px; display:block;"/>
+        <img class="back" src="/images/static/first-video-thumbnail.jpg" style="width: 0%; height: auto; position:absolute; top: 0px; left: 0px; display:block;"/>
         <iframe class="yt-video" data-src="https://www.youtube-nocookie.com/embed/eRCSrBXMto0?rel=0&enablejsapi=1&autoplay=1" style="display:none;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;" title="TV"></iframe>
         <!-- crt tv like lined overlay -->
          <div class="scan-overlay">
@@ -75,7 +76,7 @@ layout: layouts/base.liquid
     <!-- TV Controls -->
     <div style="position: relative; display: flex; flex-direction:row; gap: 2%; place-items: center; justify-content:center; margin: 8% 0 5% 0;">
       <!-- tv loading animation (1) -->
-      <div style="display: none; flex-direction: column; gap: min(2vw,10px); width: 16vw;  max-width: 80px; height: auto; transform: rotateZ(-90deg); margin-right: 3%;">
+      <div style="display: flex; flex-direction: column; gap: min(2vw,10px); width: 16vw;  max-width: 80px; height: auto; transform: rotateZ(-90deg); margin-right: 3%;">
         <div style="float: left; width: 20%; height: 2.9vw; max-height: 14px;">
           <div class="bar3 bar-sticks" style="width: 100%; height: 100%; border:0px!important; float: left;"></div>
       	</div>
@@ -100,7 +101,7 @@ layout: layouts/base.liquid
         </svg>
       </button>
       <!-- tv loading animation (2) -->
-      <div style="display: none; flex-direction: column; gap:min(2.5vw,10px); width: 16vw;  max-width: 80px; height: auto; overflow:hidden;transform: rotateZ(-90deg); margin-left: 3%;">
+      <div style="display: flex; flex-direction: column; gap:min(2.5vw,10px); width: 16vw;  max-width: 80px; height: auto; overflow:hidden;transform: rotateZ(-90deg); margin-left: 3%;">
         <div style="float: left; width: 80%; height: 2.9vw; max-height: 14px;">
           <div class="bar1 bar-sticks" style="width: 100%; height: 100%;  border:0px!important;  float: left;"></div>
         </div>
@@ -117,31 +118,31 @@ layout: layouts/base.liquid
   
   
    <!-- Image Bubbles -->
-   <div style="display:none; position: relative; width: 100%; max-width: 590px; height: auto; aspect-ratio: 16/14.5; overflow: hidden; scroll-behavior:smooth; margin: 3% 0 4% 0;" id="bubbles">
+   <div style="position: relative; width: 100%; max-width: 590px; height: auto; aspect-ratio: 16/14.5; overflow: hidden; scroll-behavior:smooth; margin: 3% 0 4% 0;" id="bubbles">
       <br><br>
      <!-- a. gift -->
-     <div class="image-bubble" style="z-index: 1; width:39%; max-width:400px; height: auto; aspect-ratio: 16/16; position: relative; top:1%; left: -16.5%; border-radius: 200px; background: #181818; display: flex; justify-content:center; align-items:center;" onclick="delayLink('https://shortcomix.blogspot.com/p/moments.html',300);">
-        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhQYpFpPE30NSuHfyIt2e8WKeVrA4sEP7d1_8FokJDVz2CBs83kcYgb9Vy7XAM4P-RFYTBquGxIR18zjMrNiDQpOHYVJfUpuR-znBexh1yJSakGNm4uoWE3ho0DZrOjMNPd0ifPtPPFQnrL3ljcpOD3lsqEmoNiPdvq7PvLQPGjyOPzbZBXHvoAq8M93zA5/s0-rw/gift--.png" style="width: 92%; height: auto; aspect-ratio: 16/16; z-index: 0;" title="Kiddo appears in shooshoo comics"  alt="Kiddo appears in shooshoo comics" />
+     <div class="image-bubble" style="z-index: 1; width:39%; max-width:400px; height: auto; aspect-ratio: 16/16; position: relative; top:1%; left: -16.5%; border-radius: 200px; background: #181818; display: flex; justify-content:center; align-items:center;" onclick="delayLink('/news',300);">
+        <img src="/images/static/posts.png" style="width: 92%; height: auto; aspect-ratio: 16/16; z-index: 0;" title="Kiddo appears in shooshoo comics"  alt="Kiddo appears in shooshoo comics" />
         <span style="color: #ffffff!important; font-family: acme; font-size: min(6.4vw,35px); font-weight: bold; left: 50%; transform: translateX(-50%); background-color: #222!important; border-radius: 50px; position: absolute; top: 67%; padding: 0px 7% 0px 7%;">
           Posts
         </span>
      </div>
      <!-- b. shop -->
-     <div class="image-bubble" style="z-index: 2; width: 36%; max-width:400px; height: auto; aspect-ratio: 15/15; position: relative; top: -33%; left: 17%; background: rgb(61, 61, 61); border-radius: 200px; display: flex; justify-content:center; align-items:center;" onclick="delayLink('/p/chalk-gpt.html',300);">
-        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiqHF0Ay5_C03aScOKi82XJlUD3KQ77QLohYwLGnz9ATvSfPDThmpcQIDV7cSWFrf293Inxa6lK3lkQ11D4J281NzCTGmAB9yxaQ5McOdZzocGJEYaPyid8z8QQ_PO1BkmjohoDM-2Zw6HqiCeGjahIrzp7NC2lHb7xLc_qzy1Yknh4wbw/s0-rw/shop.png" style="width: 92%; height: auto; aspect-ratio: 16/16; z-index: 0;" alt="SureShop"/>
+     <div class="image-bubble" style="z-index: 2; width: 36%; max-width:400px; height: auto; aspect-ratio: 15/15; position: relative; top: -33%; left: 17%; background: rgb(61, 61, 61); border-radius: 200px; display: flex; justify-content:center; align-items:center;" onclick="delayLink('https://iamsureshop.blogspot.com/?m=0',300);">
+        <img src="/images/static/shop.png" title="SureShopp"  style="width: 92%; height: auto; aspect-ratio: 16/16; z-index: 0; padding-left: 0px;" alt="SureShop"/>
         <span style="color: white; font-family: acme; font-size:min(5.7vw,32px); font-weight: bold; background-color: #493c68; border-radius: 50px; position: absolute; top: 68%; left: 50%; transform: translateX(-46%); padding: 0px 7% 0px 7%;">
           Shop
         </span>
      </div>
      <!-- c. book -->
-     <div class="image-bubble" style="z-index: 3; width: 39%; max-width:400px; height: auto; aspect-ratio: 15/14.8; position: relative; top: -45%; left: -3%; border-radius: 200px;  background: rgb(143, 143, 143); display: flex; justify-content:center; align-items:center;" onclick="delayLink('https://shortcomix.blogspot.com/p/story-book.html',400);">
-       <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhJyFBcfllIXYIWixj-smoaE_BjqOhnMJtI0__Zhtm4kLWPqV0QRe5dMQ0-4HAk-K9IpfYEV-Ls5xDhuhvPFQgZ738kv-Tc4DGQtuFNskwLCddilwkCnMmgTc0384MepDdH5eMWtRHF1AE55d-RUefR0scCIqvGmui-7ZlbVj_ctg2qoN4/s0-rw/story-book.png" style="width: 93%; height: auto; aspect-ratio: 16/15.8; border-radius:200px; z-index: 0;" alt="New Book!" title="New Book!"/>
+     <div class="image-bubble" style="z-index: 3; width: 39%; max-width:400px; height: auto; aspect-ratio: 15/14.8; position: relative; top: -45%; left: -3%; border-radius: 200px;  background: rgb(143, 143, 143); display: flex; justify-content:center; align-items:center;" onclick="delayLink('/story-book',400);">
+       <img src="/images/static/book.png" style="width: 93%; height: auto; aspect-ratio: 16/15.8; border-radius:200px; z-index: 0;" alt="New Book!" title="New Book!"/>
        <span style="color: #5e5428; font-family: acme; font-size: min(5.9vw,35px); font-weight: bold; background-color: #fee682!important; border-radius: 50px; position: absolute; top: 66%; left: 50%; z-index: 1; transform: translateX(-49%); padding: 0px 7% 0px 7%;">
          BOOK!
        </span>
      </div>
   </div><br>
- 
+  
   
  <div id="animatedDiv">
    <div class="actualhtml">
@@ -207,40 +208,41 @@ layout: layouts/base.liquid
   <div class="boxes" id="show-boxes" style="display:none;">
     <!-- a. contact 
     <a href='https://sureshop-shortcomix.blogspot.com/?m=0#section-7' alt="Contact me">
-      <img class="back" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiNeWAqwkwBC2zVhs2EbwUALZ85bPY5Zc9ezAKuWfdEfBMY_K7CIb8x40o0obqfFAasUjs0LVaktsGeH5458QTzhvMEYwcQTROTaB43m5OIMhslwNkzcHTuw4WBc_b462AoYhCAQ4HoKvomT5UrUHKC7fOMnteigDmR14ert_vCCAtUwuV1GZO6k2c66r25/s0-rw/contactme.png" style="aspect-ratio: 16/5.5;" alt="Contact" title="Contact"/>
+      <img class="back" src="/images/static/contact-me.jpg" style="aspect-ratio: 16/5.5;" alt="Contact" title="Contact"/>
     </a>-->
     <!-- b. follow me -->
-    <a href="https://shortcomix.blogspot.com/p/about.html" alt="Follow me">
-      <img class="back" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhYkovKuwInq0htrWU1SW-XZUV76UkzYKt7zJNzUNRvtJmBD5v8KW0yKwY5Cs6AiWbtcSEEH922vfh1XkBzhvOge6lJa6gAerQnu2s8OGE8b0UJ_1tkRxjU92W_hzINm-VOzmOmUO_vRdlpkLjZz2BrnAcbJwTExWXtTAKXsxZlXVOZ4pe4_Lx7YQfpb2aX/s0-rw/follow-blog.jpg"  style="aspect-ratio: 16/7.3;" alt="Follow me" title="Follow me" />
+    <a href="/about" alt="Follow me">
+      <img class="back" src="/images/static/follow-me.jpg"  style="aspect-ratio: 16/7.3;" alt="Follow me" title="Follow me" />
     </a>
-    <!-- c. play game
-    <a href="https://shortcomix.blogspot.com/p/game.html" alt="Play Game">
-      <img class="back for-laptop" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEinvE8qQZxhEbcO9bpw2vPHwdX_55mg4RWs-dMCu1CTsTetcrdEDOr7M2uneWuzzNe1BwQ888ae6y_Nk8FbW8n1EOOTtBjsoBraYE3Jd1w_pD10RJS2P4e7dbhBBy2KIEkIfGPlwKx7X5k1CKC4tco_M5rIFHtLuynE-FQqthiARHUYGKULuXc5ZKjazT2B/s0-rw/game--.jpg" style="aspect-ratio: 6/4.2;" alt="Play Game" title="Play Game"/>
+    <br><br>
+    <!-- c. play game -->
+    <a href="/fun-games" alt="Play Game">
+      <img class="back" src="/images/static/play-games.jpg" style="aspect-ratio: 6/4.2;" alt="Play Game" title="Play Game"/>
     </a>
     <!-- d. papa coffee -->
     <a href="https://media.tenor.com/3DnEtJiS3m0AAAAM/hadeel928-cat.gif" alt="In a coffee cup">
-      <img class="back" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgcFdk2R6WdGEjRC2nc1ttO22dfrhM5ShyphenhyphenvtGfVClOVuQBZLAzoPMpSJfhjuuBVpFgbvpftIBrIiSRdzJYHV5g9L1nVw2n8L_ALrg_91UQPuA0zbhyphenhyphenLdRF9JkH1j43NOLGgoVIE12wKMvDYxSCfUZ6T8Co5VbYghpGHSNui0IK3EVLOM5v8OVGNVaK_o91-/s0-rw/cofffee.png"  style="aspect-ratio: 14/9.5; filter: saturate(0.5) contrast(0.95);" alt="In a coffee cup" title="In a coffee cup" />
+      <img class="back" src="/images/static/papa-coffee.jpg"  style="aspect-ratio: 14/9.5; filter: saturate(0.5) contrast(0.95);" alt="In a coffee cup" title="In a coffee cup" />
     </a>
     <!-- e. doom scroll -->
-    <a href="https://shortcomix.blogspot.com/p/gallery.html" alt="Doom Scroll Gallery">
-      <img class="doom-scroll-gif" data-gif="loading" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhEwrz5q0zjmEgWAEijRysyLYX__WIqhpzg8bqXC4YdbvcWXWpR6BvQ-ktY88_FORRCoSsGCu81b5CyJHOPUPPXDGTExE7uIs-L30LOYLPwdqmoxdNcxcLV_Y0olE56q4wrg10AZodorBZHqlkNNf21jkRwd9w66P0xLZXbVPUXXsPMklJj8RB-_LdsJg/s0-rw/solid-color-image%20%281%29.jpeg"  style="aspect-ratio: 16/17; width: 50%!important;" alt="Doom Scroll Gallery" title="Doom Scroll Gallery" />
+    <a href="/scroll-wheel" alt="Doom Scroll Gallery">
+      <img class="doom-scroll-gif" data-gif="loading" src="/images/sprites/placeholder.jpg"  style="aspect-ratio: 16/17; width: 50%!important;" alt="Doom Scroll Gallery" title="Doom Scroll Gallery" />
     </a>
     
   </div>
   
 
   <!-- Copy Rights -->
-  <div style="margin: 20% 0 0 0; position: relative; flex-direction:column; gap:1px; place-items:center; justify-content:center;">
+  <div style="margin: 30% 0 0 0; position: relative; flex-direction:column; gap:1px; place-items:center; justify-content:center;">
     <!-- home picture -->
-    <img style="width:54vw; max-width: 330px; aspect-ratio:1.15/1;" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhnoAkuTucreDO6EGeLaIYpXEWg8donQGlhewm1vB5_QP7CC0i2ywGGXoe_5PxR02BGO_Xt-O2rpHdVjRLHcNQoTLESI_Fy0AWF_eHHK9QlPOSGbChIqhvQvuIF3IrlsxWa2TEAVNRIdr1DLaDUm1wGhVgwIFiLAjttItdvmISXy6dDI_Oy3sjSpf78uHym/s0-rw/home.png" title="Home Sweet Home" alt="Home Sweet Home"/>
+    <img style="width:56vw; max-width: 330px; aspect-ratio:1.15/1;" src="/images/static/home.png" title="Home Sweet Home" alt="Home Sweet Home"/>
     <!-- copyright text -->
-    <p style="font-family: open sans; font-size: 4.5vw; padding-top:5%; flex-direction: column; color: var(--dull-text-clr); opacity: 0.8;">
+    <p style="font-family: open sans; font-size: 4.8vw; padding-top:5%; flex-direction: column;">
       Short Comix Originals™<br>
-      <b><i>© Shreyas Hegde</i></b>
+      <i>© Shreyas Hegde</i>
     </p>
   </div>
   <!--<br>
-<p style="font-family: open sans;  font-weight: ; font-size: min(4.5vw, 28px); line-height:1.5; padding: 5px; opacity: 0.7;">Made with 🌓<br>By <a href="/p/about.html" style="color: #e6174b!important; font-style: italic;">Shreyas Hegde</a></p>
+<p style="font-family: open sans;  font-weight: ; font-size: min(4.5vw, 28px); line-height:1.5; padding: 5px; opacity: 0.7;">Made with 🌓<br>By <a href="/about" style="color: #e6174b!important; font-style: italic;">Shreyas Hegde</a></p>
   <br><br>-->
       
   <!-- Space For Mobile Menu Button -->
@@ -253,20 +255,20 @@ layout: layouts/base.liquid
 <div class="for-laptop" style="margin-top: min(15%, 80px);">
   
    <!-- Big Kiddo Peek -->
-     <img id='d-kiddo-peek' onclick="window.location.href='moments.html';" src='https://res.cloudinary.com/dzss5ged8/image/upload/v1737577034/top10_1_xapllm.png' style='position: relative; aspect-ratio:16/16; width: 40vw; max-width: 360px; height: auto; margin-bottom: min(3%, 40px); transition: ease-in-out 0.8s; opacity: 0.95; cursor:pointer;' title="©Shooshoo comics rendition of Kiddo" alt="©Shooshoo comics rendition of Kiddo"/>
+     <img id='d-kiddo-peek' onclick="window.location.href='/news';" src='/images/static/kiddo-peek.png' style='position: relative; aspect-ratio:16/16; width: 40vw; max-width: 360px; height: auto; margin-bottom: min(3%, 40px); transition: ease-in-out 0.8s; opacity: 0.95; cursor:pointer;' title="©Shooshoo comics rendition of Kiddo" alt="©Shooshoo comics rendition of Kiddo"/>
   
    <!-- Coffee Cup Menu -->
-   <div id="coffee-cup-menu" style="width: 24vw; max-width: 280px; height: auto; position: fixed; bottom: 5vh; right: 20px; z-index: 1005; cursor: pointer; overflow: hidden; transition: opacity 0.7s linear;">
-     <img alt="Menu" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjaZj1u1RKHwgy8lvC_JN2d39JaR1UKsZIwKzR60PelZM4YcBV6on_Ub5uLVbZPW1QnTG_zdtTHP5hdQaGlRnLHSrayffpeg5nfMf9vgqcHHbhYRNjqjpwlPFTsh6k0KHBW2B7O4sfrxWKN6HcHaleeTwyCODW8Bw9sNiGd3t6QoUWBEpytdLK2pXoTetm_/s0-rw/coffee-cup.png" style="width: 100%; height: auto; aspect-ratio: 16/15.3; transform: rotate(18deg); transition: transform 0.6s ease;" onclick="spill()"/>
+   <div id="coffee-cup-menu" style="width: 24vw; max-width: 300px; height: auto; position: fixed; bottom: 5vh; right: 20px; z-index: 1005; cursor: pointer; overflow: hidden; transition: opacity 0.7s linear;">
+     <img alt="Menu" src="/images/static/coffee-cup.png" style="width: 100%; height: auto; aspect-ratio: 16/15.3; transform: rotate(18deg); transition: transform 0.6s ease;" onclick="spill()"/>
   </div>
   
    <!-- Big Comics -->
    <div style="width: 100%; display:flex; flex-direction: row; gap: min(2%, 20px); margin-top: 15px; place-items:center; justify-content:center; ">
       <div class="d-pick-link">
-        <img class="d-pick-img back d-comic-square" onclick="handleComicClick(1,0)" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhEwrz5q0zjmEgWAEijRysyLYX__WIqhpzg8bqXC4YdbvcWXWpR6BvQ-ktY88_FORRCoSsGCu81b5CyJHOPUPPXDGTExE7uIs-L30LOYLPwdqmoxdNcxcLV_Y0olE56q4wrg10AZodorBZHqlkNNf21jkRwd9w66P0xLZXbVPUXXsPMklJj8RB-_LdsJg/s0-rw/solid-color-image%20%281%29.jpeg" alt="Comic I chose for you" title="Comic I chose for you"/>
+        <img class="d-pick-img back d-comic-square" onclick="handleComicClick(1,0)" src="/images/sprites/placeholder.jpg" alt="Comic I chose for you" title="Comic I chose for you"/>
       </div>
       <div class="d-pick-second-link">
-        <img class="d-pick-second-img back d-comic-square" onclick="handleComicClick(1,1)" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhEwrz5q0zjmEgWAEijRysyLYX__WIqhpzg8bqXC4YdbvcWXWpR6BvQ-ktY88_FORRCoSsGCu81b5CyJHOPUPPXDGTExE7uIs-L30LOYLPwdqmoxdNcxcLV_Y0olE56q4wrg10AZodorBZHqlkNNf21jkRwd9w66P0xLZXbVPUXXsPMklJj8RB-_LdsJg/s0-rw/solid-color-image%20%281%29.jpeg" alt="Comic I chose for you 2" title="Comic I chose for you 2"/>
+        <img class="d-pick-second-img back d-comic-square" onclick="handleComicClick(1,1)" src="/images/sprites/placeholder.jpg" alt="Comic I chose for you 2" title="Comic I chose for you 2"/>
       </div>
    </div>
 
@@ -278,7 +280,7 @@ layout: layouts/base.liquid
      <div class="d-tv-and-controls" style="display: flex; flex-direction: row; width: 100%; margin-bottom: 50px; justify-content:center; place-items:center;">
          <!-- a. Big tv -->
          <div class="d-tv-frame">
-            <div style="background-image: url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjKwfWPfny15dLwLtEe4RPNswTCCCALIgsfkZ9LUT-uLJPKAHv0ITlrPA2NGbgArqlser722zTnc1eYNpa3kA6dF9MXTLhqm5qjSMXDoo2f6Nppr9fqIxwhqMLkXfKZJOR0VZ-OSAVewpws-sFOfXika4JeR7N6aSYajGzVSwuZjHlDMoVH1WhWS0kK0rhd/s0-rw/png_20220603_191913_0000_11zon%20%281%29.jpeg'); background-position:-5px 0px;background-size: cover; width: 100%; min-width: 500px; max-width: 550px; height: auto; aspect-ratio: 16/10.5; overflow: visible; position: relative; top:40px; margin-left: 3%; display:flex; place-items:center; justify-content:center;">
+            <div style="background-image: url('/images/static/tv.jpg'); background-position:-5px 0px;background-size: cover; width: 100%; min-width: 440px; max-width: 550px; height: auto; aspect-ratio: 16/10.5; overflow: visible; position: relative; top:40px; margin-left: 3%; display:flex; place-items:center; justify-content:center;">
               <!-- tv text-->
               <div class="my-tv-text" style="background:#7081c5;border-radius:500px; width: 120px; height:120px;color:white; position:absolute; top: -40px; left:-40px; z-index: 20;">
                  <span style="font-size: 60px; position:relative; top: 14px;font-family:open sans;">
@@ -293,7 +295,7 @@ layout: layouts/base.liquid
               <!-- tv embed -->
               <div class="d-tv-embed" style="width: 90%; height: auto; max-width: 580px; aspect-ratio: 16/9.4; overflow:hidden; z-index: 10; position:relative;">
         <iframe class="d-yt-video" data-src="https://www.youtube-nocookie.com/embed/eRCSrBXMto0?rel=0&enablejsapi=1" style="display:none;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;" title="TV"></iframe>
-                <img class="back" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgOCUN25355VXcO7Tp8iNs331GUNRKOksCVIHMmUQwfSkpUiFcJc_nW8-qKOtEj18AucznnhBY2QwcTWnzKyTi_I9zuRt5K4oQuMQRHTS5IKCOLizwWxUMg3u4H2dfDBo7lu7x90b5dkcsZkwG80sGuTn4pf_d6zGHf5jyRZf3UVdYdbfzrVWIz2AuGKGv8/s0-rw/Screenshot%202025-04-14%20164025%20%281%29.png" style="width: 0%; height: auto; position:absolute; top: 0px; left: 0px; display:block;"/>
+                <img class="back" src="/images/static/first-video-thumbnail.jpg" style="width: 0%; height: auto; position:absolute; top: 0px; left: 0px; display:block;"/>
          <!-- crt tv like lined overlay -->
          <div class="d-scan-overlay">
            <div class="d-scan-line"></div>
@@ -349,7 +351,7 @@ layout: layouts/base.liquid
       <!-- a. big frog -->
       <div style="width:45%; max-width: 280px; margin-top:2%; margin-bottom:1%; position:relative;">
         <div class="frog-like-btn laptop-view"  onclick="frogClick();" style="position:relative; aspect-ratio:17/16; width: 92%;cursor:pointer;">
-          <img id="d-frog-pic" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiBJhcr6jiTWDq-xLZmWRTyqUw3uB3nZV89zkdhTa_Gz-iCCbn7Wo4cQNLvWoAaWkCjE22I8TrAh50eBmHUeSuah0WYFTEyP9gpvhteBQGiSw2HMh5HK0b0A8kxpBrsuxWzC3v3XOxmYHJeIIkuAOnco_06lskxpMXR3TRHP0tGc5mtdrrDo3Sj3YoK9UqX/s0-rw/frog-dead---.png" style="width: 100%; height:auto; aspect-ratio:17/16; position:relative; bottom:-10px; " alt="Living Like Button" title="💗Living Like Button"/>
+          <img id="d-frog-pic" src="/images/static/pencil-frog.png" style="width: 100%; height:auto; aspect-ratio:17/16; position:relative; bottom:-10px; " alt="Living Like Button" title="💗Living Like Button"/>
         </div>
       </div>
       <!-- b. big frog text -->
@@ -365,37 +367,34 @@ layout: layouts/base.liquid
   <!-- Big Copyrights -->
   <div class="d-copyrights" style="display: flex; width: 60%; justify-content: center; font-family: indie flower; font-weight: bold; opacity: 0.9; font-size: min(4vw,26px); margin: 16px 0;">
     <p>© ShortComix by&nbsp;</p>
-    <span class="retro-cursor" onclick="window.location='/p/about.html';">Shreyas Hegde</span>
+    <span class="retro-cursor" onclick="window.location='/about-me';">Shreyas Hegde</span>
   </div><br>
   
 </div>
 <!-- -->
 
 <style>
-  #fixed-background, .carousel{
-    display: block!important;
+#fixed-background, .carousel{
+  display: block!important;
+}
+.mobile-header {display: none!important;}
+.common-gap { display: none!important; } 
+
+@media(prefers-color-scheme:light){
+  #open-mobile-menu{
+    box-shadow: 0px 0px 55px 45px #f0f0f0!important;
+ 		border: 6px solid #fff!important;
+}}
+
+@media(min-width:820px){
+  .desktop-menu{
+    display:none!important;
   }
-  .mobile-header {display: none!important;}
-        
-  @media(prefers-color-scheme:light){
-    #open-mobile-menu{ display:flex;
-    	box-shadow: 0px 0px 55px 45px #f0f0f0!important;
-      border: 6px solid #fff!important;
-  }}
-        
-  @media(min-width:820px){
-  	.desktop-menu{
-    	display:none!important;
-    }
-    .common-gap {
-      margin-top: 5%!important;
-    }
-    .spill{
-  		display:grid!important;
-  }}
-  
-  .common-gap{display: none!important;}
-  
+  .spill{
+    display:grid!important;
+  }
+}
+
 #animated-road
 {
 width: 100%;
@@ -446,7 +445,7 @@ animation: moving_car 4s infinite;
 .d-comic-square{
      width:33vw;
      height:auto;
-     max-width: 290px;
+     max-width: 300px;
      aspect-ratio:16/16.5!important;
      margin: 0px 6px 0px 6px;
      cursor: pointer;
@@ -457,7 +456,7 @@ animation: moving_car 4s infinite;
 }
   
  #watch,#change{
-     width: 20.5vw;
+     width: 21vw;
      height: auto;
      max-width: 100px;
      aspect-ratio: 10/6.4;
@@ -465,7 +464,7 @@ animation: moving_car 4s infinite;
      border: 5px solid #8997d7!important;
      padding: 4px;
      border-radius: 30px;
-     filter: contrast(1) saturate(0.95) hue-rotate(0deg);
+     filter: contrast(1) saturate(1) hue-rotate(0deg);
 }
 #change{
  margin-left: 3%;
@@ -504,7 +503,7 @@ animation: moving_car 4s infinite;
 }
 .boxes img {
      width: 80%;
-     margin-bottom: min(5%, 15px);
+     margin-bottom: 8px;
 }
 
 #coffee-cup-menu {
@@ -520,7 +519,7 @@ animation: moving_car 4s infinite;
 .retro-cursor {
   display: inline-block; /* ensures it stays inline */
   position: relative;
-  cursor: url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjNP6Z9A_qs_6-GEWBvldHNLtcqJuuEtYOcQ8roH-hA7_6VmGprbUnv5J9UQ301VmdCQB7dUkcDT0knpC2RhMoKDjEBPh3i-M-w_iMYzrZn6eQsrWoiAmhW7DS6CjKVN_D3ScpFsAU8XWZ2NIfmak9G3NOcJZ4-XuSyFq6iOX6wv80wezBY4hPo1ZwTDsZ3/s32-rw/pick.png') 0 0, auto;
+  cursor: url('/images/sprites/glitch-finger.png') 0 0, auto;
 }
 
 .retro-cursor::after {
@@ -859,10 +858,10 @@ function checkText() {
   const input = document.querySelector(inp).value;
   const resultElement = document.querySelector(unscrambler);
   if (input === "🍰🌓aepayssia") {
-    resultElement.innerHTML = "<br><a style='color: #e6174b!important; text-decoration: underline; display: inline-block; text-underline-offset: 4px;' class='twinkling' href='https://shortcomix.blogspot.com/p/story-book.html#a0zVs5q'>🍰🌓AsEasyAsPie</a><br><br>";
+    resultElement.innerHTML = "<br><a style='color: #e6174b!important; text-decoration: underline; display: inline-block; text-underline-offset: 4px;' class='twinkling' href='/story-book/#a0zVs5q'>🍰🌓AsEasyAsPie</a><br><br>";
     const div = document.createElement('div');
     div.textContent = "wasn't it?";
-    div.addEventListener('click', () => window.location.href = 'https://shortcomix.blogspot.com/p/story-book.html#a0zVs5q');
+    div.addEventListener('click', () => window.location.href = '/story-book/#a0zVs5q');
     resultElement.appendChild(div);
   }
   else {

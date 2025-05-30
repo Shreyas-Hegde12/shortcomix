@@ -9,10 +9,10 @@ layout: layouts/base.liquid
 <div class="width-limit">
   
 <!-- Book tape-->
-<div class="for-mobile book-tape">
-  <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj3mwZZlGQOixOKbtT3KuNiBwPnlXRBQ9VU_2KlgpyNRfD-0P84nh3whbY2LhYZ3MIhPwPgveithjYsOwu3rBZ8LQ3fHbD5aiDvV3aUKJ5W9e-_RxNSthndiVzVRrxg5uYmZF4ijEgt9hzN2O9xUVmp8dvZSouMv9J3adwcxxWl-uEnid3w7D_RLZ1Tyvbv/s0-rw/bit1.jpg" alt="Book Tape Background"/>
-    <a href="/p/home.html" >
-      <img class="portal-to-home" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiy3vagb4cOgNRydv47_KOj_PIH-a8sNADCVt_wlWdGYgjkbbvhmDiNeCZC_HpO4kjuUZv1WCmnvSAuk1hLLZaASOo17FyOxA2FZk07yZ4MkubCnye2geNfObeEw1Nh80Yfv2DPPCQFrphckVe-Cp3BdiK5aorSyovlI2IZXFWVb7an-2vC_2TwQSlYgbpm/s0-rw/portal--.png" alt="Portal Back to Home"/>
+<div class="for-mobile for-laptop book-tape">
+  <img src="/images/static/book-tape.jpg" alt="Book Tape Background"/>
+    <a href="/" >
+      <img class="portal-to-home" src="/images/static/spinning-portal.png" alt="Portal Back to Home"/>
   	</a>
 </div>
 
@@ -29,7 +29,7 @@ layout: layouts/base.liquid
     <!-- b. Fun Lock -->
     <div id="a0zVs5q" onclick="map()" class="lock">
       <div class="lock-thumb">
-        <img  src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgIwOrCYZ7zsgt7ilkq7AJVXSLaDn8P8-5tGx4a6-DAX8Ahi9dHmqNv1KjGj0fVJbEyemIPvM9b6PBCf63QMfeqNdqqyTT7Cs2CHnMS8HLaGMfhVaH1a8z9Wt2wnb0bPMrOqQ2SBGnpYNME4FWX4ht2K3Omm29IFPujxjsQq-FyxSVggZlWRUEyRccgEWWN/s0-rw/bit2-removebg-preview%20%281%29.png" alt="View the Map!"/>
+        <img  src="/images/static/book-characters.png" alt="View the Map!"/>
       </div>
       
       <span style="font-size: min(6vw,30px); font-family:acme; color:#888;">
@@ -39,7 +39,7 @@ layout: layouts/base.liquid
 
     <!-- c. Secret map -->
     <div class="the-map">
-      <img alt="map content" class="back" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjajhmLUm2g26_4kQUnYd_aftt9fltvSagFIPBGKP3JiUHwwWaZCep64d9Z327a05Ji6K1ZJz2MH4tldRcvE8DZSp46DY8pgvx4NOTzt23WZQ_k6NrPfzlD_i3z9CHemMTStXfWBmCNozRE9JdfRTYJPAinyXUbc9LV7TTf1pugsrJmrSn2Yj-LCVMqhKGc/s0-rw/map%20%282%29.jpg"/> 
+      <img alt="map content" class="back" src="/images/static/map-to-open-the-book.jpg"/> 
     </div>
 </div>
   
@@ -53,8 +53,6 @@ layout: layouts/base.liquid
 I have a few sheets scribbled with damn silly stories.
 </p>
   
-  
-  <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjXCzDrhDTzWQCfE-mmnEHmN8tgF7n8SJlnUZYMaqf8Wtg2ojdOWvHC7lgNPQ4tjTSCH0_Yl0Elvx0A0fAyTsHg8ykUow0Ltx5ciXDglnYeZD06C5v5C3d8ArrjKeUSK4v5RRONaoeG-UJHKdH9Q9wf7zmSaF4J3t9xfrcj8PcGX1F-CoI/s0-rw/Picture1%20(2)_11zon%20(1).png" style="width: 0%; clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 90%); max-width: 600px;" alt="dinosaur oww!"/>
   
 <!-- Footer --><br><br>
 <div class="foot-links">
@@ -83,7 +81,8 @@ I have a few sheets scribbled with damn silly stories.
   }
 } 
   
-#open-mobile-menu, .mobile-header, .common-gap{display:none!important;}
+#open-mobile-menu {display:none!important;}
+.common-gap{display:none!important;}
 
 #faq:target{display:block!important;}  
 #a0zVs5q:target{display:none!important;}
@@ -183,7 +182,7 @@ I have a few sheets scribbled with damn silly stories.
   place-items:center;
 }
 .the-map img{
-  width: 90%; 
+  width: 75%; 
   height: auto; 
   aspect-ratio:4/7;
   max-width: 360px; 
@@ -243,7 +242,7 @@ to{transform:scale(1); opacity:1;}
   
 function preloadMapImage() {
 	const mapImg = document.createElement('link');
-  	mapImg.href = 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjajhmLUm2g26_4kQUnYd_aftt9fltvSagFIPBGKP3JiUHwwWaZCep64d9Z327a05Ji6K1ZJz2MH4tldRcvE8DZSp46DY8pgvx4NOTzt23WZQ_k6NrPfzlD_i3z9CHemMTStXfWBmCNozRE9JdfRTYJPAinyXUbc9LV7TTf1pugsrJmrSn2Yj-LCVMqhKGc/s0-rw/map%20%282%29.jpg';
+  	mapImg.href = '/images/static/map-to-open-the-book.jpg';
   	mapImg.rel = 'preload';
   	mapImg.as = 'image';
   	document.head.appendChild(mapImg);
