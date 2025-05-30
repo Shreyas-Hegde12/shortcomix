@@ -1,0 +1,14 @@
+---
+layout: /layouts/post.liquid
+tags:
+- life
+- cats
+- paws
+- home
+- fridge
+- meow
+- watermelon
+title: Life With Cats
+---
+
+<img class="back comicimg" src="./comic.jpg" style="aspect-ratio:  0.34;" />

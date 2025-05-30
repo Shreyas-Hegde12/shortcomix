@@ -1,0 +1,71 @@
+---
+title: Scroll Wheel
+permalink: "/scroll-wheel/"
+layout: layouts/base.liquid
+---
+
+<div id="scroll-gallery-page"></div>
+
+<p style="font-size: min(6vw,34px); font-family: open sans; margin-bottom:5%; display: nne;">Scroll, scroll, scroll </p>
+
+{% for post in collections.post %}
+  <div class="with-comic">
+    {% assign comic_url = post.url | append: '/comic.jpg' %}
+    {% assign comic_post_content = post.content | replace: './comic.jpg', comic_url %}
+    {{ comic_post_content }}
+  </div><br>
+{% endfor %}
+
+<a class="for-mobile" href="/">
+  <p style="font-size: 28px;">BACK TO HOME</p>
+</a><br><br><br>
+
+<style>
+  #footer-wrapper, #open-mobile-menu{display:none!important;} 
+  .fixed-header{display:block!important;} 
+  .with-comic{margin-bottom: 80px; width:95%!important;} 
+  .comicimg{width:95%!important; margin-top:0px!important;} 
+  .mobile-header{display:none!important;}
+  
+  .with-comic{position:relative;}
+  .with-comic::before{
+  content: 'You Liked';
+  text-align:center;
+  /*background: url('https://cdn-icons-png.flaticon.com/128/17879/17879388.png') no-repeat center;
+  background-size: cover;*/
+    font-size: min(8vw,40px);
+    font-family: gloria hallelujah;
+    background: black;
+    color: white;
+  width: 45%;
+  height: auto;
+  aspect-ratio:2.5/1;
+  animation: var(--scroll-like-animation);
+  position: fixed;
+  top: 60%;
+  left: 50%;
+  opacity: 0;
+  z-index: 5000;
+  display:flex;
+    justify-content:center;
+    place-items:center;
+  transform: translate(-50%,-50%);
+  animation-fill-mode: forwards;
+  }
+  @keyframes double_tap_like {
+    0%{opacity:0;}
+    50%{opacity:1; transform: translate(-50%,-103%) rotate(10deg);}
+    100%{opacity:0; transform: translate(-50%,-270%) rotate(-10deg);}
+  }
+</style>
+
+<script>
+const mobMenu = document.querySelector('#open-mobile-menu');
+mobMenu.classList.add('rainw');
+mobMenu.querySelector('img').style.display= "none";
+mobMenu.style.background = '';
+mobMenu.style.border = 'none';
+mobMenu.style.pointerEvents = 'none';
+  
+</script>
+
