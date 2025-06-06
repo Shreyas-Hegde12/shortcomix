@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 	loadFonts();
 	
-	if (visits < 10 && menuOpened == 'false'){
+	if (0 && visits < 10 && menuOpened == 'false'){
 		visits += 1; 
 		if(localStorage) localStorage.setItem("userNew", visits);
 		// Show a flag on menu icon and say 'I am Menu'
@@ -118,7 +118,7 @@ function polishHomePage() {
 	const toh = window.innerHeight/2;
 	const toph = toh - (5*toh)/100;
 	document.querySelector('.carousel').style.top = toph + 'px';
-	document.querySelector('.home-tag').style.display="none";
+	//document.querySelector('.home-tag').style.display="none";
 
 	// c. Frog Pic Change every second
 	frogFreeze = setInterval( ()=>{
