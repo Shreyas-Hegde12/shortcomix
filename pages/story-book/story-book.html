@@ -291,15 +291,15 @@ function map(){
   document.querySelector('.the-map').style.display = 'flex';
   document.querySelector('.the-map img').classList.add('opening-map');
   
-  setTimeout( ()=> { 
-    // book tape element being collapsed
-  	const bookTapeClose = document.querySelector('.book-tape');
-  	bookTapeClose.style.height = bookTapeClose.offsetHeight + "px"; 
-  	bookTapeClose.offsetHeight;
-  	bookTapeClose.style.height = '0px';
-  }, 1000);
+  // setTimeout( ()=> { 
+  //   // book tape element being collapsed
+  // 	const bookTapeClose = document.querySelector('.book-tape');
+  // 	bookTapeClose.style.height = bookTapeClose.offsetHeight + "px"; 
+  // 	bookTapeClose.offsetHeight;
+  // 	bookTapeClose.style.height = '0px';
+  // }, 1000);
   
-  const color = getComputedStyle(document.documentElement).getPropertyValue('--lock-background-two');
+  const color = getComputedStyle(document.querySelector('.the-map')).getPropertyValue('--lock-background-two');
   document.querySelector('.lock').style.background = color; 
 }
  
