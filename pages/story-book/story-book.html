@@ -76,16 +76,15 @@ layout: layouts/base.liquid
 </div>
 
 <style>
-  
 :root {
   --lock-background: rgba(255,255,255,0.5);
-  --lock-background-two: rgba(255,255,255,0.5);
+  --lock-background-two:  rgba(0,0,0,0.3);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --lock-background: rgba(74,73,132,0.2);
-    --lock-background-two: rgba(0,0,0,0.4);
+    --lock-background-two:  rgba(0,0,0,0.4);
   }
 } 
   
@@ -258,7 +257,7 @@ to{transform:scale(0.8); opacity:1;}
     
   
   #logo-replace::before{
-    content:''; background: url('/images/static/spinning-portal.png') no-repeat; background-size:cover; width: auto; height:140%; aspect-ratio:16/16; position:absolute; transform: translate(-10%,-14%) scale(1.04); left: 0px; display:inline-block; border-radius:5px; border: 0px solid white; transition: 0.2s ease;
+    content:''; background: url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiy3vagb4cOgNRydv47_KOj_PIH-a8sNADCVt_wlWdGYgjkbbvhmDiNeCZC_HpO4kjuUZv1WCmnvSAuk1hLLZaASOo17FyOxA2FZk07yZ4MkubCnye2geNfObeEw1Nh80Yfv2DPPCQFrphckVe-Cp3BdiK5aorSyovlI2IZXFWVb7an-2vC_2TwQSlYgbpm/s0-rw/portal--.png') no-repeat; background-size:cover; width: auto; height:140%; aspect-ratio:16/16; position:absolute; transform: translate(-10%,-14%) scale(1.04); left: 0px; display:inline-block; border-radius:5px; border: 0px solid white; transition: 0.2s ease;
   }
   
   #logo-replace:hover::before{
@@ -291,17 +290,7 @@ function map(){
   document.querySelector('.the-map').style.display = 'flex';
   document.querySelector('.the-map img').classList.add('opening-map');
   
-  // setTimeout( ()=> { 
-  //   // book tape element being collapsed
-  // 	const bookTapeClose = document.querySelector('.book-tape');
-  // 	bookTapeClose.style.height = bookTapeClose.offsetHeight + "px"; 
-  // 	bookTapeClose.offsetHeight;
-  // 	bookTapeClose.style.height = '0px';
-  // }, 1000);
-  
   const color = getComputedStyle(document.querySelector('.the-map')).getPropertyValue('--lock-background-two');
   document.querySelector('.lock').style.background = color; 
 }
- 
 </script>
-  
