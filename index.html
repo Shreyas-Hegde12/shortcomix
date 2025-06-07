@@ -33,13 +33,13 @@ layout: layouts/base.liquid
        
        src='/images/static/kiddo-peek.png' 
        
-       style='margin-bottom: 10%; aspect-ratio:16/15.6; width: 58vw; max-width: 300px; height: auto; transition: ease-in 0.8s; border-radius:500px; filter: opacity(0.97) contrast(0.85) brightness(1.11);' 
+       style='margin-bottom: 10%; aspect-ratio:16/15.6; width: 57vw; max-width: 300px; height: auto; transition: ease-in 0.8s; border-radius:500px; filter: opacity(0.97) contrast(0.85) brightness(1.11);' 
        tile="©Shooshoo.comics rendition of kiddo!" alt="©Shooshoo.comics rendition of kiddo!"
        onclick="window.location='#bubbles';"/>
    
   
   <!-- Comics -->
-  <div style="width: 91%; max-width: 580px; display:flex; flex-direction: row; place-items:center; justify-content:center; place-items:center; filter: contrast(0.9) saturate(0.9); margin-bottom: -0%;">
+  <div style="width: 90%; max-width: 580px; display:flex; flex-direction: row; place-items:center; justify-content:center; place-items:center; filter: contrast(0.9) saturate(0.9); margin-bottom: -0%;">
     <div class="pick-link comic-outer-square"onclick="handleComicClick(0,0)" >
       <img class="pick-img back comic-square" src="/images/sprites/placeholder.jpg" alt="Comic I chose for you" title="Comic I chose for you"/>
     <p class="subtitle" style="font-family: gloria hallelujah; font-size: min(8vw, 27px); opacity: 0.8; color: var(--dull-text); padding: 2%;">comic 1</p>
@@ -142,7 +142,7 @@ layout: layouts/base.liquid
        </span>
      </div>
   </div><br>
-  
+  <br>
   
  <div id="animatedDiv">
    <div class="actualhtml">
@@ -151,15 +151,15 @@ layout: layouts/base.liquid
      <!-- Frog + Text -->
       <div style="display:flex; flex-direction:row; gap: 0%; width:100%; place-items:center; justify-content:center;">
         <!-- frog part -->
-         <div style="margin-top:5%; margin-bottom: 5%; position:relative; width: 43%;">
+         <div style="margin-top:5%; margin-bottom: 5%; position:relative; width: 41%;">
             <div class="frog-like-btn" onclick="frogClick();" style="position:relative; max-width: 350px; aspect-ratio:16/16;" alt="Frog Like Button" title="Frog Like Button">
               <img id="frog-pic" src="https://res.cloudinary.com/dzss5ged8/image/upload/v1742934877/frog-dead---_teafct.png" style="width: 100%; height:auto; aspect-ratio:17/16; position:relative; bottom: -10px; filter: saturate(0.85); -webkit-filter: saturate(0.85); -moz-filter: saturate(0.85);" alt="Frog Like Button" title="Frog Like Button" />
            </div>
         </div>
         <!-- text part -->
-        <div style="height:auto; width: 60%; text-align:center; justify-content:center; place-items:center;">
+        <div style="height:auto; width: 55%; text-align:center; justify-content:center; place-items:center;">
            <p class="frog-text" style="font-family: open sans; line-height:1.7; padding-left:4px;">
-              Hey, thanks for visiting. <br>If you liked the website,<br> hit the frog !
+              Thanks for visiting. <br>If you liked it,<br> hit this frog !
            </p>
          </div>
       </div>
@@ -231,7 +231,7 @@ layout: layouts/base.liquid
   
 
   <!-- Copy Rights -->
-  <div style="margin: 20% 0 0 0; position: relative; flex-direction:column; gap:1px; place-items:center; justify-content:center;">
+  <div style="margin: 30% 0 0 0; position: relative; flex-direction:column; gap:1px; place-items:center; justify-content:center;">
     <!-- home picture -->
     <img style="width:54vw; max-width: 330px; aspect-ratio:1.15/1;" src="/images/static/home.png" title="Home Sweet Home" alt="Home Sweet Home"/>
     <!-- copyright text -->
@@ -251,7 +251,7 @@ layout: layouts/base.liquid
 <div class="for-laptop" style="margin-top: min(15%, 80px);">
   
    <!-- Big Kiddo Peek -->
-     <img id='d-kiddo-peek' onclick="window.location.href='/news';" src='/images/static/kiddo-peek.png' style='position: relative; aspect-ratio:16/16; width: 40vw; max-width: 350px; height: auto; margin-bottom: min(3%, 40px); transition: ease-in-out 0.8s; opacity: 0.95; cursor:pointer;' title="©Shooshoo comics rendition of Kiddo" alt="©Shooshoo comics rendition of Kiddo"/>
+     <img id='d-kiddo-peek' onclick="window.location.href='/news';" src='/images/static/kiddo-peek.png' style='position: relative; aspect-ratio:16/16; width: 40vw; max-width: 320px; height: auto; margin-bottom: min(3%, 40px); transition: ease-in-out 0.8s; opacity: 0.95; cursor:pointer;' title="©Shooshoo comics rendition of Kiddo" alt="©Shooshoo comics rendition of Kiddo"/>
   
    <!-- Coffee Cup Menu -->
    <div id="coffee-cup-menu" style="width: 24vw; max-width: 300px; height: auto; position: fixed; bottom: 5vh; right: 20px; z-index: 1005; cursor: pointer; overflow: hidden; transition: opacity 0.7s linear;">
@@ -261,10 +261,10 @@ layout: layouts/base.liquid
    <!-- Big Comics -->
    <div style="width: 100%; display:flex; flex-direction: row; gap: min(2%, 20px); margin-top: 15px; place-items:center; justify-content:center; ">
       <div class="d-pick-link">
-        <img class="d-pick-img back d-comic-square" onclick="handleComicClick(1,0)" src="/images/sprites/placeholder.jpg" alt="Comic I chose for you" title="Comic I chose for you"/>
+        <img class="d-pick-img back d-comic-square" onclick="handleComicClick(1,0)" src="/images/sprites/placeholder.jpg" alt="Comic I chose for you" title="Comic I chose for you"/><p class="subtitle" style="font-family: gloria hallelujah; font-size: min(8vw, 30px); opacity: 0.8; color: var(--dull-text); padding: 2%;">comic 1</p>
       </div>
       <div class="d-pick-second-link">
-        <img class="d-pick-second-img back d-comic-square" onclick="handleComicClick(1,1)" src="/images/sprites/placeholder.jpg" alt="Comic I chose for you 2" title="Comic I chose for you 2"/>
+        <img class="d-pick-second-img back d-comic-square" onclick="handleComicClick(1,1)" src="/images/sprites/placeholder.jpg" alt="Comic I chose for you 2" title="Comic I chose for you 2"/><p class="subtitle" style="font-family: gloria hallelujah; font-size: min(8vw, 30px); opacity: 0.8; color: var(--dull-text); padding: 2%;">comic 2</p>
       </div>
    </div>
 
@@ -444,7 +444,7 @@ animation: moving_car 4s infinite;
 .d-comic-square{
      width:33vw;
      height:auto;
-     max-width: 285px;
+     max-width: 280px;
      aspect-ratio:16/16.5!important;
      margin: 0px 6px 0px 6px;
      cursor: pointer;

@@ -12,8 +12,8 @@ permalink: "/about-me/"
   </div>
   
   <!-- Swipe -->
-  <div class="swipe-out for-mobile" style="width:100%; height: 100%; display:flex; justify-content: center; place-items: center; font-size: min(7vw,45px); font-family: acme; background: linear-gradient(to left, rgba(0,0,0,0.8), #000); backdrop-filter: blur(20px); color: white!important; position: fixed; left:0px; top:0px; z-index: 100;">
-    <p style="width:85%; max-width:800px; opacity: 0;" class="fade-in" >Before Following anyone, it is important to know the person properly !!
+  <div class="swipe-out for-mobile" style="width:100%; height: 100%; display:flex; justify-content: center; place-items: center; font-size: min(8vw,45px); font-family: acme; background: linear-gradient(to left, rgba(0,0,0,0.8), #000); backdrop-filter: blur(20px); color: white!important; position: fixed; left:0px; top:0px; z-index: 100;">
+    <p style="width:85%; max-width:800px; opacity: 0;" class="fade-in" >Before Following, know the person properly !!
   </p>
   </div>
   
@@ -79,13 +79,13 @@ permalink: "/about-me/"
     	</div>
   </ul>
   
-  <br><br>
+  <br><div class="for-mobile"><br><br></div>
   
   <div class="image-container"></div>
   <!-- Gif + funny me -->
   <!-- a. juggling -->
   <div class="image-container">
-    <h2>I am</h2>
+    <h2>I</h2>
     <img src="https://www.icegif.com/wp-content/uploads/icegif-5535.gif" alt="Image 1">
     <p>I love balancing stuff. So they call me to weddings to perform juggling.</p>
   </div>
@@ -93,14 +93,14 @@ permalink: "/about-me/"
   <div class="image-container">
     <h2>I</h2>
   <img src="https://www.tomandjerryonline.com/animgifs/000d9q9g.gif" alt="Image 2"/>
-    <p id="heheboy">Desert or Ocean ?<br>Desserts yum yum, heheBoy Desserts🍰</p>
+    <p id="heheboy">Desert or Ocean ?<br> heheBoy Desserts🍰</p>
   </div>
   <!-- c. school to college -->
   <div class="image-container">
   	<h2>I am</h2>
   	<img src="https://media1.tenor.com/m/xK6aYOWclHYAAAAC/tom-and-jerry-nibbles.gif" alt="Image 3">
   	<p id="line-fader">
-    	My teacher kicked me out of school for laughing a lot. So now, I go to college.
+    	My school kicked me out for laughing a lot. Now I laugh sitting in college.
     </p>
     <p id="line-fader">
 		
@@ -127,7 +127,7 @@ permalink: "/about-me/"
   <!-- g. fun fact -->
   <div class="image-container">
     <h2>⭐<u>Fun Fact</u></h2>
-    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgouWsVAT-S5axcINHmUdi9a95zKPp-l-N6CA6FwA2ho8ggoUjLzQAD1cWy8hBob6Nj5NgNu5IudzvB_ndk1HTtZFmJemN9z4cLdxCrV1WPjyjfBJWscVkouIr7_RrzjiBSMeRodonfN8W0rKwlFA51lYShunZgG3tMMD1OdOGFm62IqaLLT_kUWl284IGa/s0-rw/tom-drinks-too-much-water.jpg" style="aspect-ratio:16/15;" alt="Image 7">
+    <img src="/images/static/tom-drinks-water.jpg" style="aspect-ratio:16/15;" alt="Image 7">
     <p>Sometimes I drink too much water.</p>
   </div>
   
@@ -169,36 +169,36 @@ permalink: "/about-me/"
     background-color: #f9f9f9; 
   }
   .image-container {
-    width:88%;
-    margin-bottom: 12%;
-    border-bottom: 1px solid #e0e0e0; 
-    padding-bottom: 10%;
+    width:80%;
+    margin-bottom: min(12%,50px);
+    border-bottom: 1px solid #c0c0c0; 
+    padding-bottom: min(10%, 35px);
   }
   h2 {
     font-family: 'sedan', serif;
-    font-size: min(12vw, 50px);
+    font-size: min(12vw, 60px);
     margin-bottom: 5%;
     margin-top: 5%;
   }
   
   
     .fade-in{ animation: fade_in_text 2s 1; animation-fill-mode: forwards;}
-    .swipe-out { pointer-events: none; animation: swipe_out 2s 1; animation-fill-mode: forwards; animation-delay: 2.7s; }
+    .swipe-out { pointer-events: none; animation: swipe_out 2s 1; animation-fill-mode: forwards; animation-delay: 3.7s; }
     
     
     .follow-me-guys{display: flex; width: 90%; max-width: 600px; flex-direction: row; justify-content:center; place-items:center; margin-top: 15%;}
     .follow-me-guys div{justify-content:center; place-items:center; display: flex; width: 100%; max-width: 600px; flex-direction: column;}
-    .follow-me-guys img{width: 85%; height: auto; transition: 0.5s linear;}
+    .follow-me-guys img{width: 90%; height: auto; transition: 0.5s linear;}
     .follow-me-guys div:hover img{transform: rotate(10deg) scale(1.1)!important; }
-    .follow-me-guys p {font-family: 'sedan'; font-size: min(5.2vw,28px);}  
+    .follow-me-guys p {font-family: 'sedan'; font-size: min(5vw,28px);}  
     
    
-  .image-container img{width:90%; overflow: hidden; margin: 8px 8px 8px 8px; user-select:none;}
-  .image-container p {font-family: 'sedan'; font-size: min(5vw,28px); padding: min(5%,10px); width: 82%;}
+  .image-container img{width:100%; max-width: 500px; overflow: hidden; margin: 8px 0px 12px 0px; user-select:none;}
+  .image-container p {font-family: 'sedan'; font-size: min(5.1vw,25px); padding: min(5%,10px) 0px; width: 80%; max-width: 400px;}
     
     
   ul{margin-left: 0%; }
-  ul li{width: 80%; font-size: 120%; list-style-type: none; text-align:left; line-height: 2.2; font-style:oblique;}
+  ul li{width: 80%; font-size: min(4.8vw, 24px); list-style-type: none; text-align:left; line-height: 2.2; font-style:oblique;}
   ul > li{cursor:pointer;}
   ul > li::before{content: "?"; display: inline-block;  font-size: min(6vw, 35px); width: 1.1em; margin-left: 0em; margin-right: 0.15em; transform: translateY(5%);}
     
@@ -270,7 +270,7 @@ permalink: "/about-me/"
     function replaceText(){
     let space = document.querySelector('#heheboy');
     let text = space.innerHTML;
-    text = text.replace(/heheboy/gi, '<img src="https://www.memecreator.org/static/images/memes/3772097.jpg" style="width: 12vw; max-width: 54px; height: auto; aspect-ratio: 16/16; border-radius: 10px; vertical-align: middle; display: inline-block; transform: rotate(-8deg);" alt="hehe boy"/>')
+    text = text.replace(/heheboy/gi, '<img src="https://www.memecreator.org/static/images/memes/3772097.jpg" style="width: 12vw; max-width: 53px; height: auto; aspect-ratio: 16/16; border-radius: 10px; vertical-align: middle; display: inline-block; transform: rotate(-8deg);" alt="hehe boy"/>')
       space.innerHTML = text;
     }
     

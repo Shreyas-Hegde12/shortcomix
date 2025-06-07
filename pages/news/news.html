@@ -3,27 +3,35 @@ title: News 🎉
 permalink: "/news/"
 layout: layouts/base.liquid 
 ---
-
-<div id="back-button" class="for-mobile for-laptop" style="width: 150px; height:150px; position:fixed; top: 10vh; left: 20vh;" class="for-laptop" onclick="window.location.href='/#d-kiddo-peek';" ><p style="font-size:90px!important; font-family:acme;"> &#60;</p></div>
+<div id="back-button" class="for-mobile for-laptop" style="width: 150px; height:150px; position:fixed; top: 10vh; left: 20vh;" class="for-laptop" onclick="window.location.href='https://shortcomix.blogspot.com/p/home.html#moments';" ><p style="font-size:90px!important; font-family:acme;"> &#60;</p></div>
 
 <div class="header-space-fill"> </div>
 
-<div class="header" style="position: fixed; top: 0px; left: 0px; z-index: 1000; width: 100%; height: auto; background: var(--primary-bg); display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 5% 0 3% 0;">
-	<p style="font-family: monospace; padding: 2%; font-size: min(8vw,60px);">
+<div class="header for-laptop" style="position: fixed; top: 0px; left: 0px; z-index: 1000; width: 100%; height: auto; background: var(--primary-bg); display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-between; align-items: center; border-bottom: 2px var(--gray-bg-element) solid;">
+	<p style="font-family: Noticia Text; margin: 0% 5%; font-size: min(8vw,45px);">
       	The Double-Decker
   	</p>
-	<p style="font-family: sedan; font-size: min(5vw,28px); padding: 2%; font-style: italic;">
+	<p style="font-family: sedan; font-size: min(5vw,30px); margin: 0% 5%; font-style: italic;">
       The Only Newspaper covering me
   	</p>
 </div>
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Newspaper_-_Idil_Keysan_-_Wikimedia_Giphy_stickers_2019.gif/1024px-Newspaper_-_Idil_Keysan_-_Wikimedia_Giphy_stickers_2019.gif" style="width:80%; max-width: 500px;"/>
+<div class="header for-mobile" style="position: fixed; top: 0px; left: 0px; z-index: 1000; width: 100%; height: auto; background: var(--primary-bg); display: flex; flex-direction: column; justify-content: space-between; align-items: center; border-bottom: 0px var(--gray-bg-element) solid; padding: min(5%, 20px) 0px;">
+	<p style="font-family: sedan; opacity: 0.6; margin: 1% 5%; font-size: min(10vw,45px);">
+      	The Double-Decker
+  	</p>
+	<p style="font-family: sedan; font-size: min(5vw,30px); margin: 1% 5%; font-style: italic;">
+      The Only Newspaper covering me
+  	</p>
+</div>
 
-<br><br>
 
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Newspaper_-_Idil_Keysan_-_Wikimedia_Giphy_stickers_2019.gif/1024px-Newspaper_-_Idil_Keysan_-_Wikimedia_Giphy_stickers_2019.gif" class='for-mobil' style="width:80%; max-width: 400px;"/>
+
+<br>
 <article id="articl-0" name="ShooShoo Comics">
-  <div style="text-align: left; width: 90%; max-width: 800px; justify-content:center; place-items:center; display:flex; ">
-    <p class="for-mobile" style="font-size: 22vw; transform: rotate(-2deg); margin-top: -5%; margin-bottom: 2%; opacity:0.2; text-align: left;">1</p>
+  <div style="text-align: left; width: 90%; max-width: 800px; justify-content:left; place-items:left; display:flex; flex-direction: column; ">
+    <p style="font-size: min(5vw, 50px); transform: rotate(-2deg);  padding-left:3%; margin-bottom: min(5%,20px); opacity:0.8; text-align: left;">1 Aug 2021</p>
     <h1 style="text-align:left;font-weight:500; font-family: monospace; font-size:min(9vw,30px); margin-bottom: 40px; padding-left:3%; line-height: 1;">Featured in Shooshoo comics</h1>
   </div>
 <div style="text-align: left; width: 90%; max-width: 800px; justify-content:center; place-items:center; display:grid; ">
@@ -52,7 +60,8 @@ layout: layouts/base.liquid
 </style>
 
 <script>
-  const header = document.querySelector('.header');
+  isMobile = screen.width < 650;
+  const header = isMobile ? document.querySelector('.header.for-mobile') : document.querySelector('.header.for-laptop');
   
   const headerSpace = document.querySelector('.header-space-fill');
   const curheight = header.getBoundingClientRect().height;
