@@ -3,24 +3,31 @@ title: Short Story Book ✨🏖️
 permalink: "/story-book/"
 layout: layouts/base.liquid
 ---
-<!-- Page id-->
+<!-- Page id -->
 <div id="this-is-story-page"></div>
 
 <div class="width-limit">
+
+<!-- Spacing for Laptop -->
+<div class="for-laptop"><br><br><br><br><br><br><br><br></div>
+  
+  
+<!-- Sticky Header  -->
+  <div class="about-page-header for-mobile for-laptop" style="display:flex; flex-direction:row; gap: 25%; width:100%; height: 9vh; max-height: 100px; position:fixed; top:0px; left:0px; z-index: 10; text-align: right; background: rgba(255,255,255, 0.2); backdrop-filter:blur(20px); transform: translateY(0%); justify-content:center; place-items:center; overflow: visible;">
+    <p onclick="window.location.href='/#home-page';" style="width: auto; height:55%; aspect-ratio:2.1/1!important; font-family:acme; padding: 3px; background: rgba(200,200,200,0.4); backdrop-filter:blur(20px); border-radius:40px;" id="logo-replace">&emsp;&emsp;&emsp;</p>
+    <p style="width: 40%; font-family: sedan; padding: 5px; font-size: min(5.2vw,26px); border-radius:40px; user-select:none;">Short Story Book</p>
+  </div>
+ 
   
 <!-- Book tape-->
-<div class="for-mobile book-tape">
+<div class="book-tape for-mobile for-laptop">
   <img src="/images/static/book-tape.jpg" alt="Book Tape Background"/>
     <a href="/" >
       <img class="portal-to-home" src="/images/static/spinning-portal.png" alt="Portal Back to Home"/>
   	</a>
 </div>
 
-  
-<!-- Spacing for Laptop -->
-<div class="for-laptop"><br><br><br><br><br><br></div>
 
-  
 <!-- The Book -->
 <div class="book-wrap">
   	<!-- a. The Pdf -->
@@ -32,38 +39,39 @@ layout: layouts/base.liquid
         <img  src="/images/static/book-characters.png" alt="View the Map!"/>
       </div>
       
-      <span style="font-size: min(6vw,30px); font-family:acme; color:#888;">
+      <span  style="font-size: min(6vw,30px); font-family:acme; color:#888;">
         One word says it
       </span>
     </div>
 
     <!-- c. Secret map -->
     <div class="the-map">
-      <img alt="map content" class="back" src="/images/static/map-to-open-the-book.jpg"/> 
+      <!--<iframe class="for-mobile for-laptop" src="https://drive.google.com/file/d/1F2l-R5dxQBDgEdqbpSP8hw9KbCIY6fWu/preview"></iframe>-->
+      <img alt="map content" class="back" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgpst1XzxPFtZuN9kFBiCee7jTxfl5yiPIHLU5rvGVJSSNFTQCg-aRciaQJM4hch15Z_MnEKIX6-RpHneqMK_eim-88aL_95kkrgP1TabRIg5M0T5mw9DMGF6m7J27CmrIBg4y-25kaiY80eqalPJZaMgSbKGH7H9c43EfvOIoX-7DP2KRtVndGBUosGevG/s0-rw/map.jpg"/> 
     </div>
 </div>
-  
 
-<!-- Text --><br><br>
-<p style="font-size: min(8vw, 45px); width: 100%; font-family: indie flower; font-weight:bold;">
-  Hey there
-</p> 
   
-<p class="para1" style="width: 85%; max-width: 420px; font-size: min(5vw,22px); margin: 11% 0 0% 0; font-family: sedan; text-align:center;">
-I have a few sheets scribbled with damn silly stories.
-</p>
+<!-- text --><br><br><br>
+<div class="">
+  <p style="font-size: min(8vw, 42px); width: 100%; font-family: indie flower; font-weight:bold;">
+	Hey there
+  </p> 
+  <p class="para1" style="width: 85%; max-width: 400px; font-size: min(5vw,22px); margin: 11% 0 0% 0; font-family: sedan; text-align:center;">
+	I have a few sheets scribbled with damn silly stories.<br> 
+  </p>
+</div>
   
-  
-<!-- Footer --><br><br>
+<!-- Footer -->
 <div class="foot-links">
   <p href="#" alt="faq">
-    .FAQ.
+    .Faq.
   </p>
   <p onclick="clipboard('shortcomix.strip@gmail.com'); signalCopy('.foot-links p:nth-child(2)', 'Mail Copied!'); " alt="feedback">
     .Mail.
   </p>
 </div>
-
+ 
 
 </div>
 
@@ -120,16 +128,16 @@ I have a few sheets scribbled with damn silly stories.
   margin-top: 13%;
   width:80%; 
   height: auto;
-  max-width: 440px;
+  max-width: 500px;
   box-sizing: border-box;
-  aspect-ratio:4/5.95; 
+  aspect-ratio:4/5.9; 
+  overflow: hidden;
   position:relative;
   user-select:none;
   pointer-events:none;
   filter: contrast(0.95);
   transition: all 0.4s ease;
   display: grid; 
-  overflow: hidden;
   place-items: center;
 }
 .lock{
@@ -163,8 +171,7 @@ I have a few sheets scribbled with damn silly stories.
   max-width: 400px; 
   aspect-ratio: 16/11.5;  
   filter: hue-rotate(-18deg); 
-  transform: rotate(8deg); 
-  animation: 5s map_steer infinite;
+  animation: 7s map_steer infinite;
 }
 .lock-thumb img{
   width: 100%;
@@ -182,12 +189,11 @@ I have a few sheets scribbled with damn silly stories.
   place-items:center;
 }
 .the-map img{
-  width: 85%; 
+  width: 100%; 
   height: auto; 
-  aspect-ratio:4/7;
-  max-width: 320px; 
+  aspect-ratio:4/6; 
   opacity:0; 
-  transform:scale(0.2); 
+  transform: scale(0.2); 
   filter: saturate(0.8);
   transition: transform 2s ease;
 }
@@ -203,7 +209,7 @@ I have a few sheets scribbled with damn silly stories.
   gap: 60px; 
   place-items:center;
   justify-content:center;
-  margin-bottom: 5%;
+  margin-bottom: 10%;
 }
 .foot-links p{
   cursor: pointer;
@@ -216,10 +222,10 @@ I have a few sheets scribbled with damn silly stories.
 
 /* Media Queries */
 @media(max-width:650px){
-  .foot-links{margin-top:8%;}
+  .foot-links{margin-top:10%;}
 }
 @media(min-width:650px){
-  .book-wrap{margin:0px!important;}
+  .book-wrap {margin:0px!important;}
   .para1{margin: 10% 0 0 0!important;}  
   .foot-links{margin-top:10%;}
 }
@@ -229,25 +235,39 @@ I have a few sheets scribbled with damn silly stories.
 to{transform: rotate(-360deg);}
 }
 @keyframes map_steer{
-50%{transform:rotateZ(-4deg);}
+0%{transform: rotateZ(5deg);}
+50%{transform:rotateZ(-5deg);}
+100%{transform: rotateZ(5deg);}
 }
 @keyframes opening_map{
-to{transform:scale(1); opacity:1;}
-}  
-
+to{transform:scale(0.8); opacity:1;}
+} 
+  
+     
+  @media(min-width:650px){
+    .about-page-header{max-height: 150px!important;}
+   }
+    
+  @media(prefers-color-scheme:dark){
+    .links a{color:white!important;} 
+    .links svg{fill:white!important;} 
+    .about-page-header{background: rgba(20,20,20,1)!important;} 
+    .about-page-header p:nth-child(1){background: rgba(145,145,145,0.4)!important;}
+    .about-page-header p:nth-child(2){color:white!important;}
+    }
+    
+  
+  #logo-replace::before{
+    content:''; background: url('/images/static/spinning-portal.png') no-repeat; background-size:cover; width: auto; height:140%; aspect-ratio:16/16; position:absolute; transform: translate(-10%,-14%) scale(1.04); left: 0px; display:inline-block; border-radius:5px; border: 0px solid white; transition: 0.2s ease;
+  }
+  
+  #logo-replace:hover::before{
+    transform: translate(78%,-14%) scale(1.04); transition: 0.4s ease;
+  }
 </style>
 
 
-<script>
-  
-function preloadMapImage() {
-	const mapImg = document.createElement('link');
-  	mapImg.href = '/images/static/map-to-open-the-book.jpg';
-  	mapImg.rel = 'preload';
-  	mapImg.as = 'image';
-  	document.head.appendChild(mapImg);
-}
-  
+<script> 
 function lock(){
   preloadMapImage();
 
@@ -272,15 +292,17 @@ function map(){
   document.querySelector('.the-map').style.display = 'flex';
   document.querySelector('.the-map img').classList.add('opening-map');
   
-  setTimeout( ()=> { // book tape element being collapsed
-  const bookTapeClose = document.querySelector('.book-tape');
-  bookTapeClose.style.height = bookTapeClose.offsetHeight + "px"; 
-  bookTapeClose.offsetHeight;
-  bookTapeClose.style.height = '0px';
-  }, 10);
+  setTimeout( ()=> { 
+    // book tape element being collapsed
+  	const bookTapeClose = document.querySelector('.book-tape');
+  	bookTapeClose.style.height = bookTapeClose.offsetHeight + "px"; 
+  	bookTapeClose.offsetHeight;
+  	bookTapeClose.style.height = '0px';
+  }, 1000);
   
   const color = getComputedStyle(document.documentElement).getPropertyValue('--lock-background-two');
   document.querySelector('.lock').style.background = color; 
 }
  
 </script>
+  
