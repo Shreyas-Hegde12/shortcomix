@@ -519,7 +519,7 @@ async function searchComics() {
   	const resultsDiv = document.querySelector(".search-results");
   	resultsDiv.innerHTML = "";
 
-    if(searchTerm.length < 2){ document.querySelector('.search-background-blurred').style.display = 'block'; return; }
+    if(searchTerm.length <= 2){ document.querySelector('.search-background-blurred').style.display = 'block'; return; }
 	
 	const searchWords = searchTerm.split(/\s+/);
 
