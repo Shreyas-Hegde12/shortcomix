@@ -523,7 +523,7 @@ async function searchComics() {
 
     const filteredComics = allComicJSON.filter(comic => {
       const titleMatch = comic.title.toLowerCase().includes(searchTerm);
-      const tagMatch = comic.keywords.some(keyword => keyword.toLowerCase().includes(searchTerm)); // searchTerm.toLowerCase().includes(keyword)
+      const tagMatch = comic.keywords.some(keyword => keyword.toLowerCase().includes(searchTerm) || searchTerm.toLowerCase().includes(keyword)); 
       return titleMatch || tagMatch;
     });
 	showSearchResults(filteredComics);
