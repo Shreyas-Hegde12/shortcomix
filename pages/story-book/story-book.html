@@ -5,13 +5,8 @@ layout: layouts/base.liquid
 ---
 <!-- Page id -->
 <div id="this-is-story-page"></div>
-
-<div class="width-limit">
-
-<!-- Spacing for Laptop -->
-<div class="for-laptop"><br><br><br><br><br><br><br><br></div>
   
-  
+
 <!-- Sticky Header  -->
   <div class="about-page-header for-mobile for-laptop" style="display:flex; flex-direction:row; gap: 25%; width:100%; height: 9vh; max-height: 100px; position:fixed; top:0px; left:0px; z-index: 10; text-align: right; background: rgba(255,255,255, 0.2); backdrop-filter:blur(20px); transform: translateY(0%); justify-content:center; place-items:center; overflow: visible;">
     <p onclick="window.location.href='/#home-page';" style="width: auto; height:55%; aspect-ratio:2.1/1!important; font-family:acme; padding: 3px; background: rgba(200,200,200,0.4); backdrop-filter:blur(20px); border-radius:40px;" id="logo-replace">&emsp;&emsp;&emsp;</p>
@@ -27,6 +22,7 @@ layout: layouts/base.liquid
   </a>
 </div>
 
+<div class="width-limit">
 
 <!-- The Book -->
 <div class="book-wrap">
@@ -224,8 +220,6 @@ layout: layouts/base.liquid
   .foot-links{margin-top:10%;}
 }
 @media(min-width:650px){
-  .book-wrap {margin:0px!important;}
-  .para1{margin: 10% 0 0 0!important;}  
   .foot-links{margin-top:10%;}
 }
  
