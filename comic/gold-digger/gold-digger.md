@@ -1,7 +1,7 @@
 ---
-title: Extra Seat
+title: Gold Digger
 layout: /layouts/post.liquid
-tags: ['teacher','teaching','board','chalk','empty classroom', 'maths']
+tags: ['box','gold','treasure','greedy','secret','precious','running away']
 ---
 
 <img class="back comicimg" src="./comic.jpg" style="aspect-ratio:  0.26;" />

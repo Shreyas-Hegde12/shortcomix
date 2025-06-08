@@ -8,7 +8,7 @@ tags:
 - fridge
 - meow
 - watermelon
-- cat in home
+- cat home
 - kitty cats
 - kitkat
 title: Life With Cats
