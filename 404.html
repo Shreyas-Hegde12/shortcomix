@@ -108,87 +108,89 @@ permalink: /404.html
       70%{ transform: scale(1.12) translateY(80%) translateX(-95%) rotate(-20deg); opacity: 0;}
       100%{ transform: scale(0) translateY(80%) translateX(-95%) rotate(-20deg); opacity: 0;}
       }
-      </style>
+    </style>
   </head>
 
   <body>
     <div class='container' style='display:flex; flex-direction: column; gap: 8%; justify-content:center; align-items:center; width:100%; height: 100vh;overflow: hidden;'>
-       
-      <div style='width: 100%; max-width: 500px; display: flex; flex-direction: column; justify-content: center; align-items: center;'>
-        <!-- 404 main attraction -->
+
+      <div style='width: 100%; max-width: 610px; display: flex; flex-direction: column; justify-content: center; align-items: center;'>
+
+        <!-- a. 404 main attraction -->
         <div style='width:85%; height:auto; aspect-ratio: 16/11; position:relative;'>
           <!-- 404 dvd bounce -->
           <div id='dvd-playground' style='background: var(--pinkish-shade); width: 100%; height: 100%; position: absolute; top:0px; left:0px; overflow:hidden;'>
             <p style='font-size: min(27vw, 160px); font-family: acme; font-weight: bold; color: #e6174b!important; position: absolute; top: 0px; left: 0px; padding: 0px!important; margin:0px 0px!important;'>
-          404
+              404
             </p>
           </div>
           <!-- candle blowing meme -->
-          <div style='width:100%;  height: auto; aspect-ratio: 16/12; display:flex; justify-content:center; align-items: center;'>
-            <video autoplay='true' loop='true' muted='true' style='width:100%; max-width: 600px; height:auto; aspect-ratio: 16/11; overflow:hidden;'>
+          <div style='width:100%;  height: auto; aspect-ratio: 16/11; display:flex; justify-content:center; align-items: center;'>
+            <video autoplay='true' loop='true' muted='true' style='width:100%; height:auto; aspect-ratio: 16/11; overflow:hidden;'>
             	<source src='https://res.cloudinary.com/dzss5ged8/video/upload/v1721383220/ezgif-1-537d390973_o2xwwa.mp4' type='video/mp4'/>
          	  </video>
           </div>
 
         </div>
         
-        <!-- Error Text -->
-        <p style='width: 80%; font-size: min(4.6vw,45px); font-family: open sans; margin-top:min(3%,10px); padding: min(5%,15px); color:black; text-align:center;'>
+        <!-- b. Error Text -->
+        <p style='width: 80%; font-size: min(4.6vw,28px); font-family: open sans; margin-top:min(3%,10px); margin-bottom: min(8%, 50px); padding: min(5%,15px); color:black; text-align:center;'>
           This place exists only in your imagination, my friend.
         </p>
       
-        <!-- 404 'Back to Home' Button -->
+        <!-- c. Back To Home Button -->
         <button onclick='buttonAction()' style='display: block; color:white; background-color: #e6174b!important; outline:none; border:0px; width: 70%; height: auto; border-radius: 10px; cursor:pointer; text-align:center; font-size: min(6.4vw, 35px); font-family: open sans; padding: 15px 10px; '>
           Go back my friend
         </button>
+
       </div>
        
-    </div>
+	</div>
 
-    <script>
 
-      const playground = document.querySelector("#dvd-playground");
-      const dvdText = document.querySelector("#dvd-playground p");
-      const playgroundWidth = parseFloat(getComputedStyle(playground).width);
-      const playgroundHeight = parseFloat(getComputedStyle(playground).height);
-      
-      function buttonAction() {
-        document.querySelector("button").classList.add("soft-touch-btn");
-        setTimeout(() => {
-          document.querySelector("button").classList.remove("soft-touch-btn");
-          window.location.href = "/";
-        }, 1000);
+  <script>
+    const playground = document.querySelector("#dvd-playground");
+    const dvdText = document.querySelector("#dvd-playground p");
+    const playgroundWidth = parseFloat(getComputedStyle(playground).width);
+    const playgroundHeight = parseFloat(getComputedStyle(playground).height);
+    
+    function buttonAction() {
+      document.querySelector("button").classList.add("soft-touch-btn");
+      setTimeout(() => {
+        document.querySelector("button").classList.remove("soft-touch-btn");
+        window.location.href = "/";
+      }, 1000);
+    }
+
+    dvdText.style.fontSize = (43 * playgroundWidth) / 100 + "px";
+
+    /*
+    let posX = 10;
+    let posY = 10;
+    let speedX = 0.7*(0.2 * playgroundWidth) / 100;
+    let speedY = 0.7*(0.38 * playgroundHeight) / 100;
+    let dvdPadd = parseFloat(getComputedStyle(dvdText).height) / 5;
+
+    function update() {
+      dvdText.style.top = posY + "px";
+      dvdText.style.left = posX + "px";
+    }
+    
+    function animate() {
+      if(posX +  dvdText.clientWidth >= playground.clientWidth || posX <= 0){
+            speedX = -speedX;
       }
-
-      dvdText.style.fontSize = (43 * playgroundWidth) / 100 + "px";
-      
-      /*
-      let posX = 10;
-      let posY = 10;
-      let speedX = 0.7*(0.2 * playgroundWidth) / 100;
-      let speedY = 0.7*(0.38 * playgroundHeight) / 100;
-      let dvdPadd = parseFloat(getComputedStyle(dvdText).height) / 5;
-
-      function update() {
-        dvdText.style.top = posY + "px";
-        dvdText.style.left = posX + "px";
+      if(posY +  dvdText.clientHeight >= playground.clientHeight + dvdPadd || posY <= -dvdPadd){
+            speedY = -speedY;
       }
-      
-      function animate() {
-        if(posX +  dvdText.clientWidth >= playground.clientWidth || posX <= 0){
-              speedX = -speedX;
-        }
-        if(posY +  dvdText.clientHeight >= playground.clientHeight + dvdPadd || posY <= -dvdPadd){
-              speedY = -speedY;
-        }
-        posX += speedX;
-        posY += speedY;
-        update();
-      }
-      
-      const animateBounce = setInterval(()=>{  },5);
-      */
-    </script>
+      posX += speedX;
+      posY += speedY;
+      update();
+    }
+    
+    const animateBounce = setInterval(()=>{  },5);
+    */
+  </script>
 
   </body>
 </html>
