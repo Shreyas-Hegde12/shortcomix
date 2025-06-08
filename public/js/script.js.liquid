@@ -520,15 +520,19 @@ async function searchComics() {
   	resultsDiv.innerHTML = "";
 
     if(searchTerm.length < 2){ document.querySelector('.search-background-blurred').style.display = 'block'; return; }
+	
 	const searchWords = searchTerm.split(/\s+/);
 
 	const filteredComics = allComicJSON.filter(comic => {
-  		const titleMatch = comic.title.toLowerCase().includes(searchTerm);
-		const tagMatch = comic.keywords.some(keyword => 
-    		searchWords.some(word => keyword.toLowerCase().includes(word))
-  		);
+		const titleMatch = searchWords.some(word => word.length > 2 && comic.title.toLowerCase().includes(word));
 
- 		 return titleMatch || tagMatch;
+		const tagMatch = comic.keywords.some(keyword => 
+			searchWords.some(word => 
+				word.length > 2 && keyword.toLowerCase().includes(word)
+			)
+		);
+
+		return titleMatch || tagMatch;
 	});
 
 	showSearchResults(filteredComics);
