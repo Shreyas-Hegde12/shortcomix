@@ -34,13 +34,13 @@ layout: layouts/base.liquid
        
        src='/images/static/kiddo-peek.png' 
        
-       style='margin-bottom: 10%; aspect-ratio:16/15.6; width: 58vw; max-width: 300px; height: auto; transition: ease-in 0.8s; border-radius:500px; filter: opacity(0.97) contrast(0.85) brightness(1.11);' 
+       style='margin-bottom: 10%; aspect-ratio:16/15.6; width: 57vw; max-width: 300px; height: auto; transition: ease-in 0.8s; border-radius:500px; filter: opacity(0.97) contrast(0.85) brightness(1.11);' 
        tile="©Shooshoo.comics rendition of kiddo!" alt="©Shooshoo.comics rendition of kiddo!"
        onclick="window.location='#bubbles';"/>
    
   
   <!-- Comics -->
-  <div style="width: 91%; max-width: 580px; display:flex; flex-direction: row; place-items:center; justify-content:center; place-items:center; filter: contrast(0.9) saturate(0.9); margin-bottom: 0%;">
+  <div style="width: 90%; max-width: 580px; display:flex; flex-direction: row; place-items:center; justify-content:center; place-items:center; filter: contrast(0.9) saturate(0.9); margin-bottom: 0%;">
     <div class="pick-link comic-outer-square"onclick="handleComicClick(0,0)" >
       <img class="pick-img back comic-square" src="/images/sprites/placeholder.jpg" alt="Comic I chose for you" title="Comic I chose for you"/>
     <p class="subtitle" style="font-family: gloria hallelujah; font-size: min(8vw, 27px); opacity: 0.8; color: var(--dull-text); padding: 2%;">comic 1</p>
@@ -116,11 +116,12 @@ layout: layouts/base.liquid
       </div>
       
     </div><br>
-  </div><br>
+  </div>
+  <!-- <br> -->
   
   
   <!-- Image Bubbles -->
-  <div style="display: block; position: relative; width: 100%; max-width: 590px; height: auto; aspect-ratio: 16/14.5; overflow: hidden; scroll-behavior:smooth; margin: 4% 0 4% 0;" id="bubbles">
+  <div style="display: none; position: relative; width: 100%; max-width: 590px; height: auto; aspect-ratio: 16/14.5; overflow: hidden; scroll-behavior:smooth; margin: 4% 0 4% 0;" id="bubbles">
     <br><br>
     <!-- a. gift -->
     <div class="image-bubble" style="z-index: 1; width:40%; max-width:400px; height: auto; aspect-ratio: 16/15.5; position: relative; top:1%; left: -16.5%; border-radius: 200px; background: #181818; display: flex; justify-content:center; align-items:center;" onclick="delayLink('/news',300);">
