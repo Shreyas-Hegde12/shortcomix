@@ -263,10 +263,10 @@ layout: layouts/base.liquid
    <!-- Big Comics -->
    <div style="width: 100%; display:flex; flex-direction: row; gap: min(2%, 20px); margin-top: 15px; place-items:center; justify-content:center; ">
       <div class="d-pick-link">
-        <img class="d-pick-img back d-comic-square" onclick="handleComicClick(1,0)" src="/images/sprites/placeholder.jpg" alt="Comic I chose for you" title="Comic I chose for you"/><p class="subtitle" style="font-family: gloria hallelujah; font-size: min(8vw, 30px); opacity: 0.8; color: var(--dull-text); padding: 2%;">comic 1</p>
+        <img class="d-pick-img back d-comic-square" onclick="handleComicClick(1,0)" src="/images/sprites/placeholder.jpg" alt="Comic I chose for you" title="Comic I chose for you"/><p class="subtitle" style="font-family: gloria hallelujah; font-size: min(8vw, 33px); opacity: 0.8; color: var(--dull-text); padding: 2%;">comic 1</p>
       </div>
       <div class="d-pick-second-link">
-        <img class="d-pick-second-img back d-comic-square" onclick="handleComicClick(1,1)" src="/images/sprites/placeholder.jpg" alt="Comic I chose for you 2" title="Comic I chose for you 2"/><p class="subtitle" style="font-family: gloria hallelujah; font-size: min(8vw, 30px); opacity: 0.8; color: var(--dull-text); padding: 2%;">comic 2</p>
+        <img class="d-pick-second-img back d-comic-square" onclick="handleComicClick(1,1)" src="/images/sprites/placeholder.jpg" alt="Comic I chose for you 2" title="Comic I chose for you 2"/><p class="subtitle" style="font-family: gloria hallelujah; font-size: min(8vw, 33px); opacity: 0.8; color: var(--dull-text); padding: 2%;">comic 2</p>
       </div>
    </div>
 
@@ -374,27 +374,28 @@ layout: layouts/base.liquid
 <style>
 ::-webkit-scrollbar{display:none!important;} 
         
-        #fixed-background, .carousel{
-        	display: block!important;
-        }
-        .mobile-header, .common-gap {display: none!important;}
-        
-        @media(prefers-color-scheme:light){
-        	#open-mobile-menu{
-        		box-shadow: 0px 0px 55px 50px #f0f0f0!important;
-        		border: 6px solid #fff!important;
-        }}
-        
-        @media(min-width:820px){
-        	.desktop-menu{
-        		display:none!important;
-        	}
-        	.common-gap {
-        		margin-top: 5%!important;
-        	}
-        	.spill{
-        		display:grid!important;
-        }}
+#fixed-background, .carousel{
+  display: block!important;
+}
+.mobile-header, .common-gap {display: none!important;}
+
+@media(prefers-color-scheme:light){
+  #open-mobile-menu{
+    box-shadow: 0px 0px 55px 50px #f0f0f0!important;
+    border: 6px solid #fff!important;
+}}
+
+@media(min-width:820px){
+  .desktop-menu{
+    display:none!important;
+  }
+  .common-gap {
+    margin-top: 5%!important;
+  }
+  .spill{
+    display:grid!important;
+}}
+
 
 #animated-road
 {
@@ -423,19 +424,19 @@ animation: moving_car 4s infinite;
 }
 
 .comic-outer-square{
-     width: 46%; text-align: center;
+  width: 46%; text-align: center;
 }
   
 .comic-square{
-     width:100%;
-     height: auto;
-     aspect-ratio: 16/16.5!important;
-     max-width: 300px;
-     max-height: 350px;
-     border-radius: 35px;
-     transform-style: preserve-3d;
-     transition: 3.5s ease-in 1;
-     will-change: transform, opacity;
+  width:100%;
+  height: auto;
+  aspect-ratio: 16/16.5!important;
+  max-width: 300px;
+  max-height: 350px;
+  border-radius: 35px;
+  transform-style: preserve-3d;
+  transition: 3.5s ease-in 1;
+  will-change: transform, opacity;
 }
 .comic-square:hover{
   opacity: 0.8;
@@ -444,77 +445,77 @@ animation: moving_car 4s infinite;
 .pick-second-link{margin-left: 3.5%;} 
   
 .d-comic-square{
-     width:33vw;
-     height:auto;
-     max-width: 280px;
-     aspect-ratio:16/16.5!important;
-     margin: 0px 6px 0px 6px;
-     cursor: pointer;
-     border-radius: 50px;
-     transition: opacity 0.1s linear;
-     transform-style: preserve-3d;
-     will-change: transform, opacity;
+  width:33vw;
+  height:auto;
+  max-width: 280px;
+  aspect-ratio:16/16.5!important;
+  margin: 0px 6px 0px 6px;
+  cursor: pointer;
+  border-radius: 50px;
+  transition: opacity 0.1s linear;
+  transform-style: preserve-3d;
+  will-change: transform, opacity;
 }
   
- #watch,#change{
-     width: 21vw;
-     height: auto;
-     max-width: 100px;
-     aspect-ratio: 10/6.4;
-     background-color: #495ab1;
-     border: 5px solid #8997d7!important;
-     padding: 4px;
-     border-radius: 30px;
-     filter: contrast(1) saturate(1) hue-rotate(0deg);
+#watch,#change{
+  width: 21vw;
+  height: auto;
+  max-width: 100px;
+  aspect-ratio: 10/6.4;
+  background-color: #495ab1;
+  border: 5px solid #8997d7!important;
+  padding: 4px;
+  border-radius: 30px;
+  filter: contrast(1) saturate(1) hue-rotate(0deg);
 }
 #change{
- margin-left: 3%;
+  margin-left: 3%;
   pointer-events: none;
 }
- #watch p{
-    font-family: acme;
-     font-size: min(4.2vw,22px);
-     color: #fff!important;
+#watch p{
+  font-family: acme;
+  font-size: min(4.2vw,22px);
+  color: #fff!important;
 }
- .yt-video, .d-yt-video {
-     position: relative;
-     width: 100%;
-     height: auto;
-     aspect-ratio: 16/9.4!important;
-     background: transparent !important;
-     z-index: 10;
+.yt-video, .d-yt-video {
+  position: relative;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/9.4!important;
+  background: transparent !important;
+  z-index: 10;
 }
-  .yt-video{max-width: 450px;}
+.yt-video{max-width: 450px;}
   
 .rec1,.rec2,.rec3{filter: hue-rotate(-10deg) opacity(0.75);}
   
 #d-watch, #d-change {
-     cursor: pointer; width: 140px; height: 80px; background-color: #3d4ea6; border: 8px solid #7e92de; border-radius: 50px; 
+  cursor: pointer; user-select: none; width: 140px; height: 80px; background-color: #3d4ea6; border: 8px solid #7e92de; border-radius: 50px; 
 }
 #d-change {
   pointer-events: none;
 }
 .my-tv-text{
-     transition: transform 0.2s linear;
-     display: none!important;
+  transition: transform 0.2s linear;
+  display: none!important;
 }
-  .image-bubble{cursor: pointer;}
+.image-bubble{cursor: pointer;}
 .boxes {
-     margin-top: 8%;
+  margin-top: 8%;
 }
 .boxes img {
-     width: 80%;
-     margin-bottom: min(5%, 15px);
+  width: 80%;
+  margin-bottom: min(5%, 15px);
 }
 
 #coffee-cup-menu {
-     filter: contrast(1) saturate(0.6);
+  filter: contrast(1) saturate(0.6);
 }
 #mobile-coffee-menu img:hover{
-    transform: rotateZ(-8deg)!important;
+  transform: rotateZ(-8deg)!important;
 }
 #coffee-cup-menu img:hover {
-     transform: rotateZ(-8deg)!important;
+  transform: rotateZ(-8deg)!important;
 }
  
 .retro-cursor {
@@ -576,16 +577,16 @@ animation: moving_car 4s infinite;
   
 /* Media */
 @media(max-width: 650px) {
-     .frog-text {
-         transform: translateX(-2%);
-         width: 95%;
-         font-size: min(4.5vw,25px);
-    }
+  .frog-text {
+    transform: translateX(-2%);
+    width: 95%;
+    font-size: min(4.5vw,25px);
+  }
 }
 @media(max-width: 900px) {
-     #coffee-cup-menu {
-         display: none!important;
-    }
+  #coffee-cup-menu {
+    display: none!important;
+  }
 }
   
 /* Hover Effects */
