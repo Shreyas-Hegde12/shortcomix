@@ -2,3 +2,8 @@
   for = "/search.json"
   [headers.values]
     Access-Control-Allow-Origin = "https://shortcomix.blogspot.com"
+
+[[headers]]
+  for = "/blogger_sitemap.xml"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"

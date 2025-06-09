@@ -1,4 +1,5 @@
-// .eleventy.js
+const pluginSitemap = require("@quasibit/eleventy-plugin-sitemap");
+
 module.exports = function(eleventyConfig) {
   // Add the custom filter
   eleventyConfig.addFilter("removePostTag", (tags) => {
@@ -11,6 +12,13 @@ module.exports = function(eleventyConfig) {
   // Add passthrough copies
   eleventyConfig.addPassthroughCopy("./comic/**/*.jpg");
   eleventyConfig.addPassthroughCopy({ "./public/images": "/images" });
+
+  // Add sitemap plugin
+  eleventyConfig.addPlugin(pluginSitemap, {
+    sitemap: {
+      hostname: "https://shortcomix.netlify.app" // Replace with your final domain if custom
+    }
+  });
 
   // Return the directory configuration
   return {
