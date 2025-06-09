@@ -12,11 +12,4 @@ eleventyExcludeFromCollections: true
     {% endif %}
   {% endfor %}
 
-  {% for post in collections.post %}
-    {% if post.url and post.data.eleventyExcludeFromCollections != true %}
-  <url>
-    <loc>{{ "https://shortcomix.netlify.app" }}{{ post.url }}</loc>
-  </url>
-    {% endif %}
-  {% endfor %}
 </urlset>
