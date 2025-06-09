@@ -25,7 +25,7 @@ const carouselImages = [
 window.onload = function() {
 
 	if(document.querySelector('#this-is-home-page') != null){
-      setTimeout(startCarousel, 500);
+      startCarousel();
 	}
 }
 
@@ -380,7 +380,7 @@ function startCarousel() {
 		document.querySelector('.emoji-carousel').src= carouselImages[imageNum].src;
 
 		imageNum++;
-	},2000);
+	},3000);
 }
 
 

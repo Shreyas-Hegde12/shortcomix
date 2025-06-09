@@ -41,7 +41,7 @@ input, input:focus {
 --like-btn-animation:'';
 --like-card-zindex: -5;
 --like-card-scale:1;
---like-card-left: calc(49%);
+--like-card-left: calc(50%);
 --like-msg-appear: 0;
 --like-msg-scale:1.1;
 
@@ -78,13 +78,12 @@ input, input:focus {
 .archive-settings{aspect-ratio: 16/17!important; width: calc(45%); max-width: 230px; border-radius: 25px; height: auto; margin: 5px 5px 5px 5px!important; filter: saturate(0.8); -webkit-filter: saturate(0.8); -moz-filter: saturate(0.8);}
 .archive-settings:hover{opacity:0.75;}
 
-.animate-carousel{animation: emoji_pop 2s  infinite;}
+.animate-carousel{animation: emoji_pop 3s  infinite;}
 .gray-bg{background-color: var(--gray-bg);}
 .gray-bg-element{background-color: var(--gray-bg-element);}
 .back{background-color: var(--gray-bg-element);} 
 .bar-sticks{background-color: var(--gray-bg-element); opacity: 0.9; }
 .plain-link{color: var(--dull-text-clr);}
-.reveal-menu-icon{animation: reveal_menu_icon 2s 1; animation-fill-mode: forwards; animation-delay: 2s;}
 
 .menu-social-icons a{
 fill:white!important;
@@ -105,25 +104,25 @@ place-items:center;
 }
 .mobile-menu ul{
 position:relative;
-width: 90%;
+width: 85%;
 display: flex;
 flex-direction: column;
 justify-content:center;
 place-items:center;
 gap: 5vw;
-transform: translateY(-5%);
+transform: translateY(-2%);
 }
 .mobile-menu ul li {
 width:100%;
 height: auto;
 max-width: 650px;
 list-style: none;
-aspect-ratio: 30/8.5;
+aspect-ratio: 30/7.8;
 overflow: hidden;
 font-family: Gloria Hallelujah;
 font-size: 10.1vw;
 }
-.mobile-menu li a{width: 100%; color: white!important;}
+.mobile-menu li a{display: flex; justify-content: center; place-items:center; gap: min(6vw, 15px); width: 100%; color: white!important;}
 .mobile-menu li a:hover {color: yellow!important;}
 
 .tag-tick-tick{
@@ -134,17 +133,28 @@ transition: 1s linear infinite;
 color:yellow!important;
 }
 
-.spill ul {
-position:relative; 
+
+.spill ul{
+position:relative;
+display: flex;
+flex-direction: column;
+justify-content:center;
+place-items:center;
+gap: min(4vw, 50px);
 }
-.spill ul a{
+.spill ul li {
+width:100%;
+height: auto;
+max-width: 650px;
+list-style: none;
+aspect-ratio: 30/7.8;
+overflow: hidden;
+font-family: Gloria Hallelujah;
 font-size: 3.8vw!important;
-color: white!important;
-font-family: gloria hallelujah;
 }
-.spill li{padding-bottom: 10%;}
-.spill li:nth-last-child(1){padding-bottom: 0px!important;}
-.spill a:hover{color:yellow!important;}
+.spill li a{display: flex; justify-content: center; place-items:center; gap: min(2vw, 30px); width: 100%; color: white!important;}
+.spill li a:hover {color: yellow!important;}
+
 
 .desktop-menu{display:none; position: fixed; top: 0px; width: 100vw; height: 7vw; max-height: 80px; border-radius: 0px; background-color: #121212; z-index: 1000; justify-content:center; place-items:center; overflow:hidden; }
 .desktop-menu a{color: white;}
@@ -156,7 +166,7 @@ font-family: gloria hallelujah;
 
 
 /*Media Screen Size*/
-@media(max-width:560px) {.emoji-settings{width: 19vw; height:auto; max-width: 240px; position: relative; z-index: 10; bottom: -10px;}}
+@media(max-width:560px) {.emoji-settings{width: 19vw; height:auto; max-width: 240px; position: relative; z-index: 10; vertical-align: middle; display: inline-block; transform: translateY(-7%); }}
 @media(max-width:820px){.desktop-menu{display:none!important;}}
 
 @media(max-width:650px){
@@ -222,7 +232,7 @@ clip-path: polygon(0% 0%, 100% 0, 100% 88%, 50% 100%, 0 88%);
 
 @media(min-width:500px){
 	.social-icons{margin:-1% 0 2% 0!important; aspect-ratio:23/3!important;} 
-	.emoji-settings{width: 14vw; height:auto; max-width: 100px; position: relative;z-index: 10; bottom: -7px;}
+	.emoji-settings{width: 14vw; height:auto; max-width: 100px; position: relative;z-index: 10; vertical-align: middle; display: inline-block; transform: translateY(-7%); }
 }
 @media(min-width:820px){
 #comic-title{font-size: 3.1vw!important;} 
@@ -302,11 +312,17 @@ to{transform: rotateZ(-20deg);}
 95% { transform: translate(0px, 0px) rotate(0deg);}
 }
 
-@keyframes emoji_pop {
+@keyframes emoji_pop_fast {
  15%{transform: scale(0.8) rotateZ(10deg); opacity: 0.83;}
  50%{transform: scale(1) rotateZ(0deg); opacity: 1;} 
  95%{transform: scale(1) rotateZ(0deg); opacity: 1;}
  100%{transform: scale(1) rotateZ(0deg); opacity: 1;}
+}
+
+@keyframes emoji_pop {
+ 10%{transform: scale(0.8) rotateZ(10deg); opacity: 0.83;}
+ 35%{transform: scale(1) rotateZ(0deg); opacity: 1;} 
+ 65%{transform: scale(1) rotateZ(0deg); opacity: 1;}
 }
 
 @keyframes like_plus_one 
