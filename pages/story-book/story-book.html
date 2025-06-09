@@ -74,7 +74,7 @@ layout: layouts/base.liquid
 <style>
 :root {
   --lock-background: rgba(255,255,255,0.5);
-  --lock-background-two:  rgba(0,0,0,0.3);
+  --lock-background-two:  rgba(0,0,0,0.2);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -92,9 +92,9 @@ layout: layouts/base.liquid
 .width-limit{max-width: 600px;}
   
 .book-tape{
-  width: 100%;
+  width: 0%;
   height: auto;
-  aspect-ratio: 16/7; 
+  aspect-ratio: 16/8; 
   max-width: 600px; 
   position:relative; 
   margin:5% 0 0 0%; 
@@ -110,7 +110,7 @@ layout: layouts/base.liquid
 }
 .portal-to-home{
   position:absolute; 
-  top: 18%; /* 23% */
+  top: 23%;
   left: 7.5%; 
   width: 31%; 
   max-width: 200px; 
@@ -120,7 +120,7 @@ layout: layouts/base.liquid
 }
   
 .book-wrap{
-  margin-top: 10%; /* 13% */
+  margin-top: 13%;
   width:80%; 
   height: auto;
   max-width: 500px;
@@ -165,8 +165,8 @@ layout: layouts/base.liquid
   height: auto; 
   max-width: 400px; 
   aspect-ratio: 16/11.5;  
-  filter: hue-rotate(-18deg); 
-  animation: 7s map_steer infinite;
+  filter: hue-rotate(-20deg) saturate(1.2); 
+  animation: 5s map_steer infinite;
 }
 .lock-thumb img{
   width: 100%;

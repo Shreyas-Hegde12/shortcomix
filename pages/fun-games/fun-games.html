@@ -3,15 +3,13 @@ title: Fun Games 🎹
 permalink: "/fun-games/"
 layout: layouts/base.liquid 
 ---
-
 <div style="width:90vw;" id="this-is-games-page"><br>
 
-<div class="for-laptop" style="margin-top:0%;"></div>
-  
+
 <!--Find the Image-->
-<div align="center"><b><span style="font-family:open sans; font-size: 220%;">Find the Image</span></b></div>
-<div align="center"><span style="font-family:verdana; ">Wrong boxes can be mean !</span></div><br>
-<img class="back" src="/images/static/stars-in-sky.jpg" style="width:95%; max-width: 480px;aspect-ratio:1/1;"/>
+<div align="center"><b><span style="font-family:open sans; font-size: min(8vw, 50px); padding: min(5%, 12px);">Find the Image</span></b></div>
+<div align="center"><span style="font-family:open sans; font-size: min(5vw, 20px);  padding: min(5%, 12px); ">Wrong boxes can be mean !</span></div><br>
+<img class="back" src="" style="width:95%; max-width: 480px;aspect-ratio:1/1; margin: min(5%, 20px) 0;"/>
 <br>
 
 <div class="contain">
@@ -81,38 +79,43 @@ layout: layouts/base.liquid
 
 <!--Recaptcha game--
 <br><br><br><br>
-<div align="center"><b><span style="color:; font-family:open sans; font-size: 220%;">Are U HUman Game!</span></b></div>
-<div align="center"><span style="color:; font-family:verdana; ">Are you?</span></div><br>
+<div align="center"><b><span style=" font-family:open sans; font-size: 220%;">Are U HUman Game!</span></b></div>
+<div align="center"><span style=" font-family:open sans; ">Are you?</span></div><br>
 <div style="width: 90%; height: auto; min-height: 170px; max-width: 550px; background:#111; place-items:center;">
   <p style="padding: 20px 0px 20px 0px; font-size: 25px; font-family: ; color:white;">Give ur test here😉</p>
   <div class="g-recaptcha" data-sitekey="6Le6hxApAAAAAKPkWoIupIlMC2LCihRCk92VWgvP" style="padding: 5px 0px 10px 0px;"></div>
 </div>
--->
+<!-- -->
 
 <!-- Who went the fastest-->
 <div align="center" style="margin-top:10%;">
-<b><span style=" font-family:Open sans;font-size:220%; ">Bet on which horse?</span></b><br>
-<span style="font-family:verdana; ">One character runs like rocket!</span>
+<b><span style="font-family:Open sans;font-size:220%; ">Bet on which horse?</span></b><br>
+<span style="font-family:open sans; ">One character runs like rocket!</span>
 </div><br><br>
 
 <div class="fastest" style="width:90%; height: auto; display:flex; flex-direction: column; max-width:650px; overflow:hidden;" align="left">
+    <img id="egg" onclick="classList.add('eggs')" src="/images/emotes/think.png" style="width: min(30vw,180px);"/>
+    <p>Tensed Egg</p>
+
+    <img  id="cop" onclick="classList.add('cops')" src="/images/static/car.png" style="width: min(60vw,360px);"/>
+    <p>Police Van</p>
+
+    <img id="paper-frog" onclick="classList.add('froggie')"  src="/images/static/pencil-frog.png" style="aspect-ratio:16.2/16; width: min(35vw,180px)"/>
+    <p>Paper Frog</p>
+
+    <img id="stars" onclick="classList.add('starsky')" src="/images/emotes/sparkly.png" style="width: min(30vw,180px);"/>
+    <p>Shooting Stars</p>
+</div>
+
+<!-- Bring to the same size--><br>
+<div align="center" style="margin-top:5vw;">
+    <b><span style=" font-family:open sans; font-size: 220%; ">Bring Boxes to Same Size</span></b>
+</div><br>
   
-<img id="egg" onclick="classList.add('eggs')" src="/images/emotes/think.png" style="width: min(30vw,180px);"/>
-  <p>Tensed Egg</p>
+<div align="center">
+    <span style=" font-family: open sans; ">Can you do it?</span>
+</div><br>
 
-<img  id="cop" onclick="classList.add('cops')" src="/images/static/car.png" style="width: min(60vw,360px);"/>
-  <p>Police Van</p>
-
-<img id="paper-frog"  onclick="classList.add('froggie')"  src="/images/static/pencil-frog.png" style="aspect-ratio:16.2/16; width: min(35vw,180px)"/>
-  <p>Paper Frog</p>
-
-<img id="stars" onclick="classList.add('starsky')" src="/images/emotes/sparkly.png" style="width: min(30vw,180px);"/>
-  <p>Shooting Stars</p>
-  </div>
-
-<!-- Bring to the same size-->
-<br><div align="center" style="margin-top:5vw;"><b><span style="font-family:open sans; font-size: 220%; ">Bring Boxes to Same Size</span></b></div><br>
-  <div align="center"><span style="font-family:verdana; ">Can you do it?</span></div><br>
 <div id="red-box" align="left"></div>
 <div id="blue-box" align="left"></div>
 
@@ -209,8 +212,8 @@ width:300px;
 height:186px;
 }
 
-.fastest p{font-family:verdana; margin-bottom: 40px;}
-.fastest img{max-width:200px;}
+.fastest p{ font-family: open sans; font-size: min(4.5vw, 25px); margin-left: min(4%, 40px); margin-bottom: 40px;}
+.fastest img{max-width:200px; margin: min(4%, 20px) 0px; }
 .cops {
 animation-name:police-van;
 animation-iteration-count: 1;

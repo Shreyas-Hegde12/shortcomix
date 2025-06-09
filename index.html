@@ -34,13 +34,13 @@ layout: layouts/base.liquid
        
        src='/images/static/kiddo-peek.png' 
        
-       style='margin-bottom: 10%; aspect-ratio:16/15.6; width: 58vw; max-width: 300px; height: auto; transition: ease-in 0.8s; border-radius:500px; filter: opacity(0.97) contrast(0.85) brightness(1.11);' 
+       style='margin-bottom: 10%; aspect-ratio:16/15.6; width: 57vw; max-width: 300px; height: auto; transition: ease-in 0.8s; border-radius:500px; filter: opacity(0.97) contrast(0.85) brightness(1.11);' 
        tile="©Shooshoo.comics rendition of kiddo!" alt="©Shooshoo.comics rendition of kiddo!"
        onclick="window.location='#bubbles';"/>
    
   
   <!-- Comics -->
-  <div style="width: 91%; max-width: 580px; display:flex; flex-direction: row; place-items:center; justify-content:center; place-items:center; filter: contrast(0.9) saturate(0.9); margin-bottom: -0%;">
+  <div style="width: 90%; max-width: 580px; display:flex; flex-direction: row; place-items:center; justify-content:center; place-items:center; filter: contrast(0.9) saturate(0.9); margin-bottom: 0%;">
     <div class="pick-link comic-outer-square"onclick="handleComicClick(0,0)" >
       <img class="pick-img back comic-square" src="/images/sprites/placeholder.jpg" alt="Comic I chose for you" title="Comic I chose for you"/>
     <p class="subtitle" style="font-family: gloria hallelujah; font-size: min(8vw, 27px); opacity: 0.8; color: var(--dull-text); padding: 2%;">comic 1</p>
@@ -59,7 +59,7 @@ layout: layouts/base.liquid
   
   
   <!-- Clips -->
-  <div class="gray-bg" style="padding-top:9%;">
+  <div class="gray-bg" style="padding-top:9%; margin-bottom: 4%;">
     <!-- TV -->
     <div class="tv-frame" style="display:flex; border-radius: 4px; width:76%; max-width: 470px; height: auto; aspect-ratio: 16/10.45; margin-top:2%; margin-bottom: 5%; background-image: url('/images/static/tv.jpg'); background-position:5% 0; background-size: cover; position: relative; place-items:center; justify-content:center;">
       <!-- tv text--><div style="display:none; position: absolute; top:-16%; left:-11%; z-index:50; transform: rotate(-0deg);">
@@ -120,7 +120,7 @@ layout: layouts/base.liquid
   
   
   <!-- Image Bubbles -->
-  <div style="display: block; position: relative; width: 100%; max-width: 590px; height: auto; aspect-ratio: 16/14.5; overflow: hidden; scroll-behavior:smooth; margin: 5% 0 4% 0;" id="bubbles">
+  <div style="display: none; position: relative; width: 100%; max-width: 590px; height: auto; aspect-ratio: 16/14.5; overflow: hidden; scroll-behavior:smooth; margin: 4% 0 4% 0;" id="bubbles">
     <br><br>
     <!-- a. gift -->
     <div class="image-bubble" style="z-index: 1; width:40%; max-width:400px; height: auto; aspect-ratio: 16/15.5; position: relative; top:1%; left: -16.5%; border-radius: 200px; background: #181818; display: flex; justify-content:center; align-items:center;" onclick="delayLink('/news',300);">
@@ -130,8 +130,8 @@ layout: layouts/base.liquid
       </span>
     </div>
     <!-- b. shop -->
-    <div class="image-bubble" style="z-index: 2; width: 38%; max-width:400px; height: auto; aspect-ratio: 15/14; position: relative; top: -33%; left: 17%; background: rgb(61, 61, 61); border-radius: 200px; display: flex; justify-content:center; align-items:center;" onclick="delayLink('https://choose-egg-life.com',300);">
-      <img src="/images/static/shop.png" style="width: 92%; height: auto; aspect-ratio: 16/14.5; z-index: 0;" alt="Shop"/>
+    <div class="image-bubble" style="z-index: 2; width: 39%; max-width:400px; height: auto; aspect-ratio: 15/14; position: relative; top: -32%; left: 17%; background: rgb(61, 61, 61); border-radius: 200px; display: flex; justify-content:center; align-items:center;" onclick="delayLink('https://choose-egg-life.com',300);">
+      <img src="/images/static/shop.png" style="width: 92%; height: auto; aspect-ratio: 16/15; z-index: 0;" alt="Shop"/>
       <span style="color: white; font-family: acme; font-size:min(5.7vw,32px); font-weight: bold; background-color: #493c68; border-radius: 50px; position: absolute; top: 68%; left: 50%; transform: translateX(-46%); padding: 0px 7% 0px 7%;">
         Shop
       </span>
@@ -354,7 +354,7 @@ layout: layouts/base.liquid
       <!-- b. big frog text -->
       <div style="height:auto; width: 55%; text-align:center; justify-content:center; place-items:center; margin-right:32px;">
         <p class="d-frog-text" style="font-family: open sans; font-size:min(3.8vw,27px); line-height:1.5;">
-          Hey, thanks for visiting my website.<br>If you liked it, hit this frog's head !!
+          Hey, thanks for visiting my website !<br>If you liked it, hit this frog's head !!
         </p>
       </div>
     </div>
@@ -464,7 +464,7 @@ animation: moving_car 4s infinite;
      border: 5px solid #8997d7!important;
      padding: 4px;
      border-radius: 30px;
-     filter: contrast(1) saturate(0.95) hue-rotate(0deg);
+     filter: contrast(1) saturate(1) hue-rotate(0deg);
 }
 #change{
  margin-left: 3%;
@@ -503,7 +503,7 @@ animation: moving_car 4s infinite;
 }
 .boxes img {
      width: 80%;
-     margin-bottom: 8px;
+     margin-bottom: min(5%, 15px);
 }
 
 #coffee-cup-menu {
