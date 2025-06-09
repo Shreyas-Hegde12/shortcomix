@@ -529,7 +529,7 @@ async function searchComics() {
 
 		const tagMatch = comic.keywords.some(keyword => 
 			searchWords.some(word => 
-				word.length > 2 && keyword.toLowerCase().includes(word)
+				word.length > 2 && (keyword.toLowerCase().includes(word) || word.toLowerCase().includes(keyword))
 			)
 		);
 
