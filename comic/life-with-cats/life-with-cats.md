@@ -2,7 +2,7 @@
 layout: /layouts/post.liquid
 tags:
 - life
-- cats
+- cat
 - paws
 - home
 - fridge
