@@ -7,3 +7,8 @@
   for = "/blogger_sitemap.xml"
   [headers.values]
     Access-Control-Allow-Origin = "*"
+
+[[headers]]
+  for = "/sitemap.xml"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
