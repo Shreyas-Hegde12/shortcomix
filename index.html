@@ -40,7 +40,7 @@ layout: layouts/base.liquid
    
   
   <!-- Comics -->
-  <div style="width: 90%; max-width: 580px; display:flex; flex-direction: row; place-items:center; justify-content:center; place-items:center; filter: contrast(0.9) saturate(0.9); margin-bottom: 0%;">
+  <div style="width: 90%; max-width: 580px; display:flex; flex-direction: row; place-items:center; justify-content:center; place-items:center; filter: contrast(0.9) saturate(0.9); margin-bottom: 2%;">
     <div class="pick-link comic-outer-square"onclick="handleComicClick(0,0)" >
       <img class="pick-img back comic-square" src="/images/sprites/placeholder.jpg" alt="Comic I chose for you" title="Comic I chose for you"/>
     <p class="subtitle" style="font-family: gloria hallelujah; font-size: min(8vw, 27px); opacity: 0.8; color: var(--dull-text); padding: 2%;">comic 1</p>
@@ -67,7 +67,7 @@ layout: layouts/base.liquid
       <div class="my-tv-text" style="background:#4356b7; filter: hue-rotate(-0deg) saturate(1.05);border-radius:100px; width: min(15.5vw,80px); height:auto; aspect-ratio:1/1; color:white; position:absolute; top: 2%; left:75%; z-index: 20; display:flex; justify-content:center; place-items:center; text-align:center;transform: scale(0.9) rotate(0deg) ;"><span style="font-size: min(9vw,44px); font-family:open sans; position:relative;overflow:hidden;">Tv</span></div></div>
       <!-- tv embed -->
       <div class="tv-embed" style="position: relative; width: 90%; height: auto; border-radius: 0px; transform: translateX(-0%); max-width: 450px; aspect-ratio: 16/9.4; overflow:hidden; background: transparent; z-index: 10;">
-        <img class="back" src="/images/static/first-video-thumbnail.jpg" style="width: 0%; height: auto; position:absolute; top: 0px; left: 0px; display:block;"/>
+        <img class="back" src="/images/static/first-video-thumbnail.jpg" style="width: 0%; height: auto; position:absolute; top: 0px; left: 0px; display:block;" alt="First Video Thumbnail"/>
         <iframe class="yt-video" data-src="https://www.youtube-nocookie.com/embed/eRCSrBXMto0?rel=0&enablejsapi=1&autoplay=1" style="display:none;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;" title="TV"></iframe>
         <!-- crt tv like lined overlay -->
          <div class="scan-overlay">
@@ -293,7 +293,7 @@ layout: layouts/base.liquid
               <!-- tv embed -->
               <div class="d-tv-embed" style="width: 90%; height: auto; max-width: 580px; aspect-ratio: 16/9.4; overflow:hidden; z-index: 10; position:relative;">
         <iframe class="d-yt-video" data-src="https://www.youtube-nocookie.com/embed/eRCSrBXMto0?rel=0&enablejsapi=1" style="display:none;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;" title="TV"></iframe>
-                <img class="back" src="/images/static/first-video-thumbnail.jpg" style="width: 0%; height: auto; position:absolute; top: 0px; left: 0px; display:block;"/>
+                <img class="back" src="/images/static/first-video-thumbnail.jpg" style="width: 0%; height: auto; position:absolute; top: 0px; left: 0px; display:block;" alt="First Video Thumbnail"/>
          <!-- crt tv like lined overlay -->
          <div class="d-scan-overlay">
            <div class="d-scan-line"></div>
