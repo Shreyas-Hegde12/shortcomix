@@ -55,7 +55,8 @@ document.addEventListener('DOMContentLoaded', function() {
 		sizeTracker();
 	}
 	else if(document.querySelector('#this-is-about-page') != null){
-		replaceText();
+		replaceText(); 
+		preloadImage('https://media.tenor.com/WXqqrqOKbqUAAAAM/remi-gaillard-twitter.gif');
 	}
 
 });
@@ -102,16 +103,11 @@ function polishComicPage() {
 		}
 }
 
-
 function polishHomePage() {
 
     // a. Carousel Preload Images
 	carouselImages.forEach(image => {
-  		const link = document.createElement('link');
-  		link.rel = 'preload';
-  		link.as = 'image';
-  		link.href = image.src;
-  		document.head.appendChild(link);
+  		preloadImage(image.src);
 	});
 
 
@@ -160,11 +156,7 @@ function polishHomePage() {
         	entries.forEach(entry => {
             	if (entry.isIntersecting) {
                 	const thumbnail = document.querySelector('.tv-embed img').src;
-                	const link = document.createElement('link');
-                	link.href = thumbnail;
-					link.rel = 'preload';
-					link.as = 'image';
-					document.head.appendChild(link);
+                	preloadImage(thumbnail);
                 	observer.disconnect(); // Completely stops the observer
             	}
         	});
@@ -321,6 +313,15 @@ function clipboard(text) {
 
 	// Write to clipboard
 	navigator.clipboard.writeText(copyText);
+}
+
+// Preload Images
+function preloadImage(url){
+	const link = document.createElement('link');
+	link.href = url;
+	link.rel = 'preload';
+	link.as = 'image';
+	document.head.appendChild(link);
 }
 
 // Signal Copy to user (Optional)
