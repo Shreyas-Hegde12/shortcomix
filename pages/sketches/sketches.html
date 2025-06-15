@@ -6,7 +6,7 @@ layout: layouts/base.liquid
 <div class="width-limit">
   <div class="for-mobile"> <br><br><br></div>
   
-  <div class="iframe-container" style="">
+  <div class="iframe-container">
     <h1 style="font-size: min(6vw, 30px)!important; font-family: acme!important;">Pick a Sketch Book </h1>
     <iframe src=""></iframe>
     <div class="simplify-notes" onclick="openSketch(2); updateSimplifyPrompt();">See Cleaned Notes instead !</div>
@@ -43,6 +43,7 @@ layout: layouts/base.liquid
   padding: 10px 20px;
     height: auto;
     width: 40%;
+    display: none;
   color: white;
   font-weight: bold;
     font-family: acme;
@@ -96,40 +97,39 @@ function openSketch(idx){
   const calculatedHeightForIframe = ( iframeContainer.getBoundingClientRect().width * 6.5 )/5 + 'px'; 
   
   pdfBox.src= available_sketches[idx]["url"]; 
+  if(pdfBox.style.background != "var(--gray-bg-element)"){ pdfBox.style.background = "var(--gray-bg-element)"; }
+  pdfBox.onload = () => {
+  		updateSimplifyPrompt();
+  };
   if(iframeContainer.style.height != calculatedHeightForIframe){ iframeContainer.style.height = calculatedHeightForIframe; }
 }
   
   
 function updateSimplifyPrompt() {
   const pdfBox = document.querySelector('.iframe-container iframe');
-  const prompt = document.querySelector(".simplify-notes");
-  const targetURL = "https://drive.google.com/file/d/1BV_tDea0iFlNGEwkBtwyO9zz25BJwMTF/preview";
+  const simplifyBtn = document.querySelector(".simplify-notes");
+  const messyNotebook = "https://drive.google.com/file/d/1BV_tDea0iFlNGEwkBtwyO9zz25BJwMTF/preview";
   
-  if (pdfBox.src == targetURL) {
+  if (pdfBox.src == messyNotebook) {
     setTimeout(()=>{
-    	prompt.style.opacity = "1";
-    	prompt.style.bottom = "25%";
+    	simplifyBtn.style.opacity = "1";
+    	simplifyBtn.style.bottom = "25%";
 
     	setTimeout(() => {
-     		prompt.style.bottom = "15%";
+     		simplifyBtn.style.bottom = "15%";
     	}, 300); // snap-back effect
-        setTimeout(() => {
-          	prompt.style.opacity = "0";
-     		prompt.style.bottom = "-10%";
-    	}, 4000); // snap-back effect
-    }, 2500);
+    }, 100);
   } else {
-    prompt.style.opacity = "0";
-    prompt.style.bottom = "-10%";
+    simplifyBtn.style.opacity = "0";
+    simplifyBtn.style.bottom = "-10%";
   }
 }
 
   
-  
 function sketchTags(){
   const sketchSelect = document.querySelector(".available-tags");
   available_sketches.map(function(sketchObject, index){
-    const html = `<div class="available-tag" onclick="openSketch(${index}); updateSimplifyPrompt();">${sketchObject["name"]}</div>`;
+    const html = `<div class="available-tag" onclick="openSketch(${index});  ${index === 0 ? 'document.querySelector(\'.simplify-notes\').style.display=\'block\';' : ''}">${sketchObject["name"]}</div>`;
     sketchSelect.insertAdjacentHTML("beforeend",html);
   });
 }
