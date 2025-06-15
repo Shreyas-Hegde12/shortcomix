@@ -6,7 +6,7 @@ layout: layouts/base.liquid
 <!-- Page id -->
 <div id="this-is-story-page"></div>
   
-
+  
 <!-- Sticky Header  -->
   <div class="about-page-header for-mobile for-laptop" style="display:flex; flex-direction:row; gap: 25%; width:100%; height: 9vh; max-height: 100px; position:fixed; top:0px; left:0px; z-index: 10; text-align: right; background: rgba(255,255,255, 0.2); backdrop-filter:blur(20px); transform: translateY(0%); justify-content:center; place-items:center; overflow: visible;">
     <p onclick="window.location.href='/#home-page';" style="width: auto; height:55%; aspect-ratio:2.1/1!important; font-family:acme; padding: 3px; background: rgba(200,200,200,0.4); backdrop-filter:blur(20px); border-radius:40px;" id="logo-replace">&emsp;&emsp;&emsp;</p>
@@ -17,12 +17,20 @@ layout: layouts/base.liquid
 <!-- Book tape-->
 <div class="book-tape for-mobile">
   <img src="/images/static/book-tape.jpg" alt="Book Tape Background"/>
-  <a href="/" >
+    
+    <a href="/home" >
+      <img class="portal-to-home" src="/images/static/spinning-portal.png" alt="Portal Back to Home"/>
+  	</a>
+</div>
+
+<!-- portal for laptop -->
+<div class="for-laptop">
+  <a href="/home" >
     <img class="portal-to-home" src="/images/static/spinning-portal.png" alt="Portal Back to Home"/>
   </a>
 </div>
 
-<div class="width-limit">
+<div class="width-limit">  
 
 <!-- The Book -->
 <div class="book-wrap">
@@ -42,19 +50,18 @@ layout: layouts/base.liquid
 
     <!-- c. Secret map -->
     <div class="the-map">
-      <!--<iframe class="for-mobile for-laptop" src="https://drive.google.com/file/d/1F2l-R5dxQBDgEdqbpSP8hw9KbCIY6fWu/preview"></iframe>-->
       <img alt="map content" class="back" src="/images/static/map-for-book.jpg"/> 
     </div>
 </div>
 
   
-<!-- text --><br><br><br>
+<!-- text --><br><br> 
 <div class="">
   <p style="font-size: min(8vw, 42px); width: 100%; font-family: indie flower; font-weight:bold;">
-	Hey there
+It has arrived !
   </p> 
-  <p class="para1" style="width: 85%; max-width: 400px; font-size: min(5vw,22px); margin: 11% 0 0% 0; font-family: sedan; text-align:center;">
-	I have a few sheets scribbled with damn silly stories.<br> 
+  <p class="para1" style="width: 85%; max-width: 400px; font-size: min(4vw,22px); margin: 4% 0 0% 0; font-family: sedan; text-align:center;">
+An amazon parcel you never ordered. <br> A book you never wanted! But here it is! <br> Read it. <br><br>10 Silly Short Stories with cartoons drawn all over it like your 4 year old son did on the wall  <br><br> And and and, cherry on top, do you know who gave it a ⭐⭐⭐⭐ star?? <br><br> ChatGPT! <!-- I have a few sheets scribbled with damn silly stories. --><br> 
   </p>
 </div>
   
@@ -72,6 +79,7 @@ layout: layouts/base.liquid
 </div>
 
 <style>
+  
 :root {
   --lock-background: rgba(255,255,255,0.5);
   --lock-background-two:  rgba(0,0,0,0.2);
@@ -84,18 +92,19 @@ layout: layouts/base.liquid
   }
 } 
   
-#open-mobile-menu, .mobile-header, .desktop-menu, .common-gap{display:none!important;}
+#open-mobile-menu, .mobile-header, .desktop-menu {display:none!important;}
 
 #faq:target{display:block!important;}  
 #a0zVs5q:target{display:none!important;}
   
 .width-limit{max-width: 600px;}
   
-.book-tape{
-  width: 0%;
+
+.book-tape {
+  width: 100%;
   height: auto;
   aspect-ratio: 16/8; 
-  max-width: 600px; 
+  background: var(--gray-bg);/*#3e416b;*/
   position:relative; 
   margin:5% 0 0 0%; 
   overflow:hidden;
@@ -110,9 +119,9 @@ layout: layouts/base.liquid
 }
 .portal-to-home{
   position:absolute; 
-  top: 23%;
+  top: 23%; 
   left: 7.5%; 
-  width: 31%; 
+  width: 32%; 
   max-width: 200px; 
   height: auto; 
   aspect-ratio: 1/0.96;
@@ -167,6 +176,7 @@ layout: layouts/base.liquid
   aspect-ratio: 16/11.5;  
   filter: hue-rotate(-20deg) saturate(1.2); 
   animation: 5s map_steer infinite;
+  transform: rotateZ(6deg);
 }
 .lock-thumb img{
   width: 100%;
@@ -218,9 +228,33 @@ layout: layouts/base.liquid
 /* Media Queries */
 @media(max-width:650px){
   .foot-links{margin-top:10%;}
+  .common-gap{display: none!important;}
 }
 @media(min-width:650px){
   .foot-links{margin-top:10%;}
+  .about-page-header{max-height: 150px!important;} 
+  
+  .portal-to-home{
+  position:absolute; 
+  top: 5%; 
+  left: 5%; 
+  width: 12vw; 
+  max-width: 400px; 
+  height: auto; 
+  aspect-ratio: 1/0.96;
+  animation: portal_spin 7s ease infinite;
+  }
+  .book-wrap{ border-radius: 40px; }
+  .lock{ backdrop-filter: blur(5px)!important; }
+  .lock-thmb{
+  width: 50%!important; 
+  height: auto; 
+  max-width: 400px; 
+  aspect-ratio: 16/16!important;  
+  filter: hue-rotate(90deg) saturate(1)!important; 
+  animation: 5s map_steer infinite;
+  transform: rotateZ(6deg);
+  }
 }
  
 /* Keyframes */
@@ -228,18 +262,12 @@ layout: layouts/base.liquid
 to{transform: rotate(-360deg);}
 }
 @keyframes map_steer{
-0%{transform: rotateZ(5deg);}
-50%{transform:rotateZ(-5deg);}
-100%{transform: rotateZ(5deg);}
+50%{transform:rotateZ(-4deg);}
 }
 @keyframes opening_map{
 to{transform:scale(0.8); opacity:1;}
 } 
-  
-     
-  @media(min-width:650px){
-    .about-page-header{max-height: 150px!important;}
-   }
+ 
     
   @media(prefers-color-scheme:dark){
     .links a{color:white!important;} 
@@ -251,7 +279,7 @@ to{transform:scale(0.8); opacity:1;}
     
   
   #logo-replace::before{
-    content:''; background: url('/images/static/spinning-portal.png') no-repeat; background-size:cover; width: auto; height:140%; aspect-ratio:16/16; position:absolute; transform: translate(-10%,-14%) scale(1.04); left: 0px; display:inline-block; border-radius:5px; border: 0px solid white; transition: 0.2s ease;
+    content:''; background: url('/images/static/favicon.png') no-repeat; background-size:cover; width: auto; height:140%; aspect-ratio:16/16; position:absolute; transform: translate(-10%,-14%) scale(1.04); left: 0px; display:inline-block; border-radius:5px; border: 0px solid white; transition: 0.2s ease;
   }
   
   #logo-replace:hover::before{
@@ -268,14 +296,12 @@ function lock(){
   	document.querySelectorAll('p').forEach(p=>{p.style.display='none'});
     return
   }
-  
-  setTimeout(()=>{
-      document.querySelector('.lock').style.opacity="1";
-      document.querySelector('.lock').style.pointerEvents="auto";
-      document.querySelector('.book-wrap').style.pointerEvents="auto";
-  },700);
+  if(0){ document.querySelector('.lock-thumb img').src = '/images/static/map-legacy.png'; }
+  document.querySelector('.lock').style.opacity="1";
+  document.querySelector('.lock').style.pointerEvents="auto";
+  document.querySelector('.book-wrap').style.pointerEvents="auto";
 }
-  
+
 function map(){
   const lockImg = document.querySelector('.lock-thumb img');
   lockImg.style.transition = 'transform 1s ease';
@@ -288,3 +314,4 @@ function map(){
   document.querySelector('.lock').style.background = color; 
 }
 </script>
+  

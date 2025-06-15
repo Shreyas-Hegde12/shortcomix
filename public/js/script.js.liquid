@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 	loadFonts();
 	
-	if (0 && visits < 10 && menuOpened == 'false'){
+	if (visits < 10 && menuOpened == 'false'){
 		visits += 1; 
 		if(localStorage) localStorage.setItem("userNew", visits);
 		// Show a flag on menu icon and say 'I am Menu'
@@ -406,35 +406,40 @@ theText = theText.replace(/!smile/gi, "<img src='/images/emotes/smile.png'class=
 }
 
 
-
 // Easter Egg Message Map
-const recordsElement = document.querySelector("#records");
+const passwordBox = isMobile ? 'password' : 'd-password';
+const records = isMobile ? '#records' : '#d-records';
+const recordsElement = document.querySelector(records);
 
 const messageMap = {
     1: "The frog is ded😔💐.",
     5: "Stop stabbing 😠💢🫵",
-    11: "<span id='password' onclick='clipboard(&quot;🍰🌓aepayssia&quot;);' style='display: inline-block; font-family: open sans; font-size: inherit; user-select: none;'>aepayssia</span>",
+    11: `<span id='${passwordBox}' onclick="clipboard('🍰🌓aepayssia'); signalCopy(records,'Copied!')" class="gray-bg-element twinkling" style='display: inline-block; font-family: open sans; font-size: inherit; padding: 5px 7px;'>🍰🌓aepayssia</p>`,
     12: "Frog face is no more recognizable🤕..",
     20: "Leave this poor lil🤏 frog🥺. Dude..",
     25: () => {
+	  const unscrambler = isMobile ? '#unscrambler' : '#d-unscrambler';
       recordsElement.innerHTML = "The knife is ultra red🩸";
-      document.querySelector("#unscrambler").style.display = "block";
+      document.querySelector(unscrambler).style.display = "block";
     },
     26: () => {
+	  const unscrambler = isMobile ? '#unscrambler' : '#d-unscrambler';
       recordsElement.innerHTML = "Stabbing is crime, I repeat🤧";
-      document.querySelector("#unscrambler").style.display = "none";
+      document.querySelector(unscrambler).style.display = "none";
     },
     40: () => {
+	  const music = isMobile ? '#music' : '#d-music';
+	  const musicIframe = isMobile ? '#music iframe' : '#d-music iframe';
       recordsElement.innerHTML = "You are a dangerous guy💀! </br> Cruel is your name..</br>";
-      document.querySelector('#music iframe').src = 'https://res.cloudinary.com/dzss5ged8/video/upload/v1725563540/dangerous-michael-jackson-the-immortal-12650_mp3cut.net_x9txnk.mp3';
-      document.querySelector('#music').style.display = 'block';
+      document.querySelector(musicIframe).src = 'https://res.cloudinary.com/dzss5ged8/video/upload/v1725563540/dangerous-michael-jackson-the-immortal-12650_mp3cut.net_x9txnk.mp3';
+      document.querySelector(music).style.display = 'block';
     },
     50: () => {
+	  const music = isMobile ? '#music' : '#d-music';
       recordsElement.innerHTML = "Thanos says - The End";
-      document.querySelector('#music').style.display = 'none'; 
+      document.querySelector(music).style.display = 'none'; 
     }
   };
-
 
 // Like Animation
 function likeAnimation(){

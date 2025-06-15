@@ -94,7 +94,7 @@ aspect-ratio: 1/1;
 display: flex;
 width: 100vw;
 height: 100%;
-clip-path: circle(0% at 50% 92%);
+clip-path: circle(0% at 50% 90%);
 will-change: clip-path;
 position: fixed;
 bottom: 0px;
@@ -111,7 +111,7 @@ flex-direction: column;
 justify-content:center;
 place-items:center;
 gap: 5vw;
-transform: translateY(-2%);
+transform: translateY(-5%);
 }
 .mobile-menu ul li {
 width:100%;
@@ -196,7 +196,7 @@ filter: saturate(0) contrast(0.99) opacity(0.85) brightness(1.05);
 .common-gap {margin-top:5%;}
 .carousel{position:absolute; top:45vh; left: 50vw; transform:translate(-50%,-50%); transition: top 2s ease; z-index: 500;}
 .emoji-carousel{width: 60vw;}
-.for-laptop{display:none!important;}
+.for-laptop{max-height:0px!important; overflow:hidden!important;}
 
 .nav-next:hover {animation: nav-next 1.2s 1; transition: linear 1.2s 1;}
 .nav-prev:hover {animation: nav-prev 1.2s 1; transition: linear 1.2s 1;}
@@ -255,7 +255,7 @@ clip-path: polygon(0% 0%, 100% 0, 100% 88%, 50% 100%, 0 88%);
 /* COLOR PREFERENCE */
 @media(prefers-color-scheme: light)
 {
-:root {--primary-bg: #fff; --primary-text: #000; --gray-bg: #eee; --gray-bg-element: #ddd; --dull-text-clr: #222; --comic-square-shadow: #ccc;}
+:root {--primary-bg: #fff; --primary-text: #000; --gray-bg: rgba(238,238,238,0.8); --gray-bg-element: #ddd; --dull-text-clr: #222; --comic-square-shadow: #ccc;}
 
 #open-mobile-menu{background: white; box-shadow: 0px 0px 35px 30px #f5f5f5; border: 6px solid #fff;}
 #hcb_form_content{background-color: #ddd;}
@@ -267,7 +267,7 @@ clip-path: polygon(0% 0%, 100% 0, 100% 88%, 50% 100%, 0 88%);
 
 @media(prefers-color-scheme: dark)
 {
-:root {--primary-bg: #252525; --primary-text: #fff; --gray-bg: #171717; --gray-bg-element: #333; --dull-text-clr: #eee; --comic-square-shadow: #000;}
+:root {--primary-bg: #252525; --primary-text: #fff; --gray-bg: rgba(17,17,17,0.7); --gray-bg-element: #333; --dull-text-clr: #eee; --comic-square-shadow: #000;}
 
 #open-mobile-menu {background: black; box-shadow: 0px 0px 65px 55px black; border: 6px solid #555; } 
 #hcb_form_content {background-color: #333;}
@@ -337,11 +337,12 @@ to{transform: rotateZ(-20deg);}
 @keyframes appear_disappear 
 {
 0%{transform: translate(-50%,0) rotate(10deg); opacity:0; width: 125%;}
-25%{transform: rotate(10deg) translate(-50%,-0%); opacity:1; width: 125%;}
-50%{transform: rotate(15deg) translate(-50%,-10%); opacity:1; width: 125%;}
-75%{transform: rotate(10deg) translate(-50%, -0%); opacity:1; width: 125%;}
+10%{transform: rotate(10deg) translate(-50%,-0%); opacity:1; width: 125%;}
+40%{transform: rotate(15deg) translate(-50%,-10%); opacity:1; width: 125%;}
+95%{transform: rotate(10deg) translate(-50%, -0%); opacity:1; width: 125%;}
 100%{transform: rotate(10deg) translate(-50%,0%); opacity:0; width: 125%;}
 }
+
 @keyframes reveal_menu_icon
 {
 0%{clip-path: circle(100%); }
@@ -407,7 +408,7 @@ background-size: cover;
 position: absolute; top: -90%; left: 90%;
 transform: translate(-50%,0) rotate(10deg);
 animation: var(--i-am-menu-animation);
-animation-delay: 0;
+animation-delay: 3s;
 opacity: 0;
 z-index: 15;
 display: block;
