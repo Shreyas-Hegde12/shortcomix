@@ -6,10 +6,10 @@ layout: layouts/base.liquid
 <div id="this-is-sketches-page"></div>
 
 <div class="width-limit">
-  <div class="for-laptop"> <br><br> </div> <br>
+  <div class="for-mobile"> <br><br><br> </div>
 
   <!-- SketchBook Marker -->
-  <div id="bring-into-view"></div><br>
+  <div id="bring-into-view"></div>
   
   <!-- SketchBook Viewer-->
   <div class="iframe-container">
@@ -18,8 +18,7 @@ layout: layouts/base.liquid
     
     <!-- Simplify Notes Button -->
     <div class="recommendation-btn" onclick="openSketch(2); recommendationPrompt();">See Cleaned Notes instead !</div>
-  </div>
-  <br><br>
+  </div> <br><br>
   
   
   <!-- Sketch Tags Listed -->
@@ -32,7 +31,7 @@ layout: layouts/base.liquid
   
 <style>
   ::-webkit-scrollbar {display:none!important;}
-  .desktop-meu, #open-mobile-menu {display: none!important;}
+  .desktop-menu, #open-mobile-menu {display: none!important;}
   .width-limit{max-width: 600px; align-items: center; display: flex; flex-direction: column;}
   .bring-to-bottom:hover{ transform: translateY(10%); }
   
@@ -69,7 +68,7 @@ layout: layouts/base.liquid
   /* Sketch Tags List */
   .sketch-tags::-webkit-scrollbar { display: none; }
   .available-tag {width: auto; height: 100%; flex-shrink: 0; display: flex; justify-content: center; align-items: center; 
-    font-size: min(4.5vw, 25px); font-family: acme; background: var(--gray-bg-element); border-radius: 30px; padding: 5% 10%; cursor: pointer; }
+    font-size: min(4.5vw, 25px); font-family: acme; background: var(--gray-bg-element); border-radius: 30px; padding: 3% 7%; cursor: pointer; }
   .available-tag:hover{opacity: 0.8;}
 
   .sketch-tags-section::after { /* Soft shadow to right of sketch tags list to hint left to right scrolling */
