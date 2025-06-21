@@ -3,73 +3,76 @@ title:  'Sketches 🖼️ | Do you sketch in your notebooks when bored in class?
 permalink: "/sketches/"
 layout: layouts/base.liquid 
 ---
+<div id="this-is-sketches-page"></div>
+
 <div class="width-limit">
-  <div class="for-mobile"> <br><br><br></div>
+  <div class="for-laptop"> <br><br> </div> <br>
+
+  <!-- SketchBook Marker -->
+  <div id="bring-into-view"></div><br>
   
+  <!-- SketchBook Viewer-->
   <div class="iframe-container">
     <h1 style="font-size: min(6vw, 30px)!important; font-family: acme!important;">Pick a Sketch Book </h1>
     <iframe src=""></iframe>
-    <div class="simplify-notes" onclick="openSketch(2); updateSimplifyPrompt();">See Cleaned Notes instead !</div>
+    
+    <!-- Simplify Notes Button -->
+    <div class="recommendation-btn" onclick="openSketch(2); recommendationPrompt();">See Cleaned Notes instead !</div>
   </div>
   <br><br>
   
+  
+  <!-- Sketch Tags Listed -->
   <div class="sketch-tags-section" style="width: 100%; position:relative;">
     <div class="sketch-tags" style="width: 100%; overflow-y: hidden; overflow-x: auto;">
-      <div class="available-tags" style="width: max-content; height: 100%; display: flex;flex-direction:row;gap: min(5%, 30px); padding: 0 40px;"></div>
+      <div class="available-tags" style="width: max-content; height: 100%; display: flex;flex-direction:row;gap:min(5%, 30px);padding: 0 40px;"></div>
     </div>
-  </div>
-<br><br>
-
-<style>
-  .desktop-menu, #open-mobile-menu{display: none!important;}
-  .width-limit{max-width: 600px; align-items: center; display: flex; flex-direction: column;}
+  </div> <br><br><br>
   
+  
+<style>
+  ::-webkit-scrollbar {display:none!important;}
+  .desktop-meu, #open-mobile-menu {display: none!important;}
+  .width-limit{max-width: 600px; align-items: center; display: flex; flex-direction: column;}
+  .bring-to-bottom:hover{ transform: translateY(10%); }
+  
+  /* SketchBook Viewer */
   .iframe-container{ width: 85%; position: relative; overflow: hidden;  height: min(20vw, 200px); transition: height 1s ease; background: var(--gray-bg); justify-content: center; align-items: center; display: flex; border-radius: 40px; }
   iframe{width: 100%;  height: 100%; border-radius: 40px; position: absolute; z-index: 1;}
   
-  .sketch-tags::-webkit-scrollbar { display: none; }
-  .available-tag {width: auto; height: 100%; flex-shrink: 0; display: flex; justify-content: center; align-items: center; font-size: min(4.5vw, 25px); font-family: acme; background: var(--gray-bg-element); border-radius: 30px; padding: 3% 7%; cursor: pointer; }
-  
-  
-  .simplify-notes {
+  /* Simplify Notes Button */
+  .recommendation-btn {
   position: absolute;
   bottom: -10%;
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
-  opacity: 0;
+  z-index: 10;
+  display: none;
+  width: 40%;
+  padding: 10px 20px;
   background: #111;
+  color: white;
+  font-family: acme;
+  font-size: min(4.7vw, 18px);
+  font-weight: bold;
   border: 2px solid rgba(255, 255, 255, 0.6);
   border-radius: 20px;
-  padding: 10px 20px;
-    height: auto;
-    width: 40%;
-    display: none;
-  color: white;
-  font-weight: bold;
-    font-family: acme;
-    font-size: min(4.7vw, 18px);
-    cursor: pointer;
-  box-shadow: 0 0 10px rgba(255,255,255,0.5);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  opacity: 0;
+  cursor: pointer;
   animation: glow-rotate 2s linear infinite;
-  transition: opacity 0.4s ease, bottom 0.6s ease;
+  transition: opacity 0.4s ease, bottom 0.8s ease;
   pointer-events: auto;
-  z-index: 10;
-  }
-
-@keyframes glow-rotate {
-  0% {
-    box-shadow: 0 0 10px rgba(255,255,255,0.3), 0 0 20px rgba(255,255,255,0.2);
-    transform: translateX(-50%) rotate(0deg);
-  }
-  100% {
-    box-shadow: 0 0 20px rgba(255,255,255,0.8), 0 0 40px rgba(255,255,255,0.5);
-    transform: translateX(-50%) rotate(0deg);
-  }
 }
+
   
+  /* Sketch Tags List */
+  .sketch-tags::-webkit-scrollbar { display: none; }
+  .available-tag {width: auto; height: 100%; flex-shrink: 0; display: flex; justify-content: center; align-items: center; 
+    font-size: min(4.5vw, 25px); font-family: acme; background: var(--gray-bg-element); border-radius: 30px; padding: 5% 10%; cursor: pointer; }
   .available-tag:hover{opacity: 0.8;}
 
-  .sketch-tags-section::after {
+  .sketch-tags-section::after { /* Soft shadow to right of sketch tags list to hint left to right scrolling */
   content: "";
   position: absolute;
   right: 0;
@@ -79,15 +82,29 @@ layout: layouts/base.liquid
   pointer-events: none;
   background: linear-gradient(to right, transparent, var(--primary-bg)); /* fade into page bg */
   }
+
+
+
+@keyframes glow-rotate {
+  0% {
+    box-shadow: 0 0 10px rgba(255,255,255,0.3), 0 0 20px rgba(255,255,255,0.2);
+    transform: translateX(-50%) rotate(0deg);
+  }
+  100% {
+    box-shadow: 0 0 30px rgba(255,255,255,1), 0 0 40px rgba(255,255,255,1);
+    transform: translateX(-50%) rotate(0deg);
+  }
+}
+ 
 </style>
 
 
 <script>
   
 const available_sketches = [
-  {"name": "My engineering college notebook", "url":"https://drive.google.com/file/d/1BV_tDea0iFlNGEwkBtwyO9zz25BJwMTF/preview"},
+  {"name":"My engineering college notebook", "url":"https://drive.google.com/file/d/1BV_tDea0iFlNGEwkBtwyO9zz25BJwMTF/preview"},
   {"name":"Just Sketches", "url":"https://drive.google.com/file/d/1EoK5VA2XFmOHeSf1YP-JzSDxBxuEH-NM/preview"},
-  {"name":"notebook cleaned", "url":"https://drive.google.com/file/d/1tOK-7-Ti-P3xsFWscPccPa0p4cIpYZPi/preview"}
+  {"name": "notebook cleaned", "url":"https://drive.google.com/file/d/1D3VHXohWO6o76GEGaoDsnZTe7df-5f2w/preview"}
 ];
   
 
@@ -95,33 +112,36 @@ function openSketch(idx){
   const pdfBox = document.querySelector('.iframe-container iframe');
   const iframeContainer = document.querySelector('.iframe-container');
   const calculatedHeightForIframe = ( iframeContainer.getBoundingClientRect().width * 6.5 )/5 + 'px'; 
-  
+ 
   pdfBox.src= available_sketches[idx]["url"]; 
   if(pdfBox.style.background != "var(--gray-bg-element)"){ pdfBox.style.background = "var(--gray-bg-element)"; }
   pdfBox.onload = () => {
-  		updateSimplifyPrompt();
+  		recommendationPrompt();
+    	//window.location = '#bring-into-view'
   };
   if(iframeContainer.style.height != calculatedHeightForIframe){ iframeContainer.style.height = calculatedHeightForIframe; }
 }
   
   
-function updateSimplifyPrompt() {
+function recommendationPrompt() {
   const pdfBox = document.querySelector('.iframe-container iframe');
-  const simplifyBtn = document.querySelector(".simplify-notes");
-  const messyNotebook = "https://drive.google.com/file/d/1BV_tDea0iFlNGEwkBtwyO9zz25BJwMTF/preview";
+  const btn = document.querySelector(".recommendation-btn");
+  const targetOnPDF = "https://drive.google.com/file/d/1BV_tDea0iFlNGEwkBtwyO9zz25BJwMTF/preview";
   
-  if (pdfBox.src == messyNotebook) {
+  if (pdfBox.src == targetOnPDF) {
     setTimeout(()=>{
-    	simplifyBtn.style.opacity = "1";
-    	simplifyBtn.style.bottom = "25%";
+    	btn.style.opacity = "1";
+    	btn.style.bottom = "25%";
 
     	setTimeout(() => {
-     		simplifyBtn.style.bottom = "15%";
-    	}, 300); // snap-back effect
-    }, 100);
+     		btn.style.bottom = "15%";
+    	}, 400); // snap-back effect
+    }, 1000);
   } else {
-    simplifyBtn.style.opacity = "0";
-    simplifyBtn.style.bottom = "-10%";
+    setTimeout( () => {
+    	btn.style.opacity = "0";
+    	btn.style.bottom = "-10%";
+    }, 500);
   }
 }
 
@@ -129,7 +149,7 @@ function updateSimplifyPrompt() {
 function sketchTags(){
   const sketchSelect = document.querySelector(".available-tags");
   available_sketches.map(function(sketchObject, index){
-    const html = `<div class="available-tag" onclick="openSketch(${index});  ${index === 0 ? 'document.querySelector(\'.simplify-notes\').style.display=\'block\';' : ''}">${sketchObject["name"]}</div>`;
+    const html = `<div class="available-tag" onclick="openSketch(${index});  ${index === 0 ? 'document.querySelector(\'.recommendation-btn\').style.display=\'block\';' : ''}">${sketchObject["name"]}</div>`;
     sketchSelect.insertAdjacentHTML("beforeend",html);
   });
 }

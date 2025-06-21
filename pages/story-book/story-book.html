@@ -5,86 +5,80 @@ layout: layouts/base.liquid
 ---
 <!-- Page id -->
 <div id="this-is-story-page"></div>
-  
-  
-<!-- Sticky Header  -->
-  <div class="about-page-header for-mobile for-laptop" style="display:flex; flex-direction:row; gap: 25%; width:100%; height: 9vh; max-height: 100px; position:fixed; top:0px; left:0px; z-index: 10; text-align: right; background: rgba(255,255,255, 0.2); backdrop-filter:blur(20px); transform: translateY(0%); justify-content:center; place-items:center; overflow: visible;">
-    <p onclick="window.location.href='/#home-page';" style="width: auto; height:55%; aspect-ratio:2.1/1!important; font-family:acme; padding: 3px; background: rgba(200,200,200,0.4); backdrop-filter:blur(20px); border-radius:40px;" id="logo-replace">&emsp;&emsp;&emsp;</p>
-    <p style="width: 40%; font-family: sedan; padding: 5px; font-size: min(5.2vw,26px); border-radius:40px; user-select:none;">Short Story Book</p>
-  </div>
- 
-  
-<!-- Book tape-->
-<div class="book-tape for-mobile">
-  <img src="/images/static/book-tape.jpg" alt="Book Tape Background"/>
-    
-    <a href="/home" >
-      <img class="portal-to-home" src="/images/static/spinning-portal.png" alt="Portal Back to Home"/>
-  	</a>
+
+<!-- Portal (Laptop) -->
+<div class="for-laptop" style="position: relative;">
+    <a href="/" >
+        <img class="spinning-portal" src="/images/static/spinning-portal.png" alt="Portal Back to Home"/>
+    </a>
 </div>
 
-<!-- portal for laptop -->
-<div class="for-laptop">
-  <a href="/home" >
-    <img class="portal-to-home" src="/images/static/spinning-portal.png" alt="Portal Back to Home"/>
-  </a>
-</div>
 
 <div class="width-limit">  
-
-<!-- The Book -->
-<div class="book-wrap">
-  	<!-- a. The Pdf -->
- 	<iframe class="book-pdf" src="https://drive.google.com/file/d/1LMooWz65glAE3JpyYkunb3kZwE5iQZFk/preview"></iframe>
-  
-    <!-- b. Fun Lock -->
-    <div id="a0zVs5q" onclick="map()" class="lock">
-      <div class="lock-thumb">
-        <img  src="/images/static/book-characters.png" alt="View the Map!"/>
-      </div>
-      
-      <span  style="font-size: min(6vw,30px); font-family:acme; color:#888;">
-        One word says it
-      </span>
+    <!-- Book tape-->
+    <div class="book-tape for-mobile">
+        <img src="/images/static/book-tape.jpg" alt="Book Tape Background"/>
+        <a href="/" >
+            <img class="spinning-portal" src="/images/static/spinning-portal.png" alt="Portal Back to Home"/>
+        </a>
     </div>
 
-    <!-- c. Secret map -->
-    <div class="the-map">
-      <img alt="map content" class="back" src="/images/static/map-for-book.jpg"/> 
-    </div>
-</div>
 
+    <!-- The Book -->
+    <div class="book-wrap">
+        <!-- a. The Pdf -->
+        <iframe class="book-pdf" src="https://drive.google.com/file/d/1LMooWz65glAE3JpyYkunb3kZwE5iQZFk/preview"></iframe>
+        <!-- b. Fun Lock -->
+        <div id="a0zVs5q" onclick="map()" class="lock">
+        <div class="lock-thumb">
+            <img  src="/images/static/book-characters.png" alt="View the Map!"/>
+        </div>
+        <span  style="font-size: min(6vw,30px); font-family:acme; color:#888;">
+            One word says it
+        </span>
+        </div>
+        <!-- c. Secret map -->
+        <div class="the-map">
+        <!--<iframe class="for-mobile for-laptop" src="https://drive.google.com/file/d/1F2l-R5dxQBDgEdqbpSP8hw9KbCIY6fWu/preview"></iframe>-->
+        <img alt="map content" class="back" src="/images/static/map.jpg"/> 
+        </div>
+    </div>    
   
-<!-- text --><br><br> 
-<div class="">
-  <p style="font-size: min(8vw, 42px); width: 100%; font-family: indie flower; font-weight:bold;">
-It has arrived !
-  </p> 
-  <p class="para1" style="width: 85%; max-width: 400px; font-size: min(4vw,22px); margin: 4% 0 0% 0; font-family: sedan; text-align:center;">
-An amazon parcel you never ordered. <br> A book you never wanted! But here it is! <br> Read it. <br><br>10 Silly Short Stories with cartoons drawn all over it like your 4 year old son did on the wall  <br><br> And and and, cherry on top, do you know who gave it a ⭐⭐⭐⭐ star?? <br><br> ChatGPT! <!-- I have a few sheets scribbled with damn silly stories. --><br> 
-  </p>
-</div>
   
-<!-- Footer -->
-<div class="foot-links">
-  <p href="#" alt="faq">
-    FAQ
-  </p>
-  <p onclick="clipboard('shortcomix.strip@gmail.com'); signalCopy('.foot-links p:nth-child(2)', 'Mail Copied!'); " alt="feedback">
-    Contact
-  </p>
-</div>
+    <!-- text --><br><br> 
+    <div>
+        <p style="font-size: min(8vw, 42px); width: 100%; font-family: indie flower; font-weight:bold;">
+    It has arrived !
+        </p> 
+        <p class="para1" style="width: 80%; max-width: 400px; font-size: min(4.5vw,22px); margin: 4% 0 0% 0; font-family: sedan; text-align:justify-center;">
+        An amazon parcel you never ordered. <br> A book you never wanted! But here it is! <br> Read it. <br><br>
+        10 Silly Short Stories with cartoons drawn all over it like your 4 year old son did on the wall  <br><br>
+        And and and, cherry on top, do you know who gave it a ⭐⭐⭐⭐ star?? <br><br>
+        ChatGPT! <!-- I have a few sheets scribbled with damn silly stories. --> <br> 
+        </p>
+    </div><br><br>
+  
+  
+    <!-- Footer -->
+    <div class="foot-links">
+        <a href="#" class="plain-link">
+        FAQ
+        </a>
+        <a href="/" class="plain-link" onclick="event.preventDefault(); clipboard('shortcomix.strip@gmail.com'); signalCopy('.foot-links p:nth-child(2)', 'Mail Copied!'); ">
+        Contact
+        </a>
+    </div>
  
-
 </div>
+
 
 <style>
-  
+
+/* Root */
 :root {
-  --lock-background: rgba(255,255,255,0.5);
+  --lock-background: rgba(255,255,255,0.4);
   --lock-background-two:  rgba(0,0,0,0.2);
 }
-
 @media (prefers-color-scheme: dark) {
   :root {
     --lock-background: rgba(74,73,132,0.2);
@@ -93,13 +87,12 @@ An amazon parcel you never ordered. <br> A book you never wanted! But here it is
 } 
   
 #open-mobile-menu, .mobile-header, .desktop-menu {display:none!important;}
+.width-limit{max-width: 600px;}
 
-#faq:target{display:block!important;}  
+/* OnTarget */
 #a0zVs5q:target{display:none!important;}
   
-.width-limit{max-width: 600px;}
-  
-
+/* Book Tape */
 .book-tape {
   width: 100%;
   height: auto;
@@ -117,7 +110,7 @@ An amazon parcel you never ordered. <br> A book you never wanted! But here it is
   transform:scale(1.1) rotate(4deg); 
   filter: hue-rotate(-6deg);
 }
-.portal-to-home{
+.spinning-portal{
   position:absolute; 
   top: 23%; 
   left: 7.5%; 
@@ -127,7 +120,8 @@ An amazon parcel you never ordered. <br> A book you never wanted! But here it is
   aspect-ratio: 1/0.96;
   animation: portal_spin 7s ease infinite;
 }
-  
+
+/* Book Wrap and Pdf */ 
 .book-wrap{
   margin-top: 13%;
   width:80%; 
@@ -144,6 +138,15 @@ An amazon parcel you never ordered. <br> A book you never wanted! But here it is
   display: grid; 
   place-items: center;
 }
+.book-pdf{
+  width: 100%; 
+  height: auto; 
+  aspect-ratio: 4/6.8; /*6.8;*/ 
+  pointer-events: none;
+  background: #efefef;
+}
+
+/* Book Lock */
 .lock{
   display:flex; 
   flex-direction:column; 
@@ -162,13 +165,6 @@ An amazon parcel you never ordered. <br> A book you never wanted! But here it is
   backdrop-filter: blur(3.5px);
   background: var(--lock-background);
 }
-.book-pdf{
-  width: 100%; 
-  height: auto; 
-  aspect-ratio: 4/6.8; /*6.8;*/ 
-  pointer-events: none;
-  background: #efefef;
-}
 .lock-thumb{
   width: 90%; 
   height: auto; 
@@ -182,6 +178,8 @@ An amazon parcel you never ordered. <br> A book you never wanted! But here it is
   width: 100%;
   height: 100%; 
 }
+
+/* Secret Map */
 .the-map{
   width:100%; 
   height:100%; 
@@ -208,6 +206,7 @@ An amazon parcel you never ordered. <br> A book you never wanted! But here it is
   transition: 2s ease-in-out 1;
 }
 
+/* Foot Links */
 .foot-links{
   display: flex; 
   flex-direction:row; 
@@ -216,47 +215,13 @@ An amazon parcel you never ordered. <br> A book you never wanted! But here it is
   justify-content:center;
   margin-bottom: 10%;
 }
-.foot-links p{
+.foot-links a{
   cursor: pointer;
   font-family: sedan; 
   font-size: min(4vw,22px); 
   opacity: 0.8;
-  color: var(--text-clr-dull); 
 }
-  
 
-/* Media Queries */
-@media(max-width:650px){
-  .foot-links{margin-top:10%;}
-  .common-gap{display: none!important;}
-}
-@media(min-width:650px){
-  .foot-links{margin-top:10%;}
-  .about-page-header{max-height: 150px!important;} 
-  
-  .portal-to-home{
-  position:absolute; 
-  top: 5%; 
-  left: 5%; 
-  width: 12vw; 
-  max-width: 400px; 
-  height: auto; 
-  aspect-ratio: 1/0.96;
-  animation: portal_spin 7s ease infinite;
-  }
-  .book-wrap{ border-radius: 40px; }
-  .lock{ backdrop-filter: blur(5px)!important; }
-  .lock-thmb{
-  width: 50%!important; 
-  height: auto; 
-  max-width: 400px; 
-  aspect-ratio: 16/16!important;  
-  filter: hue-rotate(90deg) saturate(1)!important; 
-  animation: 5s map_steer infinite;
-  transform: rotateZ(6deg);
-  }
-}
- 
 /* Keyframes */
 @keyframes portal_spin{
 to{transform: rotate(-360deg);}
@@ -267,36 +232,48 @@ to{transform: rotate(-360deg);}
 @keyframes opening_map{
 to{transform:scale(0.8); opacity:1;}
 } 
+
+/* Media Queries */
+@media(max-width:650px){
+  .foot-links{margin-top:10%;}
+  .common-gap{display: none!important;}
+}
+@media(min-width:650px){
+  .foot-links{margin-top:10%;}
+  .about-page-header{max-height: 150px!important;} 
+  
+  .spinning-portal{ position:absolute; top: 5%; left: 5%; width: 12vw; max-width: 400px; height: auto; aspect-ratio: 1/0.96;animation: portal_spin 7s ease infinite; }
+  .book-wrap{ border-radius: 40px; }
+  .lock{ backdrop-filter: blur(5px)!important; }
+}
  
+/* Color Theme */  
+@media(prefers-color-scheme:dark){
+  .links a{color:white!important;} 
+  .links svg{fill:white!important;} 
+  .about-page-header{background: rgba(20,20,20,1)!important;} 
+  .about-page-header p:nth-child(1){background: rgba(145,145,145,0.4)!important;}
+  .about-page-header p:nth-child(2){color:white!important;}
+}
     
-  @media(prefers-color-scheme:dark){
-    .links a{color:white!important;} 
-    .links svg{fill:white!important;} 
-    .about-page-header{background: rgba(20,20,20,1)!important;} 
-    .about-page-header p:nth-child(1){background: rgba(145,145,145,0.4)!important;}
-    .about-page-header p:nth-child(2){color:white!important;}
-    }
-    
-  
-  #logo-replace::before{
-    content:''; background: url('/images/static/favicon.png') no-repeat; background-size:cover; width: auto; height:140%; aspect-ratio:16/16; position:absolute; transform: translate(-10%,-14%) scale(1.04); left: 0px; display:inline-block; border-radius:5px; border: 0px solid white; transition: 0.2s ease;
-  }
-  
-  #logo-replace:hover::before{
-    transform: translate(78%,-14%) scale(1.04); transition: 0.4s ease;
-  }
+/* Pseudo Elements */
+#logo-replace::before{
+  content:''; background: url('/images/sprites/favicon.png') no-repeat; background-size:cover; width: auto; height:140%; aspect-ratio:16/16; position:absolute; transform: translate(-10%,-14%) scale(1.04); left: 0px; display:inline-block; border-radius:5px; border: 0px solid white; transition: 0.2s ease;
+}
+#logo-replace:hover::before{
+  transform: translate(78%,-14%) scale(1.04); transition: 0.4s ease;
+}
+
 </style>
 
 
 <script> 
 function lock(){
-
   if(window.location.hash === '#a0zVs5q'){
     document.querySelector('.book-pdf').style.pointerEvents='auto';
   	document.querySelectorAll('p').forEach(p=>{p.style.display='none'});
     return
   }
-  if(0){ document.querySelector('.lock-thumb img').src = '/images/static/map-legacy.png'; }
   document.querySelector('.lock').style.opacity="1";
   document.querySelector('.lock').style.pointerEvents="auto";
   document.querySelector('.book-wrap').style.pointerEvents="auto";
