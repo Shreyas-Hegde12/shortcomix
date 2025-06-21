@@ -727,12 +727,12 @@ function togglePlayPause() {
   	const commandName = isVideoPlaying ? 'playVideo' : 'pauseVideo';
     const newText = isVideoPlaying ? '🙌Pause' : '🍰 Play';
     const firstVideo = iframe.src === "" && currentlyPlaying == 0;
-    
-  	// update button's text
-  	document.querySelector(watchBtnText).innerText = newText;
   
   	// autoplay 1st video as we showed its thumbnail with tv scan line animation
     if(firstVideo){ iframe.src = iframe.getAttribute('data-src'); firstvideo(iframe); return; }
+    
+    // update button's text
+  	document.querySelector(watchBtnText).innerText = newText;
     
   	// play / pause video
  	iframe.contentWindow.postMessage(
