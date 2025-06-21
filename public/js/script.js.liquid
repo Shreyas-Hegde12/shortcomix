@@ -565,16 +565,16 @@ async function searchComics() {
   	const resultsDiv = document.querySelector(".search-results");
   	resultsDiv.innerHTML = "";
 
-    if(searchTerm.length <= 2){ document.querySelector('.search-background-blurred').style.display = 'block'; return; }
+    if(searchTerm.length < 2){ document.querySelector('.search-background-blurred').style.display = 'block'; return; }
 	
 	const searchWords = searchTerm.split(/\s+/);
 
 	const filteredComics = allComicJSON.filter(comic => {
-		const titleMatch = searchWords.some(word => word.length > 2 && comic.title.toLowerCase().includes(word));
+		const titleMatch = searchWords.some(word => word.length > 1 && comic.title.toLowerCase().includes(word));
 
 		const tagMatch = comic.keywords.some(keyword => 
 			searchWords.some(word => 
-				word.length > 2 && (keyword.toLowerCase().includes(word) || word.toLowerCase().includes(keyword))
+				word.length > 1 && (keyword.toLowerCase().includes(word) || word.toLowerCase().includes(keyword))
 			)
 		);
 
