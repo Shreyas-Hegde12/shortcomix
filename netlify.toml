@@ -7,3 +7,9 @@
   for = "/sitemap.xml"
   [headers.values]
     Access-Control-Allow-Origin = "*"
+
+[[headers]]
+  for = "/files/*"
+  [headers.values]
+    Access-Control-Allow-Origin = "https://shortcomix.blogspot.com"
+    Content-Security-Policy = "frame-ancestors https://shortcomix.blogspot.com"
