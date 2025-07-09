@@ -9,9 +9,6 @@
     Access-Control-Allow-Origin = "*"
 
 [[headers]]
-  for = "/files/*"
+  for = "/*.mjs"
   [headers.values]
-    Access-Control-Allow-Origin = "https://shortcomix.blogspot.com"
-    Content-Security-Policy = "frame-ancestors https://shortcomix.blogspot.com"
-    Content-Type = "application/pdf"
-    Content-Disposition = "inline"
+    Content-Type = "application/javascript"

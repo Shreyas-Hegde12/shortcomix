@@ -11,7 +11,8 @@ module.exports = function(eleventyConfig) {
   // Add passthrough copies
   eleventyConfig.addPassthroughCopy("./comic/**/*.jpg");
   eleventyConfig.addPassthroughCopy({ "./public/images": "/images" });
-    eleventyConfig.addPassthroughCopy({ "./public/files": "/files" });
+  eleventyConfig.addPassthroughCopy({ "./public/files": "/files" });
+  eleventyConfig.addPassthroughCopy({ "./public/pdfjs": "/pdfjs" });
 
   // Return the directory configuration
   return {
