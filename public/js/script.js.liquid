@@ -500,7 +500,7 @@ function startCarousel() {
 
 const carouselInterval = setInterval(function() {
 	if(emojiNum == 0){ document.querySelector('.emoji-carousel').classList.add('animate-carousel'); }
-	if(emojiNum == carouselImages.length-5){ emojiNum=0; }
+	if(emojiNum == carouselImages.length){ emojiNum=0; }
 
 	document.querySelector('.emoji-carousel').src= carouselImages[emojiNum].src;
 
