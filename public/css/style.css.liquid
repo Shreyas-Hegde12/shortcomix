@@ -2,7 +2,11 @@
 permalink: /css/style.css
 eleventyExcludeFromCollections: true
 ---
-  
+/*-------
+Base Blogger Template: Fastest Premium - templatesyard.com
+Website Designed by Shreyas Hegde
+--------*/
+
 /* BASIC TAGS */
  *{margin:0px 0px 0px 0px; padding:0px 0px 0px 0px; scroll-behavior:smooth!important; -webkit-scroll-behavior:smooth!important; -moz-scroll-behavior:smooth!important;}
 
@@ -47,7 +51,7 @@ input, input:focus {
 --like-btn-animation:'';
 --like-card-zindex: -5;
 --like-card-scale:1;
---like-card-left: calc(49%);
+--like-card-left: calc(50%);
 --like-msg-appear: 0;
 --like-msg-scale:1.1;
 
@@ -56,13 +60,13 @@ input, input:focus {
 
 @media(min-width: 650px){
 :root{
---like-card-scale: 1.55; 
+--like-card-scale: 1.6; 
 --like-card-left: calc(52%);
 --like-msg-scale: 1.5; 
 }}
 
 /*IDs*/
-#outer-wrapper{background-color: var(--primary-bg); color: var(--primary-text); max-width:none; width: 100%; overflow:hidden; position:relative; box-sizing:border-box; padding: 0px 0px 0px 0px!important; margin: 0px 0px 0px 0px!important;}
+#outer-wrapper{background-color: var(--primary-bg); color: var(--primary-text); max-width:none; width: 100%; min-height: 100vh; overflow:hidden; position:relative; box-sizing:border-box; padding: 0px 0px 0px 0px!important; margin: 0px 0px 0px 0px!important;}
 #main-wrapper{background-color: var(--primary-bg); color: var(--primary-text); overflow:visible; box-sizing:border-box; word-wrap:break-word; padding: 0px!important; margin: 0px!important; position:relative;}
 #sidebar-wrapper{display: none!important;}
 #footer-wrapper{display:none; width: 100%; color: var(--primary-text); font-size: 20px; padding-top: 25px; font-family: open sans; text-align: center; height: 70px; overflow: hidden; background-color: var(--primary-bg); place-items: center;}
@@ -80,7 +84,7 @@ input, input:focus {
 .container{position:relative; box-sizing:border-box;}
 .nav-prev, .nav-next , .nav-random {position:relative; top: 10px;}
 
-.comicimg{width: 90vw; max-width: 600px; height:auto; margin-top: 10px; filter: saturate(0.8);}
+.comicimg{width: 90vw; max-width: 600px; height:auto; margin-top: 0px; filter: saturate(0.8);}
 .archive-settings{aspect-ratio: 16/17!important; width: calc(45%); max-width: 230px; border-radius: 25px; height: auto; margin: 5px 5px 5px 5px!important; filter: saturate(0.8); -webkit-filter: saturate(0.8); -moz-filter: saturate(0.8);}
 .archive-settings:hover{opacity:0.75;}
 
@@ -91,7 +95,8 @@ input, input:focus {
 .bar-sticks{background-color: var(--gray-bg-element); opacity: 0.9; }
 .plain-link{color: var(--primary-text);}
 .dull-link{color: var(--dull-text);}
-.soft-touch{animation: soft_touch 1.2s 1;}
+.soft-touch:hover{animation: soft_touch 1.2s 1;}
+.soft-touch-clk{animation: soft_touch 1.2s 1;}
 
 .menu-social-icons a{
 fill:white!important;
@@ -231,7 +236,7 @@ font-size: 3.5vw!important;
   }
   #open-mobile-menu{display:none!important;}
 
-  .common-gap {margin-top: 6%;}
+  .common-gap {margin-top: 5%;}
   .carousel{position:absolute; top:50vh!important; left: 50vw!important; transform:translate(-50%,-50%); z-index: 500;}
   .emoji-carousel{width:50vw;}
   .for-mobile{display: none!important;} 
@@ -261,9 +266,9 @@ font-size: 3.5vw!important;
 /* COLOR PREFERENCE */
 @media(prefers-color-scheme: light)
 {
-  :root {--mode-bg: #fff; --primary-bg: #fff; --primary-text: #000; --gray-bg: rgba(238,238,238,0.8); --gray-bg-element: #ddd; --dull-text: #222; --comic-square-shadow: #ccc;}
+  :root {--mode-bg: #fff; --primary-bg: #fff; --primary-text: #000; --gray-bg: #f5f5f5; --gray-bg-element: #ddd; --dull-text: #222; --comic-square-shadow: #ccc;}
 
-  #open-mobile-menu{background: white; box-shadow: 0px 0px 45px 35px #f5f5f5; border: 6px solid #fff;}
+  #open-mobile-menu{background: white; box-shadow: 0px 0px 35px 25px #f5f5f5; border: 6px solid #fff;}
   #hcb_form_content{background-color: #ddd;}
 
   .comicimg.back{background: #eee;}
@@ -282,7 +287,7 @@ font-size: 3.5vw!important;
   .social-icons svg{fill: white!important}
   .hcb-wrapper, .comment{background-color:#171717!important;}
   @media(max-width:650px){
-	#fixed-background{-webkit-filter: saturate(0) contrast(0.9) brightness(0.5); -moz-filter: saturate(0) contrast(0.9) brightness(0.5); filter: saturate(0) contrast(0.9) brightness(0.5);
+	#fixed-background{-webkit-filter: saturate(0) contrast(0.9) brightness(0.5); -moz-filter: saturate(0) contrast(0.9) brightness(0.5); filter: saturate(0) contrast(0.9) brightness(0.55);
   }}
   @media(min-width:650px){
     #fixed-background{-webkit-filter: saturate(0) contrast(0.9) brightness(0.5); -moz-filter: saturate(0) contrast(0.9) brightness(0.5); filter: saturate(0) contrast(0.9) brightness(0.5);}
@@ -340,9 +345,9 @@ to{transform: rotateZ(-20deg);}
 100%{transform: scale(1) rotateZ(0deg); opacity: 1;}
 }
 @keyframes like_plus_one {
-15%{transform: rotate(10deg) translate(-47%,-10px) scale(var(--like-card-scale)); opacity:1;}
-90%{transform: rotate(5deg) translate(-47%,-70px) scale(var(--like-card-scale)); opacity:1;}
-100%{transform: rotate(-2deg) translate(-48%,-102px) scale(var(--like-card-scale)); opacity:0;}
+15%{transform: rotate(10deg) translate(-48%,-10px) scale(var(--like-card-scale)); opacity:1;}
+90%{transform: rotate(5deg) translate(-48%,-70px) scale(var(--like-card-scale)); opacity:1;}
+100%{transform: rotate(-2deg) translate(-49%,-102px) scale(var(--like-card-scale)); opacity:0;}
 }
 @keyframes appear_disappear {
 0%{transform: translate(-50%,0) rotate(10deg); opacity:0; width: 125%;}
@@ -406,7 +411,7 @@ transition: opacity linear 1s;
 #open-mobile-menu::before
 {
 content: '';
-background: url('/images/sprites/i-am-menu.png') center no-repeat;
+background: url('') center no-repeat;
 background-size: cover;
 position: absolute; top: -90%; left: 90%;
 transform: translate(-50%,0) rotate(10deg);

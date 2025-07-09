@@ -12,12 +12,12 @@ layout: layouts/base.liquid
 <!--Emoji Carousel-->
 <div class='carousel' style='display: none;'><img alt='ShortComix Carousel' class='emoji-carousel' src='/images/emotes/shy.png' style='height:auto; aspect-ratio: 371/322; max-width: 430px; margin-left:0px;'/>
 </div>
-
 <!-- Page Id -->
 <div id="this-is-home-page"></div>
 
 <!-- Mobile -->
-<div class="for-mobile" style="margin-top: 10%;"> 
+<div class="for-mobile" style="margin-top: 8%;"> 
+  
   
   <!-- Kiddo Peek -->
   <img id='kiddo-peek'
@@ -30,38 +30,36 @@ layout: layouts/base.liquid
        
        src='https://res.cloudinary.com/dzss5ged8/image/upload/v1737577034/top10_1_xapllm.png' 
        
-       style='margin-bottom: 10%; aspect-ratio:16/15.6; width: 57vw; max-width: 300px; height: auto; transition: ease-in 0.8s; border-radius:500px; filter: opacity(0.97) contrast(0.85) brightness(1.11);' 
+       style='margin-bottom: 7%; aspect-ratio:16/15.6; width: 56.5vw; max-width: 300px; height: auto; transition: ease-in 0.8s; border-radius:500px; filter: opacity(0.97) contrast(0.85) brightness(1.11);' 
        tile="©Shooshoo.comics rendition of kiddo!" alt="©Shooshoo.comics rendition of kiddo!"
        onclick="window.location='#bubbles';"/>
    
   
   <!-- Comics -->
-  <div style="width:91%; max-width: 580px; display:flex; flex-direction: row; place-items:center; justify-content:center; place-items:center; filter: contrast(0.9) saturate(0.9); margin-bottom: -3%;">
+  <div style="width:93%; max-width: 580px; display:flex; flex-direction: row; gap: 7%; place-items:center; justify-content:center; place-items:center;  position:relative; z-index:10; filter: contrast(0.9) saturate(0.9);">
     <a class="pick-link comic-outer-square plain-link" onclick="handleComicClick(0,0)" >
       <img class="pick-img back comic-square" src="/images/sprites/placeholder.jpg" alt="Comic I chose for you" title="Comic I chose for you"/>
-      <p class="subtitle" style="font-family: gloria hallelujah; font-size: min(7vw, 27px); opacity: 0.8; padding: 2%;">comic 1</p>
-    </a>
+    <p class="subtitle" style="font-family: gloria hallelujah; font-size: min(6vw, 207px); opacity: 0.85; padding-top: 2%;">comic 1</p>
+   </a>
     <a class="pick-second-link comic-outer-square plain-link" onclick="handleComicClick(0,1)" >
-      <img class="pick-second-img back comic-square" src="/images/sprites/placeholder.jpg" alt="Comic I chose for you 2" title="Comic I chose for you 2"/>
-      <p class="subtitle" style="font-family: gloria hallelujah; font-size: min(7vw, 27px); opacity: 0.8; padding: 2%;">comic 2</p>
+      <img class="pick-second-img back comic-square" src="/images/sprites/placeholder.jpg" alt="Comic I chose for you 2" title="Comic I chose for you 2"/><p class="subtitle" style="font-family: gloria hallelujah; font-size: min(6vw, 207px); opacity: 0.85; padding-top: 2%;">comic 2</p>
     </a>
   </div>
 
   
   <!-- Animated Car on Road -->
-  <div style="position:relative; overflow:hidden; margin-bottom: 9%;">
-    <div id="animated-road"></div>
-    <img id="animated-car" src="/images/static/car-with-glow.png" alt="Arrested doggie van" title="Arrested doggie van"/>
-  </div><br> 
+<div style="position:relative; overflow:hidden; margin: -10% 0 7% 0; position:relative; z-index: 5;">
+  <div id="animated-road"></div>
+<img id="animated-car" src="/images/static/car-with-glow.png" alt="Arrested doggie van" title="Arrested doggie van"/></div><br> 
   
   
   <!-- Clips -->
   <div class="gray-bg" style="padding-top:9%; margin-bottom: 0%;">
     <!-- TV -->
-    <div class="tv-frame" style="display:flex; border-radius: 4px; width:76%; max-width: 470px; height: auto; aspect-ratio: 16/10.45; margin-top:2%; margin-bottom: 5%; background-image: url('/images/static/tv.jpg'); background-position:5% 0; background-size: cover; position: relative; place-items:center; justify-content:center;">
+    <div class="tv-frame" style="display:flex; border-radius: 4px; width:77%; max-width: 470px; height: auto; aspect-ratio: 16/10.45; margin-top:2%; margin-bottom: 5%; background-image: url('/images/static/tv.jpg'); background-position:5% 0; background-size: cover; filter: hue-rotate(0deg); position: relative; place-items:center; justify-content:center;">
       <!-- tv embed -->
       <div class="tv-embed" style="position: relative; width: 90%; height: auto; border-radius: 0px; transform: translateX(-0%); max-width: 450px; aspect-ratio: 16/9.4; overflow:hidden; background: transparent; z-index: 10;">
-        <img class="back" src="/images/static/first-video-thumbnail.jpg" style="width: 0%; height: auto; position:absolute; top: 0px; left: 0px; display:block;" alt="First Video Thumbnail"/>
+        <img class="back" src="/images/static/first-video=thumbnail.jpg" style="width: 0%; height: auto; position:absolute; top: 0px; left: 0px; display:block;" alt="First Video Thumbnail"/>
         <iframe class="yt-video" data-src="https://www.youtube-nocookie.com/embed/eRCSrBXMto0?rel=0&enablejsapi=1&autoplay=1" style="display:none;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;" title="TV"></iframe>
         <!-- CRT Tv like lined overlay -->
          <div class="scan-overlay">
@@ -70,7 +68,7 @@ layout: layouts/base.liquid
       </div>
     </div>
     <!-- TV Controls -->
-    <div style="position: relative; display: flex; flex-direction:row; gap: 2%; place-items: center; justify-content:center; margin: 8% 0 5% 0;">
+    <div style="position: relative; display: flex; flex-direction:row; gap: 2%; place-items: center; justify-content:center; margin: 8% 0 4% 0;">
       <!-- controls -->
       <button id="watch" onclick="watchVideo();" aria-label="Watch">
         <p>
@@ -85,87 +83,87 @@ layout: layouts/base.liquid
       </button>
 
     </div><br>
-  </div>
-  <!--  --><br>
+</div>
+ <!--  --> <br>
   
-  <!-- Image Bubbles -->
-  <div style="position: relative; width: 100%; max-width: 590px; height: auto; aspect-ratio: 16/14.5; overflow: hidden; scroll-behavior:smooth; margin: 6% 0 4% 0;" id="bubbles">
-    <br><br>
-    <!-- a. gift -->
-    <a href="/news/" class="image-bubble" style="z-index: 1; width:40%; max-width:400px; height: auto; aspect-ratio: 16/15.5; position: relative; top:1%; left: -16.5%; border-radius: 200px; background: #181818; display: flex; justify-content:center; align-items:center;" onclick="event.preventDefault();; delayLink('/news/',300);">
-      <img src="/images/static/posts.png" style="width: 92%; height: auto; aspect-ratio: 16/15.5; z-index: 0;" title="Kiddo appears in shooshoo comics"  alt="Kiddo appears in shooshoo comics" />
-      <span style="color: #ffffff!important; font-family: acme; font-size: min(6.4vw,35px); font-weight: bold; left: 50%; transform: translateX(-50%); background-color: #222!important; border-radius: 50px; position: absolute; top: 67%; padding: 0px 7% 0px 7%;">
-        Posts
-      </span>
-    </a>
-    <!-- b. shop -->
-    <a href="/sketches/" class="image-bubble" style="z-index: 2; width: 37%; max-width:400px; height: auto; aspect-ratio: 15/14; position: relative; top: -32%; left: 17%; background: rgb(61, 61, 61); border-radius: 200px; display: flex; justify-content:center; align-items:center;" onclick="event.preventDefault(); delayLink('/sketches/',300);">
-      <img src="/images/static/shop.png" style="width: 92%; height: auto; aspect-ratio: 16/15; z-index: 0;" alt="Shop"/>
-      <span style="color: white; font-family: acme; font-size:min(5.7vw,32px); font-weight: bold; background-color: #493c68; border-radius: 50px; position: absolute; top: 68%; left: 50%; transform: translateX(-46%); padding: 0px 7% 0px 7%;">
-        Shop
-      </span>
-    </a>
-    <!-- c. book -->
-    <a href="/story-book/" class="image-bubble" style="z-index: 3; width: 40%; max-width:400px; height: auto; aspect-ratio: 15/14.8; position: relative; top: -45%; left: -3%; border-radius: 200px;  background: rgb(143, 143, 143); display: flex; justify-content:center; align-items:center;" onclick="event.preventDefault(); delayLink('/story-book/',400);">
-      <img src="/images/static/book.png" style="width: 93%; height: auto; aspect-ratio: 16/15.8; border-radius:200px; z-index: 0;" alt="New Book!" title="New Book!"/>
-      <span style="color: #5e5428; font-family: acme; font-size: min(5.9vw,35px); font-weight: bold; background-color: #fee682!important; border-radius: 50px; position: absolute; top: 66%; left: 50%; z-index: 1; transform: translateX(-49%); padding: 0px 7% 0px 7%;">
-        BOOK!
-      </span>
-    </a>
-  </div><br> <!-- <br>  -->
+   <!-- Image Bubbles -->
+   <div style="display: block; position: relative; width: 100%; max-width: 590px; height: auto; aspect-ratio: 16/14.5; overflow: hidden; scroll-behavior:smooth; margin: 12% 0 10% 0;" id="bubbles">
+      <br><!--<br>-->
+     <!-- a. gift -->
+     <a href="/news" class="image-bubble" style="z-index: 1; width:40%; max-width:400px; height: auto; aspect-ratio: 16/16; position: relative; top:1%; left: -16.5%; border-radius: 200px; background: #181818; display: flex; justify-content:center; align-items:center;" onclick="event.preventDefault(); delayLink('/news',300);">
+        <img src="/images/static/posts.png" style="width: 92%; height: auto; aspect-ratio: 16/16; z-index: 0;" title="Kiddo appears in shooshoo comics"  alt="Kiddo appears in shooshoo comics" />
+        <span style="color: #ffffff!important; font-family: acme; font-size: min(6.4vw,35px); font-weight: bold; left: 50%; transform: translateX(-50%); background-color: #222!important; border-radius: 50px; position: absolute; top: 67%; padding: 0px 7% 0px 7%;">
+          Posts
+        </span>
+     </a>
+     <!-- b. shop -->
+     <a href="/shop" class="image-bubble" style="z-index: 2; width: 36%; max-width:400px; height: auto; aspect-ratio: 15/15; position: relative; top: -32%; left: 17%; background: rgb(61, 61, 61); border-radius: 200px; display: flex; justify-content:center; align-items:center;" onclick="event.preventDefault(); delayLink('/shop',300);">
+        <img src="/images/static/shop.png" style="width: 92%; height: auto; aspect-ratio: 16/16; z-index: 0; filter: hue-rotate(-15deg) saturate(0.85);" alt="Shop"/>
+        <span style="color: white; font-family: acme; font-size:min(5.7vw,32px); font-weight: bold; background-color: #493c68; border-radius: 50px; position: absolute; top: 68%; left: 50%; transform: translateX(-46%); padding: 0px 7% 0px 7%;">
+          Shop
+        </span>
+     </a>
+     <!-- c. book -->
+     <a href="/story-book" class="image-bubble" style="z-index: 3; width: 40%; max-width:400px; height: auto; aspect-ratio: 15/15; position: relative; top: -45%; left: -3%; border-radius: 200px;  background: rgb(143, 143, 143); display: flex; justify-content:center; align-items:center;" onclick="event.preventDefault(); delayLink('/story-book',400);">
+       <img src="/images/static/book.png" style="width: 93%; height: auto; aspect-ratio: 16/15.8; border-radius:200px; z-index: 0;" alt="New Book!" title="New Book!"/>
+       <span style="color: #5e5428; font-family: acme; font-size: min(5.9vw,35px); font-weight: bold; background-color: #fee682!important; border-radius: 50px; position: absolute; top: 66%; left: 50%; z-index: 1; transform: translateX(-49%); padding: 0px 7% 0px 7%;">
+         BOOK!
+       </span>
+     </a>
+  </div><br> <!-- <br> -->
   
   
-  <!-- Froggie -->
-  <div class="gray-bg" style="width:100%; height:auto; place-items:center; justify-content:center;">
-    <!-- Frog + Text -->
-    <div style="display:flex; flex-direction:row; gap: 0%; width:100%; place-items:center; justify-content:center;">
-      <!-- frog part -->
-      <div style="margin-top:5%; margin-bottom: 5%; position:relative; width: 41%;">
-        <div class="frog-like-btn" onclick="frogClick();" style="position:relative; max-width: 350px; aspect-ratio:16/16;" alt="Frog Like Button" title="Frog Like Button">
-          <img id="frog-pic" src="https://res.cloudinary.com/dzss5ged8/image/upload/v1742934877/frog-dead---_teafct.png" style="width: 100%; height:auto; aspect-ratio:17/16; position:relative; bottom: -10px; filter: saturate(0.8); -webkit-filter: saturate(0.8); -moz-filter: saturate(0.8);" alt="Frog Like Button" title="Frog Like Button" />
-        </div>
-      </div>
-      <!-- text part -->
-      <div style="height:auto; width: 55%; text-align:center; justify-content:center; place-items:center;">
-        <p class="frog-text" style="font-family: open sans; line-height:1.7; padding-left:4px;">
-            Thanks for visiting.<br>If you liked it,<br> hit this frog !
-        </p>
-      </div>
-    </div>
-  </div><br>
+<!-- Froggie -->
+ <div class="gray-bg" style="width:100%; height:auto; place-items:center; justify-content:center;">
+   <!-- Frog + Text -->
+   <div style="display:flex; flex-direction:row; gap: 0%; width:100%; place-items:center; justify-content:center;">
+     <!-- frog part -->
+     <div style="margin-top:5%; margin-bottom: 4%; position:relative; width: 41%;">
+       <div class="frog-like-btn soft-touch" onclick="frogClick();" style="position:relative; max-width: 350px; aspect-ratio:16/16;" alt="Frog Like Button" title="Frog Like Button">
+         <img id="frog-pic" src="https://res.cloudinary.com/dzss5ged8/image/upload/v1742934877/frog-dead---_teafct.png" style="width: 100%; height:auto; aspect-ratio:17/16; position:relative; bottom: -10px; filter: saturate(0.8); -webkit-filter: saturate(0.8); -moz-filter: saturate(0.8);" alt="Frog Like Button" title="Frog Like Button" />
+       </div>
+     </div>
+     <!-- text part -->
+     <div style="height:auto; width: 55%; text-align:center; justify-content:center; place-items:center;">
+       <p class="frog-text" style="font-family: open sans; line-height:1.7; padding-left:4px;">
+          Hey, thanks for visiting.<br>If you liked this website,<br> hit the frog !
+       </p>
+     </div>
+   </div>
+ </div><br>
 
-  <!-- Easter Egg -->
-  <div id="easter-egg" style="width: 100%; height: auto; display:none; margin: 2% 0 7% 0; position: relative; overflow: hidden;" class="gray-bg stab">
-    <br>
-    <div name="textcontainer" style="width: 80%; margin:3%;">
-      <!-- a. U are stabbing -->
-      <p style="padding:0px; font-family: open sans; line-height: 1.5; font-size: 4.2vw;">
-        <i>U are now stabbing a ded frog!</i>
-      </p><br>
-      <!-- b. stab count -->
-      <p id="stab-count" style="padding: 0px; font-family: open sans; line-height: 1.5; font-size: 4.7vw; font-weight: bold;">
-          .
-      </p><br>
-      <!-- c. records unlocked -->
-      <p id="records" style="padding:0px; font-family: open sans; line-height: 1.5; font-size: 4.3vw;">
-      </p>
-      <!-- d. 50 count music -->
-      <div id="music" style="display:none; width: 70%; height: auto; aspect-ratio: 16/2.9; border-radius: 40px; background: #444; margin-top: 10%; overflow:hidden; justify-content:center; place-items:center;">
-        <iframe src="" style="aspect-ratio: 16/8; overflow:hidden; width: 100%; height: auto; transform:translate(0%,-65%) scale(1.04);"></iframe>
-      </div>
-      <!-- e. password unscrambler -->
-      <div id="unscrambler" style="display:none;">
-        <form style="margin:6% 0 4% 0;" onsubmit="event.preventDefault(); checkText();">
-          <input id="password-input" type="text" required minlength="4" style="font-family: open sans; font-size: 4.2vw; margin: 0 1% 0 0; width: 35%; text-align:left; padding: 3px 18px; border-radius: 30px; outline: none!important; border:solid 1px #bbb!important;"/>
-          <button aria-label="submit" style="padding:5px; border-radius:50px; font-size: min(4.4vw,16px); outline: none!important; border:solid 1px #bbb!important;">
-            👍
-          </button>
-        </form>
-      </div>
-      <!-- -->
-    </div><br>
-  </div>
-  <!-- -->
+ <!-- Easter Egg -->
+ <div id="easter-egg" style="width: 100%; height: auto; display:none; margin: 2% 0 7% 0; position: relative; overflow: hidden;" class="gray-bg stab">
+   <br><div name="textcontainer" style="width: 80%; margin:3%;">
+   <!-- a. U are stabbing -->
+   <p style="padding:0px; font-family: open sans; line-height: 1.5; font-size: 4.2vw;">
+     <i>U are now stabbing a ded frog!</i>
+   </p><br>
+   <!-- b. stab count -->
+   <p id="stab-count" style="padding: 0px; font-family: open sans; line-height: 1.5; font-size: 4.7vw; font-weight: bold;">
+      .
+   </p><br>
+   <!-- c. records unlocked -->
+   <p id="records" style="padding:0px; font-family: open sans; line-height: 1.5; font-size: 4.3vw;">
+   </p>
+   <!-- d. 50 count music -->
+   <div id="music" style="display:none; width: 70%; height: auto; aspect-ratio: 16/2.9; border-radius: 40px; background: #444; margin-top: 10%; overflow:hidden; justify-content:center; place-items:center;">
+     <iframe src="" style="aspect-ratio: 16/8; overflow:hidden; width: 100%; height: auto; transform:translate(0%,-65%) scale(1.04);"></iframe>
+   </div>
+   <!-- e. password unscrambler -->
+   <div id="unscrambler" style="display:none;">
+     <form style="margin:6% 0 4% 0;" onsubmit="event.preventDefault(); checkText();">
+       <input id="password-input" type="text" required minlength="4" style="font-family: open sans; font-size: 4.2vw; margin: 0 1% 0 0; width: 35%; text-align:left; padding: 3px 18px; border-radius: 30px; outline: none!important; border:solid 1px #bbb!important;"/>
+       <button aria-label="submit" style="padding:5px; border-radius:50px; font-size: min(4.4vw,16px); outline: none!important; border:solid 1px #bbb!important;">
+         👍
+       </button>
+     </form>
+   </div>
+   <!-- -->
+   </div><br>
+
+ </div>
+ <!-- -->
 
 
   <!-- More Button -->
@@ -174,24 +172,24 @@ layout: layouts/base.liquid
   </div>
   <!-- More content -->
   <div class="more-section collapsible" style="max-height: 0px; overflow: hidden;">
-    <!-- a. contact -->
-    <a href='https://sureshop-shortcomix.blogspot.com/?m=0#section-7'>
-      <img class="back" src="/images/static/contactme.jpg" style="aspect-ratio: 16/5.5;" alt="Contact"/>
-    </a>
+    <!-- a. contact 
+    <a href='/contact-me'>
+      <img class="back" src="/images/static/.png" style="aspect-ratio: 16/5.5;" alt="Contact"/>
+    </a> -->
     <!-- b. follow me -->
-    <a href="/about-me/">
+    <a href="/about-me">
       <img class="back" src="/images/static/follow-me.jpg"  style="aspect-ratio: 16/7.2;" alt="Follow me" />
     </a>
-    <!-- c. play game --
-    <a href="/fun-games/">
-      <img class="back for-laptop" src="/images/static/play-games.jpg" style="aspect-ratio: 6/4.2;" alt="Play Game"/>
+    <!-- c. play game 
+    <a href="/">
+      <img class="back for-laptop" src="/images/static/.jpg" style="aspect-ratio: 6/4.2;" alt="Play Game"/>
     </a> -->
     <!-- d. papa coffee -->
-    <a href="https://media.tenor.com/3DnEtJiS3m0AAAAM/hadeel928-cat.gif">
-      <img class="back" src="/images/static/papa-coffee.jpg"  style="aspect-ratio: 14/9.5; filter: saturate(0.5) contrast(0.95);" alt="In a coffee cup" />
+    <a href="https://i0.wp.com/schrodingersothercat.blog/wp-content/uploads/2020/02/cat-cafe-facebook-1.jpg">
+      <img class="back" src="/images/static/papa-coffee.png"  style="aspect-ratio: 14/9.5; filter: saturate(0.5) contrast(0.95);" alt="In a coffee cup" />
     </a>
     <!-- e. doom scroll -->
-    <a href="https://shortcomix.netlify.app/scroll-wheel">
+    <a href="/scroll-wheel">
       <img class="doom-scroll-gif" data-gif="loading" src="/images/sprites/placeholder.jpg"  style="aspect-ratio: 16/17; width: 50%!important;" alt="Doom Scroll Gallery"/>
     </a>
     
@@ -199,18 +197,18 @@ layout: layouts/base.liquid
   
 
   <!-- Copy Rights -->
-  <div style="display: block; margin: 20% 0 0 0; position: relative; flex-direction:column; gap:1px; place-items:center; justify-content:center;">
+  <div style="display: flex; margin: 20% 0 0 0; position: relative; flex-direction:column; gap:1px; place-items:center; justify-content:center;">
     <!-- home picture -->
     <img style="width:54vw; max-width: 330px; aspect-ratio:1.15/1;" src="/images/static/home.png" title="Home Sweet Home" alt="Home Sweet Home"/>
     <!-- copyright text -->
-    <p style="font-family: open sans; font-size: 4.5vw; padding-top:5%; flex-direction: column; color: var(--primary-text); opacity: 0.8;">
+    <div style="font-family: open sans; font-size: 4vw; padding-top:5%; flex-direction: column; color: var(--primary-text); opacity: 0.8;text-underline-offset: 3px; ">
       Short Comix Originals™<br>
-      <b><i>© <a href="/about-me/" class="plain-link">Shreyas Hegde</a></i></b>
-    </p>
+      <b><i>© <a href="/about-me" class="plain-link" style="opacity:0.9;">Shreyas Hegde</a></i></b>
+    </div>
   </div>
   
   <!-- Space For Mobile Menu Button -->
-  <div style="width:100%; height: 42vw; background: transparent; font-size:0px;" name="Mobile Menu Spacer">.</div>
+  <div style="width:100%; height: 40vw; background: transparent; font-size:0px;" name="Mobile Menu Spacer">.</div>
 </div>
 
 
@@ -219,7 +217,7 @@ layout: layouts/base.liquid
 <div class="for-laptop">
   
    <!-- Big Kiddo Peek -->
-     <img id='d-kiddo-peek' onclick="window.location.href='news/';" src='https://res.cloudinary.com/dzss5ged8/image/upload/v1737577034/top10_1_xapllm.png' style='position: relative; aspect-ratio:16/16; width: 40vw; max-width: 330px; height: auto; margin-top: min(15%, 50px); margin-bottom: min(3%, 40px); transition: ease-in-out 0.8s; opacity: 0.95; cursor:pointer;' title="©Shooshoo comics rendition of Kiddo" alt="©Shooshoo comics rendition of Kiddo"/>
+     <img id='d-kiddo-peek' onclick="window.location.href='news';" src='https://res.cloudinary.com/dzss5ged8/image/upload/v1737577034/top10_1_xapllm.png' style='position: relative; aspect-ratio:16/16; width: 40vw; max-width: 340px; height: auto; margin-top: min(15%, 50px); margin-bottom: min(3%, 40px); transition: ease-in-out 0.8s; opacity: 0.95; cursor:pointer;' title="©Shooshoo comics rendition of Kiddo" alt="©Shooshoo comics rendition of Kiddo"/>
   
    <!-- Coffee Cup Menu -->
    <div class="for-laptop strict" id="coffee-cup-menu" style="width: 24vw; max-width: 300px; height: auto; position: fixed; bottom: 5vh; right: 20px; z-index: 1005; cursor: pointer; overflow: hidden; transition: opacity 0.7s linear;">
@@ -315,15 +313,15 @@ layout: layouts/base.liquid
     <div class="gray-bg">
       <br>
       <div class="table">
-        <a href="/story-book/" class="row hover-box plain-link" style="--img: url('https://shortcomix.netlify.app/images/static/book.png');">
+        <a href="/story-book" class="row hover-box plain-link" style="--img: url('/images/static/book.png');">
           <div class="cell">Short Story Book ✨</div>
           <div class="cell">I wrote one and here you will find it 👍</div>
         </a>
-        <a href="/sketches/" class="row hover-box plain-link" style="--img: url('https://shortcomix.netlify.app/images/static/shop.png');">
+        <a href="/sketches" class="row hover-box plain-link" style="--img: url('/images/static/shop.png');">
           <div class="cell">Sketches 🖼️</div>
           <div class="cell">I draw on my notebooks during classes a lot. And some of it is here 🍰</div>
         </a>
-        <a href="/news/" class="row hover-box plain-link" style="--img: url('https://shortcomix.netlify.app/images/static/posts.png');">
+        <a href="/news" class="row hover-box plain-link" style="--img: url('/images/static/posts.png');">
           <div class="cell">My NewsPaper 🚩</div>
           <div class="cell">I don't have one, I pretend to. Read it Here 🎉</div>
         </a>
@@ -342,53 +340,54 @@ layout: layouts/base.liquid
           <img id="d-frog-pic" src="/images/static/pencil-frog.png" style="width: 100%; height:auto; aspect-ratio:17/16; position:relative; bottom:-10px; filter: saturate(0.8); -webkit-filter: saturate(0.8); -moz-filter: saturate(0.8);" alt="Living Like Button" title="💗Living Like Button"/>
         </div>
       </div>
-      <!-- b. big frog text -->
+      <!-- b. text part -->
       <div style="height:auto; width: 45%; text-align:center; justify-content:center; place-items:center; margin-right:32px;">
+        
+        <!-- big frog text -->
         <p class="d-frog-text" style="font-family: open sans; font-size:min(3.4vw,27px); line-height:1.5;">
           <!-- Hey, thanks for visiting !<br>If you liked it, hit this frog's head !! -->
           Hey, thanks for visiting this website.<br>
           If you liked it, hit this frog.
         </p>
+        
+         <!-- big easter egg -->
+         <div class="d-stab" style="display:none;">
+           <div style="display:flex; flex-direction:column; justify-content:center; align-items: center;">
+         	<!-- a. U are stabbing -->
+           	<i><p style="padding: 15px; line-height: 1.5; font-size: min(4.4vw, 25px); ">U are now stabbing a ded frog.</p></i>
+         	<!-- b. stab count -->
+         	<p id="d-stab-count" style="padding: 0px; font-family: indie flower; line-height: 1.5; font-size: min(4.4vw, 30px); ">
+           	.
+           </p><p style="font-size: min(4.4vw, 28px);">🎉😬🚓</p><br>
+         	<!-- c. records unlocked -->
+        	<p id="d-records" style="padding:15px; font-family: open sans; line-height: 1.5; font-size: min(4.3vw, 22px);">
+        	</p>
+         	<!-- d. 50 count music -->
+          	<div id="d-music" style="display:none; width: 70%; margin: 10px; max-width:250px; height: auto; aspect-ratio: 16/2.9; border-radius: 40px; background: #444; overflow:hidden; justify-content:center; place-items:center;">
+           		 <iframe src="" style="aspect-ratio: 16/8; overflow:hidden; width: 100%; height: auto; transform:translate(0%,-65%) scale(1.04);"></iframe>
+         	</div>
+        	 <!-- e. password unscrambler -->
+        	 <div id="d-unscrambler" style="display:none;">
+         	 	 <form style="margin: 0px 0px;" onsubmit="event.preventDefault(); checkText();">
+            		 <input id="d-password-input" type="text" required minlength="4" style="font-family: open sans; font-size: min(4.2vw, 18px); margin: 0 5% 0 0; width: 50%; text-align:left; padding: 3px 18px; border-radius: 30px; outline: none!important; border:solid 1px #bbb!important;"/>
+             		<button aria-label="submit" style="padding:5px; border-radius:50px; font-size: min(4.4vw,20px); outline: none!important; border:solid 1px #bbb!important;">👍</button>
+          		 </form>
+         	</div>
+           <!-- --></div>
+       	</div>
+        <!--     -->
+           
       </div>
     </div>
     <!-- -->
   </div><br>
-  
-  
-  <!-- Big Easter Egg -->
-   <div id="d-easter-egg" style="width: 100%; height: auto; display:none; margin: 0% 0 2% 0; position: relative; overflow: hidden;" class="gray-bg d-stab">
-     <div name="textcontainer" style="width: 80%; margin:3% 0px;">
-     <!-- a. U are stabbing -->
-     
-     <!-- b. stab count -->
-     <p id="d-stab-count" style="padding: 0px; font-family: open sans; line-height: 1.5; font-size: min(4.4vw, 30px); font-weight: bold;">
-       .
-     </p> <br>
-     <!-- c. records unlocked -->
-     <p id="d-records" style="padding:0px; font-family: open sans; line-height: 1.5; font-size: min(4.3vw, 25px);">
-     </p>
-     <!-- d. 50 count music -->
-      <div id="d-music" style="display:none; width: 70%; height: auto; aspect-ratio: 16/2.9; border-radius: 40px; background: #444; margin-top: 10%; overflow:hidden; justify-content:center; place-items:center;">
-        <iframe src="" style="aspect-ratio: 16/8; overflow:hidden; width: 100%; height: auto; transform:translate(0%,-65%) scale(1.04);"></iframe>
-     </div>
-     <!-- e. password unscrambler -->
-     <div id="d-unscrambler" style="display:none;">
-       <form style="margin: 12px 0px;" onsubmit="event.preventDefault(); checkText();">
-         <input id="d-password-input" type="text" required minlength="4" style="font-family: open sans; font-size: min(4.2vw, 28px); margin: 0 1% 0 0; width: 25%; text-align:left; padding: 3px 18px; border-radius: 30px; outline: none!important; border:solid 1px #bbb!important;"/>
-         <button aria-label="submit" style="padding:5px; border-radius:50px; font-size: min(4.4vw,28px); outline: none!important; border:solid 1px #bbb!important;">👍</button>
-       </form>
-     </div>
-    <!-- -->
-   </div>
-     
-  </div>
-  <!-- -->
+
   
   
   <!-- Big Copyrights --><br>
   <div class="d-copyrights" style="display: flex; width: 60%; justify-content: center; font-family: indie flower; font-weight: bold; opacity: 0.9; font-size: min(4vw,26px); margin: 16px 0;">
     <p>© ShortComix by&nbsp;</p>
-    <a href="/about-me/" class="retro-cursor plain-link" onclick="event.preventDefault(); window.location='/about-me/';">Shreyas Hegde</a>
+    <a href="/about-me" class="retro-cursor plain-link" onclick="event.preventDefault(); window.location='/about-me';">Shreyas Hegde</a>
   </div><br>
   
 </div>
@@ -396,7 +395,7 @@ layout: layouts/base.liquid
 
 <style>
 ::-webkit-scrollbar{display:none!important;} 
-
+        
 #fixed-background, .carousel{
   display: block!important;
 }
@@ -404,7 +403,7 @@ layout: layouts/base.liquid
 
 @media(prefers-color-scheme:light){
   #open-mobile-menu{
-    box-shadow: 0px 0px 65px 50px #f0f0f0!important;
+    box-shadow: 0px 0px 35px 25px #f0f0f0!important;
     border: 6px solid #fff!important;
 }}
 
@@ -418,23 +417,20 @@ layout: layouts/base.liquid
   .spill{
     display:grid!important;
 }}
-
 .common-gap{display: none!important;}
  
 /* Comic Thumbnails */
 .comic-outer-square{ width: 46%; text-align: center; }
   
-.pick-link{ margin-right: 3.5%; } 
 .comic-square{ width:100%; height: auto; aspect-ratio: 16/16.5!important; max-width: 300px; max-height: 350px; border-radius: 35px; transform-style: preserve-3d; transition: 3.5s ease-in 1; will-change: transform, opacity; }
 .comic-square:hover{ opacity: 0.8; } 
-
-.pick-second-link{margin-left: 3.5%;} 
+ 
 .d-comic-square{ width:33vw; height:auto; max-width: 280px; aspect-ratio:16/16.5!important; margin: 0px 6px 0px 6px; cursor: pointer; border-radius: 50px; transition: opacity 0.1s linear; transform-style: preserve-3d; will-change: transform, opacity; }
 .d-comic-square:hover {opacity: 0.8;}
 
 /* Animated Car on Road */
 #animated-road{ width: 100%; max-width: 650px; height:auto; aspect-ratio: 32/17; border-bottom: #353f47 solid 22px; margin-top: 5%; background-image: var(--img-plain-road); background-size:auto 101%; background-position: 0 center; background-repeat: repeat-x; will-change: background-position; animation: highway 1s linear infinite; }
-#animated-car{ width: 84%; height:auto; aspect-ratio: 16/11.4; position: absolute; bottom: 4%; left:0px; transform: translate(11%,15.8%) rotate(16.5deg); animation: moving_car 4s infinite; }
+#animated-car{ width: 82%; height:auto; aspect-ratio: 16/11.4; position: absolute; bottom: 6%; left:0px; transform: translate(11%,15.8%) rotate(16.5deg); animation: moving_car 3.7s infinite; }
   
 /* TV Box and Buttons */
 .yt-video, .d-yt-video { position: relative; width: 100%; height: auto; aspect-ratio: 16/9.4!important; background: transparent !important; z-index: 10; }
@@ -443,7 +439,7 @@ layout: layouts/base.liquid
 .scan-overlay, .d-scan-overlay { background-image: linear-gradient(#0000,#00000014,#0000); background-repeat: repeat; background-size: 100% 6px; position: absolute; inset: 0; pointer-events: none; width: 0%; height: 100%; overflow: hidden; }
 .scan-line, .d-scan-line { position: absolute; top: -5%; width: 100%; height: 6px; background: rgba(255, 255, 255, 0.15); box-shadow: 0 0 8px rgba(255, 255, 255, 0.1); animation: scan 3s linear infinite; animation-fill-mode: forwards; }
   
-#watch,#change{ width: 21vw; height: auto; max-width: 100px; aspect-ratio: 10/6.4; background-color: #495ab1; border: 5px solid #8997d7!important; padding: 4px; border-radius: 30px; filter: contrast(1) saturate(1) hue-rotate(0deg); }
+#watch,#change{ width: 21vw; height: auto; max-width: 100px; aspect-ratio: 10/6.4; background-color: #495ab1; border: 5px solid #8997d7!important; padding: 4px; border-radius: 30px; filter: contrast(1) saturate(1.1) hue-rotate(0deg); }
 #watch p{ font-family: acme; font-size: min(4.2vw,22px); color: #fff!important; }
 #change{ margin-left: 3%; pointer-events: none; }
 #d-watch, #d-change { cursor: pointer; user-select: none; width: 140px; height: 80px; background-color: #3d4ea6; border: 8px solid #7e92de; border-radius: 50px; }
@@ -460,14 +456,14 @@ layout: layouts/base.liquid
 .bubbly-tap:hover, .d-bubbly-tap{ animation: bubbly_tap 1.1s 1; }
   
 /* Frog Like */
-/* .frog-like-btn:hover { animation: soft_touch 1.2s 1 } */
+/*.frog-like-btn:hover { animation: soft_touch 1.2s 1 }*/
   
 /* Easter Egg Section */
 .twinkling{ animation: twinkle 1s infinite; }
   
 /* More Section */
 .more-section { margin-top: 8%; }
-.more-section img { width: 78%; margin-bottom: min(5%, 15px); }
+.more-section img { width: 77%; margin-bottom: min(5%, 15px); }
 .more-section img:hover {animation: soft_touch 1.2s 1;}
   
 /* Coffee Cup Menu */
@@ -483,7 +479,7 @@ layout: layouts/base.liquid
 
 /* Media */
 @media(max-width: 650px) {
-  .frog-text { transform: translateX(-2%); width: 95%; font-size: min(4.5vw,25px); }
+  .frog-text { transform: translateX(-2%); width: 95%; font-size: min(4.3vw,25px); }
 }
 @media(max-width: 900px) {
   .table{width: 75%!important;}
@@ -492,6 +488,7 @@ layout: layouts/base.liquid
   
 /* Color Theme */
 @media(prefers-color-scheme:dark){
+  #kiddo-peek{ filter: opacity(0.97) contrast(0.9) brightness(1.11)!important;}
   .link-table{ max-height: none!important; margin-top: min(5vw, 60px); }
 }
 
@@ -501,9 +498,9 @@ from {background-position: 0 0;}
 to {background-position: -129.6vw 0;}
 }
 @keyframes moving_car {
-0%{transform: translate(13%,15.5%) rotateZ(17deg);}
-50%{transform: translate(6%,16%) rotateZ(16.5deg);}
-100%{transform: translate(13%,15.5%) rotateZ(17deg);}
+0%{transform: translate(15%,15.5%) rotateZ(17.5deg);}
+50%{transform: translate(8%,16%) rotateZ(17.5deg);}
+100%{transform: translate(15%,15.5%) rotateZ(17.5deg);}
 }
 @keyframes scan {
 0%{ top: -5%; opacity:1; }
@@ -727,13 +724,14 @@ function togglePlayPause() {
   	const commandName = isVideoPlaying ? 'playVideo' : 'pauseVideo';
     const newText = isVideoPlaying ? '🙌Pause' : '🍰 Play';
     const firstVideo = iframe.src === "" && currentlyPlaying == 0;
+    
   
   	// autoplay 1st video as we showed its thumbnail with tv scan line animation
     if(firstVideo){ iframe.src = iframe.getAttribute('data-src'); firstvideo(iframe); return; }
     
     // update button's text
   	document.querySelector(watchBtnText).innerText = newText;
-    
+      
   	// play / pause video
  	iframe.contentWindow.postMessage(
        JSON.stringify({ event: 'command', func: commandName, args: [] }),
@@ -782,14 +780,11 @@ function checkText() {
   let input = document.querySelector(inp).value;
   const resultElement = document.querySelector(unscrambler);
   if (input === "🍰🌓aepayssia") {
-    resultElement.innerHTML = "<br><a style='color: #e6174b!important; font-size: min(4vw, 30px); text-decoration: underline; display: inline-block; text-underline-offset: 4px; margin: min(5%, 15px);' class='twinkling' href='/story-book/#a0zVs5q'>🍰🌓AsEasyAsPie</a><br><br>";
-    const div = document.createElement('div');
-    div.textContent = "wasn't it?";
+    resultElement.innerHTML = "<br><a style='color: #e6174b!important; font-size: min(4.3vw, 22px);  text-decoration: underline; display: inline-block; text-underline-offset: 4px; margin: min(5%, 6px);' class='twinkling' href='/story-book#a0zVs5q'>🍰🌓AsEasyAsPie</a><p style='font-size: min(4.3vw, 22px);'>wasn't it?</p><br><br>";
     div.addEventListener('click', () => window.location.href = '/story-book/#a0zVs5q');
-    resultElement.appendChild(div);
   }
   else {
-    resultElement.innerHTML = "<br><p style='color: #e6174b!important;'>Wow! wrong answer.<br/></p>";
+    resultElement.innerHTML = "<br><p style='color: #e6174b!important; font-size: min(4.3vw, 22px); '>Wow! wrong answer.<br/></p>";
   }
 }
 
@@ -832,8 +827,8 @@ function spill() {
 // Comic Thumbnail Clicked (animation)
 function handleComicClick(screenSize, comicNo){
   const comicSquare = (screenSize == 0) ? 'comic-square' : 'd-comic-square';
-  const animationName = (screenSize == 0) ? 'soft_touch 1.1s 1' : 'd_comic_thumb_touch 3.5s 1';
-  const animationDuration = (screenSize == 0) ? 1100 : 4000;
+  const animationName = (screenSize == 0) ? 'soft_touch 1s 1' : 'd_comic_thumb_touch 3.5s 1';
+  const animationDuration = (screenSize == 0) ? 3100 : 4000;
   
   const selectedThumbnail = document.getElementsByClassName(comicSquare)[comicNo];
   selectedThumbnail.style.animation= animationName;
