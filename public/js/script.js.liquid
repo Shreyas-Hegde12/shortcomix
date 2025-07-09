@@ -8,6 +8,14 @@ const previousComic = document.getElementById('Blog1_blog-pager-older-link');
 const nextComic = document.getElementById('Blog1_blog-pager-newer-link');
 const isMobile = screen.width < 650;
 
+const carouselImages = [
+  	{ name: "amazing", src: "/images/emotes/awesome.png" },
+  	{ name: "egg", src: "/images/emotes/think.png" },
+  	{ name: "meh", src: "/images/emotes/oh-no.png" },
+  	{ name: "scared", src: "/images/emotes/scared.png" },
+	{ name: "shy", src: "/images/emotes/shy.png" }
+];
+
 let visits = parseInt(localStorage.getItem("userNew")) || 0;
 let menuOpened = localStorage.getItem("menuOpened") || 'false' ;
 
@@ -104,12 +112,6 @@ function polishComicPage() {
 
 function polishHomePage() {
     // a. Carousel Preload Images
-	const carouselImages = [
-		{ name: "wow/awesome", src: "/images/emotes/awesome.png" },
-		{ name: "think egg", src: "/images/emotes/think.png" },
-		{ name: "oh no", src: "/images/emotes/oh-no.png" },
-		{ name: "scared", src: "/images/emotes/scared.png" }
-	];
 	carouselImages.forEach(image => {
   		preloadImage(image.src);
 	});
@@ -491,22 +493,15 @@ function comicPick() {
 // Carousel
 function startCarousel() {
 	let emojiNum= 0;
-	const carouselImages = [
-  	{ name: "wow/awesome", src: "/images/emotes/awesome.png" },
-  	{ name: "think egg", src: "/images/emotes/think.png" },
-  	{ name: "oh no", src: "/images/emotes/oh-no.png" },
-  	{ name: "scared", src: "/images/emotes/scared.png" }
-];
 
-const carouselInterval = setInterval(function() {
-	if(emojiNum == 0){ document.querySelector('.emoji-carousel').classList.add('animate-carousel'); }
-	if(emojiNum == carouselImages.length){ emojiNum=0; }
+	const carouselInterval = setInterval(function() {
+		if(emojiNum == 0){ document.querySelector('.emoji-carousel').classList.add('animate-carousel'); }
+		if(emojiNum == carouselImages.length){ emojiNum=0; }
 
-	document.querySelector('.emoji-carousel').src= carouselImages[emojiNum].src;
+		document.querySelector('.emoji-carousel').src= carouselImages[emojiNum].src;
 
-	emojiNum++;
-},3000);
-
+		emojiNum++;
+	},3000);
 }
 
 
