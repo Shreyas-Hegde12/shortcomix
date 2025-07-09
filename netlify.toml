@@ -7,8 +7,3 @@
   for = "/sitemap.xml"
   [headers.values]
     Access-Control-Allow-Origin = "*"
-
-[[headers]]
-  for = "/*.mjs"
-  [headers.values]
-    Content-Type = "application/javascript"
