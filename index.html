@@ -16,7 +16,7 @@ layout: layouts/base.liquid
 <div id="this-is-home-page"></div>
 
 <!-- Mobile -->
-<div class="for-mobile" style="margin-top: 8%;"> 
+<div class="for-mobile" style="margin-top: 10%;"> 
   
   
   <!-- Kiddo Peek -->
@@ -54,9 +54,9 @@ layout: layouts/base.liquid
   
   
   <!-- Clips -->
-  <div class="gray-bg" style="padding-top:9%; margin-bottom: 0%;">
+  <div class="gray-bg" style="padding-top:10%; margin-bottom: 0%;">
     <!-- TV -->
-    <div class="tv-frame" style="display:flex; border-radius: 4px; width:77%; max-width: 470px; height: auto; aspect-ratio: 16/10.45; margin-top:2%; margin-bottom: 5%; background-image: url('/images/static/tv.jpg'); background-position:5% 0; background-size: cover; filter: hue-rotate(0deg); position: relative; place-items:center; justify-content:center;">
+    <div class="tv-frame" style="display:flex; border-radius: 4px; width:75%; max-width: 470px; height: auto; aspect-ratio: 16/10.45; margin-top:2%; margin-bottom: 5%; background-image: url('/images/static/tv.jpg'); background-position:5% 0; background-size: cover; filter: hue-rotate(0deg); position: relative; place-items:center; justify-content:center;">
       <!-- tv embed -->
       <div class="tv-embed" style="position: relative; width: 90%; height: auto; border-radius: 0px; transform: translateX(-0%); max-width: 450px; aspect-ratio: 16/9.4; overflow:hidden; background: transparent; z-index: 10;">
         <img class="back" src="/images/static/first-video-thumbnail.jpg" style="width: 0%; height: auto; position:absolute; top: 0px; left: 0px; display:block;" alt="First Video Thumbnail"/>
@@ -68,7 +68,7 @@ layout: layouts/base.liquid
       </div>
     </div>
     <!-- TV Controls -->
-    <div style="position: relative; display: flex; flex-direction:row; gap: 2%; place-items: center; justify-content:center; margin: 8% 0 4% 0;">
+    <div style="position: relative; display: flex; flex-direction:row; gap: 2%; place-items: center; justify-content:center; margin: 8% 0 5% 0;">
       <!-- controls -->
       <button id="watch" onclick="watchVideo();" aria-label="Watch">
         <p>
@@ -76,7 +76,7 @@ layout: layouts/base.liquid
         </p>
       </button>
       <button onclick="changeVideo();" id="change" aria-label="Change">
-        <svg fill="#aebddf" height="32px" width="32px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 66.307 66.307" xml:space="preserve"><g><path d="M64.702,30.366L37.12,14.442c-0.995-0.574-2.221-0.574-3.217,0s-1.609,1.639-1.609,2.787v13.072L4.827,14.442
+        <svg fill="#aebddf" height="30px" width="30px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 66.307 66.307" xml:space="preserve"><g><path d="M64.702,30.366L37.12,14.442c-0.995-0.574-2.221-0.574-3.217,0s-1.609,1.639-1.609,2.787v13.072L4.827,14.442
                      c-0.997-0.574-2.222-0.574-3.218,0S0,16.081,0,17.229v31.849c0,1.148,0.613,2.211,1.609,2.785c0.498,0.287,1.053,0.432,1.608,0.432
                      s1.111-0.145,1.609-0.432l27.466-15.857v13.072c0,1.148,0.612,2.211,1.608,2.785c0.498,0.287,1.055,0.432,1.609,0.432
                      s1.111-0.145,1.607-0.432l27.582-15.924c0.996-0.574,1.609-1.637,1.609-2.787C66.311,32.004,65.698,30.94,64.702,30.366z"/></g></svg>
@@ -87,7 +87,7 @@ layout: layouts/base.liquid
  <!--  --> <br>
   
    <!-- Image Bubbles -->
-   <div style="display: block; position: relative; width: 100%; max-width: 590px; height: auto; aspect-ratio: 16/14.5; overflow: hidden; scroll-behavior:smooth; margin: 12% 0 10% 0;" id="bubbles">
+   <div style="display: block; position: relative; width: 100%; max-width: 590px; height: auto; aspect-ratio: 16/14.5; overflow: hidden; scroll-behavior:smooth; margin: 12% 0 6% 0;" id="bubbles">
       <br><!--<br>-->
      <!-- a. gift -->
      <a href="/news" class="image-bubble" style="z-index: 1; width:40%; max-width:400px; height: auto; aspect-ratio: 16/16; position: relative; top:1%; left: -16.5%; border-radius: 200px; background: #181818; display: flex; justify-content:center; align-items:center;" onclick="event.preventDefault(); delayLink('/news',300);">
@@ -126,7 +126,7 @@ layout: layouts/base.liquid
      <!-- text part -->
      <div style="height:auto; width: 55%; text-align:center; justify-content:center; place-items:center;">
        <p class="frog-text" style="font-family: open sans; line-height:1.7; padding-left:4px;">
-          Hey, thanks for visiting.<br>If you liked this website,<br> hit the frog !
+          Hey, thanks for visiting.<br>If you enjoyed,<br> Tap the frog to like !
        </p>
      </div>
    </div>
@@ -172,18 +172,18 @@ layout: layouts/base.liquid
   </div>
   <!-- More content -->
   <div class="more-section collapsible" style="max-height: 0px; overflow: hidden;">
-    <!-- a. contact 
+    <!-- a. contact -->
     <a href='/contact-me'>
       <img class="back" src="/images/static/.png" style="aspect-ratio: 16/5.5;" alt="Contact"/>
-    </a> -->
+    </a> 
     <!-- b. follow me -->
     <a href="/about-me">
       <img class="back" src="/images/static/follow-me.jpg"  style="aspect-ratio: 16/7.2;" alt="Follow me" />
     </a>
-    <!-- c. play game 
+    <!-- c. play game -->
     <a href="/">
       <img class="back for-laptop" src="/images/static/.jpg" style="aspect-ratio: 6/4.2;" alt="Play Game"/>
-    </a> -->
+    </a> 
     <!-- d. papa coffee -->
     <a href="https://i0.wp.com/schrodingersothercat.blog/wp-content/uploads/2020/02/cat-cafe-facebook-1.jpg">
       <img class="back" src="/images/static/papa-coffee.jpg"  style="aspect-ratio: 14/9.5; filter: saturate(0.5) contrast(0.95);" alt="In a coffee cup" />
@@ -217,7 +217,7 @@ layout: layouts/base.liquid
 <div class="for-laptop">
   
    <!-- Big Kiddo Peek -->
-     <img id='d-kiddo-peek' onclick="window.location.href='news';" src='https://res.cloudinary.com/dzss5ged8/image/upload/v1737577034/top10_1_xapllm.png' style='position: relative; aspect-ratio:16/16; width: 40vw; max-width: 340px; height: auto; margin-top: min(15%, 50px); margin-bottom: min(3%, 40px); transition: ease-in-out 0.8s; opacity: 0.95; cursor:pointer;' title="©Shooshoo comics rendition of Kiddo" alt="©Shooshoo comics rendition of Kiddo"/>
+     <img id='d-kiddo-peek' onclick="window.location.href='news';" src='https://res.cloudinary.com/dzss5ged8/image/upload/v1737577034/top10_1_xapllm.png' style='position: relative; aspect-ratio:16/16; width: 40vw; max-width: 330px; height: auto; margin-top: min(15%, 50px); margin-bottom: min(3%, 40px); transition: ease-in-out 0.8s; opacity: 0.95; cursor:pointer;' title="©Shooshoo comics rendition of Kiddo" alt="©Shooshoo comics rendition of Kiddo"/>
   
    <!-- Coffee Cup Menu -->
    <div class="for-laptop strict" id="coffee-cup-menu" style="width: 24vw; max-width: 300px; height: auto; position: fixed; bottom: 5vh; right: 20px; z-index: 1005; cursor: pointer; overflow: hidden; transition: opacity 0.7s linear;">
@@ -346,8 +346,9 @@ layout: layouts/base.liquid
         <!-- big frog text -->
         <p class="d-frog-text" style="font-family: open sans; font-size:min(3.4vw,27px); line-height:1.5;">
           <!-- Hey, thanks for visiting !<br>If you liked it, hit this frog's head !! -->
-          Hey, thanks for visiting this website.<br>
-          If you liked it, hit this frog.
+          <!--Hey, thanks for visiting this website.<br>
+          If you liked it, hit this frog.--> 
+           Hey, thanks for visiting.<br>If you enjoyed,<br> Tap the frog to like !
         </p>
         
          <!-- big easter egg -->
@@ -439,7 +440,7 @@ layout: layouts/base.liquid
 .scan-overlay, .d-scan-overlay { background-image: linear-gradient(#0000,#00000014,#0000); background-repeat: repeat; background-size: 100% 6px; position: absolute; inset: 0; pointer-events: none; width: 0%; height: 100%; overflow: hidden; }
 .scan-line, .d-scan-line { position: absolute; top: -5%; width: 100%; height: 6px; background: rgba(255, 255, 255, 0.15); box-shadow: 0 0 8px rgba(255, 255, 255, 0.1); animation: scan 3s linear infinite; animation-fill-mode: forwards; }
   
-#watch,#change{ width: 21vw; height: auto; max-width: 100px; aspect-ratio: 10/6.4; background-color: #495ab1; border: 5px solid #8997d7!important; padding: 4px; border-radius: 30px; filter: contrast(1) saturate(1.1) hue-rotate(0deg); }
+#watch,#change{ width: 21vw; height: auto; max-width: 100px; aspect-ratio: 10/6.8; background-color: #495ab1; border: 5px solid #8997d7!important; padding: 4px; border-radius: 30px; filter: contrast(1) saturate(1.1) hue-rotate(0deg); }
 #watch p{ font-family: acme; font-size: min(4.2vw,22px); color: #fff!important; }
 #change{ margin-left: 3%; pointer-events: none; }
 #d-watch, #d-change { cursor: pointer; user-select: none; width: 140px; height: 80px; background-color: #3d4ea6; border: 8px solid #7e92de; border-radius: 50px; }
