@@ -5,18 +5,21 @@ layout: layouts/base.liquid
 ---
 
 <!--Carousel Background-->
-<div id='fixed-background'>
+<div class='not-simple' id='fixed-background'>
   <p class='for-laptop' style='font-family: indie flower; font-size: 0px;'>.</p>
 </div>
   
 <!--Emoji Carousel-->
-<div class='carousel' style='display: none;'><img alt='ShortComix Carousel' class='emoji-carousel' src='/images/emotes/shy.png' style='height:auto; aspect-ratio: 371/322; max-width: 430px; margin-left:0px;'/>
+<div class='carousel' style='display: none;'>
+  <img alt='ShortComix Carousel' class='emoji-carousel' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEimqGnFifPb887vmknTUJmh-vBJLkWNwDdKWU2ng0fNm2nbPCsgqL-y-3vxN5c_snfa-CZ-mKxC3w9nFasUC_lZ1Db_rTPkPdcPnqNYL719e0R3bj5PhJNh-5_-hOvJ0374HjRIzo9d2UpbpKeIyWhN-8qiRDhNRH6U96bhQmp8b4pevcHNT9PpK3zUD0Er/s0-rw/shy--.png' style='height:auto; aspect-ratio: 371/322; max-width: 430px; margin-left:0px;'/>
+  <p class='for-laptop for-mobile for-dark' style='font-family: gloria hallelujah; font-size: 40px; color: white; filter: drop-shadow(0 0 10px white);'>@shortcomix</p>
 </div>
+
 <!-- Page Id -->
 <div id="this-is-home-page"></div>
 
 <!-- Mobile -->
-<div class="for-mobile" style="margin-top: 10%;"> 
+<div class="for-mobile" style="margin-top: 8%;"> 
   
   
   <!-- Kiddo Peek -->
@@ -30,13 +33,13 @@ layout: layouts/base.liquid
        
        src='https://res.cloudinary.com/dzss5ged8/image/upload/v1737577034/top10_1_xapllm.png' 
        
-       style='margin-bottom: 7%; aspect-ratio:16/15.6; width: 56.5vw; max-width: 300px; height: auto; transition: ease-in 0.8s; border-radius:500px; filter: opacity(0.97) contrast(0.85) brightness(1.11);' 
+       style='margin-bottom: 9%; aspect-ratio:16/15.6; width: 56vw; max-width: 300px; height: auto; transition: ease-in 0.8s; border-radius:500px; filter: opacity(0.97) contrast(0.87) brightness(1.11);' 
        tile="©Shooshoo.comics rendition of kiddo!" alt="©Shooshoo.comics rendition of kiddo!"
        onclick="window.location='#bubbles';"/>
    
   
   <!-- Comics -->
-  <div style="width:93%; max-width: 580px; display:flex; flex-direction: row; gap: 7%; place-items:center; justify-content:center; place-items:center;  position:relative; z-index:10; filter: contrast(0.9) saturate(0.9);">
+  <div style="width:92%; max-width: 580px; display:flex; flex-direction: row; gap: 7%; place-items:center; justify-content:center; place-items:center;  position:relative; z-index:10; filter: contrast(0.9) saturate(0.9);">
     <a class="pick-link comic-outer-square plain-link" onclick="handleComicClick(0,0)" >
       <img class="pick-img back comic-square" src="/images/sprites/placeholder.jpg" alt="Comic I chose for you" title="Comic I chose for you"/>
     <p class="subtitle" style="font-family: gloria hallelujah; font-size: min(6vw, 207px); opacity: 0.85; padding-top: 2%;">comic 1</p>
@@ -48,7 +51,7 @@ layout: layouts/base.liquid
 
   
   <!-- Animated Car on Road -->
-<div style="position:relative; overflow:hidden; margin: -10% 0 7% 0; position:relative; z-index: 5;">
+<div style="position:relative; overflow:hidden; margin: -7% 0 7% 0; position:relative; z-index: 5;">
   <div id="animated-road"></div>
 <img id="animated-car" src="/images/static/car-with-glow.png" alt="Arrested doggie van" title="Arrested doggie van"/></div><br> 
   
@@ -174,7 +177,7 @@ layout: layouts/base.liquid
   <div class="more-section collapsible" style="max-height: 0px; overflow: hidden;">
     <!-- a. contact -->
     <a href='/contact-me'>
-      <img class="back" src="/images/static/.png" style="aspect-ratio: 16/5.5;" alt="Contact"/>
+      <img class="back" src="/images/static/contact-me.png" style="aspect-ratio: 16/5.5; filter: saturate(0.9);" alt="Contact"/>
     </a> 
     <!-- b. follow me -->
     <a href="/about-me">
@@ -186,7 +189,7 @@ layout: layouts/base.liquid
     </a> 
     <!-- d. papa coffee -->
     <a href="https://i0.wp.com/schrodingersothercat.blog/wp-content/uploads/2020/02/cat-cafe-facebook-1.jpg">
-      <img class="back" src="/images/static/papa-coffee.jpg"  style="aspect-ratio: 14/9.5; filter: saturate(0.5) contrast(0.95);" alt="In a coffee cup" />
+      <img class="back" src="/images/static/papa-coffee.jpg"  style="aspect-ratio: 14/9.5; filter: saturate(0.6) contrast(0.99);" alt="In a coffee cup" />
     </a>
     <!-- e. doom scroll -->
     <a href="/scroll-wheel">
@@ -197,7 +200,7 @@ layout: layouts/base.liquid
   
 
   <!-- Copy Rights -->
-  <div style="display: flex; margin: 20% 0 0 0; position: relative; flex-direction:column; gap:1px; place-items:center; justify-content:center;">
+  <div style="margin: 20% 0 0 0; position: relative; flex-direction:column; gap:1px; place-items:center; justify-content:center;">
     <!-- home picture -->
     <img style="width:54vw; max-width: 330px; aspect-ratio:1.15/1;" src="/images/static/home.png" title="Home Sweet Home" alt="Home Sweet Home"/>
     <!-- copyright text -->
@@ -348,7 +351,8 @@ layout: layouts/base.liquid
           <!-- Hey, thanks for visiting !<br>If you liked it, hit this frog's head !! -->
           <!--Hey, thanks for visiting this website.<br>
           If you liked it, hit this frog.--> 
-           Hey, thanks for visiting.<br>If you enjoyed,<br> Tap the frog to like !
+          Hey, thanks for visiting my website.<br>
+          If you liked it, hit this frog.
         </p>
         
          <!-- big easter egg -->
@@ -396,10 +400,11 @@ layout: layouts/base.liquid
 
 <style>
 ::-webkit-scrollbar{display:none!important;} 
-        
+
 #fixed-background, .carousel{
   display: block!important;
 }
+
 .mobile-header {display: none;}
 
 @media(prefers-color-scheme:light){
@@ -418,6 +423,7 @@ layout: layouts/base.liquid
   .spill{
     display:grid!important;
 }}
+
 .common-gap{display: none!important;}
  
 /* Comic Thumbnails */

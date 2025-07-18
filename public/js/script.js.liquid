@@ -3,11 +3,7 @@ permalink: /js/script.js
 eleventyExcludeFromCollections: true
 ---
 
-const comictitle = document.getElementById('comic-title');
-const previousComic = document.getElementById('Blog1_blog-pager-older-link');
-const nextComic = document.getElementById('Blog1_blog-pager-newer-link');
-const isMobile = screen.width < 650;
-
+// carousel images
 const carouselImages = [
   	{ name: "amazing", src: "/images/emotes/awesome.png" },
   	{ name: "egg", src: "/images/emotes/think.png" },
@@ -15,6 +11,96 @@ const carouselImages = [
   	{ name: "scared", src: "/images/emotes/scared.png" },
 	{ name: "shy", src: "/images/emotes/shy.png" }
 ];
+
+// frog images
+const frogImages = [
+	'/images/static/frog.png', '/images/static/frog-with-tie.png'
+];
+
+// for random comic button
+const allLinks = [
+	{% for post in collections.post %}
+		"{{ post.url }}",
+	{% endfor %}
+	];
+
+// for home page
+const comicLinks = [
+	// "/comic/cut-it", 
+  	// "/comic/extra-seat",
+  	"/comic/shooting-stars",
+  	"/comic/puppy-tale",
+	// "/comic/feel-the-kick",
+	"/comic/the-english-smile",
+ 	// "/comic/cooking-with-google", 
+	"/comic/a-nosy-deal",
+	"/comic/toasted-birthday",
+	"/comic/wonder-of-life",
+ 	// "/comic/game-over", 
+	"/comic/blame-potatoes",
+ 	// "/comic/egg-life", */
+ 	// "/comic/story-time", 
+  	// "/comic/million-dollar-baby",
+  	// "/comic/anybody-coffee", 
+];
+
+// to Emoji Function
+function toEmoji(){
+	let bodyText = document.querySelector(".emoji-space");
+	let theText = bodyText.innerHTML;
+	theText = theText.replace(/!shy/gi, "<img src='/images/emotes/shy.png' class='emoji-settings' alt='emoji shy'/>");
+	theText = theText.replace(/!omg/gi, "<img src='/images/emotes/scared.png' class='emoji-settings' alt='emoji omg'/>");
+	theText = theText.replace(/!sad/gi, "<img src='/images/emotes/oh-no.png' class='emoji-settings' alt='emoji sad'/>");
+	theText = theText.replace(/!smile/gi, "<img src='/images/emotes/smile.png'class='emoji-settings' alt='emoji smile'/>");
+	theText = theText.replace(/!stars/gi, "<img src='/images/emotes/sparkly.png' class='emoji-settings' alt='emoji stars'/>");
+	theText = theText.replace(/!dog/gi, "<img src='/images/emotes/loyal.png' class='emoji-settings'  alt='emoji dog'/>");
+	theText = theText.replace(/!cop/gi, "<img src='/images/emotes/eyes-on-you.png' class='emoji-settings'  alt='emoji cop'/>");
+	theText = theText.replace(/!wow/gi, "<img src='/images/emotes/awesome.png' class='emoji-settings'  alt='emoji wow'/>");
+	theText = theText.replace(/!egg/gi, "<img src='/images/emotes/think.png' class='emoji-settings'  alt='emoji egg'/>");
+	theText = theText.replace(/!hat/gi, "<img src='/images/emotes/hat.png' class='emoji-settings' alt='emoji with-hat'/>");
+	
+	bodyText.innerHTML = theText;
+}
+
+function comicPick() {
+
+	const ran1 = Math.floor(Math.random() * comicLinks.length);
+	let ran2 = Math.floor(Math.random() * comicLinks.length);
+
+	while(ran1 === ran2){ 
+		ran2 = Math.floor(Math.random() * comicLinks.length);
+	}
+
+	const pickLink = isMobile ? '.pick-link' : '.d-pick-link';
+	const secondPickLink = isMobile ? '.pick-second-link' : '.d-pick-second-link';
+	const pickImage = isMobile ? '.pick-img' : '.d-pick-img';
+	const secondPickImage = isMobile ? '.pick-second-img' : '.d-pick-second-img';
+
+	document.querySelector(pickLink).href = comicLinks[ran1];
+	document.querySelector(secondPickLink).href = comicLinks[ran2];
+	document.querySelector(pickImage).src = comicLinks[ran1] + '/thumb.jpg';
+	document.querySelector(secondPickImage).src = comicLinks[ran2] + '/thumb.jpg';
+}
+
+// Carousel
+function startCarousel() {
+	let emojiNum= 0;
+	
+const carouselInterval = setInterval(function() {
+	if(emojiNum == 0){ document.querySelector('.emoji-carousel').classList.add('animate-carousel'); }
+	if(emojiNum == carouselImages.length){ emojiNum=0; }
+
+	let pick= emojiNum;
+	document.querySelector('.emoji-carousel').src= carouselImages[pick].src;
+
+	emojiNum++;
+},3000);
+}
+
+const comictitle = document.getElementById('comic-title');
+const previousComic = document.getElementById('Blog1_blog-pager-older-link');
+const nextComic = document.getElementById('Blog1_blog-pager-newer-link');
+const isMobile = screen.width < 650;
 
 let visits = parseInt(localStorage.getItem("userNew")) || 0;
 let menuOpened = localStorage.getItem("menuOpened") || 'false' ;
@@ -50,7 +136,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		polishHomePage();
 	}
 	else if (document.querySelector('#this-is-story-page') !== null) {
-    	document.querySelector("iframe").addEventListener("load", lock);
+    	//document.querySelector("iframe").addEventListener("load", lock);
 	}
 	else if(document.querySelector('#this-is-games-page') != null){
 		sizeTracker();
@@ -116,7 +202,6 @@ function polishHomePage() {
   		preloadImage(image.src);
 	});
 
-
 	// b. Carousel Position Settings
 	const toh = window.innerHeight/2;
 	const toph = toh - (5*toh)/100;
@@ -125,9 +210,6 @@ function polishHomePage() {
 	// c. Frog Pic Change every 3 second
 	frogFreeze = setInterval( ()=>{
 		const frog = isMobile ? document.querySelector('#frog-pic') : document.querySelector('#d-frog-pic');
-		const frogImages = [
-			'/images/static/frog.png', '/images/static/frog-with-tie.png'
-		];
 
 		if(frogPose === frogImages.length){ frogPose=0; } 
 		frog.src= frogImages[frogPose];
@@ -217,19 +299,13 @@ function firstvideo(iframe){
 
 // Random Post
 function LuckyLink() {
-	const allLinks = [
-		{% for post in collections.post %}
-    		"{{ post.url }}",
-		{% endfor %}
-		];
-
 	// Find a Random Comic Link
 	let destination, lucky;
 	do
 	{
 		lucky = Math.floor(Math.random()*allLinks.length);
-		destination = allLinks[lucky];
-	} while(destination == window.location.pathname);
+		destination= "https://shortcomix.blogspot.com" + allLinks[lucky] + ".html";
+	} while(new URL(destination).pathname == window.location.pathname);
 	
 	// Play Button Animation
 	document.querySelector('.nav-random').style.animation='shake_on_hover 0.45s 2';
@@ -300,7 +376,7 @@ function mobileMenu(opn) {
 		else{
 			mobilemenu.style.clipPath = "circle(0% at 50% 90%)";
 			mobilemenu.style.transition= "clip-path 0.5s ease-in-out";
-			button.style.display="flex";
+			//button.style.display="flex";
 		}
 		return;
 	}
@@ -449,82 +525,9 @@ function signalCopy(buttonId, whatToSay) {
 	document.querySelector(buttonId).innerHTML= `<span id="signaling-copy"> ${whatToSay} </span>`;
 }
 
-// Comics for home comic grid
-const comicLinks = [
-	// "/comic/cut-it", 
-  	// "/comic/extra-seat",
-  	"/comic/shooting-stars",
-  	"/comic/puppy-tale",
-	// "/comic/feel-the-kick",
-	"/comic/the-english-smile",
- 	// "/comic/cooking-with-google", 
-	"/comic/a-nosy-deal",
-	"/comic/toasted-birthday",
-	"/comic/wonder-of-life",
- 	// "/comic/game-over", 
-	"/comic/blame-potatoes",
- 	// "/comic/egg-life", */
- 	// "/comic/story-time", 
-  	// "/comic/million-dollar-baby",
-  	// "/comic/anybody-coffee", 
-];
-
-function comicPick() {
-
-	const ran1 = Math.floor(Math.random() * comicLinks.length);
-	let ran2 = Math.floor(Math.random() * comicLinks.length);
-
-	while(ran1 === ran2){ 
-		ran2 = Math.floor(Math.random() * comicLinks.length);
-	}
-
-	const pickLink = isMobile ? '.pick-link' : '.d-pick-link';
-	const secondPickLink = isMobile ? '.pick-second-link' : '.d-pick-second-link';
-	const pickImage = isMobile ? '.pick-img' : '.d-pick-img';
-	const secondPickImage = isMobile ? '.pick-second-img' : '.d-pick-second-img';
-
-	document.querySelector(pickLink).href = comicLinks[ran1];
-	document.querySelector(secondPickLink).href = comicLinks[ran2];
-	document.querySelector(pickImage).src = comicLinks[ran1] + '/thumb.jpg';
-	document.querySelector(secondPickImage).src = comicLinks[ran2] + '/thumb.jpg';
-}
-
-
-// Carousel
-function startCarousel() {
-	let emojiNum= 0;
-
-	const carouselInterval = setInterval(function() {
-		if(emojiNum == 0){ document.querySelector('.emoji-carousel').classList.add('animate-carousel'); }
-		if(emojiNum == carouselImages.length){ emojiNum=0; }
-
-		document.querySelector('.emoji-carousel').src= carouselImages[emojiNum].src;
-
-		emojiNum++;
-	},3000);
-}
-
 
 // Replace Emoji Text with its Emojis
 !function(){ toEmoji(); }();
-
-function toEmoji(){
-	let bodyText = document.querySelector(".emoji-space");
-	let theText = bodyText.innerHTML;
-	theText = theText.replace(/!shy/gi, "<img src='/images/emotes/shy.png' class='emoji-settings' alt='emoji shy'/>");
-	theText = theText.replace(/!omg/gi, "<img src='/images/emotes/scared.png' class='emoji-settings' alt='emoji omg'/>");
-	theText = theText.replace(/!sad/gi, "<img src='/images/emotes/oh-no.png' class='emoji-settings' alt='emoji sad'/>");
-	theText = theText.replace(/!smile/gi, "<img src='/images/emotes/smile.png'class='emoji-settings' alt='emoji smile'/>");
-	theText = theText.replace(/!stars/gi, "<img src='/images/emotes/sparkly.png' class='emoji-settings' alt='emoji stars'/>");
-	theText = theText.replace(/!dog/gi, "<img src='/images/emotes/loyal.png' class='emoji-settings'  alt='emoji dog'/>");
-	theText = theText.replace(/!cop/gi, "<img src='/images/emotes/eyes-on-you.png' class='emoji-settings'  alt='emoji cop'/>");
-	theText = theText.replace(/!wow/gi, "<img src='/images/emotes/awesome.png' class='emoji-settings'  alt='emoji wow'/>");
-	theText = theText.replace(/!egg/gi, "<img src='/images/emotes/think.png' class='emoji-settings'  alt='emoji egg'/>");
-	theText = theText.replace(/!hat/gi, "<img src='/images/emotes/hat.png' class='emoji-settings' alt='emoji with-hat'/>");
-	
-	bodyText.innerHTML = theText;
-}
-
 
 // Easter Egg Message Map
 const passwordBox = isMobile ? 'password' : 'd-password';
@@ -556,14 +559,13 @@ const messageMap = {
     },
   };
 
-
 // Like Animation
 function likeAnimation(){
 	const root = document.querySelector(":root");
 
 	// a. Set scale for mobile devices
     if (window.innerWidth < 650) {
-      const hscale = (window.innerWidth / 460) * 1.35;
+      const hscale = (window.innerWidth / 460) * 1.4;
       const tscale = (window.innerWidth / 460) * 1.15;
       root.style.setProperty("--like-card-scale", hscale);
       root.style.setProperty("--like-msg-scale", tscale);

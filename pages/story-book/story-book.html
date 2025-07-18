@@ -27,7 +27,7 @@ layout: layouts/base.liquid
     <!-- The Book -->
     <div class="book-wrap">
         <!-- a. The Pdf -->
-        <iframe class="book-pdf" data-src="/images/static/book-first-page.jpg" style="width: 100%; height: auto; z-index: 5; position: absolute; aspect-ratio: 16/24; " class="back first-page"/>
+        <iframe class="book-pdf" src="https://drive.google.com/file/d/1LMooWz65glAE3JpyYkunb3kZwE5iQZFk/preview"></iframe><img src="/images/static/book-first-page.jpg" style="width: 100%; height: auto; z-index: 5; position: absolute; aspect-ratio: 16/24; " class="back first-page"/>
         <!-- b. Fun Lock -->
         <div id="a0zVs5q" onclick="map()" class="lock">
           <div class="lock-thumb">
@@ -268,7 +268,7 @@ to{transform:scale(0.8); opacity:1;}
     
 /* Pseudo Elements */
 #logo-replace::before{
-  content:''; background: url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiy3vagb4cOgNRydv47_KOj_PIH-a8sNADCVt_wlWdGYgjkbbvhmDiNeCZC_HpO4kjuUZv1WCmnvSAuk1hLLZaASOo17FyOxA2FZk07yZ4MkubCnye2geNfObeEw1Nh80Yfv2DPPCQFrphckVe-Cp3BdiK5aorSyovlI2IZXFWVb7an-2vC_2TwQSlYgbpm/s0-rw/portal--.png') no-repeat; background-size:cover; width: auto; height:140%; aspect-ratio:16/16; position:absolute; transform: translate(-10%,-14%) scale(1.04); left: 0px; display:inline-block; border-radius:5px; border: 0px solid white; transition: 0.2s ease;
+  content:''; background: url('/images/static/home-portal.png') no-repeat; background-size:cover; width: auto; height:140%; aspect-ratio:16/16; position:absolute; transform: translate(-10%,-14%) scale(1.04); left: 0px; display:inline-block; border-radius:5px; border: 0px solid white; transition: 0.2s ease;
 }
 #logo-replace:hover::before{
   transform: translate(78%,-14%) scale(1.04); transition: 0.4s ease;
@@ -281,7 +281,7 @@ to{transform:scale(0.8); opacity:1;}
 function lock(){
   if(window.location.hash === '#a0zVs5q'){
     document.querySelector('.book-pdf').style.pointerEvents='auto';
-    document.querySelector('.book-pdf').src = document.querySelector('.book-pdf').getAttribute('data-src');
+    //document.querySelector('.book-pdf').src = document.querySelector('.book-pdf').getAttribute('data-src');
     document.querySelector('.first-page').style.display = 'none';
     //document.querySelectorAll('p').forEach(p=>{p.style.display='none'});
   }
