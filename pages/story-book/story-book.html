@@ -9,7 +9,7 @@ layout: layouts/base.liquid
 <!-- Portal (Laptop) -->
 <div class="for-laptop" style="position: relative;">
     <a href="/" >
-        <img class="spinning-portal-laptop" src="/images/static/spinning-portal.png" alt="Portal Back to Home"/>
+        <img class="spinning-portal-laptop" src="/images/static/home-portal.png" alt="Portal Back to Home"/>
     </a>
 </div>
 
@@ -19,7 +19,7 @@ layout: layouts/base.liquid
     <div class="book-tape for-mobile">
         <img src="/images/static/book-tape.jpg" alt="Book Tape Background"/>
         <a href="/" >
-            <img class="spinning-portal" src="/images/static/spinning-portal.png" alt="Portal Back to Home"/>
+            <img class="spinning-portal" src="/images/static/home-portal.png" alt="Portal Back to Home"/>
         </a>
     </div>
 
@@ -27,11 +27,11 @@ layout: layouts/base.liquid
     <!-- The Book -->
     <div class="book-wrap">
         <!-- a. The Pdf -->
-        <iframe class="book-pdf" src="https://drive.google.com/file/d/1LMooWz65glAE3JpyYkunb3kZwE5iQZFk/preview"></iframe>
+        <iframe class="book-pdf" data-src="/images/static/book-first-page.jpg" style="width: 100%; height: auto; z-index: 5; position: absolute; aspect-ratio: 16/24; " class="back first-page"/>
         <!-- b. Fun Lock -->
         <div id="a0zVs5q" onclick="map()" class="lock">
           <div class="lock-thumb">
-              <img  src="/images/static/book-characters.png" alt="View the Map!"/>
+              <img  src="/images/static/lock-thumb.png" alt="View the Map!"/>
           </div>
           <span  style="font-size: min(6vw,30px); font-family:acme; color:#888;">
               One word says it
@@ -281,7 +281,9 @@ to{transform:scale(0.8); opacity:1;}
 function lock(){
   if(window.location.hash === '#a0zVs5q'){
     document.querySelector('.book-pdf').style.pointerEvents='auto';
-  	document.querySelectorAll('p').forEach(p=>{p.style.display='none'});
+    document.querySelector('.book-pdf').src = document.querySelector('.book-pdf').getAttribute('data-src');
+    document.querySelector('.first-page').style.display = 'none';
+    //document.querySelectorAll('p').forEach(p=>{p.style.display='none'});
   }
   else{ 
     document.querySelector('.lock').style.opacity="1";
@@ -291,6 +293,8 @@ function lock(){
   }
 }
 
+setTimeout(() => { lock(); },1500);
+  
 function map(){
   const lockImg = document.querySelector('.lock-thumb img');
   lockImg.style.transition = 'transform 1s ease';

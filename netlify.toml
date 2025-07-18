@@ -7,8 +7,3 @@
   for = "/sitemap.xml"
   [headers.values]
     Access-Control-Allow-Origin = "*"
-
-[[headers]]
-  for = "/pdfjs/web/viewer.html" 
-  [headers.values]
-    Content-Security-Policy = "frame-ancestors https://shortcomix.blogspot.com"
