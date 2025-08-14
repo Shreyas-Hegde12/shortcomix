@@ -305,7 +305,7 @@ function LuckyLink() {
 	{
 		lucky = Math.floor(Math.random()*allLinks.length);
 		destination= allLinks[lucky];
-	} while(new URL(destination).pathname == window.location.pathname);
+	} while(destination == window.location.pathname);
 	
 	// Play Button Animation
 	document.querySelector('.nav-random').style.animation='shake_on_hover 0.45s 2';
