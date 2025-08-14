@@ -1,0 +1,212 @@
+---
+title:  'Sketches 🖼️ | Do you sketch in your notebooks when bored in class? I do 🖼️'
+permalink: "/sketches/"
+layout: layouts/base.liquid 
+---
+<!-- Page Id -->
+<div id="this-is-sketches-page"></div>
+
+<!-- Page Content -->
+<div class="content">
+  <div class="for-mobile"><br><br><br></div>
+
+   <!-- SketchBook Viewer-->
+  <div class="painting-container" style="transform: rotate(-6deg); ">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg/1200px-Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg" style="transition: transform 0.4s ease; "/>
+    <iframe src=""></iframe>
+  
+    <!-- Rotate Handle -->
+    <div class="rotate-handle"><div><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="width: 70%; height: auto; aspect-ratio:1/1;" fill="white"><path d="M142.9 142.9c-17.5 17.5-30.1 38-37.8 59.8c-5.9 16.7-24.2 25.4-40.8 19.5s-25.4-24.2-19.5-40.8C55.6 150.7 73.2 122 97.6 97.6c87.2-87.2 228.3-87.5 315.8-1L455 55c6.9-6.9 17.2-8.9 26.2-5.2s14.8 12.5 14.8 22.2l0 128c0 13.3-10.7 24-24 24l-8.4 0c0 0 0 0 0 0L344 224c-9.7 0-18.5-5.8-22.2-14.8s-1.7-19.3 5.2-26.2l41.1-41.1c-62.6-61.5-163.1-61.2-225.3 1zM16 312c0-13.3 10.7-24 24-24l7.6 0 .7 0L168 288c9.7 0 18.5 5.8 22.2 14.8s1.7 19.3-5.2 26.2l-41.1 41.1c62.6 61.5 163.1 61.2 225.3-1c17.5-17.5 30.1-38 37.8-59.8c5.9-16.7 24.2-25.4 40.8-19.5s25.4 24.2 19.5 40.8c-10.8 30.6-28.4 59.3-52.9 83.8c-87.2 87.2-228.3 87.5-315.8 1L57 457c-6.9 6.9-17.2 8.9-26.2 5.2S16 449.7 16 440l0-119.6 0-.7 0-7.6z"/></svg></div></div>
+    
+  </div>
+	
+ <div class="for-mobile" style="margin-top: min(13%, 70px);"></div>
+  
+  <div style="width: 100%;" class="mona-text">
+    <!-- Mona Text -->
+    <h1 style="padding:5%; line-height:1.2; font-size: min(9vw, 40px); width:85%;">Monalisa Likes my sketches</h1>
+    <p style="font-size: min(4.5vw,25px);">Nah, she always smiles.. </p> 
+    
+    
+     <!-- Sketch Tags Listed -->
+    <div class="sketch-tags-section" style="width: 100%; position:relative; margin-top: min(12%, 70px);">
+      <div class="sketch-tags" style="width: 100%; overflow-y: hidden; overflow-x: auto;">
+        <div class="available-tags" style="width: max-content; height: 100%; display: flex;flex-direction:row;gap:min(5%, 30px);padding: 0 40px;"></div>
+      </div>
+    </div> 
+    
+    <p class="for-mobile" style="font-family:open sans; font-size:min(4.5vw,30px); width:85%; place-items:center; border-radius:40px; margin: min(13%,70px) 0 0% 0;">
+      *Pick a Sketch Book*
+    </p>
+  
+  </div>
+  
+  <br><br>
+</div>  
+  
+  
+<style>
+  ::-webkit-scrollbar {display:none!important;}
+  
+  .desktop-menu, #open-mobile-menu, .mobile-header {display: none!important;}
+  
+  
+  .content{max-width: 1000px; min-height: 100%;  align-items: center; display: flex; flex-direction: column;}
+
+  /* SketchBook Viewer */
+  .painting-container { width: 70vw; height: 100vw; max-width: 380px; max-height: 550px; background: var(--gray-bg); overflow: hidden; position: relative; transition: all 1s ease; justify-content: center; align-items: center; display: flex;}
+  .painting-container img { width: 100%; }
+  .painting-container.no-transition { transition: none !important; }
+  .iframe-opened{width: 80%!important; height: min(35vw, 200px); border-radius: 30px;}
+  
+  iframe {width: 100%; height: 100%; position: absolute; z-index: 11;}
+ 
+  /* Rotate Handle */
+  .rotate-handle {
+  width: min(25%,100px);
+  height:auto;
+  aspect-ratio:1/1;
+  display:flex; 
+  justify-content: center;
+  align-items: center; 
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  touch-action: none;
+  z-index: 15;
+  user-select: none;
+  cursor: grab;
+  }
+  .rotate-handle div{
+    position: absolute;
+    bottom: 11px;
+    left: 11px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: red;
+    display:flex;
+    justify-content: center;
+    align-items: center; 
+  }
+  
+  /* Simplify Notes Button */
+  .recommendation-btn {
+  position: absolute;
+  bottom: -10%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  z-index: 12;
+  display: none;
+  width: 45%;
+  padding: 10px 20px;
+  background: #111;
+  color: white;
+  font-family: acme;
+  font-size: min(4.7vw, 18px);
+  font-weight: bold;
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  opacity: 0;
+  cursor: pointer;
+  animation: glow-rotate 2s linear infinite;
+  transition: opacity 0.4s ease, bottom 0.8s ease;
+  pointer-events: auto;
+  }
+
+  /* Sketch Tags List */
+  .sketch-tags::-webkit-scrollbar { display: none; }
+  .available-tag {width: auto; height: 100%; flex-shrink: 0; display: flex; justify-content: center; align-items: center; 
+    font-size: min(4.5vw, 21px); font-family: acme; background: var(--gray-bg); border-radius: 30px; padding: 3% 6%; cursor: pointer; }
+  .available-tag:hover{opacity: 0.8;}
+
+  .sketch-tags-section::after { /* Soft shadow to right of sketch tags list to hint left to right scrolling */
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 50px;
+  height: 100%;
+  pointer-events: none;
+  background: linear-gradient(to right, transparent, var(--primary-bg)); 
+  }
+  
+  /* Media */
+  @media(min-width:900px){
+    .content{ flex-direction:row; gap: 5%; }
+    .mona-text {  width: 80%!important; overflow:hidden; }
+  }
+  
+  /* Keyframes */
+  @keyframes glow-rotate {
+    0% {
+      box-shadow: 0 0 10px rgba(255,255,255,0.3), 0 0 20px rgba(255,255,255,0.2);
+      transform: translateX(-50%) rotate(0deg);
+    }
+    100% {
+      box-shadow: 0 0 30px rgba(255,255,255,1), 0 0 40px rgba(255,255,255,1);
+      transform: translateX(-50%) rotate(0deg);
+    }
+  }
+  
+</style>
+
+
+<script>
+  
+let isFirstClick = true;
+
+let paintingContainer =  document.querySelector('.painting-container');
+let painting = document.querySelector('.painting-container img');
+let sketchPDF = document.querySelector('.painting-container iframe');
+let availableTags = document.querySelector(".available-tags");
+let tags = [
+  {"name":"🎈 My College Notebook", "url":"https://drive.google.com/file/d/1D3VHXohWO6o76GEGaoDsnZTe7df-5f2w/preview"},
+  {"name":"🖼️ Just sketches", "url":"https://drive.google.com/file/d/1EoK5VA2XFmOHeSf1YP-JzSDxBxuEH-NM/preview"},
+  {"name": "🗿 Notebook (raw)", "url":"https://drive.google.com/file/d/1BV_tDea0iFlNGEwkBtwyO9zz25BJwMTF/preview"}
+];
+
+function sketchTags(){
+  tags.map(function(tag, index){
+    const html = `<div class="available-tag" onclick="openSketch(${ index });">${ tag["name"] }</div>`;
+    availableTags.insertAdjacentHTML("beforeend", html);
+  });
+}
+  
+sketchTags();
+  
+
+function monalisaEffect(){
+  let paintingContainer =  document.querySelector('.painting-container');
+  let painting = document.querySelector('.painting-container img');
+  paintingContainer.classList.add('iframe-opened');
+  const delay = isMobile ? 50: 500;
+  setTimeout( ()=> { painting.style.transform ="translateY(25%)";}, delay);
+}
+
+function openPdf(idx){
+  let sketchPDF = document.querySelector('.painting-container iframe');
+  sketchPDF.src= tags[idx]["url"];
+}
+  
+function openSketch(idx){
+  let paintingContainer =  document.querySelector('.painting-container');
+  let sketchPDF = document.querySelector('.painting-container iframe');
+  if (isFirstClick) {
+    monalisaEffect(); 
+    sleep(2000).then( () => { 
+      const PDFHeight = ( paintingContainer.getBoundingClientRect().width * 6.6 )/5 + 'px'; 
+      paintingContainer.style.height = PDFHeight;
+      sketchPDF.style.background = "#222";
+
+      setTimeout( () => { openPdf(idx); }, 1010);
+    });
+    isFirstClick = false;
+  }
+  else{
+    openPdf(idx);
+  }
+}
+  
+</script>

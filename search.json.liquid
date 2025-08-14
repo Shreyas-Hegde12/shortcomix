@@ -1,0 +1,14 @@
+---
+permalink: /search.json
+eleventyExcludeFromCollections: true
+---
+[
+  {% for post in collections.post %}
+    {
+      "title": "{{ post.data.title | escape }}",
+      "url": "{{ post.url | url }}",
+      "thumbnail": "{{ post.url | url }}thumb.jpg",
+      "keywords": {{ post.data.tags | removePostTag | jsonify }}
+    }{% unless forloop.last %}, {% endunless %}
+  {% endfor %}
+]

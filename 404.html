@@ -1,0 +1,197 @@
+---
+permalink: /404.html
+eleventyExcludeFromCollections: true
+---
+<html>
+  <head>
+    <title>404 🚨 | Thats a Crime</title>
+   
+    <link href='/images/sprites/favicon.png' rel='icon'/>
+    <link href='/images/sprites/favicon.png' rel='apple-touch-icon' sizes='180x180'/>
+
+    <!-- Basic Meta Tags -->
+    <meta charset='UTF-8'/>
+    <meta content='width=device-width, initial-scale=1.0' name='viewport'/>
+    <meta content='Short Comix is a comic website. LightHearted Illustrations, comics and short stories. ShortComix is weekly. Stuffed with Fun © Shreyas Hegde' name='description'/>
+    <meta content='Shreyas Hegde' name='author'/>
+
+    <!-- Google Search Console Verification -->
+    <meta content='pt5UcQjmqTVxOQyZTv4Ha_y3h96Z6Zf5814_1JYGnBo' name='google-site-verification'/>
+
+    <!-- Open Graph / Facebook -->
+    <meta content='website' property='og:type'/>
+    <meta content='/' property='og:url'/>
+    <meta content='ShortComix - Comics and Short Stories' property='og:title'/>
+    <meta content='Some lighthearted illustrations, comics and short stories packed with fun!' property='og:description'/>
+    <meta content='/images/emotes/awesome.png' property='og:image'/>
+    <meta content='ShortComix' property='og:site_name'/>
+
+    <!-- Twitter -->
+    <meta content='summary_large_image' name='twitter:card'/>
+    <meta content='@shortcomix1' name='twitter:site'/>
+    <meta content='@shortcomix1' name='twitter:creator'/>
+    <meta content='ShortComix - Comics and Short Stories' name='twitter:title'/>
+    <meta content='Some lighthearted illustrations, comics and short stories packed with fun!' name='twitter:description'/>
+    <meta content='/images/emotes/awesome.png' name='twitter:image'/>
+
+    <!-- Theme Colors -->
+    <meta content='#ffffff' name='theme-color'/>
+    <meta content='#ffffff' name='msapplication-navbutton-color'/>
+    <meta content='default' name='app lle-mobile-web-app-status-bar-style'/>
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Acme&family=Gloria+Hallelujah&family=Indie+Flower&family=Open+Sans&family=Sedan&family=Montserrat&display=swap");
+          
+      *{margin:0px; padding:0px;}
+      :root{ --pinkish-shade: #ffabc0; }
+      .desktop-menu, #open-mobile-menu, .mobile-header, #main-wrapper { display:none!important; } 
+      
+      @media(prefers-color-scheme:dark){ 
+        body{background-color: #222;}
+        p, button{color:white!important;} 
+        button{background:#6b6b6b!important;}
+        :root{ --pinkish-shade: #ffabc0; }
+      }
+      @media(max-width:650px){ 
+    
+      }
+      @media(min-width:650px){ 
+
+      }
+      #dvd-playground{animation: fall_down ease-in-out 5s; animation-delay: 2s; animation-fill-mode: forwards;}
+      .soft-touch-btn {animation: soft_touch 1.1s 1;}
+      
+      @keyframes soft_touch {
+        13% { transform: scale(0.92); }
+        40% { transform: scale(1.03); }
+        70% { transform: scale(1); }
+      }
+      #dvd-playground p {
+        position: absolute;
+        aspect-ratio: 2 / 0.85; 
+        overflow: hidden;/* Example: adjust as needed */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        animation: bounceRhombus 2.8s linear infinite;
+      }
+
+      @keyframes bounceRhombus {
+        0%   {
+          top: 0;
+          left: 50%;
+          transform: translate(-50%, 0);
+        }
+        25%  {
+          top: 50%;
+          left: 100%;
+          transform: translate(-100%, -50%);
+        }
+        50%  {
+          top: 100%;
+          left: 50%;
+          transform: translate(-50%, -100%);
+        }
+        75%  {
+          top: 50%;
+          left: 0;
+          transform: translate(0, -50%);
+        }
+        100% {
+          top: 0;
+          left: 50%;
+          transform: translate(-50%, 0);
+        }
+      }
+      @keyframes fall_down{ 
+      50%{ transform: scale(1.12) translateY(80%) translateX(-95%) rotate(-20deg);  opacity: 1;}
+      60%{ transform: scale(1.12) translateY(80%) translateX(-95%) rotate(-20deg); opacity: 0;}
+      70%{ transform: scale(1.12) translateY(80%) translateX(-95%) rotate(-20deg); opacity: 0;}
+      100%{ transform: scale(0) translateY(80%) translateX(-95%) rotate(-20deg); opacity: 0;}
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class='container' style='display:flex; flex-direction: column; gap: 8%; justify-content:center; align-items:center; width:100%; height: 100vh;overflow: hidden;'>
+
+      <div style='width: 100%; max-width: 610px; display: flex; flex-direction: column; justify-content: center; align-items: center;'>
+
+        <!-- a. 404 main attraction -->
+        <div style='width:85%; height:auto; aspect-ratio: 16/11; position:relative;'>
+          <!-- 404 dvd bounce -->
+          <div id='dvd-playground' style='background: var(--pinkish-shade); width: 100%; height: 100%; position: absolute; top:0px; left:0px; overflow:hidden;'>
+            <p style='font-size: min(27vw, 160px); font-family: acme; font-weight: bold; color: #e6174b!important; position: absolute; top: 0px; left: 0px; padding: 0px!important; margin:0px 0px!important;'>
+              404
+            </p>
+          </div>
+          <!-- candle blowing meme -->
+          <div style='width:100%;  height: auto; aspect-ratio: 16/11; display:flex; justify-content:center; align-items: center;'>
+            <video autoplay='true' loop='true' muted='true' style='width:100%; height:auto; aspect-ratio: 16/11; overflow:hidden;'>
+            	<source src='https://res.cloudinary.com/dzss5ged8/video/upload/v1721383220/ezgif-1-537d390973_o2xwwa.mp4' type='video/mp4'/>
+         	  </video>
+          </div>
+
+        </div>
+        
+        <!-- b. Error Text -->
+        <p style='width: 80%; font-size: min(4.6vw,28px); font-family: open sans; margin-top:min(3%,10px); margin-bottom: min(8%, 50px); padding: min(5%,15px); color:black; text-align:center;'>
+          This place exists only in your imagination, my friend.
+        </p>
+      
+        <!-- c. Back To Home Button -->
+        <button onclick='buttonAction()' style='display: block; color:white; background-color: #e6174b!important; outline:none; border:0px; width: 70%; height: auto; border-radius: 10px; cursor:pointer; text-align:center; font-size: min(6.4vw, 35px); font-family: open sans; padding: 15px 10px; '>
+          Go back my friend
+        </button>
+
+      </div>
+       
+	</div>
+
+
+  <script>
+    const playground = document.querySelector("#dvd-playground");
+    const dvdText = document.querySelector("#dvd-playground p");
+    const playgroundWidth = parseFloat(getComputedStyle(playground).width);
+    const playgroundHeight = parseFloat(getComputedStyle(playground).height);
+    
+    function buttonAction() {
+      document.querySelector("button").classList.add("soft-touch-btn");
+      setTimeout(() => {
+        document.querySelector("button").classList.remove("soft-touch-btn");
+        window.location.href = "/";
+      }, 1000);
+    }
+
+    dvdText.style.fontSize = (43 * playgroundWidth) / 100 + "px";
+
+    /*
+    let posX = 10;
+    let posY = 10;
+    let speedX = 0.7*(0.2 * playgroundWidth) / 100;
+    let speedY = 0.7*(0.38 * playgroundHeight) / 100;
+    let dvdPadd = parseFloat(getComputedStyle(dvdText).height) / 5;
+
+    function update() {
+      dvdText.style.top = posY + "px";
+      dvdText.style.left = posX + "px";
+    }
+    
+    function animate() {
+      if(posX +  dvdText.clientWidth >= playground.clientWidth || posX <= 0){
+            speedX = -speedX;
+      }
+      if(posY +  dvdText.clientHeight >= playground.clientHeight + dvdPadd || posY <= -dvdPadd){
+            speedY = -speedY;
+      }
+      posX += speedX;
+      posY += speedY;
+      update();
+    }
+    
+    const animateBounce = setInterval(()=>{  },5);
+    */
+  </script>
+
+  </body>
+</html>

@@ -1,0 +1,815 @@
+---
+title: 'ShortComix | Comics and Short Stories'
+eleventyExcludeFromCollections: true
+layout: layouts/base.liquid
+---
+
+<!--Carousel Background-->
+<div class='not-simple' id='fixed-background'>
+  <p class='for-laptop' style='font-family: indie flower; font-size: 0px;'>.</p>
+</div>
+  
+<!--Emoji Carousel-->
+<div class='carousel' style='display: none;'>
+  <img alt='ShortComix Carousel' class='emoji-carousel' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEimqGnFifPb887vmknTUJmh-vBJLkWNwDdKWU2ng0fNm2nbPCsgqL-y-3vxN5c_snfa-CZ-mKxC3w9nFasUC_lZ1Db_rTPkPdcPnqNYL719e0R3bj5PhJNh-5_-hOvJ0374HjRIzo9d2UpbpKeIyWhN-8qiRDhNRH6U96bhQmp8b4pevcHNT9PpK3zUD0Er/s0-rw/shy--.png' style='height:auto; aspect-ratio: 371/322; max-width: 430px; margin-left:0px;'/>
+  <p class='for-laptop for-mobile for-dark' style='font-family: gloria hallelujah; font-size: 40px; color: white; filter: drop-shadow(0 0 10px white);'>@shortcomix</p>
+</div>
+
+<!-- Page Id -->
+<div id="this-is-home-page"></div>
+
+<!-- Mobile -->
+<div class="for-mobile" style="margin-top: 8%;"> 
+  
+  
+  <!-- Kiddo Peek -->
+  <img id='kiddo-peek'
+       data-minimal="https://res.cloudinary.com/dzss5ged8/image/upload/v1737577034/top10_1_xapllm.png"
+       data-eyebrows="https://res.cloudinary.com/dzss5ged8/image/upload/v1737571516/top5_zfqzgg.png"
+       data-shaded="https://res.cloudinary.com/dzss5ged8/image/upload/v1737571749/top7_y6elgg.png"
+       data-shaded-max="https://res.cloudinary.com/dzss5ged8/image/upload/v1737571653/top6_zb354s.png"
+       data-smile="https://res.cloudinary.com/dzss5ged8/image/upload/v1737571237/top3_tnv6er.png"
+       data-smile-shaded="https://res.cloudinary.com/dzss5ged8/image/upload/v1737571237/top3_tnv6er.png"
+       
+       src='https://res.cloudinary.com/dzss5ged8/image/upload/v1737577034/top10_1_xapllm.png' 
+       
+       style='margin-bottom: 9%; aspect-ratio:16/15.6; width: 56vw; max-width: 300px; height: auto; transition: ease-in 0.8s; border-radius:500px; filter: opacity(0.97) contrast(0.87) brightness(1.11);' 
+       tile="©Shooshoo.comics rendition of kiddo!" alt="©Shooshoo.comics rendition of kiddo!"
+       onclick="window.location='#bubbles';"/>
+   
+  
+  <!-- Comics -->
+  <div style="width:92%; max-width: 580px; display:flex; flex-direction: row; gap: 7%; place-items:center; justify-content:center; place-items:center;  position:relative; z-index:10; filter: contrast(0.9) saturate(0.9);">
+    <a class="pick-link comic-outer-square plain-link" onclick="handleComicClick(0,0)" >
+      <img class="pick-img back comic-square" src="/images/sprites/placeholder.jpg" alt="Comic I chose for you" title="Comic I chose for you"/>
+    <p class="subtitle" style="font-family: gloria hallelujah; font-size: min(6vw, 207px); opacity: 0.85; padding-top: 2%;">comic 1</p>
+   </a>
+    <a class="pick-second-link comic-outer-square plain-link" onclick="handleComicClick(0,1)" >
+      <img class="pick-second-img back comic-square" src="/images/sprites/placeholder.jpg" alt="Comic I chose for you 2" title="Comic I chose for you 2"/><p class="subtitle" style="font-family: gloria hallelujah; font-size: min(6vw, 207px); opacity: 0.85; padding-top: 2%;">comic 2</p>
+    </a>
+  </div>
+
+  
+  <!-- Animated Car on Road -->
+<div style="position:relative; overflow:hidden; margin: -7% 0 7% 0; position:relative; z-index: 5;">
+  <div id="animated-road"></div>
+<img id="animated-car" src="/images/static/car-with-glow.png" alt="Arrested doggie van" title="Arrested doggie van"/></div><br> 
+  
+  
+  <!-- Clips -->
+  <div class="gray-bg" style="padding-top:10%; margin-bottom: 0%;">
+    <!-- TV -->
+    <div class="tv-frame" style="display:flex; border-radius: 4px; width:75%; max-width: 470px; height: auto; aspect-ratio: 16/10.45; margin-top:2%; margin-bottom: 5%; background-image: url('/images/static/tv.jpg'); background-position:5% 0; background-size: cover; filter: hue-rotate(0deg); position: relative; place-items:center; justify-content:center;">
+      <!-- tv embed -->
+      <div class="tv-embed" style="position: relative; width: 90%; height: auto; border-radius: 0px; transform: translateX(-0%); max-width: 450px; aspect-ratio: 16/9.4; overflow:hidden; background: transparent; z-index: 10;">
+        <img class="back" src="/images/static/first-video-thumbnail.jpg" style="width: 0%; height: auto; position:absolute; top: 0px; left: 0px; display:block;" alt="First Video Thumbnail"/>
+        <iframe class="yt-video" data-src="https://www.youtube-nocookie.com/embed/eRCSrBXMto0?rel=0&enablejsapi=1&autoplay=1" style="display:none;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;" title="TV"></iframe>
+        <!-- CRT Tv like lined overlay -->
+         <div class="scan-overlay">
+           <div class="scan-line"></div>
+         </div>
+      </div>
+    </div>
+    <!-- TV Controls -->
+    <div style="position: relative; display: flex; flex-direction:row; gap: 2%; place-items: center; justify-content:center; margin: 8% 0 5% 0;">
+      <!-- controls -->
+      <button id="watch" onclick="watchVideo();" aria-label="Watch">
+        <p>
+          Watch
+        </p>
+      </button>
+      <button onclick="changeVideo();" id="change" aria-label="Change">
+        <svg fill="#aebddf" height="30px" width="30px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 66.307 66.307" xml:space="preserve"><g><path d="M64.702,30.366L37.12,14.442c-0.995-0.574-2.221-0.574-3.217,0s-1.609,1.639-1.609,2.787v13.072L4.827,14.442
+                     c-0.997-0.574-2.222-0.574-3.218,0S0,16.081,0,17.229v31.849c0,1.148,0.613,2.211,1.609,2.785c0.498,0.287,1.053,0.432,1.608,0.432
+                     s1.111-0.145,1.609-0.432l27.466-15.857v13.072c0,1.148,0.612,2.211,1.608,2.785c0.498,0.287,1.055,0.432,1.609,0.432
+                     s1.111-0.145,1.607-0.432l27.582-15.924c0.996-0.574,1.609-1.637,1.609-2.787C66.311,32.004,65.698,30.94,64.702,30.366z"/></g></svg>
+      </button>
+
+    </div><br>
+</div>
+ <!--  --> <br>
+  
+   <!-- Image Bubbles -->
+   <div style="display: block; position: relative; width: 100%; max-width: 590px; height: auto; aspect-ratio: 16/14.5; overflow: hidden; scroll-behavior:smooth; margin: 12% 0 6% 0;" id="bubbles">
+      <br><!--<br>-->
+     <!-- a. gift -->
+     <a href="/news" class="image-bubble" style="z-index: 1; width:40%; max-width:400px; height: auto; aspect-ratio: 16/16; position: relative; top:1%; left: -16.5%; border-radius: 200px; background: #181818; display: flex; justify-content:center; align-items:center;" onclick="event.preventDefault(); delayLink('/news',300);">
+        <img src="/images/static/posts.png" style="width: 92%; height: auto; aspect-ratio: 16/16; z-index: 0;" title="Kiddo appears in shooshoo comics"  alt="Kiddo appears in shooshoo comics" />
+        <span style="color: #ffffff!important; font-family: acme; font-size: min(6.4vw,35px); font-weight: bold; left: 50%; transform: translateX(-50%); background-color: #222!important; border-radius: 50px; position: absolute; top: 67%; padding: 0px 7% 0px 7%;">
+          Posts
+        </span>
+     </a>
+     <!-- b. shop -->
+     <a href="/sketches" class="image-bubble" style="z-index: 2; width: 36%; max-width:400px; height: auto; aspect-ratio: 15/15; position: relative; top: -32%; left: 17%; background: rgb(61, 61, 61); border-radius: 200px; display: flex; justify-content:center; align-items:center;" onclick="event.preventDefault(); delayLink('/shop',300);">
+        <img src="/images/static/shop.png" style="width: 92%; height: auto; aspect-ratio: 16/16; z-index: 0; filter: hue-rotate(-15deg) saturate(0.85);" alt="Shop"/>
+        <span style="color: white; font-family: acme; font-size:min(5.7vw,32px); font-weight: bold; background-color: #493c68; border-radius: 50px; position: absolute; top: 68%; left: 50%; transform: translateX(-46%); padding: 0px 7% 0px 7%;">
+          Shop
+        </span>
+     </a>
+     <!-- c. book -->
+     <a href="/story-book" class="image-bubble" style="z-index: 3; width: 40%; max-width:400px; height: auto; aspect-ratio: 15/15; position: relative; top: -45%; left: -3%; border-radius: 200px;  background: rgb(143, 143, 143); display: flex; justify-content:center; align-items:center;" onclick="event.preventDefault(); delayLink('/story-book',400);">
+       <img src="/images/static/book.png" style="width: 93%; height: auto; aspect-ratio: 16/15.8; border-radius:200px; z-index: 0;" alt="New Book!" title="New Book!"/>
+       <span style="color: #5e5428; font-family: acme; font-size: min(5.9vw,35px); font-weight: bold; background-color: #fee682!important; border-radius: 50px; position: absolute; top: 66%; left: 50%; z-index: 1; transform: translateX(-49%); padding: 0px 7% 0px 7%;">
+         BOOK!
+       </span>
+     </a>
+  </div><br> <!-- <br> -->
+  
+  
+<!-- Froggie -->
+ <div class="gray-bg" style="width:100%; height:auto; place-items:center; justify-content:center;">
+   <!-- Frog + Text -->
+   <div style="display:flex; flex-direction:row; gap: 0%; width:100%; place-items:center; justify-content:center;">
+     <!-- frog part -->
+     <div style="margin-top:5%; margin-bottom: 6%; position:relative; width: 42%;">
+       <div class="frog-like-btn soft-touch" onclick="frogClick();" style="position:relative; max-width: 350px; aspect-ratio:16/16;" alt="Frog Like Button" title="Frog Like Button">
+         <img id="frog-pic" src="https://res.cloudinary.com/dzss5ged8/image/upload/v1742934877/frog-dead---_teafct.png" style="width: 100%; height:auto; aspect-ratio:17/16; position:relative; bottom: -10px; filter: saturate(0.8); -webkit-filter: saturate(0.8); -moz-filter: saturate(0.8);" alt="Frog Like Button" title="Frog Like Button" />
+       </div>
+     </div>
+     <!-- text part -->
+     <div style="height:auto; width: 55%; text-align:center; justify-content:center; place-items:center;">
+       <p class="frog-text" style="font-family: open sans; line-height:1.7; padding-left:4px;">
+          Thanks for visiting !<br>If you enjoyed,<br> Tap the frog to like !!
+       </p>
+     </div>
+   </div>
+ </div><br>
+
+ <!-- Easter Egg -->
+ <div id="easter-egg" style="width: 100%; height: auto; display:none; margin: 2% 0 7% 0; position: relative; overflow: hidden;" class="gray-bg stab">
+   <br><div name="textcontainer" style="width: 80%; margin:3%;">
+   <!-- a. U are stabbing -->
+   <p style="padding:0px; font-family: open sans; line-height: 1.5; font-size: 4vw;">
+     <i>U are now stabbing a ded frog!</i>
+   </p><br>
+   <!-- b. stab count -->
+   <p id="stab-count" style="padding: 0px; font-family: open sans; line-height: 1.5; font-size: 4.4vw;">
+      .
+   </p><br>
+   <!-- c. records unlocked -->
+   <p id="records" style="margin-top:5%; padding:0px; font-family: open sans; line-height: 1.5; font-size: 4.2vw;">
+   </p>
+   <!-- d. 50 count music -->
+   <div id="music" style="display:none; width: 70%; height: auto; aspect-ratio: 16/2.9; border-radius: 40px; background: #444; margin-top: 10%; overflow:hidden; justify-content:center; place-items:center;">
+     <iframe src="" style="aspect-ratio: 16/8; overflow:hidden; width: 100%; height: auto; transform:translate(0%,-65%) scale(1.04);"></iframe>
+   </div>
+   <!-- -->
+   </div><br>
+
+ </div>
+ <!-- -->
+
+
+  <!-- More Button -->
+  <div id="more" class="gray-bg" style="width: 38%; height: auto; margin: 3% 0 11% 0; border-radius:30px;" onclick="more();">
+      <p style="padding:8%; font-family: open sans; font-size:min(4.8vw,28px);">🔽 More</p>
+  </div>
+  <!-- More content -->
+  <div class="more-section collapsible" style="max-height: 0px; overflow: hidden;">
+    <!-- a. contact -->
+    <a href='/contact-me' class="none">
+      <img class="back" src="/images/static/contact-me.png" style="aspect-ratio: 16/5.5; filter: saturate(0.9);" alt="Contact"/>
+    </a> 
+    <!-- b. follow me -->
+    <a href="/about-me">
+      <img class="back" src="/images/static/follow-me.jpg"  style="aspect-ratio: 16/7.2;" alt="Follow me" />
+    </a>
+    <!-- c. play game -->
+    <a href="/" class="none">
+      <img class="back for-laptop" src="/images/static/.jpg" style="aspect-ratio: 6/4.2;" alt="Play Game"/>
+    </a> 
+    <!-- d. papa coffee -->
+    <a href="https://i0.wp.com/schrodingersothercat.blog/wp-content/uploads/2020/02/cat-cafe-facebook-1.jpg">
+      <img class="back" src="/images/static/papa-coffee.jpg"  style="aspect-ratio: 14/9.5; filter: saturate(0.6) contrast(0.99);" alt="In a coffee cup" />
+    </a>
+    <!-- e. doom scroll -->
+    <a href="/scroll-wheel">
+      <img class="doom-scroll-gif" data-gif="loading" src="/images/sprites/placeholder.jpg"  style="aspect-ratio: 16/17; width: 50%!important;" alt="Doom Scroll Gallery"/>
+    </a>
+    
+  </div>
+  
+
+  <!-- Copy Rights -->
+  <div style="margin: 20% 0 0 0; position: relative; flex-direction:column; gap:1px; place-items:center; justify-content:center;">
+    <!-- home picture -->
+    <img style="width:54vw; max-width: 330px; aspect-ratio:1.15/1;" src="/images/static/home.png" title="Home Sweet Home" alt="Home Sweet Home"/>
+    <!-- copyright text -->
+    <div style="font-family: open sans; font-size: 4vw; padding-top:5%; flex-direction: column; color: var(--primary-text); opacity: 0.8;text-underline-offset: 3px; ">
+      Short Comix Originals™<br>
+      <b><i>© <a href="/about-me" class="plain-link" style="opacity:0.9;">Shreyas Hegde</a></i></b>
+    </div>
+  </div>
+  
+  <!-- Space For Mobile Menu Button -->
+  <div style="width:100%; height: 40vw; background: transparent; font-size:0px;" name="Mobile Menu Spacer">.</div>
+</div>
+
+
+<!-- ###################################################### -->
+<!-- Laptops -->
+<div class="for-laptop">
+  
+      <!-- Big Kiddo Peek -->
+     <img id='d-kiddo-peek' onclick="window.location.href='/p/news.html#shooshoo-appearance';" src='https://res.cloudinary.com/dzss5ged8/image/upload/v1737577034/top10_1_xapllm.png' style='position: relative; aspect-ratio:16/16; width: 40vw; max-width: 320px; height: auto; margin-top: min(15%, 50px); margin-bottom: min(5%, 30px); transition: ease-in-out 0.8s; opacity: 0.95; cursor: pointer;' title="©Shooshoo comics rendition of Kiddo" alt="©Shooshoo comics rendition of Kiddo"/>
+  
+   <!-- Coffee Cup Menu -->
+   <div class="for-laptop strict" id="coffee-cup-menu" onclick="spill()" style="width: 24vw; max-width: 300px; height: auto; position: fixed; bottom: 5vh; right: 20px; z-index: 1005; overflow: hidden; transition: opacity 0.7s linear;">
+     <img alt="Menu" src="/images/static/coffee-cup.png" style="width: 100%; height: auto; aspect-ratio: 16/15.3; transform: rotate(18deg); transition: transform 0.6s ease;" />
+  </div>
+  
+   <!-- Big Comics -->
+   <div style="width: 100%; display:flex; flex-direction: row; gap: min(2%, 20px); margin-top: 15px; place-items:center; justify-content:center; ">
+      <a class="d-pick-link plain-link">
+        <img class="d-pick-img back d-comic-square" onclick="handleComicClick(1,0)" src="/images/sprites/placeholder.jpg" alt="Comic I chose for you" title="Comic I chose for you"/><p class="subtitle" style="font-family: gloria hallelujah; font-size: min(8vw, 33px); opacity: 0.8; padding: 2%;">comic 1</p>
+      </a>
+      <a class="d-pick-second-link plain-link">
+        <img class="d-pick-second-img back d-comic-square" onclick="handleComicClick(1,1)" src="/images/sprites/placeholder.jpg" alt="Comic I chose for you 2" title="Comic I chose for you 2"/><p class="subtitle" style="font-family: gloria hallelujah; font-size: min(8vw, 33px); opacity: 0.8; padding: 2%;">comic 2</p>
+      </a>
+   </div>
+
+  
+   <!-- Big TV --><br>
+   <div class="gray-bg" style="width: 100%; height: auto; margin-top: 50px; overflow: hidden; padding: 20px 0px 20px 0px;">
+      
+     <!-- big tv + controls -->
+     <div class="d-tv-and-controls" style="display: flex; flex-direction: row; width: 100%; margin-bottom: 50px; justify-content:center; place-items:center;">
+         <!-- a. Big tv -->
+         <div class="d-tv-frame">
+            <div style="background-image: url('/images/static/tv.jpg'); background-position:-5px 0px;background-size: cover; width: 100%; min-width: 450px; max-width: 520px; height: auto; aspect-ratio: 16/10.5; overflow: visible; position: relative; top:40px; margin-left: 3%; display:flex; place-items:center; justify-content:center;">
+              <!-- tv text-->
+              <div style="display:none;">
+                <div style="background:#7081c5;border-radius:500px; width: 120px; height:120px;color:white; position:absolute; top: -40px; left:-40px; z-index: 20;">
+                  <span style="font-size: 60px; position:relative; top: 14px;font-family:open sans;">
+                   My
+                  </span>
+                </div>
+                <div style="background:#4356b7;border-radius:500px; width: 92px; height:92px;color:white; position:absolute; top: -40px; left:64px; z-index: 20;">
+                  <span style="font-size: 52px; position:relative; top: 10px;font-family:open sans;">
+                    Tv
+                  </span>
+                </div>
+              </div>
+              <!-- tv embed -->
+              <div class="d-tv-embed" style="width: 90%; height: auto; max-width: 580px; aspect-ratio: 16/9.4; overflow:hidden; z-index: 10; position:relative;">
+                <iframe class="d-yt-video" data-src="https://www.youtube-nocookie.com/embed/eRCSrBXMto0?rel=0&enablejsapi=1" style="display:none;" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;" title="TV"></iframe>
+                <img class="back" src="/images/static/first-video-thumbnail.jpg" style="width: 0%; height: auto; position:absolute; top: 0px; left: 0px; display:block;" alt="First Video Thumbnail"/>
+         <!-- crt tv like lined overlay -->
+         <div class="d-scan-overlay">
+           <div class="d-scan-line"></div>
+         </div>
+      		 </div>
+              
+           </div>
+       </div>
+       <!-- b. Big controls-->
+         <div style="display: flex; flex-direction: column;gap: 50px; margin-top: 60px; margin-left: min(7%, 60px); margin-right: min(2%, 15px);">
+            <div>
+              <button id="d-watch" aria-label='Watch' onclick="watchVideo();">
+                <p style="font-family: acme; font-size: 27px; color: white!important;">
+                 Watch
+                </p>
+              </button>
+           </div>
+           <div>
+             <button onclick="changeVideo();" aria-label='Change' id="d-change">
+               <p style="font-family: acme; font-size: 27px; color: white!important; position:relative; width:100%; display:flex; justify-content:center; place-items:center; width:100%; height: 100%;">
+                 <svg fill="#aebddf" style="width: 34%; height: auto; aspect-ratio: 1/1;" height="30px" width="30px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 66.307 66.307" xml:space="preserve"><g><path d="M64.702,30.366L37.12,14.442c-0.995-0.574-2.221-0.574-3.217,0s-1.609,1.639-1.609,2.787v13.072L4.827,14.442
+                     c-0.997-0.574-2.222-0.574-3.218,0S0,16.081,0,17.229v31.849c0,1.148,0.613,2.211,1.609,2.785c0.498,0.287,1.053,0.432,1.608,0.432
+                     s1.111-0.145,1.609-0.432l27.466-15.857v13.072c0,1.148,0.612,2.211,1.608,2.785c0.498,0.287,1.055,0.432,1.609,0.432
+                     s1.111-0.145,1.607-0.432l27.582-15.924c0.996-0.574,1.609-1.637,1.609-2.787C66.311,32.004,65.698,30.94,64.702,30.366z"/></g>
+        </svg>
+               </p>
+             </button>
+           </div>
+       </div>
+       <!-- c. Big tv loading animation -->
+       <div class="d-bar-graph" style="display:none; width:52%; flex-direction: column; gap: 20px; margin: 60px 0 0 20px; ">
+         <div style="width: 80%; height: 65px;overflow: hidden; float: left;">
+           <div class="d-bar1 bar-sticks" style="width: 100%; height: 100%; float: left;">
+           </div>
+         </div>
+         <div style="float: left; width: 65%; height: 65px;">
+           <div class="d-bar2 bar-sticks" style="width: 100%; height: 100%; float: left;">
+           </div>
+         </div>
+         <div style="float: left; width: 45%; height: 65px;">
+           <div class="d-bar3 bar-sticks" style="width: 100%; height: 100%;border:0px!important; float: left;"></div>
+         </div>
+       </div>
+     </div>
+     <!-- --><br>
+  </div>
+  
+  <!-- Experimental Link Table -->
+  <div class="link-table" style="overflow: hidden; max-height: 0px;">
+    <div class="gray-bg">
+      <br>
+      <div class="table">
+        <a href="/story-book" class="row hover-box plain-link" style="--img: url('/images/static/book.png');">
+          <div class="cell">Short Story Book ✨</div>
+          <div class="cell">I wrote one and here you will find it 👍</div>
+        </a>
+        <a href="/sketches" class="row hover-box plain-link" style="--img: url('/images/static/shop.png');">
+          <div class="cell">Sketches 🖼️</div>
+          <div class="cell">I draw on my notebooks during classes a lot. And some of it is here 🍰</div>
+        </a>
+        <a href="/news" class="row hover-box plain-link" style="--img: url('/images/static/posts.png');">
+          <div class="cell">My NewsPaper 🚩</div>
+          <div class="cell">I don't have one, I pretend to. Read it Here 🎉</div>
+        </a>
+      </div>
+      <br>
+    </div><br>
+  </div>
+
+  <!-- Big Froggie --><br><br>
+  <div class="gray-bg" style="width:100%; height:auto; place-items:center; justify-content:center;">
+    <!-- Big frog + text -->
+    <div style="display:flex; flex-direction:row; gap: 4%; width:100%; place-items:center; justify-content:center;">
+      <!-- a. big frog -->
+      <div style="width:45%; max-width: 280px; margin-top:2%; margin-bottom:2%; position:relative;">
+        <div class="frog-like-btn for-laptop"  onclick="frogClick();" style="position:relative; aspect-ratio:17/16; width: 85%;cursor:pointer;">
+          <img id="d-frog-pic" src="/images/static/pencil-frog.png" style="width: 100%; height:auto; aspect-ratio:17/16; position:relative; bottom:-10px; filter: saturate(0.8); -webkit-filter: saturate(0.8); -moz-filter: saturate(0.8);" alt="Living Like Button" title="💗Living Like Button"/>
+        </div>
+      </div>
+      <!-- b. text part -->
+      <div style="height:auto; width: 45%; text-align:center; justify-content:center; place-items:center; margin-right:32px;">
+        
+        <!-- big frog text -->
+        <p class="d-frog-text" style="font-family: open sans; font-size:min(3.4vw,27px); line-height:1.5;">
+          <!-- Hey, thanks for visiting !<br>If you liked it, hit this frog's head !! -->
+          <!--Hey, thanks for visiting this website.<br>
+          If you liked it, hit this frog.--> 
+          Hey, thanks for visiting my website.<br>
+          If you liked it, hit this frog.
+        </p>
+        
+         <!-- big easter egg -->
+         <div class="d-stab" style="display:none;">
+           <div style="display:flex; flex-direction:column; justify-content:center; align-items: center;">
+         	<!-- a. U are stabbing -->
+           	<i><p style="padding: 15px; line-height: 1.5; font-size: min(4.4vw, 0px); ">U are now stabbing a ded frog.</p></i>
+         	<!-- b. stab count -->
+         	<p id="d-stab-count" style="padding: 0px; font-family: indie flower; line-height: 1.5; font-size: min(4.4vw, 30px); ">
+           	.
+           </p><p style="font-size: min(4.4vw, 28px);">🎉😬🚓</p><br>
+         	<!-- c. records unlocked -->
+        	<p id="d-records" style="padding:15px; font-family: open sans; line-height: 1.5; font-size: min(4.3vw, 22px);">
+        	</p>
+         	<!-- d. 50 count music -->
+          	<div id="d-music" style="display:none; width: 70%; margin: 10px; max-width:250px; height: auto; aspect-ratio: 16/2.9; border-radius: 40px; background: #444; overflow:hidden; justify-content:center; place-items:center;">
+           		 <iframe src="" style="aspect-ratio: 16/8; overflow:hidden; width: 100%; height: auto; transform:translate(0%,-65%) scale(1.04);"></iframe>
+         	</div>
+        	 <!-- e. password unscrambler -->
+        	 <div id="d-unscrambler" style="display:none;">
+         	 	 <form style="margin: 0px 0px;" onsubmit="event.preventDefault(); checkText();">
+            		 <input id="d-password-input" type="text" required minlength="4" style="font-family: open sans; font-size: min(4.2vw, 18px); margin: 0 5% 0 0; width: 50%; text-align:left; padding: 3px 18px; border-radius: 30px; outline: none!important; border:solid 1px #bbb!important;"/>
+             		<button aria-label="submit" style="padding:5px; border-radius:50px; font-size: min(4.4vw,20px); outline: none!important; border:solid 1px #bbb!important;">👍</button>
+          		 </form>
+         	</div>
+           <!-- --></div>
+       	</div>
+        <!--     -->
+           
+      </div>
+    </div>
+    <!-- -->
+  </div><br>
+
+  
+  
+  <!-- Big Copyrights --><br>
+  <div class="d-copyrights" style="display: flex; width: 60%; justify-content: center; font-family: indie flower; font-weight: bold; opacity: 0.9; font-size: min(4vw,26px); margin: 16px 0;">
+    <p>© ShortComix by&nbsp;</p>
+    <a href="/about-me" class="retro-cursor plain-link" onclick="event.preventDefault(); window.location='/about-me';">Shreyas Hegde</a>
+  </div><br>
+  
+</div>
+<!-- -->
+
+<style>
+::-webkit-scrollbar{display:none!important;} 
+
+#fixed-background, .carousel{
+  display: block!important;
+}
+
+.mobile-header {display: none;}
+
+@media(prefers-color-scheme:light){
+  #open-mobile-menu{
+    box-shadow: 0px 0px 35px 25px #f0f0f0!important;
+    border: 6px solid #fff!important;
+}}
+
+@media(min-width:820px){
+  .desktop-menu{
+    display:none!important;
+  }
+  .common-gap {
+    margin-top: 5%!important;
+  }
+  .spill{
+    display:grid!important;
+}}
+
+.common-gap {display: none!important;}
+ 
+/* Comic Thumbnails */
+.comic-outer-square{ width: 46%; text-align: center; }
+  
+.comic-square{ width:100%; height: auto; aspect-ratio: 16/16.5!important; max-width: 300px; max-height: 350px; border-radius: 35px; transform-style: preserve-3d; transition: 3.5s ease-in 1; will-change: transform, opacity; }
+.comic-square:hover{ opacity: 0.8; } 
+ 
+.d-comic-square{ width:33vw; height:auto; max-width: 277px; aspect-ratio:16/16.5!important; margin: 0px 6px 0px 6px; cursor: pointer; border-radius: 50px; transition: opacity 0.1s linear; transform-style: preserve-3d; will-change: transform, opacity; }
+.d-comic-square:hover {opacity: 0.8;}
+
+/* Animated Car on Road */
+#animated-road{ width: 100%; max-width: 650px; height:auto; aspect-ratio: 32/17; border-bottom: #353f47 solid 22px; margin-top: 5%; background-image: var(--img-plain-road); background-size:auto 101%; background-position: 0 center; background-repeat: repeat-x; will-change: background-position; animation: highway 1s linear infinite; }
+#animated-car{ width: 82%; height:auto; aspect-ratio: 16/11.4; position: absolute; bottom: 6%; left:0px; transform: translate(11%,15.8%) rotate(16.5deg); animation: moving_car 3.7s infinite; }
+  
+/* TV Box and Buttons */
+.yt-video, .d-yt-video { position: relative; width: 100%; height: auto; aspect-ratio: 16/9.4!important; background: transparent !important; z-index: 10; }
+.yt-video{ max-width: 450px; }  
+  
+.scan-overlay, .d-scan-overlay { background-image: linear-gradient(#0000,#00000014,#0000); background-repeat: repeat; background-size: 100% 6px; position: absolute; inset: 0; pointer-events: none; width: 0%; height: 100%; overflow: hidden; }
+.scan-line, .d-scan-line { position: absolute; top: -5%; width: 100%; height: 6px; background: rgba(255, 255, 255, 0.15); box-shadow: 0 0 8px rgba(255, 255, 255, 0.1); animation: scan 3s linear infinite; animation-fill-mode: forwards; }
+  
+#watch,#change{ width: 21vw; height: auto; max-width: 100px; aspect-ratio: 10/6.8; background-color: #495ab1; border: 5px solid #8997d7!important; padding: 4px; border-radius: 30px; filter: contrast(1) saturate(1.1) hue-rotate(0deg); }
+#watch p{ font-family: acme; font-size: min(4.2vw,22px); color: #fff!important; }
+#change{ margin-left: 3%; pointer-events: none; }
+#d-watch, #d-change { cursor: pointer; user-select: none; width: 140px; height: 80px; background-color: #3d4ea6; border: 8px solid #7e92de; border-radius: 50px; }
+#d-change { pointer-events: none; }
+  
+.d-rec1{animation: d_bar_one 3.8s ease 1;}
+.d-rec2{animation: d_bar_two 3.8s ease 1;}
+.d-rec3{animation: d_bar_three 3.8s ease 1;}
+
+  
+/* Image Bubbles */
+.image-bubble{ cursor: pointer; }
+.image-bubble:hover{ animation: bubbly_tap_weak 1.1s 1; }
+.bubbly-tap:hover, .d-bubbly-tap{ animation: bubbly_tap 1.1s 1; }
+  
+/* Frog Like */
+/*.frog-like-btn:hover { animation: soft_touch 1.2s 1 }*/
+  
+/* Easter Egg Section */
+.twinkling{ animation: twinkle 1s infinite; }
+  
+/* More Section */
+.more-section { margin-top: 8%; }
+.more-section img { width: 77%; margin-bottom: min(5%, 15px); }
+.more-section img:hover {animation: soft_touch 1.2s 1;}
+  
+/* Coffee Cup Menu */
+#coffee-cup-menu img { cursor: pointer; filter: contrast(1) saturate(0.6); }
+#coffee-cup-meu img:hover { transform: rotateZ(-8deg)!important; } 
+ 
+/* Glitch Cursor */ 
+.retro-cursor { display: inline-block; position: relative; cursor: url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjNP6Z9A_qs_6-GEWBvldHNLtcqJuuEtYOcQ8roH-hA7_6VmGprbUnv5J9UQ301VmdCQB7dUkcDT0knpC2RhMoKDjEBPh3i-M-w_iMYzrZn6eQsrWoiAmhW7DS6CjKVN_D3ScpFsAU8XWZ2NIfmak9G3NOcJZ4-XuSyFq6iOX6wv80wezBY4hPo1ZwTDsZ3/s32-rw/pick.png') 0 0, auto; }
+  
+.retro-cursor::after { content: ''; position: absolute; left: 0; bottom: 0; height: 2px; background: currentColor; width: 100%; transform: scaleX(0); transform-origin: left; transition: transform 0.3s ease; pointer-events: none; }
+.retro-cursor:hover::after { transform: scaleX(1); }
+
+
+/* Media */
+@media(max-width: 650px) {
+  .frog-text { transform: translateX(-2%); width: 95%; font-size: min(4.2vw,25px); }
+}
+@media(max-width: 900px) {
+  .table{width: 75%!important;}
+  #coffee-cup-menu { display: none!important; }
+}
+  
+/* Color Theme */
+@media(prefers-color-scheme:dark){
+  #kiddo-peek{ filter: opacity(0.97) contrast(0.9) brightness(1.11)!important;}
+  .link-table{ max-height: none!important; margin-top: min(5vw, 60px); }
+}
+
+/* Keyframes */
+@keyframes highway {
+from {background-position: 0 0;}
+to {background-position: -129.6vw 0;}
+}
+@keyframes moving_car {
+0%{transform: translate(15%,15.5%) rotateZ(17.5deg);}
+50%{transform: translate(8%,16%) rotateZ(17.5deg);}
+100%{transform: translate(15%,15.5%) rotateZ(17.5deg);}
+}
+@keyframes scan {
+0%{ top: -5%; opacity:1; }
+100%{ top: 105%; opacity: 1; }
+}
+@keyframes bubbly_tap_weak {
+18%{ transform: scale(1.16); }
+45%{ transform: scale(0.92); }
+80%{ transform: scale(1.03); }
+}
+@keyframes comic_thumb_touch_old {
+5%{ transform: perspective(550px) rotatex(-26deg); opacity: 0.9;}
+30%{ transform: perspective(550px) rotatex(19deg); opacity: 0.95;}
+60%{ transform: perspective(550px) rotatey(-14deg); opacity: 1;}
+70%{ transform: perspective(550px) rotatex(0deg); opacity: 1;}
+80%{ transform: perspective(550px) rotatex(-10deg); opacity: 1;}
+90%{ transform: perspective(550px) rotatey(11deg); opacity: 1; }
+}
+@keyframes comic_thumb_touch {
+7%{ transform: perspective(500px) rotatex(-26deg); opacity: 0.95;}
+30%{ transform: perspective(500px) rotatex(20deg); opacity: 0.95;}
+60%{ transform: perspective(500px) rotatey(-18deg); opacity: 1;}
+70%{ transform: perspective(500px) rotatex(-14deg); opacity: 1;}
+80%{ transform: perspective(500px) rotatey(12deg); opacity: 1; }
+}
+@keyframes d_comic_thumb_touch {
+5%{ transform: scale(0.9); opacity: 1;}
+18%{ transform: scale(1); opacity: 1;}
+}
+@keyframes d_bar_one{
+0%{background-color:#7382f5; width: 10%;}
+20%{background-color:#8aa1ff ; width: 50%;}
+40%{background-color: #8aa1ff; width: 40%;}
+60%{background-color: #8aa1ff; width: 90%;}
+80%{background-color: #8aa1ff; width: 50%;}
+95%{background-color:#8aa1ff; width: 100%;}
+}
+@keyframes d_bar_two{
+0%{background-color:#7382f5; width: 50%;}
+20%{background-color:#8aa1ff; width: 20%;}
+40%{background-color: #8aa1ff; width: 80%;} 
+60%{background-color: #8aa1ff; width: 70%;}
+80%{background-color: #8aa1ff; width: 90%;}
+95%{background-color: #8aa1ff; width: 100%;}
+}
+@keyframes d_bar_three{
+0%{background-color: #7382f5; width: 20%;}
+20%{background-color:#8aa1ff; width: 40%;}
+40%{background-color: #8aa1ff; width: 10%;}
+60%{background-color: #8aa1ff; width: 50%;}
+80%{background-color: #8aa1ff; width: 150%;}
+95%{background-color: #8aa1ff; width: 100%;}
+}
+
+
+/* Experimental */  
+.table {
+  margin: min(4%,50px) 0;
+  width: 65%;
+  max-width: 1000px;
+  border: 4px solid var(--gray-bg);
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+  width: 100%;
+}
+
+.cell {
+  flex: 1;
+  padding: min(5%, 35px) min(5%, 35px);
+  border-bottom: 4px solid var(--gray-bg);
+  border-right: 4px solid var(--gray-bg);
+  font-family: open sans;
+  font-size: min(4.5vw, 20px);
+  background: var(--gray-bg-element);
+  display: flex; 
+  align-items: center;
+  justify-content: center;
+}
+
+  .cell:last-child{ border-right: none; }
+  
+.row:first-child .cell:first-child {
+  border-top-left-radius: 30px;
+}
+.row:first-child .cell:last-child {
+  border-top-right-radius: 30px;
+}
+  
+.row:last-child .cell:first-child {
+  border-bottom: none;
+  border-bottom-left-radius: 30px;
+}
+.row:last-child .cell:last-child {
+  border-bottom: none;
+  border-bottom-right-radius: 30px;
+}
+
+.row.header .cell {
+  font-weight: bold;
+  background: #eee;
+}
+
+.hover-box {
+  position: relative;
+  --transition-type: 'transform 3s linear';
+}
+
+.hover-box::after {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-image: var(--img);
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  z-index: 100;
+  pointer-events: none;
+  transform: translate(var(--x, 0px), var(--y, 0px)) scale(0);
+  transform-origin: center;
+  transition: transform 0.3s linear;
+}
+
+.hover-box:hover::after {
+  transform: translate(var(--x, 0px), var(--y, 0px)) scale(1);
+  transition: transform 0.3s linear;
+}
+  
+</style>
+
+
+<script async defer>
+"use strict";
+let currentlyPlaying = 0,
+    tvSwitchedOn = false,
+    isVideoPlaying = false;
+  
+const videoURLS = [
+  "5jmWhihqpG8?si=2FOHOr4Lyg8xyrzr",
+  "nvYb2fepMko?si=VX0rqKw__En3__pU",
+  "iChrTec5BsI?si=GHjUyo7V6XjiSxzF",
+  "TZPtvqgbAHs?si=BdRteomzXNK6PaHq",
+  "eRCSrBXMto0?rel=0"
+];
+
+
+// graph like loading bars (animation)
+function tvLoading() {
+    const animations = [
+        { selector: ".bar1", className: "rec1" },
+        { selector: ".bar2", className: "rec2" },
+        { selector: ".bar3", className: "rec3" },
+        { selector: ".d-bar1", className: "d-rec1" },
+        { selector: ".d-bar2", className: "d-rec2" },
+        { selector: ".d-bar3", className: "d-rec3" },
+    ];
+  	const wait = isMobile ? 0 : 0;
+    setTimeout(() => {
+        animations.forEach(({ selector, className }) => {
+            document.querySelectorAll(selector).forEach(el => el.classList.toggle(className));
+        });
+    }, wait);
+}
+
+
+// TV Watch
+function watchVideo() {
+  	// if not first click on the button, just jump to togglePlayPause()
+    if (tvSwitchedOn) { togglePlayPause(); return; }
+  
+  	// this is first click on this button, give tv switch on kind of effect
+  	tvSwitchedOn = true;
+    const embed = isMobile ? '.tv-embed' : '.d-tv-embed';
+    const embedImg = isMobile ? '.tv-embed img' : '.d-tv-embed img';
+    const ytVideo = isMobile ? '.yt-video' : '.d-yt-video';
+    const scanOverlay = isMobile ? '.scan-overlay' : '.d-scan-overlay';
+      
+    const watchBtn = isMobile ? '#watch' : '#d-watch';
+    const changeBtn = isMobile ? '#change' : '#d-change';
+  
+    const watchBtnText = isMobile ? '#watch p' : '#d-watch p';
+    const text = isMobile ? '🕯 Play' : '🥁 Play';
+  
+  	if(isMobile) { document.querySelector(watchBtnText).style.fontSize = "min(4vw,22px)";} 
+      	
+    // thumbnail with old tv scan line effect
+    document.querySelector(embedImg).style.width="100%";
+  document.querySelector(embed).style.background="black";
+    document.querySelector(scanOverlay).style.width="100%";
+        
+    // Change Button Text to 'Play'
+   	document.querySelector(watchBtnText).innerText = text;
+   	document.querySelector(ytVideo).style.display = "block";
+    document.querySelector(watchBtn).classList.add('d-bubbly-tap');
+    setTimeout(() => {document.querySelector(watchBtn).classList.remove('d-bubbly-tap'); }, 1000);
+    
+  	// Make 'Change Video' Button Clickable
+  	document.querySelector(changeBtn).style.pointerEvents = "auto";
+  
+  	// Run graph like loading bars if it is not on mobile
+    if(!isMobile){ tvLoading(); }
+}
+
+// play pause video
+function togglePlayPause() {
+  	isVideoPlaying = !isVideoPlaying;
+  
+    const ytVideo = isMobile ? '.yt-video' : '.d-yt-video';
+    const watchBtnText = isMobile ? '#watch p' : '#d-watch p';
+    const iframe = document.querySelector(ytVideo);
+  	const commandName = isVideoPlaying ? 'playVideo' : 'pauseVideo';
+    const newText = isVideoPlaying ? '🙌Pause' : '🍰 Play';
+    const firstVideo = iframe.src === "" && currentlyPlaying == 0;
+    
+  
+  	// autoplay 1st video as we showed its thumbnail with tv scan line animation
+    if(firstVideo){ iframe.src = iframe.getAttribute('data-src'); firstvideo(iframe); return; }
+    
+    // update button's text
+  	document.querySelector(watchBtnText).innerText = newText;
+      
+  	// play / pause video
+ 	iframe.contentWindow.postMessage(
+       JSON.stringify({ event: 'command', func: commandName, args: [] }),
+       '*'
+     );
+
+}
+
+// Change video
+function changeVideo() {
+	// Run graph like loading bars if it is not on mobile
+    if(!isMobile){ tvLoading(); }
+  
+    const url = `https://www.youtube-nocookie.com/embed/${videoURLS[currentlyPlaying]}&rel=0&enablejsapi=1`;
+
+  	const watchBtnText = isMobile ? '#watch p' : '#d-watch p';
+    const changeBtn = isMobile ? '#change' : '#d-change';
+  	const iframe = isMobile ? 'yt-video' : 'd-yt-video';
+    const embed = isMobile ? '.tv-embed' : '.d-tv-embed';
+    const newText = isMobile ? '🕯 Play' : '🥁 Play';
+  	isVideoPlaying = false;
+  
+    document.querySelector(watchBtnText).innerText = newText;
+
+    document.querySelector(changeBtn).classList.add('d-bubbly-tap');
+    setTimeout(() => document.querySelector(changeBtn).classList.remove('d-bubbly-tap'), 1000);
+
+    // set new video
+  	document.querySelector(embed).innerHTML = `<iframe class="${iframe}" src="${url}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;"></iframe>`;
+
+    currentlyPlaying = (currentlyPlaying + 1) % videoURLS.length;
+}
+
+// More button 
+let moreVisible = false;
+  
+function more() {
+  const more = document.querySelector('#more p');
+  const hidden = document.querySelector(".more-section.collapsible");
+  const isEasterEggOpen = (document.querySelector('#easter-egg').style.display === 'block');
+
+  moreVisible = !moreVisible;
+  
+  // Toggle Visibility
+  more.innerHTML = moreVisible ? '🔼 Less' : '🔽 More';
+  hidden.style.maxHeight = moreVisible ? '' : '0px';
+
+  if (moreVisible) {
+    // Swap in the GIF if not already loaded
+    const doomScrollGif = document.querySelector('.doom-scroll-gif');
+    if (doomScrollGif.getAttribute('data-gif') === 'loading') {
+      doomScrollGif.src = "https://media1.giphy.com/media/8acyWj9NmAsq5CwHCe/giphy.gif?cid=6c09b95294l772kq5uk29vlqoxesa19luoy8ujvwr8mi5htr";
+      doomScrollGif.setAttribute('data-gif', 'loaded');
+    }
+
+    // Scroll to the correct anchor
+    window.location = isEasterEggOpen ? '#easter-egg' : '#frog-pic';
+  }
+}
+
+// Menu Open-Close controller for big screens
+function spill() {
+  const cup = document.querySelector('#coffee-cup-menu');
+  const spillElement = document.querySelector('.spill');
+  const isCollapsed = spillElement.style.clipPath === 'circle(0% at 90% 85%)';
+  document.body.style.overflow = isCollapsed ? 'hidden' : 'auto';
+  spillElement.style.clipPath = isCollapsed ? 'circle(120vw at 90% 85%)' : 'circle(0% at 90% 85%)';
+  spillElement.style.transition = isCollapsed ? 'clip-path 0.6s ease-in-out' : 'clip-path 0.5s ease-in-out';
+  
+  cup.classList.add('soft-touch');
+  setTimeout( ()=> { cup.classList.remove('soft-touch'); }, 1100);
+  
+}
+  
+// Comic Thumbnail Clicked (animation)
+function handleComicClick(screenSize, comicNo){
+  const comicSquare = (screenSize == 0) ? 'comic-square' : 'd-comic-square';
+  const animationName = (screenSize == 0) ? 'soft_touch 1s 1' : 'd_comic_thumb_touch 3.5s 1';
+  const animationDuration = (screenSize == 0) ? 3100 : 4000;
+  
+  const selectedThumbnail = document.getElementsByClassName(comicSquare)[comicNo];
+  selectedThumbnail.style.animation= animationName;
+  setTimeout(()=>{
+      selectedThumbnail.style.animation='';
+    },animationDuration);
+}
+ 
+</script>

@@ -1,0 +1,304 @@
+---
+title: About Me 📍
+layout: layouts/base.liquid 
+permalink: "/about-me/"
+---
+<!-- Page Id -->
+<div id="this-is-about-page"></div>
+
+
+<!-- Sticky Header (Mobile) -->
+<div class="for-mobile none" style="width:100%; height: 5vh; max-height: 100px; "></div>
+<div class="sticky-header for-mobile none" onclick="window.location.href='/#this-is-home-page';" style="display: flex; gap:25%; width:100%; height: 10vh; max-height: 100px; position:fixed; top:0px; left:0px; z-index: 10; text-align: right; background: rgba(255,255,255,0.2); backdrop-filter: blur(10px); justify-content:center; place-items:center;">
+<p style="width: auto; height:50%; aspect-ratio:1.95/1; position: relative; font-size: 0px; padding: 3px; background: rgba(200,200,200,0.6); border-radius:40px;" id="logo-replace">.</p>
+<p style="font-family: sedan; padding: 5px; font-size: min(5.2vw,26px); user-select:none; --strike: 0; position: relative;" class="dot-strike">About Page</p>
+</div>
+
+
+<!-- Opening Card -->
+<div class="opening-card swipe-out none" style="width:100%; height: 100%; display:flex; flex-direction: column; gap:5%; justify-content: center; place-items: center; background: linear-gradient(to left, rgba(0,0,0,1), #000); backdrop-filter: blur(20px); position: fixed; left:0px; top:0px; z-index: 100;">
+<img class="back switch-on-reveal none" src="https://media.tenor.com/WXqqrqOKbqUAAAAM/remi-gaillard-twitter.gif" style="width: 80%; max-width: 530px; height: auto; aspect-ratio: 220/123; clip-path: polygon(0% 50%, 100% 50%, 100% 50%, 0% 50%);" alt="following somebody"/>
+<p class="fade-in" style="width:85%; font-size: min(8vw,45px); font-family: acme; color: white!important; opacity: 0; transition: opacity 0.5s linear;" >Before Following<br> Know the Person Properly!</p>
+</div> 
+
+
+<!-- Page Content -->
+<div class="content">
+  
+  <div style="width:100%; display:flex; justify-content:center; align-items:center;"> 
+    <div style="width:100%; height:auto;">
+  <!-- Page Name -->
+  <p class="" style="font-style:italic; text-decoration: underline; font-size: min(8vw,45px); font-family: sedan;">About</p>
+ 
+  <!-- I, the creator of -->
+  <div class="i-the-creator" style="margin-top: 15vh; width:100%; height: auto; display:flex; flex-direction: column; justify-content:center; place-items:center;">  
+    <div class="for-laptop" style="margin-top: -10vh;"></div>
+    <div class="for-mobile">
+        <p style="font-family: sedan; font-size: min(15vw, 50px); text-align:center; line-height:1.5; font-style:italic;">I,</p><p style="margin-bottom: 4%; font-family: sedan; font-size: min(8vw,40px); text-align:center; line-height:1.5;font-style:italic;">The creator of<br>ShortComix</p>
+    </div>
+    <!-- a. Broken soul Gif -->
+    <div style="width:85%; height: auto; aspect-ratio:16/9.5; margin-bottom: 5%; position:relative;">
+       <img class="back" src="https://i.pinimg.com/originals/bf/ab/e1/bfabe1d75f91c37a452de53733ea6f6a.gif" style="width:100%; height: auto; aspect-ratio: 498/278; position:relative;"/>
+       <div style="position: absolute; bottom:0%; left:0px; width:100%; height: 41%;  background: rgba(0,0,0,0); backdrop-filter: grayscale(1);"></div>
+    </div> 
+    <!-- b. sub title -->
+    <p style="font-size: min(4.8vw,27px); width:85%; font-family: sedan;">I am a broken soul searching for peace and happiness.</p>
+  </div>
+    
+  </div>  
+</div>
+
+  <!-- Info Pad -->
+  <ul style="margin-top: 10vh; margin-bottom:5vh;">
+    <!-- a. Name -->
+    <li onclick="hiddenTextToggler('field-name')"><span class="no-italic-emoji">😎</span> My Name</li>
+    <div id="field-name" class="hidden-text" style="font-style:italic;" onclick="hiddenTextToggler('field-name')">
+      Shreyas Hegde <br>
+      <img  class="back" alt="Shreyas's digital signature" src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhRkTNmEy5bks9wl0XuAGUvDDCtRvcEmri59LW9LZD9n-w8FDVKYCiZXayJqanngUXIvXKX0qt1Oywjsrh-2nMS_shIJ4fINKAEw9TQkBQuqLQUDGf84AK2u8WGB9CPR6zxE8aBDX5fbeYUqVbLQbD_lcfZI4d7xH7nXG7XJFUiLXuZpvvbmR-iTY_4nQJ0/s0-rw/signature.png' style="width: 50%; height: auto; aspect-ratio:16/8; margin-top:5%;"/> <br>
+    </div>
+    <!-- b. Fav Comics -->
+    <li onclick="hiddenTextToggler('field-comics')"><span class="no-italic-emoji">🎨</span> My fav comics</li>
+    <div id="field-comics" class="hidden-text" onclick="hiddenTextToggler('field-comics')">
+      Loading Artist, Jenkins Comics, Wumo Comics, Sarah Scribbles, Whats Up Beanie?, Exo Comics, Xkcd Comics, PhD Comics and more. <br><br>
+    </div>
+    <!-- c. Phone Wallpaper -->
+    <li onclick="hiddenTextToggler('field-wallpaper'); setTimeout(()=>{document.querySelector('#field-wallpaper div').classList.add('switch-on-reveal');},1500);"><span class="no-italic-emoji">🖼️✨</span> My phone wallpaper</li>
+    <div id="field-wallpaper" class="hidden-text" onclick="hiddenTextToggler('field-wallpaper')" align="left">
+      😎 Do you think I am that cringe? <br>
+   
+      <div class="none" style="clip-path: polygon(0% 50%, 100% 50%, 100% 50%, 0% 50%);" ><img class="back" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiPhSOFVQK2sOXMgsENSGyUvpTcGm_TJJatfGE7prvA-1JKEFtv4UCE7kCJkXQB8oYPf3X-xBzr8QwikABLwENJIW9UCBI-VB3l0TLQaXtqBC2HAdU1FYiO9_9-ZTbH8c1fqh6CfoJJFWrwnzaw4FpU7aHhXu7xXkpQ2SXMkcJOu7oc6ts/s0-rw/Screenshot_20240630-224045.jpg" alt="Shreyas's Phone Wallpaper as of now" style="width: 60%; height: auto; aspect-ratio: 16/29; border-radius: 0.25px;"/><p>So calm.</p></div>
+      <br>
+    </div>
+    <!-- c. Zodiac Sign -->
+    <li onclick="hiddenTextToggler('field-zodiac')"><span class="no-italic-emoji">🦁</span> My zodiac sign</li>
+    <div id="field-zodiac" class="hidden-text" onclick="hiddenTextToggler('field-zodiac')" style="text-align:center;">
+      <img  src="https://media.tenor.com/lEPCz_3tD_oAAAAj/penguin-pudgy.gif" style="width: 60%; height: auto; aspect-ratio: 1/1;"/>
+      <br>My zodiac sign is Aquarius.<br>
+    </div>
+    <!-- d. Fav Movies -->
+    <li onclick="hiddenTextToggler('field-movies')"><span class="no-italic-emoji">🍿</span> My fav movies</li>
+    <div id="field-movies" class="hidden-text" onclick="hiddenTextToggler('field-movies')">
+      <ol>
+        <li>My Neighbour Totoro (1988)</li>
+        <li>Matrix (1999)</li>
+        <li>Harry Potter (2001-2011)</li>
+        <li>Inception (2010)</li>
+        <li>Interstellar (2014) </li>
+        <li>Ulidavaru Kandante (2014)</li>
+        <li>Aachar &amp; Co (2023)</li>
+        <li><i>Ok stop. ( Also, Dune part 1 )</i></li>
+      </ol> 
+    </div>
+    <!-- e. Signature -->
+    <li class="none" onclick="hiddenTextToggler('field-signature')"><span class="no-italic-emoji">✍️</span> My signature</li>
+    <div id="field-signature" class="hidden-text" onclick="hiddenTextToggler('field-signature')" >
+      I owe Industrial Bank of India ₹20,000.
+      If I dont pay, the person reading this on my website will.<br>
+      <img  class="back" alt="signature" src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEib3GMnvK2WXa-3qdjchwlNaF0-6qSQhV5tN2ZjZJJVjq8wJ1Sb0G1kEzusPQ5xpz5pcylU5VbxDmm25LWA46m40MQaM3Xt___MXyo484hnOMRR8K9QzeSOFfM-fyxOgOXN9hKoKTk1MyP0_U30KxxRUUhJwkMhe0TOvMNCj4lEB_MXJkocYTBRUCuj2E_C/s0-rw/signature_960x640.png' style="width: 50%; height: auto; aspect-ratio:16/7; margin-top:5%; position: relative; left:50%; transform: translateX(-50%);"/><br>
+    </div>
+  </ul>
+  
+ <!-- Fun Sentences -->
+  <div class="image-container"><h2></h2></div>
+  
+  <!-- a. juggling -->
+  <div class="image-container">
+    <h2>I</h2>
+    <img  class="back" src="https://www.icegif.com/wp-content/uploads/icegif-5535.gif" style="aspect-ratio: 300/180;" alt="Image 1">
+    <p>I love balancing stuff. So they call me to weddings to perform juggling.</p>
+  </div>
+  <!-- b. dessert joke -->
+  <div class="image-container">
+    <h2>am</h2>
+  	<img  class="back" src="https://www.tomandjerryonline.com/animgifs/000d9q9g.gif" style="aspect-ratio: 300/180;" alt="Image 2"/>
+    <p id="heheboy">
+      Beaches or Hill stations ?<br> east or west, home is the best.<!-- Dessert, I luv Dessert heheBoy--><!--yummy yummy Desserts 🍰-->
+      <!--heheBoy Desserts-->
+    </p>
+  </div>
+  <!-- c. school to college -->
+  <div class="image-container">
+  	<h2>a</h2>
+  	<img src="https://media1.tenor.com/m/xK6aYOWclHYAAAAC/tom-and-jerry-nibbles.gif" alt="Image 3">
+  	<p>
+     <!-- In my previous life I was a cat.-->
+       I go to college to sit in the last bench and laugh. 
+   <!--I was kicked out of class for laughing a lot. Now I laugh alone in my room --><!--I do it in college - louder-->
+     <!-- Once my school teacher kicked me out of the class for laughing a lot and cracking jokes. From that day, I go to college to do it.-->
+      <!--	One fine day, my school kicked me out. Now, I go to college. -->
+    </p>
+  </div>
+  <!-- d. dominos pizza -->
+  <div class="image-container">
+    <h2>very very</h2>
+    <img  class="back" src="https://i.makeagif.com/media/9-02-2019/4QohA7.gif" style="aspect-ratio: 320/218;" alt="Image 4">
+    <p><!--Dominos makes the best pizza. But I eat from Pizza Hut.--> <!--I love Pizzas. Only when they arrive 30 minutes late. --> <!--I love Pizzas. And also Netlfix.<br> But both at the same time is not possible.<br>-My father said--> Dominos is totally overpriced. I eat bread with milk while bingeing.</p>
+  </div>
+  <!-- e. early riser -->
+  <div class="image-container">
+    <h2>good guy</h2>
+    <img  class="back" src="https://i.pinimg.com/originals/e2/73/c3/e273c32f7e463115f853600cc435d59e.gif" style="aspect-ratio: 498/368;" alt="Image 5">
+    <p>I am an early bird. I go to bed very early. Glad you believed it.</p>
+  </div>
+  <!-- f. popcorn lunch -->
+  <div class="image-container">
+    <h2>I am a gem</h2>
+    <img  class="back" src="https://media.tenor.com/4kKTxLbtzy8AAAAM/pop-corn-movie.gif" style="aspect-ratio: 220/228;" alt="Image 6">
+    <p>Popcorn is a healthy snack. <br>But sorry, I eat it for Lunch.</p>
+  </div>
+  <!-- g. fun fact -->
+  <div class="image-container">
+    <h2>🌟 <u>Fun Fact</u></h2>
+    <img  class="back" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgouWsVAT-S5axcINHmUdi9a95zKPp-l-N6CA6FwA2ho8ggoUjLzQAD1cWy8hBob6Nj5NgNu5IudzvB_ndk1HTtZFmJemN9z4cLdxCrV1WPjyjfBJWscVkouIr7_RrzjiBSMeRodonfN8W0rKwlFA51lYShunZgG3tMMD1OdOGFm62IqaLLT_kUWl284IGa/s0-rw/tom-drinks-too-much-water.jpg" style="aspect-ratio:16/15;" alt="Image 7">
+    <p>
+      I drink too much water sometimes.<!-- I drink too much water sometimes. My sister says it is my only talent.-->
+    </p>
+  </div>  <br><br>
+  
+  
+  <!-- Now You Qualify -->
+  <p style="font-family:sedan; font-size: min(10vw,60px); margin-top: min(10vw, 60px)">Now you qualify !</p><br>
+  <div class="now-you-qualify">
+    <a href="https://randomstreetview.com/" class="plain-link" style="flex:1;">
+      <img loading='lazy' src="https://static.vecteezy.com/system/resources/thumbnails/022/659/648/small/3d-rendering-3d-illustration-location-pin-on-folded-city-map-isolated-on-transparent-background-minimal-map-pins-gps-pin-checking-points-png.png" style="aspect-ratio: 16/8;"/>
+      <p>GPS Track Me!</p>
+    </a>
+    <a href="https://instagram.com/shortcomix.ig" class="plain-link" style="flex:1;">
+      <img loading='lazy' src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/640px-Instagram_icon.png" style="transform: rotate(20deg); width: 30%!important; height: auto; aspect-ratio: 1/1; margin-bottom: 12%;"/>
+      <p>Insta Follow Me!</p>
+    </a>
+  </div>
+  
+  
+  <!-- Foot Links -->
+  <div class="foot-links" style="width:100%; justify-content:center; display:flex; flex-direction:row; place-items:center; margin-top: min(15%, 100px); margin-bottom: 5%;">
+    <a onclick="clipboard('copylink'); signalCopy('.foot-links a','Copied!');" style="cursor:pointer; font-size: min(5vw,22px);">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21.921 2.081c2.771 2.772 2.771 7.269 0 10.042l-3.84 3.839-2.121-2.122 3.839-3.84c1.599-1.598 1.599-4.199-.001-5.797-1.598-1.599-4.199-1.599-5.797-.001l-3.84 3.839-2.121-2.121 3.84-3.839c2.771-2.773 7.267-2.773 10.041 0zm-8.082 13.879l-3.84 3.839c-1.598 1.6-4.199 1.599-5.799 0-1.598-1.598-1.598-4.2 0-5.797l3.84-3.84-2.121-2.121-3.84 3.84c-2.771 2.772-2.772 7.268 0 10.041 2.773 2.772 7.27 2.773 10.041 0l3.84-3.84-2.121-2.122z"/></svg>
+    </a>
+    <a href="mailto:shortcomix.strip@gmail.com" target="_blank">Email</a>
+    <a href="https://twitter.com/shortcomix1" target="_blank" class="twitter-link">Twitter</a>
+    <a href="https://github.com/Shreyas-Hegde12" target="_blank">GitHub</a>
+
+  </div>
+
+</div>
+  
+  <style>
+
+    #open-mobile-menu, .mobile-header, .desktop-menu{display:none!important;}
+    body { line-height: 1.6; }
+    .content { max-width: 700px; }
+  
+    
+    /* Swipe Card */
+    .switch-on-reveal{ animation: switch_on_reveal 1s 1; animation-fill-mode: forwards; }
+    .fade-in{ animation: fade_in_text 1s 1; animation-fill-mode: forwards; }
+    .swipe-out { pointer-events: none; animation: swipe_out 2s 1; animation-fill-mode: forwards; animation-delay: 2.7s; }
+    
+
+    /* Info Pad */
+    ul{margin-left: 0%; }
+    ul li{width: 80%; font-size: min(4.8vw, 25px); list-style-type: none; text-align:left; line-height: 2.2; font-style:oblique; font-family: sedan;}
+    ul > li{cursor:pointer;}
+    ul > li::before{content: "?"; display: inline-block;  font-size: min(6vw, 35px); width: 1.1em; margin-left: 0em; margin-right: 0.15em; transform: translateY(5%); font-family:sedan;}
+    .no-italic-emoji{font-style: normal!important;}
+    .hidden-text{display:none; width: 75%; overflow:hidden; font-size: min(4vw, 22px); margin-left: 10%; padding: 20px 0; text-align:left;}
+    ol li{width: 80%; font-size: min(3.8vw, 20px); list-style-type: numbered; text-align:left; line-height: 2; text-decoration:none!important; font-style: normal!important; margin-left: 3%;}
+
+
+    /* Gif + Funny Me */
+    .image-container { width:85%; margin-top: min(12%,50px); border-bottom: 0.5px solid #c0c0c0; padding-bottom: min(12%, 50px); }
+    .image-container img{ width:95%; overflow: hidden; margin: 8px 0px 15px 0px; user-select:none; }
+    .image-container h2 { font-family: 'sedan'; font-size: min(10vw, 55px); margin-bottom: min(8%, 30px); margin-top: min(10%, 30px); font-weight: ormal;}
+    .image-container p { font-family: 'sedan'; font-size: min(5vw,25px); padding: min(5%,10px) 0px; line-height: 1.5; width: 90%; }
+       
+
+    /* Now U Qualify */
+    .now-you-qualify{ display: flex; width: 90%; max-width: 600px; flex-direction: row; justify-content:center; place-items:center; margin-top: 10%; }
+    .now-you-qualify div{ justify-content:center; place-items:center; display: flex; width: 100%; max-width: 600px; flex-direction: column; }
+    .now-you-qualify img{ width: 90%; height: auto; transition: 0.5s linear; }
+    .now-you-qualify a:hover img{ transform: rotate(10deg) scale(1.1)!important; }
+    .now-you-qualify p { font-family: 'sedan'; font-size: min(5vw,28px); }  
+
+
+    /* Foot Links */
+    .foot-links a{ margin-right: 20px; margin-bottom: 40px; text-decoration: underline; color: black;font-family: sedan;font-size: min(4.4vw,25px); }
+    .twitter-link{position: relative;}
+
+    /* Media Queries */
+    @media(min-width:650px){
+        .i-the-creator{ margin-top: 20vh!important; }
+    }
+    
+
+    /* Color Theme Settings */
+    @media(prefers-color-scheme:dark){
+        .foot-links a{color:white!important;} 
+        .foot-links svg{fill:white!important;} 
+        .sticky-header{background: rgba(20,20,20,0.8)!important;} 
+        .sticky-header p:nth-child(1){background: rgba(145,145,145,0.4)!important;}
+        .sticky-header p:nth-child(2){color:white!important;}
+    }
+
+
+    /* Pseudo Elements */
+    #logo-replace::before{
+      content:''; background: url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh-Hu65xI4WbKQ3oXlP36F00Y6lYVUTtk9xNFfEzjh5gn0XtcK3IimuSPHgC_NvBDjJ8pxazDqHdTHZkp6vjY5EzDltMItKLXv0rdWlNCGVjvu-resOKz-6FzcFOAUfIkpE1YJBt6Gus1ruQ6Y9GmpiymyFGklvpeuXZr_0lvIsg1viKdEUW3aU6iXVk5iM/s0-rw/open-mobile-menu.png') no-repeat; background-size:cover; width: auto; height:110%; aspect-ratio:1/1; position:absolute; transform: translate(-10%,-14%) scale(1.04); left: 0px; display:inline-block; border-radius:50px; border: 2px solid white; transition: 0.2s ease;
+    }
+    .sticky-header:hover #logo-replace::before{ 
+        transform: translate(78%,-14%) scale(1.04); transition: 0.4s ease;
+    }
+    .dont-strike::before{ content:''; width: 35%; height: 4px; background: red; transform: rotate(20deg) translateY(-50%); position: absolute; top: 52%; left: 0%; opacity: var(--strike); transition: opacity 0.4s ease;}
+    
+    
+     .twitter-link::before { content:'I call it Twitter understand?'; width: 150%; height: auto; background: var(--gray-bg); border: 2px solid var(--gray-bg-element); border-radius: 10%; position: absolute; top: 0; left: 50%; padding: 0 5%; transform: translate(-50%, -80%); opacity: 0; transition: transform 0.3s, opacity 0.3s; font-size: min(3.5vw, 16px); font-family: inherit;
+    }
+    .twitter-link:hover::before { opacity: 1; transform: translate(-50%, -110%);}
+
+
+    /* Keyframes */
+    @keyframes fade_in_text{
+      from{ opacity: 0;}
+      to{ opacity: 1;}
+    }
+    @keyframes switch_on_reveal{
+      to{clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);}
+    }
+    @keyframes swipe_out{
+      to{ transform: translateX(-100%); display:none;}
+    }
+
+</style>
+  
+
+<script>
+function hiddenTextToggler(id) {
+    var textElement = document.getElementById(id);
+    if (textElement.style.display === "block") {
+        textElement.style.display = "none";
+    } else {
+        textElement.style.display = "block";
+    }
+}
+
+function replaceText(){
+    let ele = document.querySelector('#heheboy');
+    let text = ele.innerHTML;
+    text = text.replace(/heheboy/gi, '<img  class="back" src="https://www.memecreator.org/static/images/memes/3772097.jpg" style="width: 12vw; max-width: 53px; height: auto; aspect-ratio: 16/16; border-radius: 10px; margin: 5% 2%; vertical-align: middle; display: inline-block; transform: rotate(-8deg) translateY(-10%);" alt="hehe boy"/>')
+    ele.innerHTML = text;
+}
+  
+  
+/*
+
+		const img = new Image();
+		img.src = 'https://media.tenor.com/WXqqrqOKbqUAAAAM/remi-gaillard-twitter.gif';
+		img.onload =  ()=> {
+			const card = document.querySelector('.opening-card');
+			card.classList.add('swipe-out');
+			card.querySelector('img').classList.add('switch-on-reveal');
+			card.querySelector('p').classList.add('fade-in');
+			card.querySelector('p').innerText = 'Before Following, know the person properly !!';
+		}; 
+*/
+</script>

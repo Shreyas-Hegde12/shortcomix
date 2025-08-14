@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>
+    {% if page.url == "/" %}
+      {{title}}
+    {% else %}
+      {{ title }} | ShortComix
+    {% endif %}
+  </title>
+
+  <!-- Favicon -->
+  <link href="/images/sprites/favicon.png" rel="icon" />
+  <link href="/images/sprites/favicon.png" rel="apple-touch-icon" sizes="180x180" />
+  <link href="/css/style.css" rel="stylesheet" />
+
+  <!-- Basic Meta Tags -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Short Comix is a comic website. LightHearted Illustrations, comics and short stories. ShortComix is weekly. Stuffed with Fun © Shreyas Hegde" />
+  <meta name="author" content="Shreyas Hegde" />
+
+  <!-- Google Search Console Verification -->
+  <meta name="google-site-verification" content="raRFzgJ7SERESnHNQPbCsxolS00IbNdtWoNytqPiCUY" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="/" />
+  <meta property="og:title" content="ShortComix - Comics and Short Stories" />
+  <meta property="og:description" content="Some lighthearted illustrations, comics and short stories packed with fun!" />
+  <meta property="og:image" content="/images/emotes/awesome.png" />
+  <meta property="og:site_name" content="ShortComix" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@shortcomix1" />
+  <meta name="twitter:creator" content="@shortcomix1" />
+  <meta name="twitter:title" content="ShortComix - Comics and Short Stories" />
+  <meta name="twitter:description" content="Some lighthearted illustrations, comics and short stories packed with fun!" />
+  <meta name="twitter:image" content="/images/emotes/awesome.png" />
+
+  <!-- Theme Colors -->
+  <meta name="theme-color" content="#ffffff" />
+  <meta name="msapplication-navbutton-color" content="#ffffff" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+</head>
+
+<body>
+  <div align="center" class="emoji-space" id="outer-wrapper">
+
+    <div class="mobile-header for-laptp strict for-mobile" style="width:100%; height:60px;">
+      <div style="width:100%; height:60px; position: fixed; top:0; left:0; z-index: 5000; background: #000; display: flex; justify-content: space-between; align-items: center;">
+        <div onclick="window.location='/'" style="height: 100%; display: flex; justify-content: center; align-items:center; gap: 15px; padding:0 5%;">
+          <img src="/images/sprites/favicon.png" style="height: 60%; aspect-ratio:1/1;" />
+          <p style="user-select:none; font-family: gloria hallelujah; font-size: min(6vw, 28px); color: white;">ShortComix</p>
+        </div>
+        <div style="height: 100%; padding: 0 5%; display: flex; justify-content: center; align-items:center; gap: 20px;">
+          <svg fill="none" height="24" onclick="mobileMenu(1)" style="height: 45%; width: auto; aspect-ratio:1/1;" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M4 6H20M4 12H20M4 18H20" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg>
+          <svg fill="none" height="24" onclick="document.querySelector('#comic-search-bar').style.display='flex'; document.querySelector('.search-results').style.display='grid';" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="height: 40%; width: auto; aspect-ratio:1/1;" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><circle cx="11" cy="11" r="8"/><line x1="21" x2="16.65" y1="21" y2="16.65"/></svg>
+        </div>
+
+        <!-- search input -->
+        <div id="comic-search-bar" style="box-sizing: border-box; width:100%; height: 100%; position: absolute; top:0; left:0; display: none; overflow: hidden; border-bottom: 2px solid #aaa;">
+          <input id="comic-search-input" oninput="searchComics()" placeholder="Search Comics" style="flex: 1; border: var(--gray-bg-element) solid 8px; background: var(--mode-bg); color: var(--primary-text); font-size: min(4vw, 30px); padding: 0 5%;" type="text" value="" />
+          <div onclick="document.querySelector('#comic-search-bar').style.display='none'; document.querySelector('.search-results').style.display='none';document.querySelector('.search-background-blurred').style.display ='none';" style="position: absolute; top: 0; right: 0; aspect-ratio: 1.5/1; height: 100%; color: white; display:flex; justify-content: right; font-size: min(3vw, 30px);">
+            <div style="background: black; border-radius: 500px; clip-path: circle(25%); aspect-ratio: 1/1; height: 100%; display: grid; place-items:center;">
+              <p style="transform: translateY(-5%);">&#10006;</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="search-results" style="display:none; grid-auto-flow: column; grid-auto-columns: min-content; align-items: center; gap: 30px; position: fixed; width: 100%; height: auto; overflow-x: scroll; top:60px; left:0; z-index: 5500; background: var(--primary-bg);"></div>
+    <div class="search-background-blurred" style="display:none; backdrop-filter: blur(8px); width:100%; height: 100%; z-index: 5400; position: fixed; font-size: 0px;">.</div>
+
+    <!--Mobile Menu Button-->
+    <div id="open-mobile-menu" onclick="mobileMenu(1)" style="display: flex; width: 18.5vw; max-width: 100px; height: auto; aspect-ratio: 1/0.98; position: fixed; left: 50vw; transform:translateX(-50%); bottom: min(5.5vh, 50px); z-index: 1100; border-radius: 500px; transition: ease-in-out 1s linear;">
+      <img alt="Mobile Menu" src="/images/sprites/favicon.png" style="position: relative; z-index: 5; width: 100%; max-width: 100px; height: auto; aspect-ratio: 1/0.98;" />
+    </div>
+
+    <!--Mobile Menu-->
+    <div class="mobile-menu for-mobile">
+      <div class="menu-background" onclick="mobileMenu(0);" style="width: 100vw; height: 100vh; background-color: black; overflow: hidden; position: fixed; bottom: 0px; left: 0px; display: flex; justify-content:center; place-items:center;"></div>
+      <div class="for-mobile home-tag" onclick="if(document.querySelector('#this-is-home-page')){ mobileMenu(0); } else{ window.location.href = '/#kiddo-peek'; }" style="display: block; width: 20vw; height: 30vw; position: fixed; top: 4%; left: 0%; color:white; font-family: gloria hallelujah; font-weight: 400; font-size: min(14.8vw,75px); text-align: center;">
+        <p class="tag-tick-tick">#</p>
+      </div>
+      <ul>
+        <li><a href="/archives">Comic List !egg</a></li>
+        <li><a href="/fun-games">Fun Game !stars</a></li>
+        <li><a href="/daily-joke">Read jokes !wow</a></li>
+      </ul>
+
+       <!-- a. menu social icons--> 
+      <div class='menu-social-icons' style='width: 29%; max-width: 140px; height: auto; display: flex; flex-direction: row; gap: min(40%, 80px); justify-content: space-between; place-items: center; position: absolute; bottom: 8%; margin: min(0%, 42px) 0 min(0%,40px) 0;'>
+          <a aria-label='Instagram' class='bubbly-touch' href='https://instagram.com/shortcomix.ig' onclick='event.preventDefault(); delayLink(&apos;https://instagram.com/shortcomix.ig&apos;, 600, &apos;blank&apos;);' style='width:100%;'>
+            <svg style='flex:1; ransform: scale(2.3);' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+              <path d='M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z' fill='' stroke=''/>
+            </svg>
+          </a>
+        
+          <a aria-label='Twitter' class='tweet bubbly-touch' href='https://twitter.com/shortcomix1' onclick='event.preventDefault(); delayLink(&apos;https://twitter.com/shortcomix1&apos;, 600, &apos;blank&apos;);' style='width: 100%;'>
+            <svg style='flex:1; ransform: scale(2.3);' viewBox='0 0 16 16' xmlns='http://www.w3.org/2000/svg'>
+              <path d='M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z'/>
+            </svg>
+          </a>
+     </div>
+     <!-- -->
+    </div>
+
+    <!--Spill Menu-->
+    <div class="spill" style="display:none;width:100vw; height: 100vh; max-height: auto; position: fixed; bottom: 0px; right: 0px; background:#070707; clip-path: circle(0% at 90% 85%); -webkit-clip-path: circle(0% at 90% 85%); will-change: clip-path; transition: clip-path 1s linear; aspect-ratio:1/1; z-index: 1000; overflow:hidden; place-items:center; justify-content:center;">
+      <ul>
+        <li><a href="/archives">Comic List !egg</a></li>
+        <li><a href="/fun-games">Fun Game !stars</a></li>
+        <li><a href="/daily-joke">Read Jokes !wow</a></li>
+      </ul>
+    </div>
+
+    <!--Desktop Menu-->
+    <div align="center" class="desktop-menu">
+      <a href="/#d-kiddo-peek"><img alt="Home" loading="lazy" src="/images/sprites/favicon.png" style="position:fixed; left: 18.5%; z-index: 100; aspect-ratio:1/1; width: auto; height: 7vw; max-height: 200px; margin-top:15px; border-radius:100px;" title="Sweet Home" /></a>
+      <ul>
+        <li><a href="/archives">Comics</a></li>
+        <li><a href="/fun-games">Fun Game</a></li>
+        <li><a href="/daily-joke">Daily Joke</a></li>
+      </ul>
+      <a href="/story-book"><img alt="star in the corner" src="https://images.vexels.com/content/134175/preview/star-hand-drawn-icon-56-3bf3da.png" style="filter: invert(1); position:fixed; top: 0px; right: 5%; z-index: 100; aspect-ratio:1/1; width: auto; height: 3.5vw; max-height: 100px; margin-top:15px; border-radius:100px;" /></a>
+    </div>
+
+    <!--Main Wrapper-->
+    <div id="main-wrapper">
+      <div class="common-gap" style="width:100%; height:0px;"></div>
+      {{content}}
+    </div>
+
+  </div>
+
+  <!-- JAVASCRIPT FUNCTIONS -->
+  <script defer type="text/javascript" src="/js/script.js"></script>
+</body>
+</html>

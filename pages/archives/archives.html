@@ -1,0 +1,28 @@
+---
+title: Comic List 🏁
+permalink: "/archives/"
+layout: layouts/base.liquid
+---
+
+<div class="for-laptop" style="margin-top: 8%;"></div>
+
+<div style="width:95%; max-width: 950px; margin-top: 5%;">
+
+{% for post in collections.post %}
+<a href={{post.url}}>
+    <img class="back archive-settings" src="{{post.url}}thumb.jpg" alt={{post.title}} />
+</a>
+{% endfor %}
+
+</div>
+
+<br><br><br>
+<div class="for-mobile"><br><br><br><br></div>
+
+<style>
+#footer-wrapper,.mobile-header {display:none!important;}
+</style>
+
+<script>
+document.querySelectorAll('.archive-settings').forEach((comic)=>{comic.alt="A Comic";});
+</script>

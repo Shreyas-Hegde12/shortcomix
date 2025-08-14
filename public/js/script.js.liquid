@@ -1,0 +1,794 @@
+---
+permalink: /js/script.js
+eleventyExcludeFromCollections: true
+---
+
+// carousel images
+const carouselImages = [
+  	{ name: "amazing", src: "/images/emotes/awesome.png" },
+  	{ name: "egg", src: "/images/emotes/think.png" },
+  	{ name: "meh", src: "/images/emotes/oh-no.png" },
+  	{ name: "scared", src: "/images/emotes/scared.png" },
+	{ name: "shy", src: "/images/emotes/shy.png" }
+];
+
+// frog images
+const frogImages = [
+	'/images/static/frog.png', '/images/static/frog-with-tie.png'
+];
+
+// for random comic button
+const allLinks = [
+	{% for post in collections.post %}
+		"{{ post.url }}",
+	{% endfor %}
+	];
+
+// for home page
+const comicLinks = [
+	// "/comic/cut-it", 
+  	// "/comic/extra-seat",
+  	"/comic/shooting-stars",
+  	"/comic/puppy-tale",
+	// "/comic/feel-the-kick",
+	"/comic/the-english-smile",
+ 	// "/comic/cooking-with-google", 
+	"/comic/a-nosy-deal",
+	"/comic/toasted-birthday",
+	"/comic/wonder-of-life",
+ 	// "/comic/game-over", 
+	"/comic/blame-potatoes",
+ 	// "/comic/egg-life", */
+ 	// "/comic/story-time", 
+  	// "/comic/million-dollar-baby",
+  	// "/comic/anybody-coffee", 
+];
+
+// to Emoji Function
+function toEmoji(){
+	let bodyText = document.querySelector(".emoji-space");
+	let theText = bodyText.innerHTML;
+	theText = theText.replace(/!shy/gi, "<img src='/images/emotes/shy.png' class='emoji-settings' alt='emoji shy'/>");
+	theText = theText.replace(/!omg/gi, "<img src='/images/emotes/scared.png' class='emoji-settings' alt='emoji omg'/>");
+	theText = theText.replace(/!sad/gi, "<img src='/images/emotes/oh-no.png' class='emoji-settings' alt='emoji sad'/>");
+	theText = theText.replace(/!smile/gi, "<img src='/images/emotes/smile.png'class='emoji-settings' alt='emoji smile'/>");
+	theText = theText.replace(/!stars/gi, "<img src='/images/emotes/sparkly.png' class='emoji-settings' alt='emoji stars'/>");
+	theText = theText.replace(/!dog/gi, "<img src='/images/emotes/loyal.png' class='emoji-settings'  alt='emoji dog'/>");
+	theText = theText.replace(/!cop/gi, "<img src='/images/emotes/eyes-on-you.png' class='emoji-settings'  alt='emoji cop'/>");
+	theText = theText.replace(/!wow/gi, "<img src='/images/emotes/awesome.png' class='emoji-settings'  alt='emoji wow'/>");
+	theText = theText.replace(/!egg/gi, "<img src='/images/emotes/think.png' class='emoji-settings'  alt='emoji egg'/>");
+	theText = theText.replace(/!hat/gi, "<img src='/images/emotes/hat.png' class='emoji-settings' alt='emoji with-hat'/>");
+	
+	bodyText.innerHTML = theText;
+}
+
+function comicPick() {
+
+	const ran1 = Math.floor(Math.random() * comicLinks.length);
+	let ran2 = Math.floor(Math.random() * comicLinks.length);
+
+	while(ran1 === ran2){ 
+		ran2 = Math.floor(Math.random() * comicLinks.length);
+	}
+
+	const pickLink = isMobile ? '.pick-link' : '.d-pick-link';
+	const secondPickLink = isMobile ? '.pick-second-link' : '.d-pick-second-link';
+	const pickImage = isMobile ? '.pick-img' : '.d-pick-img';
+	const secondPickImage = isMobile ? '.pick-second-img' : '.d-pick-second-img';
+
+	document.querySelector(pickLink).href = comicLinks[ran1];
+	document.querySelector(secondPickLink).href = comicLinks[ran2];
+	document.querySelector(pickImage).src = comicLinks[ran1] + '/thumb.jpg';
+	document.querySelector(secondPickImage).src = comicLinks[ran2] + '/thumb.jpg';
+}
+
+// Carousel
+function startCarousel() {
+	let emojiNum= 0;
+	
+const carouselInterval = setInterval(function() {
+	if(emojiNum == 0){ document.querySelector('.emoji-carousel').classList.add('animate-carousel'); }
+	if(emojiNum == carouselImages.length){ emojiNum=0; }
+
+	let pick= emojiNum;
+	document.querySelector('.emoji-carousel').src= carouselImages[pick].src;
+
+	emojiNum++;
+},3000);
+}
+
+const comictitle = document.getElementById('comic-title');
+const previousComic = document.getElementById('Blog1_blog-pager-older-link');
+const nextComic = document.getElementById('Blog1_blog-pager-newer-link');
+const isMobile = screen.width < 650;
+
+let visits = parseInt(localStorage.getItem("userNew")) || 0;
+let menuOpened = localStorage.getItem("menuOpened") || 'false' ;
+
+let frogFreeze;
+let frogPose=0;
+
+// On Page Load
+window.onload = function() {
+
+	if(document.querySelector('#this-is-home-page') != null){
+      startCarousel();
+	}
+}
+
+// On DOM content Load
+document.addEventListener('DOMContentLoaded', function() {
+
+	loadFonts();
+	
+	if (visits < 10 && menuOpened == 'false'){
+		visits += 1; 
+		if(localStorage) localStorage.setItem("userNew", visits);
+		// Show a flag on menu icon and say 'I am Menu'
+		document.querySelector(':root').style.setProperty('--i-am-menu-animation', 'appear_disappear 5s 1');
+	}
+
+	if(comictitle != null){
+		polishComicPage();
+	}
+	else if(document.querySelector('#this-is-home-page') != null){
+		comicPick();
+		polishHomePage();
+	}
+	else if (document.querySelector('#this-is-story-page') !== null) {
+    	//document.querySelector("iframe").addEventListener("load", lock);
+	}
+	else if(document.querySelector('#this-is-games-page') != null){
+		sizeTracker();
+	}
+	else if(document.querySelector('#this-is-about-page') != null){
+		replaceText();
+		strikeOutText();
+	} else if(document.querySelector('#this-is-sketches-page') != null){
+		rotateHandle();
+	}
+});
+
+function loadFonts() {
+	const link = document.createElement('link');
+	link.href='https://fonts.googleapis.com/css2?family=Acme&family=Gloria+Hallelujah&family=Indie+Flower&family=Open+Sans&family=Sedan&family=Montserrat&Noticia+Text&display=swap';
+	link.rel= 'stylesheet';
+	link.type='text/css';
+	link.media='all';
+	document.head.appendChild(link);
+}
+
+function polishComicPage() {
+
+		// a. comic title and alt
+		document.querySelector('.comicimg').alt = comictitle.innerHTML;
+		document.querySelector('.comicimg').title = comictitle.innerHTML; 
+
+      	//document.querySelector('#open-mobile-menu').style.display = 'none';
+
+		// b. tweet links
+		const COMIC_URL = window.location.origin + window.location.pathname;
+		const TWEET_TEXT = "A comic by @shortcomix1";
+		const tweetHref = "https://twitter.com/share?url=" + COMIC_URL + "&text=" + TWEET_TEXT;
+		document.querySelector('.tweet').href= tweetHref;
+
+		// c. gmail comments
+		if(window.location.pathname=='/2021/09/whythehell.html'){document.querySelector('.gmail-comments').style.display='block';}
+
+		// d. mobile menu stick to bottom for small squarey comics
+		if(document.querySelector('.sq') !== null){
+			const mobmenu = document.querySelector('#open-mobile-menu');
+ 			mobmenu.style.position = 'absolute'; 
+			mobmenu.bottom = '5px';
+		}
+
+		// e. Keyboard Comic Navigation
+		if(window.innerWidth> 800){
+			document.addEventListener("keydown", (e) => {
+				if((e.key == "ArrowLeft") && (previousComic.pathname!=location.pathname)){window.open(previousComic.href,"_self");}
+				if((e.key == "ArrowRight") && (nextComic.pathname!=location.pathname)){window.open(nextComic.href,"_self");}
+			});
+		}
+
+		// f. Comic Next Prev Disappear When No Comic Neighbour Present
+		if(previousComic.pathname==window.location.pathname){document.querySelector(".nav-prev").innerHTML ="";}
+		if(nextComic.pathname==window.location.pathname){document.querySelector(".nav-next").innerHTML ="";}
+}
+
+
+function polishHomePage() {
+    // a. Carousel Preload Images
+	carouselImages.forEach(image => {
+  		preloadImage(image.src);
+	});
+
+	// b. Carousel Position Settings
+	const toh = window.innerHeight/2;
+	const toph = toh - (5*toh)/100;
+	document.querySelector('.carousel').style.top = toph + 'px';
+
+	// c. Frog Pic Change every 3 second
+	frogFreeze = setInterval( ()=>{
+		const frog = isMobile ? document.querySelector('#frog-pic') : document.querySelector('#d-frog-pic');
+
+		if(frogPose === frogImages.length){ frogPose=0; } 
+		frog.src= frogImages[frogPose];
+		frogPose++;
+
+	}, 3000);
+
+	// d. Coffee Cup Menu
+	if(window.innerWidth>800){
+		document.addEventListener("scroll", (e)=>{
+			const a = window.pageYOffset/document.body.clientHeight;
+			let ele = document.querySelector('#coffee-cup-menu');
+
+			if(a>0.6){
+				// Coffee Cup visible
+				ele.style.opacity='0';
+				ele.style.pointerEvents = 'none';
+			}
+			else{
+				// Coffee Cup invisible
+				ele.style.opacity='1';
+				ele.style.pointerEvents = 'auto';
+			}
+
+		});
+
+		document.querySelectorAll('.hover-box').forEach(box => {
+			box.addEventListener('mousemove', e => {
+              const rect = box.getBoundingClientRect();
+             const offsetX = e.clientX - rect.left - rect.width / 2; //Math.max(Math.max(e.clientX - rect.left - rect.width / 2, -500), 0);
+
+              const offsetY = e.clientY - rect.top - rect.height / 2;
+
+              box.style.setProperty('--x', `${offsetX / 2}px`);
+              box.style.setProperty('--y', `${offsetY / 2}px`);
+            });
+
+            box.addEventListener('mouseleave', () => {
+              box.style.setProperty('--x', `0px`);
+              box.style.setProperty('--y', `0px`);
+            });
+		});
+	}
+
+	// e. Preload 1st Youtube Video Thumbnail
+    if(isMobile){
+		const observer = new IntersectionObserver(entries => {
+        	entries.forEach(entry => {
+            	if (entry.isIntersecting) {
+                	const thumbnail = document.querySelector('.tv-embed img').src;
+                	preloadImage(thumbnail);
+                	observer.disconnect(); // Completely stops the observer
+            	}
+        	});
+    	});
+    	const target = document.querySelector('#bubbles');
+    	if (target) observer.observe(target);
+	}
+
+}
+
+
+// When user clicks 'Play' under Tv section in Home Page, Autoplay the video without showing thumbnail
+function firstvideo(iframe){
+	const watchBtnText = isMobile ? '#watch p' : '#d-watch p';
+
+	// iframe may take time to load till then keep loading svg
+	document.querySelector(watchBtnText).innerHTML = 
+		`<svg width="24" height="24" fill="#aebddf" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><style>.spinner_P7sC{transform-origin:center;animation:spinner_svv2 .75s infinite linear}
+			@keyframes spinner_svv2{100%{transform:rotate(360deg)}}</style>
+			<path d="M10.14,1.16a11,11,0,0,0-9,8.92A1.59,1.59,0,0,0,2.46,12,1.52,1.52,0,0,0,4.11,10.7a8,8,0,0,1,6.66-6.61A1.42,1.42,0,0,0,12,2.69h0A1.57,1.57,0,0,0,10.14,1.16Z" class="spinner_P7sC"/>	
+		</svg>`;
+
+	// On iframe load
+	iframe.onload = () => {
+		// send command to the video to start playing immediately
+		const command = 'playVideo';
+        iframe.contentWindow.postMessage(
+        	JSON.stringify({ event: 'command', func: command, args: [] }),
+            '*'
+        );
+		// Iframe has loaded so stop showing loading svg
+		document.querySelector(watchBtnText).innerText = '🙌Pause';
+   };
+}
+
+
+// Random Post
+function LuckyLink() {
+	// Find a Random Comic Link
+	let destination, lucky;
+	do
+	{
+		lucky = Math.floor(Math.random()*allLinks.length);
+		destination= "https://shortcomix.blogspot.com" + allLinks[lucky] + ".html";
+	} while(new URL(destination).pathname == window.location.pathname);
+	
+	// Play Button Animation
+	document.querySelector('.nav-random').style.animation='shake_on_hover 0.45s 2';
+    const reset = setTimeout(()=>{
+      	document.querySelector('.nav-random').style.animation='';
+    },900);
+
+	// Wait for 0.5s then open Link
+	sleep(500).then( ()=>{ window.location.href= destination; } );
+}
+
+
+// Configure Disqus
+function disqusConfig() {    
+    // a. Load the Disqus embed script
+	document.getElementById('disqus_thread').innerHTML = '';
+    let disqusscript = document.createElement('script');
+    disqusscript.src = `https://shortcomix.disqus.com/embed.js`;
+    disqusscript.setAttribute('data-timestamp', +new Date());
+    disqusscript.async = true;
+    document.body.appendChild(disqusscript);
+}
+
+// Comment Section
+function commentsSection() {
+
+	const cmts = document.querySelector('#cmts');
+	const cmtsOpen = cmts.style.display === 'block';
+
+	if(!cmtsOpen){
+		cmts.style.display = 'block'; 
+		document.querySelector('.open-comments-section p').innerHTML="Hide Comments"; 
+		document.querySelector('#open-mobile-menu').style.display="none"; 
+		document.querySelector('.social-icons').style.display="none"; 
+		document.getElementById('disqus_thread').style.display = 'block';
+		// Scroll Down to bring comments into view
+		window.scrollBy({
+  			top: 300,
+  			left: 0,
+  			behavior: "smooth",
+		});
+		// Configure Disqus
+		disqusConfig();
+	}
+	else{
+		cmts.style.display = 'none'; 
+		document.querySelector('.open-comments-section p').innerHTML="Write a Comment"; 
+		document.querySelector('#open-mobile-menu').style.display="flex"; 
+		document.querySelector('.social-icons').style.display="flex";
+		document.getElementById('disqus_thread').style.display = 'none';
+	}
+}
+
+
+// Mobile Menu open and close
+function mobileMenu(opn) { 
+	menuOpened = 'true'; 
+	localStorage.setItem('menuOpened','true');
+	const mobilemenu = document.querySelector('.mobile-menu');
+	const button = document.querySelector('#open-mobile-menu');
+	const isHomePage = (document.querySelector('#this-is-home-page') != null);
+	
+	if(1){
+		if(opn){
+			mobilemenu.style.clipPath = "circle(150% at 50% 90%)";
+			mobilemenu.style.transition= "clip-path 0.5s ease-in-out";
+		}
+		else{
+			mobilemenu.style.clipPath = "circle(0% at 50% 90%)";
+			mobilemenu.style.transition= "clip-path 0.5s ease-in-out";
+			//button.style.display="flex";
+		}
+		return;
+	}
+
+	if(opn){
+		mobilemenu.style.clipPath = "circle(0% at 50% 50%)";
+		mobilemenu.offsetWidth;
+		mobilemenu.style.clipPath = "circle(150% at 50% 50%)";
+		mobilemenu.style.transition= "clip-path 0.5s ease-in-out";
+	}
+	else{
+		mobilemenu.style.clipPath = "circle(0% at 50% 50%)";
+		mobilemenu.style.transition= "clip-path 0.5s ease-in-out";
+		//button.style.display="flex";
+	}
+}
+
+
+// Game Page
+function sizeTracker() {
+	const sizetrack = setInterval(function(){
+		let bx = parseInt(window.getComputedStyle(document.querySelector("#blue-box")).width);
+		let by = parseInt(window.getComputedStyle(document.querySelector("#blue-box")).height);
+		let rx = parseInt(window.getComputedStyle(document.querySelector("#red-box")).width);
+		let ry = parseInt(window.getComputedStyle(document.querySelector("#red-box")).height);
+		if(Math.abs(bx - rx) <= 2 && Math.abs(by - ry) <= 2){ fireAlert(); }
+ 	},1);
+}
+
+// About Page
+function strikeOutText(){
+	preloadImage('https://media.tenor.com/WXqqrqOKbqUAAAAM/remi-gaillard-twitter.gif');
+    document.addEventListener('scroll', () => {
+      const scrollPosition = window.innerHeight + window.pageYOffset; 
+      const scrollThreshold = document.documentElement.scrollHeight - 300;
+      if (scrollPosition >= scrollThreshold) {
+          document.querySelectorAll('.dont-strike').forEach( (ele) => { ele.style.setProperty('--strike', '1'); } );
+      } else {
+          document.querySelectorAll('.dont-strike').forEach( (ele) => { ele.style.setProperty('--strike', '0'); } );
+      } 
+	});
+}
+
+// Story Page
+function magnifyLens(){
+  const image = document.querySelector('.zoom-container img');
+  const lens = document.querySelector('.zoom-container > .lens');
+  const lensContainer = document.querySelector('.zoom-container');
+  const touchContainer = document.querySelector('.the-map');
+
+  let cx = isMobile ? 1.7 : 1.4;
+  let cy = isMobile ? 1.7 : 1.4;
+
+  lens.style.backgroundImage  = 'url(' + image.getAttribute('data-src2') + ')';
+  lens.style.backgroundSize = (cx * image.offsetWidth) + 'px ' + (cy * image.offsetHeight) + 'px';
+
+  let startPointerX = 0, startPointerY = 0;
+  let startLensX = 0, startLensY = 0;
+
+  function startZoom(e) {
+	if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') {
+    	return;
+ 	}
+	touchContainer.style.cursor = "grabbing";
+
+    e.preventDefault();
+
+    if (e.touches) {
+      startPointerX = e.touches[0].clientX;
+      startPointerY = e.touches[0].clientY;
+    } else {
+      startPointerX = e.clientX;
+      startPointerY = e.clientY;
+    }
+
+    startLensX = parseInt(lens.style.left, 10) || parseInt(window.getComputedStyle(lens).left, 10);
+    startLensY = parseInt(lens.style.top, 10) ||  parseInt(window.getComputedStyle(lens).top, 10);
+
+    touchContainer.addEventListener('mousemove', moveLens);
+    touchContainer.addEventListener('mouseup', endZoom);
+    touchContainer.addEventListener('touchmove', moveLens, { passive: false });
+    touchContainer.addEventListener('touchend', endZoom);
+  }
+
+  function moveLens(e) {
+    e.preventDefault();
+
+    let currentX, currentY;
+    if (e.touches) {
+      currentX = e.touches[0].clientX;
+      currentY = e.touches[0].clientY;
+    } else {
+      currentX = e.clientX;
+      currentY = e.clientY;
+    }
+
+    let deltaX = currentX - startPointerX;
+    let deltaY = currentY - startPointerY;
+
+    let newLensX = startLensX + deltaX;
+    let newLensY = startLensY + deltaY;
+
+    newLensX = Math.max(0, Math.min(newLensX, lensContainer.offsetWidth - lens.offsetWidth));
+    newLensY = Math.max(0, Math.min(newLensY, lensContainer.offsetHeight - lens.offsetHeight));
+
+    lens.style.left = newLensX + 'px';
+    lens.style.top = newLensY + 'px';
+
+    lens.style.backgroundPosition = '-' + (cx * newLensX) + 'px -' + (cy * newLensY) + 'px';
+  }
+
+  function endZoom(e) {
+	touchContainer.style.cursor = "grab";
+    touchContainer.removeEventListener('mousemove', moveLens);
+    touchContainer.removeEventListener('mouseup', endZoom);
+    touchContainer.removeEventListener('touchmove', moveLens);
+    touchContainer.removeEventListener('touchend', endZoom);
+  }
+
+  touchContainer.addEventListener('mousedown', startZoom);
+  touchContainer.addEventListener('touchstart', startZoom, { passive: false });
+}
+
+// Sketch Page
+function rotateHandle(){
+    const container = document.querySelector(".painting-container");
+    const handle = container.querySelector(".rotate-handle");
+
+    let isRotating = false;
+    let center = null;
+    let startAngle = 0;
+    let initialAngle = 0;
+
+    function getAngle(center, point) {
+      return Math.atan2(point.y - center.y, point.x - center.x) * (180 / Math.PI);
+    }
+
+    function startRotate(x, y) {
+      const rect = container.getBoundingClientRect();
+      center = {
+        x: rect.left + rect.width / 2,
+        y: rect.top + rect.height / 2,
+      };
+      startAngle = getAngle(center, { x, y });
+      const match = container.style.transform.match(/rotate\(([-\d.]+)deg\)/);
+      initialAngle = match ? parseFloat(match[1]) : 0;
+      isRotating = true;
+      document.body.style.overflow = 'hidden'; // optional: prevent scroll during rotation
+      container.classList.add('no-transition');
+    }
+
+    function updateRotate(x, y) {
+      if (!isRotating) return;
+      const currentAngle = getAngle(center, { x, y });
+      const delta = currentAngle - startAngle;
+      container.style.transform = `rotate(${initialAngle + delta}deg)`;
+    }
+
+    function stopRotate() {
+      isRotating = false;
+      document.body.style.overflow = ''; // re-enable scroll
+      container.classList.remove('no-transition');  
+    }
+
+    // Touch events
+    handle.addEventListener("touchstart", (e) => {
+      if (e.cancelable) e.preventDefault();
+      startRotate(e.touches[0].clientX, e.touches[0].clientY);
+    }, { passive: false });
+
+    document.addEventListener("touchmove", (e) => {
+      if (!isRotating) return;
+      if (e.cancelable) e.preventDefault();
+      updateRotate(e.touches[0].clientX, e.touches[0].clientY);
+    }, { passive: false });
+
+    document.addEventListener("touchend", stopRotate);
+
+    // Optional mouse support
+    handle.addEventListener("pointerdown", (e) => {
+      e.preventDefault();
+      handle.setPointerCapture(e.pointerId);  // lock pointer
+      startRotate(e.clientX, e.clientY);
+    });
+
+    handle.addEventListener("pointermove", (e) => {
+      if (!isRotating) return;
+      updateRotate(e.clientX, e.clientY);
+    });
+
+    handle.addEventListener("pointerup", () => {
+      stopRotate();
+    });
+
+}
+
+// Sleep
+function sleep(ms) {
+	return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+function delayLink(url, ms, target= "") {
+  sleep(ms).then(() => {
+    if (target=="blank") {
+        window.open(url, "_blank");
+    }
+    else {
+       window.location.href = url;
+    }
+  });
+}
+
+// Clipboard
+function clipboard(text) {
+	let copyText = text
+
+	// If text says 'copylink' then copy page URL instead
+	if(text === "copylink"){
+		copyText = window.location.origin + window.location.pathname;
+	}
+
+	// Write to clipboard
+	navigator.clipboard.writeText(copyText);
+}
+
+// Preload Images
+function preloadImage(url){
+	const link = document.createElement('link');
+	link.href = url;
+	link.rel = 'preload';
+	link.as = 'image';
+	document.head.appendChild(link);
+}
+
+// Signal Copy to user 
+function signalCopy(buttonId, whatToSay) {
+	document.querySelector(buttonId).innerHTML= `<span id="signaling-copy"> ${whatToSay} </span>`;
+}
+
+
+// Replace Emoji Text with its Emojis
+!function(){ toEmoji(); }();
+
+// Easter Egg Message Map
+const passwordBox = isMobile ? 'password' : 'd-password';
+const records = isMobile ? '#records' : '#d-records';
+const recordsElement = document.querySelector(records);
+
+const messageMap = {
+    1: "You are a psychopath 💀.",
+    5: "Frog Don Gonzalo !! 😭",
+    12: "Face is no more recognizable🤕..",
+    20: "Leave this poor lil🤏 frog🥺.",
+    200: () => {
+      recordsElement.innerHTML = "The knife is ultra red🩸";
+    },
+    25: () => {
+      recordsElement.innerHTML = " The frog is taking rebirth to take revenge 🙃 ";
+    },
+    30: () => {
+	  const music = isMobile ? '#music' : '#d-music';
+	  const musicIframe = isMobile ? '#music iframe' : '#d-music iframe';
+      recordsElement.innerHTML = "You are officially a dangerous guy💀! </br> Cruel is your name..</br>";
+      document.querySelector(musicIframe).src = 'https://res.cloudinary.com/dzss5ged8/video/upload/v1725563540/dangerous-michael-jackson-the-immortal-12650_mp3cut.net_x9txnk.mp3';
+      document.querySelector(music).style.display = 'block';
+    },
+    50: " Reborn Frog is in your home now. Happy sleeping 🕷️",
+  };
+
+// Like Animation
+function likeAnimation(){
+	const root = document.querySelector(":root");
+
+	// a. Set scale for mobile devices
+    if (window.innerWidth < 650) {
+      const hscale = (window.innerWidth / 460) * 1.4;
+      const tscale = (window.innerWidth / 460) * 1.15;
+      root.style.setProperty("--like-card-scale", hscale);
+      root.style.setProperty("--like-msg-scale", tscale);
+    }
+    
+    // b. Initialize animation properties
+    root.style.setProperty("--like-btn-animation", "like_plus_one 2s 1");
+    root.style.setProperty("--like-card-zIndex", "500");
+    
+    // c. Show message after delay
+    sleep(2000).then(() => {
+      document.querySelector(":root").style.setProperty("--like-msg-appear", "1");
+    });
+    
+    // d. Stop frog animation and replace with dead frog
+    clearInterval(frogFreeze);
+    const deadFrogUrl = 'https://res.cloudinary.com/dzss5ged8/image/upload/v1742934877/frog-dead---_teafct.png';
+    document.querySelector('#frog-pic').src = deadFrogUrl;
+    document.querySelector('#d-frog-pic').src = deadFrogUrl;
+	//document.querySelector('.frog-like-btn.laptop-view').style.pointerEvents = 'None';
+}
+
+
+// Frog Click - What to do
+let count = 0
+function frogClick() {
+
+  if (count === 0) {
+	// User Liked the page, animate the Liking Card
+    likeAnimation();
+  }
+  else{
+	// User is using Easter Egg
+	
+  	// a. Show Stab Count
+	const stabBox = isMobile ? '.stab' : '.d-stab';
+	const stabCount = isMobile ? '#stab-count' : '#d-stab-count';
+  	document.querySelector(stabBox).style.display = "block";
+  	document.querySelector(stabCount).innerHTML = "Stab count: " + count;
+
+	// special adjustments for laptop easter egg version
+	if(!isMobile && count == 1){document.querySelector('.d-frog-text').style.display = 'none';}
+	//if(!isMobile && count == 2){document.querySelector('.d-stab i').style.display = 'none';}
+
+  	// b. Display appropriate easter egg message
+  	if (messageMap[count]) {
+    	if (typeof messageMap[count] === 'function') {
+      		messageMap[count]();
+    	} else {
+      		recordsElement.innerHTML = messageMap[count];
+    	}
+ 	}
+  }
+
+  count++;
+}
+
+
+let allComicJSON = [];
+let searchFileLoaded = false;
+
+// Fetch search.json
+function fetchSearchJSON(){
+	fetch('https://shortcomix.netlify.app/search.json')
+    .then(response => response.json())
+    .then(data => {
+      allComicJSON = data;
+	  searchFileLoaded = true;
+    })
+    .catch(error => {
+      console.error('Error fetching search.json:', error);
+      searchResultsContainer.innerHTML = '<p>Error loading search data.</p>';
+    });
+
+}
+
+// Search Comics
+async function searchComics() {
+	if(!searchFileLoaded){ await fetchSearchJSON(); }
+  	const searchTerm = document.querySelector("#comic-search-input").value.trim().toLowerCase();
+
+  	const resultsDiv = document.querySelector(".search-results");
+  	resultsDiv.innerHTML = "";
+
+    if(searchTerm.length < 2){ document.querySelector('.search-background-blurred').style.display = 'block'; return; }
+	
+	const searchWords = searchTerm.split(/\s+/);
+
+	const filteredComics = allComicJSON.filter(comic => {
+		const titleMatch = searchWords.some(word => word.length > 1 && comic.title.toLowerCase().includes(word));
+
+		const tagMatch = comic.keywords.some(keyword => 
+			searchWords.some(word => 
+				word.length > 1 && (keyword.toLowerCase().includes(word) || word.toLowerCase().includes(keyword))
+			)
+		);
+
+		return titleMatch || tagMatch;
+	});
+
+	showSearchResults(filteredComics);
+  
+}
+
+function showSearchResults(searchResults) {
+  const resultsDiv = document.querySelector(".search-results");
+  
+  if (!searchResults || searchResults.length === 0) {
+    resultsDiv.innerHTML = `<p style="width: 100vw; height: auto; padding: 5% 0%; font-family: open sans; text-align: center; font-size: min(5vw, 30px);"> Comic not found :( </p>`;
+    return;
+  }
+
+  resultsDiv.innerHTML = "";
+  document.querySelector('.search-background-blurred').style.display = 'block';
+
+  searchResults.forEach(result => {
+    const title = result.title;
+    const link = result.url;
+    const thumbnail = result.thumbnail;
+	console.log(thumbnail);
+
+    const comicHTML = `
+      <div class="search-result" style=" height: 30vw; max-height: 200px; aspect-ratio: 16/9; overflow: hidden; font-family: acme; text-align: left; font-size: min(5vw, 28px); padding: 5% 0% 0 10%; ">
+        <a href="https://shortcomix.netlify.app${link}" class="dull-link" style=" display: grid; grid-template-columns: 3fr 5fr; align-items: center; gap: 10px; width:100%; height: 100%; ">
+		  	<img src="https://shortcomix.netlify.app/${thumbnail}" alt="${title}" style="aspect-ratio: 1/1; border-radius: 20%; filter: saturate(0.9);"/>
+			<div style="text-align: center;" align="left"><p style="">${title}</p></div>
+        </a>
+      </div>
+</div>
+    `;
+    resultsDiv.insertAdjacentHTML("beforeend", comicHTML);
+  });
+
+  const searchEnded = `
+     <div class="search-result" style="height: 30vw; max-height: 200px; aspect-ratio: 16/14; overflow: hidden; font-family: acme; font-size: min(5vw, 28px); margin-left: 20%; display:flex; align-items:center; text-align: center;"><p style="padding-top:5%;">👈Found This</p></div>
+  `;
+	if(searchResults.length == 1){
+	resultsDiv.insertAdjacentHTML("beforeend", searchEnded);}
+}

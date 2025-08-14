@@ -1,0 +1,132 @@
+---
+title: Daily Jokes 😹
+permalink: "/daily-joke/"
+layout: layouts/base.liquid 
+---
+<!-- Page Id -->
+<div id="this-is-jokes-page" ></div>
+
+<div class="for-laptop spacer"></div>
+
+<!-- Page Content -->
+<div class="content">
+ 
+  <img class="back gif-img" src="https://media3.giphy.com/media/QMHoU66sBXqqLqYvGO/giphy.gif?cid=6c09b952k7utvoznpedavf45fgo3grnajp049c1jlb24m95l&ep=v1_internal_gif_by_id&rid=giphy.gif&ct=gid=giphy.gif&ct=g" />
+
+  <div id="bee" class="joke-card"><p>"Why do bees have sticky hair? Because they use a honeycomb."</p></div><br><br>
+
+  <div id="electric" class="joke-card"><p>"How did the student feel when he learned about electricity? Totally shocked"</p></div><br><br>
+
+  <div class="joke-card"><p>"Why did the ducks quack so much? Earthquack!"</p></div><br><br>
+
+  <div class="joke-card"><p>"Did you hear the rumor about butter? Well, I'm not going to spread it"</p></div><br><br>
+
+  <div class="joke-card"><p>"Where do you find a turkey with no legs? Where you left it."</p></div><br><br>
+
+  <div class="joke-card"><p>"Before you criticize someone, walk a mile in their shoes. That way, when you do criticize them, you're a mile away, and you have their shoes."</p></div><br><br>
+
+  <div class="joke-card"><p>"Evening news is where they begin with “Good evening,” and then proceed to tell you why it isn’t."</p></div><br><br>
+
+  <div class="joke-card"><p>"Why does it take pirates so long to learn the alphabet? Because they could spend years at C."</p></div><br><br>
+
+  <div class="joke-card"><p>"Why it is hard for a communist to tell a joke? It's not funny until everyone gets it."</p></div><br><br>
+
+  <div class="joke-card"><p>"Why did the scarecrow get promoted? Because he was out standing in his field!"</p></div><br><br>
+
+  <div class="joke-card"><p>"I smoke Internet"</p></div><br><br>
+
+  <p class="note">*Currently, all jokes are sourced from internet except one or two. Future plan is to write a funny quote every day.</p>
+  <br><br>
+</div>
+
+
+
+<style>
+  
+.content{ 
+margin-top: 5%;
+}
+
+.spacer{
+margin-top: 8%;
+}
+
+.gif-img {
+  width: 80%;
+  height: auto;
+  aspect-ratio: 16 / 9.5;
+  max-width: 500px;
+}
+
+.joke-card {
+  width: 80%;
+  height: auto;
+  position: relative;
+  border: #111111;
+  max-width: 500px !important;
+  background: var(--gray-bg);
+}
+
+.joke-card p {
+  font-size: 160%;
+  margin-top: 20px;
+  width: 80%;
+  max-width: 550px;
+  height: auto;
+  font-family: 'Open Sans', sans-serif;
+  padding: 20px 0;
+}
+
+.note {
+  margin: 2%;
+  width: 75%;
+  max-width: 500px;
+  font-family: 'Open Sans', sans-serif;
+  padding: 5px;
+  font-size: min(4.2vw, 18px);
+}
+
+#open-mobile-menu,
+.mobile-headr,
+.desktop-men {
+  display: none !important;
+}
+
+.joke-card:last-of-type {
+  background-color: black !important;
+  color: white !important;
+}
+
+#bee::before {
+  content: '';
+  width: 50%;
+  height: auto;
+  aspect-ratio: 2 / 1;
+  background: url('https://png.pngtree.com/png-vector/20221111/ourmid/pngtree-bee-flight-path-dotted-line-png-image_6436902.png') no-repeat center/cover;
+  position: absolute;
+  bottom: -10%;
+  right: -10%;
+  z-index: 10;
+  display: inline-block;
+}
+
+#electric::before {
+  content: '😲';
+  font-size: 7vw;
+  padding: 5%;
+  border-radius: 50%;
+  box-shadow: 0 0 50px 10px var(--clr-bg);
+  background: var(--clr-bg);
+  transform: rotate(-20deg);
+  aspect-ratio: 1 / 1;
+  position: absolute;
+  bottom: -10%;
+  left: -5%;
+  z-index: 10;
+  display: none;
+}
+
+  
+</style>
+
+  
