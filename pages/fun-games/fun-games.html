@@ -3,128 +3,80 @@ title: Fun Games 🎹
 permalink: "/fun-games/"
 layout: layouts/base.liquid 
 ---
-<div style="width:90vw;" id="this-is-games-page"><br>
+<!-- Page Id -->
+<div id="this-is-games-page"></div>
 
+<div class="for-laptop spacer"></div>
 
-<!--Find the Image-->
-<div align="center"><b><span style="font-family:open sans; font-size: min(8vw, 50px); padding: min(5%, 12px);">Find the Image</span></b></div>
-<div align="center"><span style="font-family:open sans; font-size: min(5vw, 20px);  padding: min(5%, 12px); ">Wrong boxes can be mean !</span></div><br>
-<img class="back" src="/images/static/find-the-image.jpg" style="width:95%; max-width: 480px;aspect-ratio:1/1; margin: min(5%, 20px) 0;"/>
-<br>
-
-<div class="contain">
-    <div class="tile" onclick="classList.add('rotate');">
-            <div class="tile-inner">
-                <div class="tile-front">
-                    <img src="/images/sprites/black-box.jpg" alt="Front Image 6">
-                </div>
-                <div class="tile-back">
-                    <img src="/images/static/mr-bean-stare.jpg"  alt="Back Image 6">
-                </div>
-            </div>
-        </div>
-    <div class="tile" onclick="classList.add('rotate');">
-            <div class="tile-inner">
-                <div class="tile-front">
-                    <img src="/images/sprites/black-box.jpg" alt="Front Image 1">
-                </div>
-                <div class="tile-back">
-                    <img src="/images/static/monalisa-brother.jpg" alt="Back Image 1">
-                </div>
-            </div>
-        </div>
-    <div class="tile" onclick="classList.add('rotate');">
-            <div class="tile-inner">
-                <div class="tile-front">
-                    <img src="/images/sprites/black-box.jpg"  alt="Front Image 2">
-                </div>
-                <div class="tile-back">
-                    <img src="/images/static/brilliant.jpg"  alt="Back Image 2">
-                </div>
-            </div>
-        </div>
-    <div class="tile" onclick="classList.add('rotate');">
-            <div class="tile-inner">
-                <div class="tile-front">
-                    <img src="/images/sprites/black-box.jpg"  alt="Front Image 3">
-                </div>
-                <div class="tile-back">
-                    <img src="/images/static/dummy-piece.jpg"  alt="Back Image 3">
-                </div>
-            </div>
-  </div>
-    <div class="tile" onclick="classList.add('rotate');">
-            <div class="tile-inner">
-                <div class="tile-front">
-                    <img src="/images/sprites/black-box.jpg" alt="Front Image 4">
-                </div>
-                <div class="tile-back">
-                    <img src="/images/static/oh-shit.jpg" alt="Back Image 4">
-                </div>
-            </div>
-        </div>
-    <div class="tile" onclick="classList.add('rotate');">
-            <div class="tile-inner">
-                <div class="tile-front">
-                    <img src="/images/sprites/black-box.jpg"  alt="Front Image 5">
-                </div>
-                <div class="tile-back">
-                    <img src="/images/static/change-my-diapers.jpg" alt="Back Image 5">
-                </div>
-            </div>
-        </div>
-
-  </div>
-<!-- -->
-
-<!--Recaptcha game--
-<br><br><br><br>
-<div align="center"><b><span style=" font-family:open sans; font-size: 220%;">Are U HUman Game!</span></b></div>
-<div align="center"><span style=" font-family:open sans; ">Are you?</span></div><br>
-<div style="width: 90%; height: auto; min-height: 170px; max-width: 550px; background:#111; place-items:center;">
-  <p style="padding: 20px 0px 20px 0px; font-size: 25px; font-family: ; color:white;">Give ur test here😉</p>
-  <div class="g-recaptcha" data-sitekey="6Le6hxApAAAAAKPkWoIupIlMC2LCihRCk92VWgvP" style="padding: 5px 0px 10px 0px;"></div>
-</div>
--->
-
-<!-- Who went the fastest-->
-<div align="center" style="margin-top:10%;">
-<b><span style="font-family:Open sans;font-size:220%; ">Bet on which horse?</span></b><br>
-<span style="font-family:open sans; ">One character runs like rocket!</span>
-</div><br><br>
-
-<div class="fastest" style="width:90%; height: auto; display:flex; flex-direction: column; max-width:650px; overflow:hidden;" align="left">
-    <img id="egg" onclick="classList.add('eggs')" src="/images/emotes/think.png" style="width: min(30vw,180px);"/>
-    <p>Tensed Egg</p>
-
-    <img  id="cop" onclick="classList.add('cops')" src="/images/static/car.png" style="width: min(60vw,360px);"/>
-    <p>Police Van</p>
-
-    <img id="paper-frog" onclick="classList.add('froggie')"  src="/images/static/pencil-frog.png" style="aspect-ratio:16.2/16; width: min(35vw,180px)"/>
-    <p>Paper Frog</p>
-
-    <img id="stars" onclick="classList.add('starsky')" src="/images/emotes/sparkly.png" style="width: min(30vw,180px);"/>
-    <p>Shooting Stars</p>
-</div>
-
-<!-- Bring to the same size--><br>
-<div align="center" style="margin-top:5vw;">
-    <b><span style=" font-family:open sans; font-size: 220%; ">Bring Boxes to Same Size</span></b>
-</div><br>
+<!-- Page Content -->
+<div class="content">  
   
-<div align="center">
-    <span style=" font-family: open sans; ">Can you do it?</span>
-</div><br>
+  <!-- Find the Image -->
+  <div class="game-card" style="margin-top: 0px;" >
+    <h2>Find the Image</h2>
+    <p>Wrong boxes can be mean !</p>
+    
+  	<div class="game-find-image">
+      <img class="back" src="/images/static/stars-in-sky.jpg" style="width:90%; aspect-ratio:1/1; "/>
+      <div class="tiles-container"></div>
+    </div>
+ 
+  </div>
 
-<div id="red-box" align="left"></div>
-<div id="blue-box" align="left"></div>
+  <!-- Who went the fastest-->
+  <div class="game-card">
+    <h2>Bet on which horse?</h2>
+  	<p>One character runs like rocket!</p> 
 
-</div><br><br><br><br><!-- -->
+    <div class="game-character-betting">
+      <img onclick="this.classList.add('move-egg')" src="/images/static/egg.png" style="max-height: 150px;"/>
+        <p>Mr. Egg</p>
+      <img onclick="this.classList.add('move-car')" src="/images/static/car.png" style="max-height: 120px;"/>
+        <p>Police Car</p>
+      <img onclick="this.classList.add('move-frog')"  src="/images/static/dead-frog.png" style="aspect-ratio:16.2/16; height: min(35vw, 180px);"/>
+        <p>Cute Frog</p>
+      <img onclick="this.classList.add('move-stars')" src="/images/static/stars.png" />
+        <p>Shooting Stars</p>
+          
+    </div>
+    
+  </div>
+
+  <!-- Bring to the same size -->
+  <div class="game-card" style="margin-bottom: min(20vw, 80px);">
+    <h2>Bring Boxes to Same Size</h2>
+    <p>Can you do it?</p>
+    
+    <div class="game-same-size-boxes">
+      <div id="red-box"></div>
+      <div id="blue-box"></div>
+    </div>
+    
+  </div>
+
+</div>
+
 
 <style>
-#open-mobile-menu, .mobile-header,.desktop-men{display:none!important;}
+#open-mobile-menu {display:none!important;}
 
-.contain {
+.content {
+position: relative;
+width:95%; 
+max-width: 550px;
+margin-top: 5%;
+}
+.spacer{
+margin-top: 8%;
+}
+
+/* Game Card */
+.game-card{ margin-top: min(10%, 60px); } 
+.game-card h2{ font-family: open sans; font-size: min(8vw, 40px); padding: min(3%, 12px); font-weight: bold; }
+.game-card p{ font-family:open sans; font-size: min(5vw, 18px); margin-bottom: min(5%, 50px); }
+  
+/* Game - Find Image */
+.tiles-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 15px;
@@ -142,7 +94,6 @@ layout: layouts/base.liquid
     perspective: 1000px;
     cursor:pointer;
 }
-
 .tile-inner {
     position: relative;
     width: 100%;
@@ -151,25 +102,21 @@ layout: layouts/base.liquid
     transition: transform 0.6s;
     transform-style: preserve-3d;
 }
-
 .rotate > .tile-inner {
     transform: rotateY(180deg);
 }
-
 .tile-front, .tile-back {
     position: absolute;
     width: 100%;
     height: 100%;
     backface-visibility: hidden;
 }
-
 .tile-front {
     background-color: var(--gray-bg-element);
     display: flex;
     justify-content: center;
     align-items: center;
 }
-
 .tile-back {
     background-color: var(--gray-bg-element);
     color: white;
@@ -178,94 +125,61 @@ layout: layouts/base.liquid
     justify-content: center;
     align-items: center;
 }
-
 .tile img {
     width: 100%!important;
     height: auto;
     aspect-ratio:1/1;
 } 
+  
+/* Game - Character Betting */
+.game-character-betting { display: flex; flex-direction: column; justify-content: flex-start; align-items: flex-start; }
+.game-character-betting p { font-family: open sans; font-size: min(4.5vw, 20px); margin-left: min(4%, 40px); margin-bottom: 40px; }
+.game-character-betting img { width:auto!important; height: min(25vw, 180px); margin: min(4%, 20px) 0px; cursor: pointer; }
+  
+.move-egg { animation: character_run 5s 1; }
+.move-car { animation: character_run 0.2s 1; }
+.move-frog { animation: character_hop 0.5s 1; }  
+.move-stars { animation: character_run 1.2s 1; }  
 
+/* Game - Same Size Boxes */
 #red-box {
 background: #f04f32;
 height: 45px;
 width: 55px;
 transition: width 2.5s, height 5s;
 }
-
 #red-box:hover {
 background: #eb3434;
 width:200px;
 height:200px;
 }
-
-
 #blue-box {
 background: #34ebd6;
 height: 64px;
 width: 27px;
 transition: width 2.5s, height 5s;
 }
-
 #blue-box:hover {
 background: #349feb;
 width:300px;
 height:186px;
 }
-
-.fastest p{ font-family: open sans; font-size: min(4.5vw, 25px); margin-left: min(4%, 40px); margin-bottom: 40px;}
-.fastest img{max-width:200px; margin: min(4%, 20px) 0px; }
-.cops {
-animation-name:police-van;
-animation-iteration-count: 1;
-animation-duration:0.3s;
-transition:ease-in 0.3s;
-}
-
-@keyframes police-van {
+   
+  
+/* Keyframes */
+@keyframes character_run {
 0%{transform:translate(0px,0px);}
-100%{transform:translate(500%,0px);}
+100%{transform:translate(250%,0px); }
 }
-
-
-.froggie {
-animation-name:hopping;
-animation-iteration-count: 1;
-animation-duration:0.5s;
-transition:ease-in 0.5s;
-}
-
-@keyframes hopping {
+@keyframes character_hop {
 0%{transform:translateY(0px);}
 30%{transform:translateY(-20px);}
 60%{transform:translateY(0px);}
 80%{transform:translateY(-20px);}
 }
-
-.starsky {
-animation-name:stary;
-animation-iteration-count: 1;
-animation-duration:1.8s;
-  transition:ease-in 1.8s;
-}
-
-@keyframes stary {
-0%{transform:translate(0px,0px);}
-100%{transform:translate(500%,0px);}
-}
-
-.eggs {
-animation-name:eg;
-animation-iteration-count: 1;
-animation-duration:9s;
-transition:ease-in 9s;
-}
-
-@keyframes eg {
-0%{transform:translate(0px,0px);}
-100%{transform:translate(500%,0px);}
-}
-
 </style>
+
+
 <script>
   function fireAlert(){
   
@@ -281,5 +195,32 @@ transition:ease-in 9s;
   backdrop: 'rgba(0,0,123,0.4)'
 });
   }
+  
+  const backImages = [
+  "/images/static/mr-bean-stare.jpg",
+  "/images/static/monalisa-brother.jpg",
+  "/images/static/stars-in-sky.jpg",
+  "/images/static/dummy-piece.jpg",
+  "/images/static/oh-shit.jpg",
+  "/images/static/change-my-diapers.jpg"
+];
+
+const frontImage = "/images/sprites/black-box.jpg";
+
+const tilesContainer = document.querySelector(".tiles-container");
+
+tilesContainer.innerHTML = backImages.map(back => `
+  <div class="tile" onclick="this.classList.add('rotate')">
+    <div class="tile-inner">
+      <div class="tile-front">
+        <img src="${frontImage}" alt="Front Image">
+      </div>
+      <div class="tile-back">
+        <img src="${back}" alt="Back Image">
+      </div>
+    </div>
+  </div>
+`).join('');
+
 </script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>

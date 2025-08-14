@@ -5,8 +5,8 @@ eleventyExcludeFromCollections: true
 
 // carousel images
 const carouselImages = [
-  	{ name: "amazing", src: "/images/emotes/awesome.png" },
-  	{ name: "egg", src: "/images/emotes/think.png" },
+  	{ name: "amazing", src: "/images/emotes/amazing.png" },
+  	{ name: "egg", src: "/images/emotes/egg.png" },
   	{ name: "meh", src: "/images/emotes/oh-no.png" },
   	{ name: "scared", src: "/images/emotes/scared.png" },
 	{ name: "shy", src: "/images/emotes/shy.png" }
@@ -14,7 +14,7 @@ const carouselImages = [
 
 // frog images
 const frogImages = [
-	'/images/static/frog.png', '/images/static/frog-with-tie.png'
+	'/images/static/frog.png', '/images/static/school-frog.png'
 ];
 
 // for random comic button
@@ -51,12 +51,12 @@ function toEmoji(){
 	theText = theText.replace(/!shy/gi, "<img src='/images/emotes/shy.png' class='emoji-settings' alt='emoji shy'/>");
 	theText = theText.replace(/!omg/gi, "<img src='/images/emotes/scared.png' class='emoji-settings' alt='emoji omg'/>");
 	theText = theText.replace(/!sad/gi, "<img src='/images/emotes/oh-no.png' class='emoji-settings' alt='emoji sad'/>");
-	theText = theText.replace(/!smile/gi, "<img src='/images/emotes/smile.png'class='emoji-settings' alt='emoji smile'/>");
-	theText = theText.replace(/!stars/gi, "<img src='/images/emotes/sparkly.png' class='emoji-settings' alt='emoji stars'/>");
-	theText = theText.replace(/!dog/gi, "<img src='/images/emotes/loyal.png' class='emoji-settings'  alt='emoji dog'/>");
-	theText = theText.replace(/!cop/gi, "<img src='/images/emotes/eyes-on-you.png' class='emoji-settings'  alt='emoji cop'/>");
-	theText = theText.replace(/!wow/gi, "<img src='/images/emotes/awesome.png' class='emoji-settings'  alt='emoji wow'/>");
-	theText = theText.replace(/!egg/gi, "<img src='/images/emotes/think.png' class='emoji-settings'  alt='emoji egg'/>");
+	theText = theText.replace(/!smile/gi, "<img src='/images/emotes/smiling.png'class='emoji-settings' alt='emoji smile'/>");
+	theText = theText.replace(/!stars/gi, "<img src='/images/emotes/stars.png' class='emoji-settings' alt='emoji stars'/>");
+	theText = theText.replace(/!dog/gi, "<img src='/images/emotes/dog.png' class='emoji-settings'  alt='emoji dog'/>");
+	theText = theText.replace(/!cop/gi, "<img src='/images/emotes/cop.png' class='emoji-settings'  alt='emoji cop'/>");
+	theText = theText.replace(/!wow/gi, "<img src='/images/emotes/amazing.png' class='emoji-settings'  alt='emoji wow'/>");
+	theText = theText.replace(/!egg/gi, "<img src='/images/emotes/egg.png' class='emoji-settings'  alt='emoji egg'/>");
 	theText = theText.replace(/!hat/gi, "<img src='/images/emotes/hat.png' class='emoji-settings' alt='emoji with-hat'/>");
 	
 	bodyText.innerHTML = theText;
