@@ -304,7 +304,7 @@ function LuckyLink() {
 	do
 	{
 		lucky = Math.floor(Math.random()*allLinks.length);
-		destination= "https://shortcomix.blogspot.com" + allLinks[lucky] + ".html";
+		destination= allLinks[lucky];
 	} while(new URL(destination).pathname == window.location.pathname);
 	
 	// Play Button Animation
